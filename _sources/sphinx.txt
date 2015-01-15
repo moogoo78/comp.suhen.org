@@ -248,3 +248,7 @@ conf.py::
   html_theme = 'sphinx_rtd_theme'
   html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+Publish
+-----------
+
+* `Publishing sphinx-generated docs on github — sphinxdoc-test v0.1 documentation <http://daler.github.io/sphinxdoc-test/includeme.html>`__ github pages
