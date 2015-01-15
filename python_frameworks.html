@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python Web Framework (SQLAlchemy, Django, Flask, Jinja2) &mdash; CompDocs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html" />
+    <link rel="next" title="GIT" href="git.html" />
+    <link rel="prev" title="&lt; Python &gt;" href="python.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="git.html" title="GIT"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="python.html" title="&lt; Python &gt;"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="python-web-framework-sqlalchemy-django-flask-jinja2">
+<h1>Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)<a class="headerlink" href="#python-web-framework-sqlalchemy-django-flask-jinja2" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-04-09 11:36</td>
+</tr>
+<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">docs</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="sqlalchemy">
+<h2>SQLAlchemy<a class="headerlink" href="#sqlalchemy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting">
+<h3>setting<a class="headerlink" href="#setting" title="Permalink to this headline">¶</a></h3>
+<p>sqlite path:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># sqlite://&lt;nohostname&gt;/&lt;path&gt;</span>
+<span class="c"># where &lt;path&gt; is relative:</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s">&#39;sqlite:///foo.db&#39;</span><span class="p">)</span>
+
+<span class="c"># or absolute, starting with a slash:</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s">&#39;sqlite:////absolute/path/to/foo.db&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>import:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">BaseQuery</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">func</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="schema">
+<h3>schema<a class="headerlink" href="#schema" title="Permalink to this headline">¶</a></h3>
+<p>column parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">primary_key</span> <span class="o">=</span><span class="bp">True</span>
+<span class="n">nullable</span><span class="o">=</span><span class="bp">False</span>
+<span class="n">unique</span><span class="o">=</span><span class="bp">True</span>
+<span class="n">default</span>
+<span class="n">onupdate</span>
+<span class="n">index</span><span class="o">=</span><span class="bp">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.sqlalchemy.org/en/rel_0_7/core/schema.html">Schema Definition Language — SQLAlchemy 0.7 Documentation</a></li>
+</ul>
+<p>mapper_args:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">__mapper_args__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;order_by&#39;</span><span class="p">:</span> <span class="s">&#39;-created&#39;</span><span class="p">}</span>
+<span class="n">__mapper_args__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;order_by&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">sort</span><span class="p">,</span> <span class="n">name</span><span class="p">]}</span>
+<span class="n">__mapper_args__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;primary_key&#39;</span><span class="p">:(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">num_log</span><span class="p">)}</span> <span class="c"># 沒有primary key時用!</span>
+</pre></div>
+</div>
+<p>relationship:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">employees</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span><span class="s">&#39;Employee&#39;</span><span class="p">,</span>
+                <span class="n">backref</span><span class="o">=</span><span class="s">&#39;company&#39;</span><span class="p">,</span> <span class="n">cascade</span><span class="o">=</span><span class="s">&#39;all, delete-orphan&#39;</span><span class="p">)</span>
+
+<span class="c"># 原本backref是one-to-many, 如果要one-to-one:</span>
+<span class="n">child</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span><span class="s">&quot;Child&quot;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="n">backref</span><span class="p">(</span><span class="s">&quot;parent&quot;</span><span class="p">,</span> <span class="n">uselist</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>relationship+filter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">products</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span>
+    <span class="s">&#39;SaleProductData&#39;</span><span class="p">,</span>
+    <span class="n">lazy</span><span class="o">=</span><span class="s">&quot;dynamic&quot;</span><span class="p">,</span>
+    <span class="n">backref</span><span class="o">=</span><span class="s">&#39;sale_event&#39;</span><span class="p">)</span>
+
+<span class="n">products</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://docs.sqlalchemy.org/en/latest/orm/inheritance.html">http://docs.sqlalchemy.org/en/latest/orm/inheritance.html</a></p>
+</div>
+<div class="section" id="query">
+<h3>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h3>
+<p>rand:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">func</span>
+
+<span class="n">query</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">rand</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>date:</p>
+<div class="highlight-python"><div class="highlight"><pre>query.group_by(func.day(LogUserData.dtime).all()
+</pre></div>
+</div>
+<p>group by:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">votes</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">EventDC1Vote</span><span class="p">,</span>
+<span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s">&#39;cnt&#39;</span><span class="p">),</span> <span class="s">&#39;uid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s">&#39;uid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;cnt DESC&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>between, like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">q</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;*&#39;</span><span class="p">))</span><span class="o">.</span>\
+        <span class="nb">filter</span><span class="p">(</span><span class="n">API2Log</span><span class="o">.</span><span class="n">dtime</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+               <span class="n">API2Log</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%%%s%%</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">j</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">distinct</span>
+<span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">distinct</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example">
+<h3>example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>in/limit/order:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Article</span><span class="o">.</span><span class="n">shop_id</span><span class="o">==</span><span class="n">g</span><span class="o">.</span><span class="n">shop_id</span><span class="p">,</span>
+             <span class="n">Article</span><span class="o">.</span><span class="n">blog_id</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">blog_id</span><span class="p">))</span><span class="o">.</span>\
+             <span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-created&#39;</span><span class="p">)</span><span class="o">.</span>\
+             <span class="n">limit</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span><span class="o">.</span>\
+             <span class="nb">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>join:</p>
+<div class="highlight-python"><div class="highlight"><pre>reg_list = db.session.query(User.name, User.email).\
+join(LogUserData, User.id==LogUserData.uid).\
+filter(User.email != &#39;&#39;, LogUserData.app_id.in_([156, 157])).\
+all()
+
+SELECT user.name, user.email, log_user_data.app_id
+FROM `user`
+LEFT JOIN log_user_data ON user.id = log_user_data.uid
+WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
+</pre></div>
+</div>
+<p>join, or:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">or_</span><span class="p">,</span> <span class="n">and_</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;brand&#39;</span><span class="p">)</span><span class="o">.</span>\
+    <span class="nb">filter</span><span class="p">(</span><span class="n">or_</span><span class="p">(</span><span class="n">Product</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s">&#39;%&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&#39;%&#39;</span><span class="p">),</span>
+               <span class="n">Brand</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s">&#39;%&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&#39;%&#39;</span><span class="p">)))</span><span class="o">.</span>\
+    <span class="nb">filter</span><span class="p">(</span><span class="n">Product</span><span class="o">.</span><span class="n">shop_id</span><span class="o">==</span><span class="n">g</span><span class="o">.</span><span class="n">shop_id</span><span class="p">)</span><span class="o">.</span>\
+    <span class="nb">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>foreign key constraint</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># database level</span>
+<span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;category.id&#39;</span><span class="p">,</span> <span class="n">ondelete</span><span class="o">=</span><span class="s">&#39;SET NULL&#39;</span><span class="p">)</span>
+<span class="c"># pythen level</span>
+<span class="n">relationship</span><span class="p">(</span><span class="n">passive_deletes</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>relationship, associate</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># db.Table</span>
+<span class="c"># class Foo()</span>
+<span class="c"># class Bar():</span>
+<span class="c"># foo_id = &#39;foo.id&#39;</span>
+
+<span class="n">foo</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Bar</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="debug">
+<h3>debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries">http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries</a></p>
+</div>
+<div class="section" id="error">
+<h3>常見error<a class="headerlink" href="#error" title="Permalink to this headline">¶</a></h3>
+<p>0.8更新:</p>
+<div class="highlight-python"><div class="highlight"><pre>&#39;dynamic&#39; loaders cannot be used with many-to-one/one-to-one relationships and/or uselist=False.
+</pre></div>
+</div>
+<p>0.8以後的SQLAlchemy的relationship如果是是many-to-one, one-to-one的關係用了dynamic loader <tt class="docutils literal"><span class="pre">lazy='dynamic'</span></tt> , 或是加了 <tt class="docutils literal"><span class="pre">uselist=False</span></tt> , 都會吐錯誤訊息出來. (以前只是warning)</p>
+<p>changelog (0.8): <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.html#change-5f7f7241c49f5c13956148d68788a5b4">http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.html#change-5f7f7241c49f5c13956148d68788a5b4</a></p>
+<p>文件 (0.7): <a class="reference external" href="http://docs.sqlalchemy.org/en/rel_0_7/orm/collections.html#dynamic-relationship">http://docs.sqlalchemy.org/en/rel_0_7/orm/collections.html#dynamic-relationship</a></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>比較<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/">SQLAlchemy and You | Armin Ronacher&#8217;s Thoughts and Writings</a></li>
+</ul>
+</div>
+<div class="section" id="flask">
+<h2>Flask<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pattern">
+<h3>pattern<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/">charles leifer | Structuring flask apps, a how-to for those coming from Django</a></li>
+<li><a class="reference external" href="https://github.com/mitsuhiko/flask/tree/master/examples">lask/examples at master · mitsuhiko/flask</a></li>
+<li><a class="reference external" href="https://github.com/semirook/flask-kit">semirook/flask-kit</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="django">
+<h2>Django<a class="headerlink" href="#django" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quick-start">
+<h3>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install Django
+$ django-admin.py startproject mysite
+$ python manage.py startapp myapp
+</pre></div>
+</div>
+<p>check version:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">django</span>
+<span class="k">print</span> <span class="n">django</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="docs">
+<h3>docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.djangoproject.com/en/1.3/">Django | Django documentation | Django documentation</a></li>
+<li><a class="reference external" href="http://djangosnippets.org/snippets/1811/">Django snippets: django paginator</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Flask<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>request:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span> <span class="c"># client id</span>
+<span class="n">request</span><span class="o">.</span><span class="n">access_route</span> <span class="c"># all ip addresses from client (access_route[0]) to the last proxy server,</span>
+<span class="c"># 判斷環境變數 HTTP_X_FORWARDED_FOR</span>
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h3>Docs<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://flask.pocoo.org/docs/">Flask documentation</a>, <a class="reference external" href="https://github.com/mitsuhiko/flask">github</a></li>
+<li><a class="reference external" href="http://jinja.pocoo.org/docs/">Jinja2 documentation</a></li>
+<li><a class="reference external" href="http://packages.python.org/Flask-SQLAlchemy/">Flask-SQLAlchemy documentation</a>, <a class="reference external" href="https://github.com/brosner/sqlalchemy">github</a>, <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/index.html">SQLAlchemy Documentation</a></li>
+<li><a class="reference external" href="http://packages.python.org/Flask-Login/">Flask-Login documentation</a>, <a class="reference external" href="https://bitbucket.org/leafstorm/flask-login">leafstorm / flask-login / overview — Bitbucket</a></li>
+<li><a class="reference external" href="http://packages.python.org/Flask-WTF/">Flask-WTF</a>, <a class="reference external" href="http://wtforms.simplecodes.com/docs/dev/">WTForms Documentation</a>, <a class="reference external" href="https://bitbucket.org/danjac/flask-wtf">danjac / flask-wtf / overview — Bitbucket</a></li>
+</ul>
+</div>
+<div class="section" id="tips">
+<h3>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h3>
+<p>看Flask版本:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">flask</span>
+
+<span class="n">flask</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+<p>request.args
+request.form.getlist(&#8216;&#8217;)</p>
+</div>
+</div>
+<div class="section" id="jinja2">
+<h2>Jinja2<a class="headerlink" href="#jinja2" title="Permalink to this headline">¶</a></h2>
+<p>sort(value, reverse=False, case_sensitive=False, attribute=None):</p>
+<div class="highlight-python"><div class="highlight"><pre>{% for item in iterable|sort(attribute=&#39;date&#39;) %}
+  ...
+{% endfor %}
+</pre></div>
+</div>
+<p>dictsort(value, case_sensitive=False, by=&#8217;key&#8217;):</p>
+<div class="highlight-python"><div class="highlight"><pre>{% for item in mydict|dictsort(false, &#39;value&#39;) %}
+    sort the dict by key, case insensitive, sorted
+    normally and ordered by value.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)</a><ul>
+<li><a class="reference internal" href="#sqlalchemy">SQLAlchemy</a><ul>
+<li><a class="reference internal" href="#setting">setting</a></li>
+<li><a class="reference internal" href="#schema">schema</a></li>
+<li><a class="reference internal" href="#query">Query</a></li>
+<li><a class="reference internal" href="#example">example</a></li>
+<li><a class="reference internal" href="#debug">debug</a></li>
+<li><a class="reference internal" href="#error">常見error</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">比較</a></li>
+<li><a class="reference internal" href="#flask">Flask</a><ul>
+<li><a class="reference internal" href="#pattern">pattern</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#django">Django</a><ul>
+<li><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li><a class="reference internal" href="#docs">docs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Flask</a><ul>
+<li><a class="reference internal" href="#id3">Docs</a></li>
+<li><a class="reference internal" href="#tips">Tips</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jinja2">Jinja2</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="python.html"
+                        title="previous chapter">&lt; Python &gt;</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="git.html"
+                        title="next chapter">GIT</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/python_frameworks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="git.html" title="GIT"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="python.html" title="&lt; Python &gt;"
+             >previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Suhen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

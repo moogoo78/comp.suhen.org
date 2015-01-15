@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Emacs 小抄 &mdash; CompDocs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html" />
+    <link rel="next" title="強大的Emacs Macro 巨集" href="emacs_macro.html" />
+    <link rel="prev" title="Sphinx - reST (reStructuredText)" href="sphinx.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="emacs_macro.html" title="強大的Emacs Macro 巨集"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sphinx.html" title="Sphinx - reST (reStructuredText)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="emacs">
+<h1>Emacs 小抄<a class="headerlink" href="#emacs" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-04-26 18:37</td>
+</tr>
+<tr class="field-even field"><th class="field-name">tags:</th><td class="field-body">docs</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">category:</th><td class="field-body">computer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">slug:</th><td class="field-body">emacs</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>自動補齊:</p>
+<div class="highlight-python"><div class="highlight"><pre>M-/
+</pre></div>
+</div>
+<p>變數對齊:</p>
+<div class="highlight-python"><div class="highlight"><pre>M-x align-regexp
+</pre></div>
+</div>
+<p>輸入 <tt class="docutils literal"><span class="pre">=</span></tt></p>
+<p>列出全部字串:</p>
+<div class="highlight-python"><div class="highlight"><pre>M-x occur
+</pre></div>
+</div>
+<p>刪除整行(vim&#8217;s dd):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">S</span><span class="o">-</span><span class="n">Backspace</span>
+</pre></div>
+</div>
+<p>刪除空白行:</p>
+<div class="highlight-python"><div class="highlight"><pre>M-x flush-lines RET ^$ RET ;純空白行
+M-x flush-lines RET ^\s-*$ RET ; 有空白的空白行
+</pre></div>
+</div>
+<p>編輯每行文字:</p>
+<div class="highlight-python"><div class="highlight"><pre>;; 把每行的文字foo加indent和quote &#39;foo&#39; =&gt;&#39;  &quot;foo&quot;&#39;
+M-x replace-regexp RET ^ RET SPACE SPACE&quot; RET ;; 開頭加3個空白和&quot;
+M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
+</pre></div>
+</div>
+<p>每行加2空白:</p>
+<div class="highlight-python"><div class="highlight"><pre>M-x cua-mode
+選好區塊
+C-RET
+移到第一行
+按2個空白
+</pre></div>
+</div>
+<p><strong>參考</strong>
+<a class="reference external" href="http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature">polls - The single most useful Emacs feature - Stack Overflow</a></p>
+</div>
+<div class="section" id="basic">
+<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>檔案<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-x C-f</td>
+<td>find-file 開檔案</td>
+</tr>
+<tr class="row-even"><td>C-x C-r</td>
+<td>find-file-read-only</td>
+</tr>
+<tr class="row-odd"><td>C-x C-v</td>
+<td>find-alternate-file</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="movement">
+<h3>移動 Movement<a class="headerlink" href="#movement" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>M-&lt;</td>
+<td>beginning-of-buffer</td>
+</tr>
+<tr class="row-even"><td>M-&gt;</td>
+<td>end-of-buffer</td>
+</tr>
+<tr class="row-odd"><td>C-M-V</td>
+<td>other window page down</td>
+</tr>
+<tr class="row-even"><td>C-M-S-V</td>
+<td>other window page up</td>
+</tr>
+</tbody>
+</table>
+<p>search: M-c 切換case-sensitivity</p>
+<p>M-x occur 找出某字串在此 buffer 那裡現出</p>
+</div>
+<div class="section" id="editing">
+<h3>編輯 Editing<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>M-x string-replace</td>
+<td>replace</td>
+</tr>
+<tr class="row-even"><td>M-x query-replace</td>
+<td>confirm (M-%)</td>
+</tr>
+<tr class="row-odd"><td>M-x replace-regexp</td>
+<td>replace with regex</td>
+</tr>
+<tr class="row-even"><td>C-t</td>
+<td>對調兩字元</td>
+</tr>
+<tr class="row-odd"><td>M-t</td>
+<td>對調兩word</td>
+</tr>
+<tr class="row-even"><td>C-x C-t</td>
+<td>對調兩行, 跟游標上一行對調</td>
+</tr>
+<tr class="row-odd"><td>M-c</td>
+<td>單字的第一個字大寫</td>
+</tr>
+<tr class="row-even"><td>M-u</td>
+<td>單字改大寫</td>
+</tr>
+<tr class="row-odd"><td>M-l</td>
+<td>單字改小寫</td>
+</tr>
+<tr class="row-even"><td>C-S-Backspace</td>
+<td>刪除整行</td>
+</tr>
+<tr class="row-odd"><td>M-</td>
+<td>刪除游標前後全部空白, tab</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="register-and-bookmark">
+<h4>Register and Bookmark<a class="headerlink" href="#register-and-bookmark" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-x r SPACE</td>
+<td>設定register, 出現Point to register後輸入一字元</td>
+</tr>
+<tr class="row-even"><td>C-x r j</td>
+<td>移動到register, 出現Jump to register後輸入一字元</td>
+</tr>
+<tr class="row-odd"><td>C-x r s a</td>
+<td>copy-to-register, 把region內的文字copy到register a</td>
+</tr>
+<tr class="row-even"><td>C-x r i a</td>
+<td>insert-register, insert register a</td>
+</tr>
+<tr class="row-odd"><td>C-x r w a</td>
+<td>把window的狀態存起來, window-configuration-to-register, C-x r j 叫出來</td>
+</tr>
+<tr class="row-even"><td>C-x r f a</td>
+<td>frame-configuration-to-register</td>
+</tr>
+<tr class="row-odd"><td>C-x r m</td>
+<td>設定bookmark, bookmark會永久存起來(~/.emacs.bmk), register不會</td>
+</tr>
+<tr class="row-even"><td>C-x r b</td>
+<td>goto bookmark</td>
+</tr>
+<tr class="row-odd"><td>C-x r l</td>
+<td>list bookmark</td>
+</tr>
+</tbody>
+</table>
+<p>其他:</p>
+<ul class="simple">
+<li>M-x bookmark-delete &lt;RET&gt; bookmark名字 &lt;RET&gt;</li>
+</ul>
+</div>
+</div>
+<div class="section" id="coding">
+<h3>Coding<a class="headerlink" href="#coding" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-h C &lt;RET&gt;</td>
+<td>看目前coding</td>
+</tr>
+<tr class="row-even"><td>M-x list-coding-systems</td>
+<td>列出所有coding system</td>
+</tr>
+<tr class="row-odd"><td>C-x &lt;RET&gt; r coding &lt;RET&gt;</td>
+<td>選coding system重新讀檔</td>
+</tr>
+<tr class="row-even"><td>C-x &lt;RET&gt; f coding &lt;RET&gt;</td>
+<td>coding system存檔</td>
+</tr>
+<tr class="row-odd"><td>C-x &lt;RET&gt; c coding &lt;RET&gt;</td>
+<td>coding system buffer?</td>
+</tr>
+<tr class="row-even"><td>C-u C-x =</td>
+<td>詳細coding system</td>
+</tr>
+<tr class="row-odd"><td>C-x &lt;RET&gt; c raw-text &lt;RET&gt;</td>
+<td>load unibyte</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h3>特殊符號<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>C-q C-j 換行符號, Windows編輯器的^M: M-x replace-string [ENTER] C-q C-m [ENTER] n [ENTER]</li>
+</ul>
+</div>
+<div class="section" id="help">
+<h3>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-h ?</td>
+<td>help的help, SPACE和Backspace上下移動</td>
+</tr>
+<tr class="row-even"><td>C-h v</td>
+<td>M-x describe-variable</td>
+</tr>
+<tr class="row-odd"><td>C-h f</td>
+<td>M-x describe-function</td>
+</tr>
+<tr class="row-even"><td>C-h m</td>
+<td>M-x describe-mode</td>
+</tr>
+<tr class="row-odd"><td>C-h k KEYS</td>
+<td>M-x describe-key KEYS</td>
+</tr>
+<tr class="row-even"><td>C-h c KEYS</td>
+<td>M-x describe-key-briefly</td>
+</tr>
+<tr class="row-odd"><td>C-h b</td>
+<td>M-x describe-bindings</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="modes">
+<h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dired">
+<h3>Dired<a class="headerlink" href="#dired" title="Permalink to this headline">¶</a></h3>
+<p>M-x dired</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>^</td>
+<td>回上目錄</td>
+</tr>
+<tr class="row-even"><td>j</td>
+<td>jump 移動游標</td>
+</tr>
+<tr class="row-odd"><td>*</td>
+<td>標示</td>
+</tr>
+<tr class="row-even"><td>u</td>
+<td>取消標示</td>
+</tr>
+<tr class="row-odd"><td>f</td>
+<td>(like C-x C-f 開檔)</td>
+</tr>
+<tr class="row-even"><td>RET</td>
+<td>同上</td>
+</tr>
+<tr class="row-odd"><td>o</td>
+<td>開檔, 開在另一 window, 自動開一個分割視窗</td>
+</tr>
+<tr class="row-even"><td>C-o</td>
+<td>開檔, 開在另一 window</td>
+</tr>
+<tr class="row-odd"><td>a</td>
+<td>開檔, 但是不會新開一個buffer</td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td>copy</td>
+</tr>
+<tr class="row-odd"><td>R</td>
+<td>rename, 可以當&#8221;mv&#8221;用</td>
+</tr>
+<tr class="row-even"><td>d</td>
+<td>標示delete</td>
+</tr>
+<tr class="row-odd"><td>x</td>
+<td>執行delete</td>
+</tr>
+<tr class="row-even"><td>+</td>
+<td>create dir</td>
+</tr>
+<tr class="row-odd"><td>M</td>
+<td>chmod</td>
+</tr>
+<tr class="row-even"><td>O</td>
+<td>chown</td>
+</tr>
+<tr class="row-odd"><td>G</td>
+<td>chgrp</td>
+</tr>
+<tr class="row-even"><td>g</td>
+<td>refresh</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h4>批次改檔名<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-x C-q</td>
+<td>wdired-change-to-wdired-mode</td>
+</tr>
+<tr class="row-even"><td>C-c C-c</td>
+<td>wdired-finish-edit</td>
+</tr>
+<tr class="row-odd"><td>C-c C-Esc</td>
+<td>wdired-abort-changes</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">C-x C-q (23.1以後)</p>
+</div>
+<p>ref: <a class="reference external" href="http://ergoemacs.org/emacs/rename_file_pattern.html">Emacs: Rename Files Interactively by Pattern (regex; wdired)</a></p>
+</div>
+</div>
+<div class="section" id="org-mode">
+<h3>Org-mode<a class="headerlink" href="#org-mode" title="Permalink to this headline">¶</a></h3>
+<p>預設開啟狀態:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#+STARTUP: overview</span>
+<span class="c">#+STARTUP: content</span>
+<span class="c">#+STARTUP: showall</span>
+<span class="c">#+STARTUP: showeverything</span>
+
+<span class="c">#+STARTUP: hideblocks</span>
+<span class="c">#+STARTUP: nohideblock</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h4>移動<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-c C-n/p</td>
+<td>下/上一個outline</td>
+</tr>
+<tr class="row-even"><td>C-c C-f/b</td>
+<td>下/上一個outline (同lever)</td>
+</tr>
+<tr class="row-odd"><td>C-c C-u</td>
+<td>上一層</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="agenda">
+<h4>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h4>
+<p>C-c C-x C-s archive
+C-c [ 把檔案加入agenda</p>
+</div>
+</div>
+<div class="section" id="calc">
+<h3>Calc<a class="headerlink" href="#calc" title="Permalink to this headline">¶</a></h3>
+<p>M-x calc</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>q, C-x * c</td>
+<td>離開</td>
+</tr>
+<tr class="row-even"><td>C-x * k</td>
+<td>keypad (數字)</td>
+</tr>
+<tr class="row-odd"><td>M-x quick-calc</td>
+<td>在minibuffer直接做簡單計算</td>
+</tr>
+<tr class="row-even"><td>M-x calc-reset</td>
+<td>clear [ C-x * 0 ]</td>
+</tr>
+</tbody>
+</table>
+<p>Radix-Modes:</p>
+<div class="highlight-python"><div class="highlight"><pre>d 0, d 2, d 8 ; 10, 2, 8進位
+d r ;然後按2到36選進位數
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_mono/calc.html">GNU Emacs Calc Manual</a></li>
+<li><a class="reference external" href="http://www.emacswiki.org/emacs/AdvancedDeskCalculator">EmacsWiki: Advanced Desk Calculator</a></li>
+</ul>
+</div>
+<div class="section" id="html">
+<h3>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-c C-t</td>
+<td>加tag, 然後照指示加attribute: property, value.</td>
+</tr>
+<tr class="row-even"><td>C-c C-v</td>
+<td>開browser看</td>
+</tr>
+<tr class="row-odd"><td>C-c C-f</td>
+<td>移到下個匹配tag</td>
+</tr>
+<tr class="row-even"><td>C-c C-b</td>
+<td>移到上個匹配tag</td>
+</tr>
+<tr class="row-odd"><td>C-c Tab</td>
+<td>隱藏HTML tag, 再打一次C-c Tab就顯示回來</td>
+</tr>
+<tr class="row-even"><td>C-c  /</td>
+<td>加入結尾tag</td>
+</tr>
+<tr class="row-odd"><td>C-c C-a</td>
+<td>在HTML tag裡加attribute</td>
+</tr>
+<tr class="row-even"><td>C-c C-d</td>
+<td>刪除HTML tag開頭和結尾都會一起刪</td>
+</tr>
+<tr class="row-odd"><td>C-c RET</td>
+<td>插入&lt;p&gt;</td>
+</tr>
+<tr class="row-even"><td>C-c j</td>
+<td>插入&lt;br&gt;</td>
+</tr>
+<tr class="row-odd"><td>C-c C-n</td>
+<td>插入特殊字元, 像空白&amp;nbsp;, 小於&amp;lt;, 大於&amp;gt;...</td>
+</tr>
+<tr class="row-even"><td>C-c C-c h</td>
+<td>插入&lt;a href=...&gt;</td>
+</tr>
+<tr class="row-odd"><td>C-c C-c u</td>
+<td>插入&lt;ul&gt;&lt;li&gt;...&lt;/ul&gt;</td>
+</tr>
+<tr class="row-even"><td>C-c C-c o</td>
+<td>插入&lt;ol&gt;&lt;li&gt;...&lt;/ol&gt;</td>
+</tr>
+<tr class="row-odd"><td>C-c C-c c</td>
+<td>插入checkbox</td>
+</tr>
+<tr class="row-even"><td>C-c C-c r</td>
+<td>插入radio</td>
+</tr>
+<tr class="row-odd"><td>C-c C-h</td>
+<td>看說明</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="graphviz-dot">
+<h3>Graphviz (dot)<a class="headerlink" href="#graphviz-dot" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-c c</td>
+<td>compile dot ($ dot -Tpng foo.dot &gt; foo.png)</td>
+</tr>
+<tr class="row-even"><td>C-c p</td>
+<td>display png</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="http://users.skynet.be/ppareit/projects/graphviz-dot-mode/graphviz-dot-mode.html">Graphviz dot mode for emacs</a></p>
+</div>
+<div class="section" id="others-mode">
+<h3>Others Mode<a class="headerlink" href="#others-mode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>M-x artist-mode</li>
+<li>M-x toggle-debug-on-error</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-control">
+<h2>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C-x v v</td>
+<td>commit (C-c C-c結束)</td>
+</tr>
+<tr class="row-even"><td>C-x v d</td>
+<td>version control status</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adv-mode">
+<h2>Adv. Mode<a class="headerlink" href="#adv-mode" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://jblevins.org/projects/deft/">Deft</a> - 快速找筆記, 檔案修改工具</li>
+</ul>
+</div>
+<div class="section" id="configure">
+<h2>configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="font">
+<h3>Font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h3>
+<p>M-x describe-font 看現在用的字形</p>
+<ul class="simple">
+<li><a class="reference external" href="https://sites.google.com/site/steveyegge2/my-dot-emacs-file">my-dot-emacs-file - steveyegge2</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="shell">
+<h2>shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>M-x shell</td>
+<td>開一個buffer</td>
+</tr>
+<tr class="row-even"><td>M-x term</td>
+<td>Emacs Lisp 寫的 terminal emulator</td>
+</tr>
+<tr class="row-odd"><td>M-x eshell</td>
+<td>Emacs Lisp 實作的 shell, 可以 redirect output 到 Emacs 的 buffer</td>
+</tr>
+<tr class="row-even"><td>M-! cmd</td>
+<td>直接執行, 輸出另外開一個buffer</td>
+</tr>
+<tr class="row-odd"><td>C-u M-! cmd</td>
+<td>直接執行, 輸出在目前游標位置</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">要再開另外一個 shell 就把原本 buffer 改名字就可以了</p>
+</div>
+<div class="section" id="term">
+<h3>term<a class="headerlink" href="#term" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>C-c C-k char mode, 每個字元都會被送到 subshell 處理</li>
+<li>C-c C-j line mode</li>
+</ul>
+<dl class="docutils">
+<dt><a class="reference external" href="http://unix.stackexchange.com/questions/104325/what-is-the-difference-between-shell-eshell-and-term-in-emacs">What is the difference between shell, eshell, and term in Emacs? - Unix &amp; Linux Stack Exchange</a></dt>
+<dd>(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
+(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
+(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
+(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
+(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
+(&#8216;Another social link&#8217;, &#8216;#&#8217;),)</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="ref">
+<h2>ref<a class="headerlink" href="#ref" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://tuhdo.github.io/emacs-tutor.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=books">Emacs Mini Manual (PART 1) - THE BASICS</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Emacs 小抄</a><ul>
+<li><a class="reference internal" href="#tips">Tips</a></li>
+<li><a class="reference internal" href="#basic">Basic</a><ul>
+<li><a class="reference internal" href="#id1">檔案</a></li>
+<li><a class="reference internal" href="#movement">移動 Movement</a></li>
+<li><a class="reference internal" href="#editing">編輯 Editing</a><ul>
+<li><a class="reference internal" href="#register-and-bookmark">Register and Bookmark</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coding">Coding</a></li>
+<li><a class="reference internal" href="#id2">特殊符號</a></li>
+<li><a class="reference internal" href="#help">Help</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modes">Modes</a><ul>
+<li><a class="reference internal" href="#dired">Dired</a><ul>
+<li><a class="reference internal" href="#id3">批次改檔名</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#org-mode">Org-mode</a><ul>
+<li><a class="reference internal" href="#id4">移動</a></li>
+<li><a class="reference internal" href="#agenda">Agenda</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calc">Calc</a></li>
+<li><a class="reference internal" href="#html">HTML</a></li>
+<li><a class="reference internal" href="#graphviz-dot">Graphviz (dot)</a></li>
+<li><a class="reference internal" href="#others-mode">Others Mode</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-control">Version Control</a></li>
+<li><a class="reference internal" href="#adv-mode">Adv. Mode</a></li>
+<li><a class="reference internal" href="#configure">configure</a><ul>
+<li><a class="reference internal" href="#font">Font</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#shell">shell</a><ul>
+<li><a class="reference internal" href="#term">term</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ref">ref</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sphinx.html"
+                        title="previous chapter">Sphinx - reST (reStructuredText)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="emacs_macro.html"
+                        title="next chapter">強大的Emacs Macro 巨集</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/emacs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="emacs_macro.html" title="強大的Emacs Macro 巨集"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sphinx.html" title="Sphinx - reST (reStructuredText)"
+             >previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Suhen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

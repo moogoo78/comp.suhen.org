@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Database筆記 (MySQL, SQLite) &mdash; CompDocs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Command 常用指令" href="command_line.html" />
+    <link rel="prev" title="CompDocs" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="command_line.html" title="Command 常用指令"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="CompDocs"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="database-mysql-sqlite">
+<h1>Database筆記 (MySQL, SQLite)<a class="headerlink" href="#database-mysql-sqlite" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-05-09 18:23</td>
+</tr>
+<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">manual</td>
+</tr>
+<tr class="field-even field"><th class="field-name">slug:</th><td class="field-body">database_manual</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="mysql">
+<h2>MySql<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h2>
+<p>Syntax</p>
+<div class="highlight-sql"><div class="highlight"><pre>[ALL | DISTINCT | DISTINCTROW ]
+  [HIGH_PRIORITY]
+  [STRAIGHT_JOIN]
+  [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+  [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
+select_expr [, select_expr ...]
+[FROM table_references
+[WHERE where_condition]
+[GROUP BY {col_name | expr | position}
+  [ASC | DESC], ... [WITH ROLLUP]]
+[HAVING where_condition]
+[ORDER BY {col_name | expr | position}
+  [ASC | DESC], ...]
+[LIMIT {[offset,] row_count | row_count OFFSET offset}]
+[PROCEDURE procedure_name(argument_list)]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">MySQL的JOIN預設是 <tt class="docutils literal"><span class="pre">INNER</span> <span class="pre">JOIN</span></tt> ，另一種是LEFT OUTER JOIN，通常用 <tt class="docutils literal"><span class="pre">LEFT</span> <span class="pre">JOIN</span></tt> 就可以了。MySQL會優先處理JOIN，然後才是WHERE。</p>
+</div>
+<div class="section" id="cookbook">
+<h3>cookbook<a class="headerlink" href="#cookbook" title="Permalink to this headline">¶</a></h3>
+<p>CURD:</p>
+<div class="highlight-python"><div class="highlight"><pre>INSERT INTO tbl_name (col1,col2) VALUES(15,col1*2);
+INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);
+UPDATE user SET password=password(&#39;新密碼&#39;) where user=&#39;root&#39;;
+</pre></div>
+</div>
+<p>以中文筆畫排序:</p>
+<div class="highlight-python"><div class="highlight"><pre>CONVERT( 欄位名稱 using big5) 。
+</pre></div>
+</div>
+<p>LIMIT</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span> <span class="k">LIMIT</span> <span class="mi">20</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span> <span class="k">LIMIT</span> <span class="mi">20</span> <span class="k">OFFSET</span> <span class="mi">40</span> <span class="c1">-- 從40個以後抓20個</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span> <span class="k">LIMIT</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span> <span class="c1">-- 同上</span>
+</pre></div>
+</div>
+<p>查看database容量:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">table_schema</span> <span class="ss">&quot;database_name&quot;</span><span class="p">,</span>
+<span class="k">sum</span><span class="p">(</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span>
+<span class="mi">1024</span> <span class="ss">&quot;Data Base Size in MB&quot;</span><span class="p">,</span>
+<span class="k">sum</span><span class="p">(</span> <span class="n">data_free</span> <span class="p">)</span><span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="ss">&quot;Free Space in MB&quot;</span>
+<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p>增加欄位 add column:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">contacts</span> <span class="k">ADD</span> <span class="n">email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">contacts</span> <span class="k">ADD</span> <span class="n">email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="k">AFTER</span> <span class="n">name</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>status:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SHOW</span> <span class="k">TABLE</span> <span class="n">STATUS</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysqlshow -uroot -p123456 --status db_name
+</pre></div>
+</div>
+<p>統計相關:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="c1">---- 欄位 col1 出現超過 5 次:</span>
+<span class="c1">-- WHERE (放在 group 前面) 在這裏不能用, 要改用 having</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">cnt</span> <span class="k">from</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="o">&lt;</span><span class="n">col1</span><span class="o">&gt;</span> <span class="k">HAVING</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">cnt</span> <span class="k">DESC</span><span class="p">;</span>
+
+<span class="c1">-- 欄位 col1 不重複, 符合條件, 總共筆數</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="o">&lt;</span><span class="n">col1</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">col2</span><span class="o">&gt;</span> <span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function">
+<h3>function<a class="headerlink" href="#function" title="Permalink to this headline">¶</a></h3>
+<p>時間</p>
+<div class="highlight-sql"><div class="highlight"><pre>SELECT NOW(),CURDATE(),CURTIME() ; | 2012-06-04 14:19:42 | 2012-06-04 | 14:19:42 |
+SELECT MONTH(FROM_UNIXTIME(add_date)) as month
+SELECT NOW(), NOW() - INTERVAL 1 DAY ;今天跟昨天
+</pre></div>
+</div>
+<p>ref: <a class="reference external" href="http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html">http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html</a></p>
+</div>
+<div class="section" id="schema">
+<h3>Schema<a class="headerlink" href="#schema" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>原則<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>小的好</li>
+<li>簡單的好, 如integers比characters好, 不用判斷collations</li>
+<li>不要用 <strong>NULL</strong>, 影響效能, 可以用 <tt class="docutils literal"><span class="pre">0</span></tt>, <tt class="docutils literal"><span class="pre">空字串</span></tt>或 <tt class="docutils literal"><span class="pre">N</span></tt>等值來代替</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4>整數<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>資料儲存上 <tt class="docutils literal"><span class="pre">TINYINT</span></tt>, <tt class="docutils literal"><span class="pre">SMALLINT</span></tt>, <tt class="docutils literal"><span class="pre">MEDIUMINT</span></tt>, <tt class="docutils literal"><span class="pre">INT</span></tt>, <tt class="docutils literal"><span class="pre">BIGINT</span></tt>各使用了8, 16, 26, 32, 64 bits, 數值範圍-2^(N-1)到2(N-1)-1, 加了 <tt class="docutils literal"><span class="pre">UNSIGNED</span></tt>後, 範圍從0到2^N-1. 但是MySQL在 <strong>計算</strong>上是用64-bit的BIGINT來算, 就算是32-bit的系統</p>
+<p>MySQL使用的整數長度, 如INT(11), 並不會真的有儲存限制, 只是為了command-line client的顯示, 在儲存和計算上INT(1)和INT(20)是一樣的.</p>
+</div>
+<div class="section" id="id3">
+<h4>實數<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>浮點數可以用 <tt class="docutils literal"><span class="pre">FLOAT</span></tt> (4 bytes), <tt class="docutils literal"><span class="pre">DOUBLE</span></tt> (8 bytes), <tt class="docutils literal"><span class="pre">DECIMAL</span></tt> 等格式, MySQL在浮點數的計算上都是用DOUBLE, 資料儲存上以DECIMAL為佳</p>
+</div>
+<div class="section" id="varcharchar">
+<h4>VARCHAR和CHAR<a class="headerlink" href="#varcharchar" title="Permalink to this headline">¶</a></h4>
+<p><tt class="docutils literal"><span class="pre">VARCHAR</span></tt>是可變長度, 會用1到2byte存字串長度(MyISAM或InnoDB), <tt class="docutils literal"><span class="pre">CHAR</span></tt>是固字長度, 用來存Y/N, MD5值等.</p>
+</div>
+<div class="section" id="id4">
+<h4>時間<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p><tt class="docutils literal"><span class="pre">DATETIME</span></tt> 以YYYYMMDDHHMMSS的格式儲存, 範圍從1001到9999年, 8 bytes</p>
+<p><tt class="docutils literal"><span class="pre">TIMESTAMP</span></tt> 以Unix timestamp格式, 範圍從1970到2038 (格林威治標準時間)</p>
+<p>選擇用TIMESTAMP比較節省空間, 但不要把unix timestamp存在整數格式, 因為沒有什麼好處, 也很難判讀</p>
+</div>
+<div class="section" id="id5">
+<h4>其他<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><tt class="docutils literal"><span class="pre">BLOB</span></tt>和 <tt class="docutils literal"><span class="pre">TEXT</span></tt>不同的是TEXT會有character set和collation, BLOB沒有</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>最佳化<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>所有資料表最佳化</p>
+<div class="highlight-sql"><div class="highlight"><pre>$ mysqlcheck -a -c -o -r --all-databases -uroot -p
+
+$ mysqlcheck --all-databases
+$ mysqlcheck --all-databases -o
+$ mysqlcheck --all-databases --auto-repair
+$ mysqlcheck --all-databases --analyze
+</pre></div>
+</div>
+<p>a: analyze, c: check, o: optimize, r: repair</p>
+<p>重建索引:</p>
+<div class="highlight-python"><div class="highlight"><pre>myisamchk -s /var/lib/mysql/*/*.MYI
+</pre></div>
+</div>
+<p>s: silent mode (output only errors)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">mysql要先停</p>
+</div>
+</div>
+<div class="section" id="tools">
+<h3>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://hackmysql.com/mysqlreportdoc">mysqlreport Documentation</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysqlreport  --user MY_USER --password MY_PASS
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Read Hit: 從硬碟/記憶體讀取key的比率, 最好不要低於99%, 太低的話, 檢查Key Report, 調高key buffer</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Slow: 要低於0.05</p>
+</div>
+<p><a class="reference external" href="http://hackmysql.com/mysqlreportguide">The Guide To Understanding mysqlreport</a></p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.day32.com/MySQL/">Sundry MySQL Scripts and Docs</a> 很棒的MySQL tuning scripts</li>
+<li><a class="reference external" href="https://github.com/rackerhacker/MySQLTuner-perl">rackerhacker/MySQLTuner-perl</a></li>
+<li><a class="reference external" href="http://hackmysql.com/mysqlsla">mysqlsla :: Parse, filter and sort MySQL slow, general and binary logs</a></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>常用處理<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>第一次設定:</p>
+<div class="highlight-python"><div class="highlight"><pre>/usr/bin/mysql_secure_installation
+</pre></div>
+</div>
+<p>改root密碼:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysqladmin -u root -p&#39;oldpassword&#39; password newpass
+</pre></div>
+</div>
+<p>via: <a class="reference external" href="http://www.cyberciti.biz/faq/mysql-change-root-password/">MySQL Change root Password</a></p>
+<div class="section" id="root">
+<h4>忘記root密碼<a class="headerlink" href="#root" title="Permalink to this headline">¶</a></h4>
+<p>1.先關掉mysql server:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo /etc/init.d/mysql stop
+</pre></div>
+</div>
+<p>2.開server, 但忽略grant-tables (存密碼的地方):</p>
+<div class="highlight-python"><div class="highlight"><pre>mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">mysqld_safe就是用更安全的方式開啟(重載)mysqld, 如有錯誤發生時會重開, 寫log.</p>
+</div>
+<p>3.用root進入sql改密碼:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql -u root mysql
+&gt; UPDATE user SET Password=PASSWORD(&#39;123456&#39;) WHERE User=&#39;root&#39;;
+&gt; FLUSH PRIVILEGES;
+&gt; exit
+</pre></div>
+</div>
+<p>或是把上面sql語法存在foo.txt裡, 用:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysqld_safe --init-file=/pathto/foo.txt &amp;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">flush privileges; 重載授權表</p>
+</div>
+<p>參考</p>
+<ul class="simple">
+<li><a class="reference external" href="http://wiki.joyent.com/display/smart/Resetting+the+MySQL+Root+Password">Resetting the MySQL Root Password - SmartMachines - Joyent Customer Wiki</a></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>連接外部資料庫<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>1.改my.cnf(通常在/etc下):</p>
+<div class="highlight-python"><div class="highlight"><pre># skip-networking 此行註解掉
+bind-address = 11.22.33.44 # 加上要連過來的ip
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OpenSolaris的my.cnf好像在加在/var/mysql才會有作用</p>
+</div>
+<p>2.重開mysql</p>
+<p>3.連線進入:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql -u root –p mysql
+mysql&gt; CREATE DATABASE foo;
+mysql&gt; GRANT ALL ON foo.* TO bar@&#39;11.22.33.44&#39; IDENTIFIED BY &#39;密碼&#39;;
+
+mysql&gt; update db set Host=&#39;11.22.33.44&#39; where Db=&#39;資料庫名稱&#39;;
+mysql&gt; update user set Host=&#39;11.22.33.44&#39; where user=&#39;使用者名稱&#39;;
+</pre></div>
+</div>
+<p>4.重開mysql</p>
+<p>5.測試能不能連:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql -h 主機 -u root -p
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>資料庫編碼<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>列出MySQL各種編碼變數:</p>
+<div class="highlight-python"><div class="highlight"><pre>show variables like &quot;character%&quot;;
+</pre></div>
+</div>
+<p>php的 <tt class="docutils literal"><span class="pre">mysql_query(&quot;SET</span> <span class="pre">NAMES</span> <span class="pre">UTF8&quot;);</span></tt> 相當於MySQL:</p>
+<div class="highlight-python"><div class="highlight"><pre>SET character_set_client = utf8;
+SET character_set_results = utf8;
+SET character_set_connection = utf8;
+</pre></div>
+</div>
+<p>編碼順序: <strong>client -&gt; connect -&gt; server -&gt; connect -&gt; client</strong></p>
+</div>
+<div class="section" id="id10">
+<h4>亂碼處理<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>原本是latin1(ISO 8859-1)編碼, 要改成utf-8:</p>
+<ol class="arabic simple">
+<li>mysqldump -uroot -p mydb &#8211;default-character-set=latin1 &gt; old.sql</li>
+<li>piconv -f utf8 -t utf8 old.sql&gt; new.sql</li>
+<li>打開new.sql裡面加 <tt class="docutils literal"><span class="pre">SET</span> <span class="pre">NAMES</span> <span class="pre">utf8</span></tt>;</li>
+<li>mysql -uroot -pmypassword -Dmydb_new &#8211;default-character-set=utf8 &lt; new.sql</li>
+</ol>
+</div>
+</div>
+<div class="section" id="command">
+<h3>command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sql"><div class="highlight"><pre>mysql -uUSER -pPASS -e &quot;DROP DATABASE foo; CREATE DATABASE bar COLLATE &#39;utf8_general_ci&#39;;&quot;
+
+SHOW DATABASES;
+SHOW TABLES;
+USE db_name;
+
+TRUNCATE tbl_name;
+DROP DATABASE db_name;
+DROP TABLE tbl_name;
+
+SHOW TABLE STATUS; # 看collation
+DESCRIBE tbl_name; # 看table屬性
+SHOW FULL COLUMNS FROM tbl_name; #table 細節
+ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; # 改欄位編碼
+
+SHOW GLOBAL VARIABLES;
+</pre></div>
+</div>
+</div>
+<div class="section" id="server-management">
+<h3>Server Management<a class="headerlink" href="#server-management" title="Permalink to this headline">¶</a></h3>
+<p>安裝, 以Debian為例:</p>
+<div class="highlight-python"><div class="highlight"><pre># 清除
+sudo apt-get --purge remove mysql-server mysql-common mysql-client
+# 安裝
+sudo apt-get install mysql-server mysql-common mysql-client php5-mysql
+# 第一次設定admin密碼
+mysqladmin -u root password your-new-password
+# 啟動
+sudo /etc/init.d/mysql restart
+# data位置
+# /var/lib/mysql
+</pre></div>
+</div>
+<div class="section" id="mac-os-x">
+<h4>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h4>
+<p>從 MySql (<a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a>) 找適何的package，裝完後:</p>
+<p>binary:</p>
+<div class="highlight-python"><div class="highlight"><pre>/usr/local/mysql/bin/mysql
+</pre></div>
+</div>
+<p>path:</p>
+<div class="highlight-python"><div class="highlight"><pre>export PATH=/usr/local/mysql/bin:$PATH
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">原本沒有 /etc/my.cnf, 可以從 /usr/local/mysql/support-files/ 找一個官方範本來改</p>
+</div>
+</div>
+<div class="section" id="import-export">
+<h4>Import / Export<a class="headerlink" href="#import-export" title="Permalink to this headline">¶</a></h4>
+<p>倒整個資料庫:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mysqldump ---u myuser -p myuser_db &gt; myuser_db.sql
+$ mysqldump --skip-lock-tables -umysuer -ppassword --database mydb &gt; backup.sql
+</pre></div>
+</div>
+<p>倒一個資料表:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mysqldump -u myuser -p myuser_db sometable &gt; myuser_db_sometable.sql
+</pre></div>
+</div>
+<p>到多個叫foo_開頭的資料表到同一個檔案:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql databasename -u [root] -p[password] -e &#39;show tables like &quot;foo_%&quot;&#39; | grep -v Tables_in | xargs mysqldump [databasename] -u [root] -p[password] &gt; [target_file]
+</pre></div>
+</div>
+<p><strong>import</strong></p>
+<p>方法1:</p>
+<div class="highlight-python"><div class="highlight"><pre>直接import
+$ mysql  -uname -p dbname  --default-character-set=utf8  &lt;  XXX.sql
+</pre></div>
+</div>
+<p>方法2:</p>
+<div class="highlight-python"><div class="highlight"><pre>先登入mysql shell介面
+$ mysql -u myuser -p
+$ use myuser_db; #select db
+$ \. myuser_db_sometable.sql
+$ \q
+</pre></div>
+</div>
+<p>資料庫轉移, 從 localhost 到另一台DB (直接倒, 不用存 IO):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mysqldump -u db_user -p db_passwd db_name | mysql -u db2_user -p db2_passwd -h db2_host db2_name;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>my.cnf選用(/usr/share/mysql/下)</p>
+<ul class="simple">
+<li>my-small.cnf(小於64MB的記憶體)</li>
+<li>my-medium.cnf (64~128MB的記憶體)</li>
+<li>my-large.cnf (128~512MB的記憶體)</li>
+<li>my-huge.cnf (1~2GB的記憶體)</li>
+<li>my-innodb-heavy-4G.cnf (4GB的記憶體)</li>
+</ul>
+<p>找my.cnf:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql --verbose --help | grep -A 1 &#39;Default options&#39;
+# CentOS: /etc/my.cnf ~/.my.cnf
+</pre></div>
+</div>
+<p>my.cnf:</p>
+<div class="highlight-python"><div class="highlight"><pre>[mysqld]
+set-variable=max_connections=250
+default-storage-engine=InnoDB # 預設選用InnoDB
+
+# slow query
+log-slow-queries=/tmp/slow-query.log #
+long_query_time = 3 #query超過2秒時，則會記錄
+log-queries-not-using-indexes
+
+# optimize
+query_cache_size # 大量相同的query時, 很有用
+key_buffer_size # 越大query越快, 但最好設定1/4, 不要超過一半的系統記憶體 (看*.MYI的size多大, 就設多大)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">MySQL安裝時不一定會產生</p>
+</div>
+</div>
+<div class="section" id="q-a">
+<h3>Q &amp; A<a class="headerlink" href="#q-a" title="Permalink to this headline">¶</a></h3>
+<p>error: MySQL server has gone away:</p>
+<div class="highlight-python"><div class="highlight"><pre>; my.cnf
+max_allowed_packet = 1M ; 超過SQL設定最大長度, 改大一點
+; or 連線逾時
+wait_timeout
+interactive_timeout
+</pre></div>
+</div>
+</div>
+<div class="section" id="others">
+<h3>others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://antbsd.twbbs.org/~ant/wordpress/?p=2259">探討 MySQL 授權 | Ant&#8217;s ATField</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sqlite">
+<h2>Sqlite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h2>
+<p>常用指令</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sqlite3 new.db # create db
+$ sqlite3 myprecious.db &quot;.dump&quot; ＞ output.sql # dump sql
+$ sqlite3 new.db ＜ output.sql # import
+# or
+$ cat dumpfile.sql | sqlite3 new.db
+</pre></div>
+</div>
+<p>進入sqlite3後:</p>
+<div class="highlight-python"><div class="highlight"><pre>.tables  # MySQL的show tables
+.schema TABLENAME
+.help
+.quit
+</pre></div>
+</div>
+<p>ref</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.sqlite.org/sqlite.html">Command Line Shell For SQLite</a></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>比較<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">MySQL:</th><td class="field-body">RAND()</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Sqlite:</th><td class="field-body">RANDOM()</td>
+</tr>
+</tbody>
+</table>
+<p>MySQL有ROW_NUMBER(), Sqlite沒有, 只能用SQL語法的奇技淫巧來達成.</p>
+</div>
+<div class="section" id="snippets">
+<h2>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
+<p>單字表沒有照abc排, 要照字母順序排序(num)</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t2</span> <span class="k">where</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">word</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">word</span><span class="p">))</span> <span class="k">as</span> <span class="n">NUM</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t1</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">foo</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>一個裝置, 安裝了2個app以上的數量統計</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">total</span><span class="p">,</span> <span class="n">num</span> <span class="k">as</span> <span class="n">num_of_apps</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">num</span><span class="p">,</span> <span class="n">did</span> <span class="k">from</span> <span class="n">log_user_data</span> <span class="k">group</span> <span class="k">by</span> <span class="p">(</span><span class="n">did</span><span class="p">)</span> <span class="k">order</span> <span class="k">by</span> <span class="n">num</span> <span class="k">desc</span><span class="p">)</span> <span class="n">t</span> <span class="k">where</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">group</span> <span class="k">by</span> <span class="n">num</span> <span class="k">desc</span>
+</pre></div>
+</div>
+<p>每個字母開頭的單字數量</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">lower</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span><span class="n">english</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">as</span> <span class="k">c</span> <span class="k">from</span> <span class="n">words</span> <span class="k">group</span> <span class="k">by</span> <span class="k">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Database筆記 (MySQL, SQLite)</a><ul>
+<li><a class="reference internal" href="#mysql">MySql</a><ul>
+<li><a class="reference internal" href="#cookbook">cookbook</a></li>
+<li><a class="reference internal" href="#function">function</a></li>
+<li><a class="reference internal" href="#schema">Schema</a><ul>
+<li><a class="reference internal" href="#id1">原則</a></li>
+<li><a class="reference internal" href="#id2">整數</a></li>
+<li><a class="reference internal" href="#id3">實數</a></li>
+<li><a class="reference internal" href="#varcharchar">VARCHAR和CHAR</a></li>
+<li><a class="reference internal" href="#id4">時間</a></li>
+<li><a class="reference internal" href="#id5">其他</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">最佳化</a></li>
+<li><a class="reference internal" href="#tools">Tools</a></li>
+<li><a class="reference internal" href="#id7">常用處理</a><ul>
+<li><a class="reference internal" href="#root">忘記root密碼</a></li>
+<li><a class="reference internal" href="#id8">連接外部資料庫</a></li>
+<li><a class="reference internal" href="#id9">資料庫編碼</a></li>
+<li><a class="reference internal" href="#id10">亂碼處理</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#command">command</a></li>
+<li><a class="reference internal" href="#server-management">Server Management</a><ul>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+<li><a class="reference internal" href="#import-export">Import / Export</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#q-a">Q &amp; A</a></li>
+<li><a class="reference internal" href="#others">others</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sqlite">Sqlite</a></li>
+<li><a class="reference internal" href="#id11">比較</a></li>
+<li><a class="reference internal" href="#snippets">snippets</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">CompDocs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="command_line.html"
+                        title="next chapter">Command 常用指令</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/database.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="command_line.html" title="Command 常用指令"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="CompDocs"
+             >previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Suhen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

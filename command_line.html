@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Command 常用指令 &mdash; CompDocs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html" />
+    <link rel="next" title="&lt; Python &gt;" href="python.html" />
+    <link rel="prev" title="Database筆記 (MySQL, SQLite)" href="database.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="python.html" title="&lt; Python &gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="database.html" title="Database筆記 (MySQL, SQLite)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="command">
+<h1>Command 常用指令<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-03-28</td>
+</tr>
+<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">docs</td>
+</tr>
+<tr class="field-even field"><th class="field-name">slug:</th><td class="field-body">unix_command</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="script">
+<h2>script<a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="snippets">
+<h3>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
+<p>把&#8221;/t&#8221;分隔的檔案轉成sql語法, 用awk和sed</p>
+<div class="highlight-bash"><div class="highlight"><pre>awk -F <span class="s1">&#39;\t&#39;</span> <span class="s1">&#39;{print &quot;INSERT INTO word (\&quot;s3id\&quot;,\&quot;content\&quot;,\&quot;freq\&quot;,\&quot;translate\&quot;,\&quot;ex1\&quot;,\&quot;ex1_translate\&quot;,\&quot;ex2\&quot;,\&quot;ex2_translate\&quot;) VALUES(\&quot;&quot;$1&quot;\&quot;,\&quot;&quot;$2&quot;\&quot;,\&quot;&quot;$3&quot;\&quot;,\&quot;&quot;$4&quot;\&quot;,\&quot;&quot;$5&quot;\&quot;,\&quot;&quot;$6&quot;\&quot;,\&quot;&quot;$7&quot;\&quot;,\&quot;&quot;$8&quot;\&quot;);&quot;}&#39;</span> data_all_u.txt <span class="p">|</span> sed -e <span class="s1">&#39;s/^M//g&#39;</span> &gt; out.sql
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">先用awk轉好, 再用sed去除最後換行符號, &#8220;^M&#8221;在commend-line裡要Ctrl-V + Ctrl-M表示</p>
+</div>
+<p>more</p>
+<ul class="simple">
+<li><a class="reference external" href="http://robertmuth.blogspot.tw/2012/08/better-bash-scripting-in-15-minutes.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=fav">Robert Muth: Better Bash Scripting in 15 Minutes</a></li>
+<li><a class="reference external" href="http://www.grymoire.com/Unix/sed.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=code">Sed - An Introduction and Tutorial</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>檔案<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>把檔案foo複製到以下全部目錄裡:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -type d |xargs -n 1 cp -i foo
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">xargs -n 1:</th><td class="field-body">把每一行command line輸出當作一個參數</td>
+</tr>
+<tr class="field-even field"><th class="field-name">cp -i:</th><td class="field-body">詢問y or n</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h3>改檔名<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>大寫改小寫:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr &#39;A-Z&#39; &#39;a-z&#39;`; done
+</pre></div>
+</div>
+<p>只取數字, JPG改jpg:</p>
+<div class="highlight-python"><div class="highlight"><pre>for i in *.JPG ; do mv &quot;$i&quot; `echo $i | tr -dc &#39;[0-9]&#39;`&quot;.jpg&quot; ; done
+</pre></div>
+</div>
+<p>for loop:</p>
+<div class="highlight-python"><div class="highlight"><pre>for f in *.html; do
+    base=`basename $f .html`
+    mv $f $bae.php
+done
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>找檔案<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>找目錄名稱:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find / -type d -name &quot;dir_name&quot;
+</pre></div>
+</div>
+<p>刪除5分鐘內建立的檔案:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find -cmin -5 -type f -exec rm -rf {} \;
+</pre></div>
+</div>
+<p>找出體積最大前十檔案/目錄:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ du -a /home | sort -n -r | head -n 10
+</pre></div>
+</div>
+<p>via: <a class="reference external" href="http://www.hkcode.com/linux-bsd-notes/693">Linux 下找出體積最大的檔案/目錄 – 網絡技術日誌</a></p>
+<p>某目錄下的全部檔案的字串:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -rl flaskext . |xargs sed -i -e &#39;s/flaskext/flask.ext/&#39;
+
+$ ls *.md | xargs sed -i -e &#39;s/static\///&#39; ## 把 所有的.md (markdown) 檔裡的 &quot;static/&quot; 去掉
+</pre></div>
+</div>
+<p>via: <a class="reference external" href="http://www.commandlinefu.com/commands/view/4698/recursive-search-and-replace-old-with-new-string-inside-files">recursive search and replace old with new string, inside files | commandlinefu.com</a></p>
+<p>列出各目錄大小(不顯示子目錄):</p>
+<div class="highlight-python"><div class="highlight"><pre>du -h | grep -v &#39;[a-z]/.&#39;
+</pre></div>
+</div>
+<p>coding convert:</p>
+<div class="highlight-python"><div class="highlight"><pre># big5 to utf-8
+$ iconv -f big5 -t utf-8 big5.txt -o utf8.txt
+
+# 簡體轉繁體
+$ cat test.txt | iconv -f gb2312 -t big5
+
+# 繁體轉簡體
+$ cat test.txt | iconv -f big5 -t gb2312
+
+# Big5 編碼跟 UTF-8 編碼之間的轉換,如 UTF-8 轉 Big5
+$ cat test.txt | iconv -f utf-8 -t big5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="utils">
+<h2>工具 utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="grep">
+<h3>grep<a class="headerlink" href="#grep" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">-i:</th><td class="field-body">忽略大小寫</td>
+</tr>
+<tr class="field-even field"><th class="field-name">-n:</th><td class="field-body">輸出行號</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">-c:</th><td class="field-body">計算次數</td>
+</tr>
+<tr class="field-even field"><th class="field-name">-a:</th><td class="field-body">binary 檔用 text 檔案</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">-A:</th><td class="field-body">顯示後幾行 (after)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">-B:</th><td class="field-body">顯示前幾行 (before)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">-C:</th><td class="field-body">顯示前後幾行</td>
+</tr>
+<tr class="field-even field"><th class="field-name">-v:</th><td class="field-body">&#8211;invert-match</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">-V:</th><td class="field-body">version</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="compress-depress">
+<h3>壓縮/解壓縮 compress/depress<a class="headerlink" href="#compress-depress" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>## tar
+# compress (tar 打包, zip壓縮)
+$ tar -zcvf foo.tgz foo
+# decompress
+$ tar -zxvf foo.tgz
+
+$ tar -jcvf foo.tar.bz2 foo
+$ tar -jxvf too.tar.bz2
+
+## bzip2
+$ bzip2 foo # 會把 foo 變成 foo.bz2
+$ bzip2 -d foo.bz2 # 把 foo.bz2 變 foo
+</pre></div>
+</div>
+<p>bzip2 的壓縮率比較大, 運算時間長</p>
+</div>
+<div class="section" id="id4">
+<h3>編輯<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://coolshell.cn/articles/9070.html">AWK 简明教程 | 酷壳 - CoolShell.cn</a></li>
+</ul>
+<p>vim硬是要存檔:</p>
+<div class="highlight-python"><div class="highlight"><pre>:w !sudo tee %
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>網路<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>$ lsof # list open files
+$ lsof -n # network files
+$ lsof -i # monitors network connections in real time
+$ iftop # shows bandwith usage per *connection*
+$ nethogs #shows the bandwith usage per *process*
+
+# iOS
+$ sudo lsof -i -P
+$ lsof -n -i4TCP:5000 | grep LISTEN # 找出port5000
+</pre></div>
+</div>
+<p>rsync:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
+$ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
+</pre></div>
+</div>
+<p>dns:</p>
+<div class="highlight-python"><div class="highlight"><pre>dig foobar.com        # simple query
+dig +trace foobar.com # detail
+dig +short foobar.com # 不廢話
+dig foobar.com mx
+</pre></div>
+</div>
+<p><em>.</em> 表示the root of the hierarchy</p>
+<ul class="simple">
+<li><a class="reference external" href="http://blog.longwin.com.tw/2010/02/netstat-check-connect-2010/">使用 netstat 找出不正常的連線 | Tsung&#8217;s Blog</a></li>
+</ul>
+<p>curl:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl http://example.com
+curl http://example -d&quot;tag=foo&amp;cat=bar&quot; # 這個預設會送POST
+curl http://example/edit -XPOST # http method
+</pre></div>
+</div>
+</div>
+<div class="section" id="service">
+<h2>Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h2>
+<p>關掉uwsgi的process:</p>
+<div class="highlight-python"><div class="highlight"><pre>ps ca|grep uwsgi |awk &#39;{ print $1}&#39; | xargs --no-run-if-empty sudo kill -9
+</pre></div>
+</div>
+<p>快速靜態檔案server:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python -m SimpleHTTPServer 8080
+</pre></div>
+</div>
+<div class="section" id="crontab">
+<h3>Crontab<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h3>
+<p>分鐘 小時 日期 月份 週</p>
+<p>每5min一次:</p>
+<div class="highlight-python"><div class="highlight"><pre>*/5 * * * * /home/moogoo/test.sh
+5 0 * * *
+</pre></div>
+</div>
+<p>每小時:</p>
+<div class="highlight-python"><div class="highlight"><pre>01 * * * * /home/moogoo/test.sh
+</pre></div>
+</div>
+<p>每天(半夜):</p>
+<div class="highlight-python"><div class="highlight"><pre>0 0 * * *
+</pre></div>
+</div>
+<p>每週:</p>
+<div class="highlight-python"><div class="highlight"><pre>0 0 * * 0
+</pre></div>
+</div>
+<p>每月:</p>
+<div class="highlight-python"><div class="highlight"><pre>0 0 1 * *
+</pre></div>
+</div>
+<p>start:</p>
+<div class="highlight-python"><div class="highlight"><pre>service crond start
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="system">
+<h2>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h2>
+<p>語系:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ locale -a # 目前系統支援語系
+$ dpkg-reconfigure locales 安裝語系
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Command 常用指令</a><ul>
+<li><a class="reference internal" href="#script">script</a><ul>
+<li><a class="reference internal" href="#snippets">snippets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">檔案</a><ul>
+<li><a class="reference internal" href="#id2">改檔名</a></li>
+<li><a class="reference internal" href="#id3">找檔案</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#utils">工具 utils</a><ul>
+<li><a class="reference internal" href="#grep">grep</a></li>
+<li><a class="reference internal" href="#compress-depress">壓縮/解壓縮 compress/depress</a></li>
+<li><a class="reference internal" href="#id4">編輯</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">網路</a></li>
+<li><a class="reference internal" href="#service">Service</a><ul>
+<li><a class="reference internal" href="#crontab">Crontab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system">System</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="database.html"
+                        title="previous chapter">Database筆記 (MySQL, SQLite)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="python.html"
+                        title="next chapter">&lt; Python &gt;</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/command_line.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="python.html" title="&lt; Python &gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="database.html" title="Database筆記 (MySQL, SQLite)"
+             >previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Suhen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

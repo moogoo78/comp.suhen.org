@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>[computer] Emacs輸入newline符號 &mdash; CompDocs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Elscreen - Emacs好用的tab mode" href="emacs_elscreen.html" />
+    <link rel="prev" title="[Computer] 用Emacs dired-mode批次改檔名" href="emacs_dired_rename.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="emacs_elscreen.html" title="Elscreen - Emacs好用的tab mode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="emacs_dired_rename.html" title="[Computer] 用Emacs dired-mode批次改檔名"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="computer-emacsnewline">
+<h1>[computer] Emacs輸入newline符號<a class="headerlink" href="#computer-emacsnewline" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-06-27 11:32</td>
+</tr>
+<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">emacs, note</td>
+</tr>
+<tr class="field-even field"><th class="field-name">slug:</th><td class="field-body">emacs_newline</td>
+</tr>
+</tbody>
+</table>
+<p>Emacs的換行:</p>
+<div class="highlight-python"><div class="highlight"><pre>C-q C-j
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>C-q</cite>: quoted-insert, <cite>C-j</cite>: newline</p>
+</div>
+<p>但是我的 <cite>C-q</cite> 和 <cite>C-j</cite> 為了使用dvorak layout, 改成cut &amp; paste:</p>
+<div class="highlight-python"><div class="highlight"><pre>(global-set-key (kbd &quot;C-q&quot;) &#39;kill-region) ; cut
+(global-set-key (kbd &quot;C-j&quot;) &#39;kill-ring-save) ; paste
+</pre></div>
+</div>
+<p>因此把沒用到的 <cite>C-`</cite> 跟 <cite>C-,</cite> 拿來做key-translate:</p>
+<div class="highlight-python"><div class="highlight"><pre>(define-key key-translation-map (kbd &quot;C-q&quot;) (kbd &quot;C-&#39;&quot;))
+(define-key key-translation-map (kbd &quot;C-&#39;&quot;) (kbd &quot;C-q&quot;))
+(define-key key-translation-map (kbd &quot;C-j&quot;) (kbd &quot;C-,&quot;))
+(define-key key-translation-map (kbd &quot;C-,&quot;) (kbd &quot;C-j&quot;))
+(global-set-key (kbd &quot;C-&#39;&quot;) &#39;kill-region)
+(global-set-key (kbd &quot;C-,&quot;) &#39;kill-ring-save)
+</pre></div>
+</div>
+<p>搞得很複雜... 先試用一下看看...</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="emacs_dired_rename.html"
+                        title="previous chapter">[Computer] 用Emacs dired-mode批次改檔名</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="emacs_elscreen.html"
+                        title="next chapter">Elscreen - Emacs好用的tab mode</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/emacs_newline.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="emacs_elscreen.html" title="Elscreen - Emacs好用的tab mode"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="emacs_dired_rename.html" title="[Computer] 用Emacs dired-mode批次改檔名"
+             >previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Suhen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

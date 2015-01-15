@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Software &mdash; CompDocs 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Sphinx - reST (reStructuredText)" href="sphinx.html" />
+    <link rel="prev" title="GIT" href="git.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sphinx.html" title="Sphinx - reST (reStructuredText)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="git.html" title="GIT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="software">
+<h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-03-28</td>
+</tr>
+<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">docs</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="desktop-tips">
+<h2>Desktop Tips<a class="headerlink" href="#desktop-tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="system">
+<h3>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mac-osx">
+<h4>Mac OSX<a class="headerlink" href="#mac-osx" title="Permalink to this headline">¶</a></h4>
+<p>(Mac的Option也是Alt鍵)</p>
+<p>Finder:</p>
+<ul class="simple">
+<li>Command Shift D: 移駕「桌面」</li>
+<li>Command Shift H: Home</li>
+<li>Command Shift G: 輸入資料夾名稱</li>
+<li>Command Shift U:「工具程式」檔案夾</li>
+<li>Command M: 縮小視窗</li>
+<li>Command Option T:隱藏 / 顯示工具列</li>
+<li>Command 1/2/3/4: 顯示方式</li>
+<li>Command [ / ]: 上/下一個資料夾</li>
+<li>Command 上: 上一層資料夾</li>
+<li>顯示User Library(資料庫): 在Finder裡的Go(前往)選單, 按住option, 就會出現</li>
+</ul>
+<p>清空垃圾桶: Command Shift Delete</p>
+<p>zoom in/out: Command Opt =/-</p>
+<p>強制結束: Command Opt Esc (force quit)</p>
+<p>全面截圖 (存到桌面): Command Shift 3</p>
+<p>區域截圖 (存到桌面): Command Shift 4</p>
+<p>視窗截圖 (存到桌面): Command Shift 4 Space [選視窗]</p>
+<p>區域截圖 (存到剪貼簿): Command Shift Control 4</p>
+<p>貼上無格式文字 (plain-text): ShiftOption Command-v</p>
+<p>輸入特殊符號: Command option T</p>
+<p>放大縮小: Command + / Command -</p>
+<p>無線網路密碼:</p>
+<div class="highlight-python"><div class="highlight"><pre>1. 到&quot;鑰匙圈存取&quot;: Finder -&gt; 工具程式 -&gt; 鑰匙圈存取
+2. 找基地台名稱, 分類是&quot;AirPort網路密碼&quot;, 顯示密碼
+</pre></div>
+</div>
+<p>Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關):</p>
+<div class="highlight-python"><div class="highlight"><pre>1. 更新xcode
+2. sudo xcodebuild -license
+3. xcode-select --install
+</pre></div>
+</div>
+<ul class="simple">
+<li>[14 Mac Hacks That Will Change The Way You Use Your Computer](<a class="reference external" href="http://www.buzzfeed.com/peggy/14-mac-hacks-that-will-change-the-way-you-use-your-computer">http://www.buzzfeed.com/peggy/14-mac-hacks-that-will-change-the-way-you-use-your-computer</a>)</li>
+</ul>
+<p>瘦身:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/Library/Application\ Support/MobileSync # 檔案很大, iPhone, iPad, iPod...的備份
+
+iTunes -&gt; Perference -&gt; Devices -&gt; 刪除備份
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="browser">
+<h3>Browser<a class="headerlink" href="#browser" title="Permalink to this headline">¶</a></h3>
+<p>browser 網址輸入以下, 可以當記事本:</p>
+<div class="highlight-python"><div class="highlight"><pre>data:text/html, &lt;html contenteditable&gt;
+</pre></div>
+</div>
+<div class="section" id="firefox">
+<h4>Firefox<a class="headerlink" href="#firefox" title="Permalink to this headline">¶</a></h4>
+<p>快速鍵 (整理過, 只列出自己常用):</p>
+<div class="highlight-python"><div class="highlight"><pre># bookmark
+Ctrl+B   顯示bookmark (側邊欄)
+Ctrl+D   加入bookmark
+
+# tab
+Ctrl+T   開新tab
+Ctrl+W   關Tab
+Ctrl+tab 下一個tab
+Ctrl+PageUp/PageDown 上/下一個tab
+
+# window/frame
+Ctrl+L 移到網址列
+Ctrl+J download
+F6     move to frame
+
+# search
+Ctrl+F   search
+Ctrl+G   search next
+Shift+F3 serach privious
+
+# other
+Alt+Enter open link in new tab
+F11 fullscreen
+F7 鍵盤瀏覽
+</pre></div>
+</div>
+</div>
+<div class="section" id="developer-s-tools">
+<h4>Developer&#8217;s tools<a class="headerlink" href="#developer-s-tools" title="Permalink to this headline">¶</a></h4>
+<p>scratchpad: 按shift+F4</p>
+<ul class="simple">
+<li>[重新介紹 Firefox 開發者工具之二 | 訊息中心 | Mozilla Taiwan](<a class="reference external" href="http://blog.mozilla.com.tw/posts/4200/reintroducing-the-firefox-developer-tools-part-2-the-scratchpad-and-the-style-editor">http://blog.mozilla.com.tw/posts/4200/reintroducing-the-firefox-developer-tools-part-2-the-scratchpad-and-the-style-editor</a>)</li>
+</ul>
+</div>
+<div class="section" id="browser-plugin-extensions">
+<h4>Browser plugin/extensions<a class="headerlink" href="#browser-plugin-extensions" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>顯示網站使用fromeworks, web server, service...<ul>
+<li><a class="reference external" href="http://www.nqbao.com/chrome-sniffer">Chrome Sniffer | Bao&#8217;s Blog</a> (Chrome)</li>
+<li><a class="reference external" href="http://wappalyzer.com/">Wappalyzer</a> (Firefox)</li>
+<li><a class="reference external" href="http://www.tcpiputils.com/browser-extensions-addons-accelerators">Find your extension, accelerator and addon for the browsers safari, internet explorer(ie), chrome and firefox</a> (Chrome, Firefox, Opera, Safari)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="web-service">
+<h2>Web Service<a class="headerlink" href="#web-service" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gmail">
+<h3>Gmail<a class="headerlink" href="#gmail" title="Permalink to this headline">¶</a></h3>
+<p>shortcut:</p>
+<ul class="simple">
+<li>j / k: 下/上</li>
+<li>x: check</li>
+<li>&#8216; / ~ : next tab /previous tab</li>
+<li>m: mark</li>
+<li>gi / ga: goto inbox/archive</li>
+</ul>
+<p><a class="reference external" href="https://support.google.com/mail/answer/6594?hl=en">Keyboard shortcuts for Gmail - Gmail Help</a></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>好用軟體<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="internet">
+<h3>Internet<a class="headerlink" href="#internet" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">bt - Deluge (Linux)</p>
+</li>
+<li><p class="first">IRC Client (OS X)</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.charlesproxy.com/">Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS &amp; SSL Proxy / Reverse Proxy</a></p>
+<ol class="arabic simple">
+<li>Install Charles.app</li>
+<li>iOS add SSL certificate (不管 https 可忽略)</li>
+<li>設定 proxy: iOS 的 Wi-Fi, HTTP PROXY 改 Manual</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Server: 裝 Charles.app 的電腦 IP (要在同一個網路下)</li>
+<li>Port: 8888</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Charles.app 會收到 request, 按 accept 就可以了</li>
+<li>操作 iOS 的 APP, Charles.app 就有資料了</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="ebook">
+<h3>ebook<a class="headerlink" href="#ebook" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://calibre-ebook.com/">calibre - E-book management</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>系統工具<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>osx mount ext2/3: <a class="reference external" href="http://osxfuse.github.com/">FUSE for OS X</a> + <a class="reference external" href="http://sourceforge.net/projects/fuse-ext2/">fuse-ext2</a></p>
+</div>
+<div class="section" id="devtools">
+<h3>DevTools<a class="headerlink" href="#devtools" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.pixelwindowapp.com/">PixelWindow</a> resolution ruler</li>
+<li><a class="reference external" href="http://meldmerge.org/">meld</a>: $ homebrew install meld</li>
+</ul>
+</div>
+<div class="section" id="html5-slides">
+<h3>HTML5 Slides<a class="headerlink" href="#html5-slides" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://bartaz.github.io/impress.js/#/bored">impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka &#64;bartaz</a></li>
+<li><a class="reference external" href="https://github.com/hakimel/reveal.js">hakimel/reveal.js</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="vim">
+<h2>VIM<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h2>
+<p>行號:</p>
+<div class="highlight-python"><div class="highlight"><pre>:set nonu
+:set nu
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-line">
+<h2>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tmux">
+<h3>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h3>
+<p># 開新視窗
+C-b c</p>
+<p># 前/後一個視窗
+C-b n/p</p>
+<p># 分割上下pane
+C-b &#8220;</p>
+<p># 分割左右pane
+C-b %</p>
+<p># 重整pane(幫你排)
+C-b SPACE</p>
+<p># 調整視窗大小
+C-b 按著不放再按上下左右</p>
+<p># 移動到另一視窗
+C-b 上下左右
+C-b o</p>
+<p># 視窗交換位址</p>
+<p>C-b C-o</p>
+<p># 顯示時間
+C-b t</p>
+<p># 把目前tmux session丟到背景去 (回到原本terminal)
+C-b d</p>
+<p># 回到剛才的tmux session
+tmux attach</p>
+<p># help
+C-b ?</p>
+<p>scroll:</p>
+<div class="highlight-python"><div class="highlight"><pre>Ctrl-b [ 上/下/左/右 , q 離開
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">tmux shortcuts &amp; cheatsheet</a></li>
+<li><a class="reference external" href="https://gist.github.com/andreyvit/2921703">tmux cheatsheet</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dot-grphviz">
+<h3>dot (grphviz)<a class="headerlink" href="#dot-grphviz" title="Permalink to this headline">¶</a></h3>
+<p>example:</p>
+<div class="highlight-python"><div class="highlight"><pre>digraph foo {
+  hello [shape=&quot;diamond&quot;, label=&quot;hihi \nhello&quot;]
+  world
+  hello -&gt; world [label=&quot;Y&quot;]
+}
+</pre></div>
+</div>
+<p>輸出png:</p>
+<div class="highlight-python"><div class="highlight"><pre>dot foo.dot -Tpng -o foo.png
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">-T: format -o: output</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">註解用/* */ 或 //，像C++一樣</p>
+</div>
+<p>ref:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.graphviz.org/content/node-shapes">Node Shapes | Graphviz - Graph Visualization Software</a></li>
+<li><a class="reference external" href="http://www.graphviz.org/content/dot-language">The DOT Language | Graphviz - Graph Visualization Software</a></li>
+<li><a class="reference external" href="http://www.graphviz.org/Gallery.php">Gallery | Graphviz - Graph Visualization Software</a></li>
+</ul>
+</div>
+<div class="section" id="ffmpeg">
+<h3>ffmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this headline">¶</a></h3>
+<p>usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="p">[</span><span class="n">target</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">-vcodec</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">-s 100x100</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">-t 10 (前10秒)</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">-vf crop=100:100 (切中間100x100), crop=in_w-480:in_h(左右各切240)</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">-aspect 4:3</p>
+</div>
+<p>列出所有codecs:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -codecs
+</pre></div>
+</div>
+<p>列出所有file format:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -formats
+</pre></div>
+</div>
+<div class="section" id="tips">
+<h4>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h4>
+<p>右上角watermark:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg –i inputvideo.avi -vf &quot;movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]&quot; outputvideo.flv
+</pre></div>
+</div>
+<p>via: <a class="reference external" href="http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/">How to watermark a video using FFmpeg | iDude.net</a></p>
+<p>examples:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -i filename.webm -acodec libmp3lame -aq 4 filename.mp3
+
+# convert MTS to mp4
+$ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
+
+# movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
+$ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Software</a><ul>
+<li><a class="reference internal" href="#desktop-tips">Desktop Tips</a><ul>
+<li><a class="reference internal" href="#system">System</a><ul>
+<li><a class="reference internal" href="#mac-osx">Mac OSX</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#browser">Browser</a><ul>
+<li><a class="reference internal" href="#firefox">Firefox</a></li>
+<li><a class="reference internal" href="#developer-s-tools">Developer&#8217;s tools</a></li>
+<li><a class="reference internal" href="#browser-plugin-extensions">Browser plugin/extensions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#web-service">Web Service</a><ul>
+<li><a class="reference internal" href="#gmail">Gmail</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">好用軟體</a><ul>
+<li><a class="reference internal" href="#internet">Internet</a></li>
+<li><a class="reference internal" href="#ebook">ebook</a></li>
+<li><a class="reference internal" href="#id2">系統工具</a></li>
+<li><a class="reference internal" href="#devtools">DevTools</a></li>
+<li><a class="reference internal" href="#html5-slides">HTML5 Slides</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vim">VIM</a></li>
+<li><a class="reference internal" href="#command-line">Command Line</a><ul>
+<li><a class="reference internal" href="#tmux">tmux</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tools">Tools</a><ul>
+<li><a class="reference internal" href="#dot-grphviz">dot (grphviz)</a></li>
+<li><a class="reference internal" href="#ffmpeg">ffmpeg</a><ul>
+<li><a class="reference internal" href="#tips">Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="git.html"
+                        title="previous chapter">GIT</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sphinx.html"
+                        title="next chapter">Sphinx - reST (reStructuredText)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/software.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sphinx.html" title="Sphinx - reST (reStructuredText)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="git.html" title="GIT"
+             >previous</a> |</li>
+        <li><a href="index.html">CompDocs 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Suhen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
