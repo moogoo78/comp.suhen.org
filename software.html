@@ -66,14 +66,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#script">script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#utils">工具 utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#id5">網路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#system">System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html#system">System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
@@ -504,6 +504,12 @@ $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
 
 # movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
 $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+
+# show meta data
+$ ffmpeg -i &lt;foo.mp4&gt; -f ffmetadata &lt;out.txt&gt;
+
+# 聲音放大
+$ ffmpeg -i silent.mp3 -af &quot;volume=10dB&quot; noise.mp3
 </pre></div>
 </div>
 </div>

@@ -327,4 +327,8 @@ examples::
   # movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
   $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
 
+  # show meta data
+  $ ffmpeg -i <foo.mp4> -f ffmetadata <out.txt>
 
+  # 聲音放大
+  $ ffmpeg -i silent.mp3 -af "volume=10dB" noise.mp3
