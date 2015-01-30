@@ -330,5 +330,7 @@ examples::
   # show meta data
   $ ffmpeg -i <foo.mp4> -f ffmetadata <out.txt>
 
-  # 聲音放大
+  # 大小聲
   $ ffmpeg -i silent.mp3 -af "volume=10dB" noise.mp3
+  $ ffmpeg -i silent.mp3 -af "volume=-5dB" noise.mp3
+  $ ffmpeg -f inputfile -vcodec copy -af "volume/10dB" outputfile
