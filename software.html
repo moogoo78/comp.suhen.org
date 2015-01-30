@@ -508,8 +508,10 @@ $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45
 # show meta data
 $ ffmpeg -i &lt;foo.mp4&gt; -f ffmetadata &lt;out.txt&gt;
 
-# 聲音放大
+# 大小聲
 $ ffmpeg -i silent.mp3 -af &quot;volume=10dB&quot; noise.mp3
+$ ffmpeg -i silent.mp3 -af &quot;volume=-5dB&quot; noise.mp3
+$ ffmpeg -f inputfile -vcodec copy -af &quot;volume/10dB&quot; outputfile
 </pre></div>
 </div>
 </div>
