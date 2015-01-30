@@ -1,13 +1,6 @@
 Command 常用指令
-#############################
-:date: 2013-03-28
-:category: computer
-:tags: docs
-:slug: unix_command
+=========================
 
-
-script
-================
 
 snippets
 -------------
@@ -25,8 +18,16 @@ more
 * `Robert Muth: Better Bash Scripting in 15 Minutes <http://robertmuth.blogspot.tw/2012/08/better-bash-scripting-in-15-minutes.html?utm_source=hackernewsletter&utm_medium=email&utm_term=fav>`__
 * `Sed - An Introduction and Tutorial <http://www.grymoire.com/Unix/sed.html?utm_source=hackernewsletter&utm_medium=email&utm_term=code>`__
 
+
+顯示 \uxxx => unicode 文字:
+
+.. code-block:: bash
+
+   echo -e "$(curl http://127.0.0.1:5000/api/info)"
+             
+  
 檔案
-========
+---------------
 
 把檔案foo複製到以下全部目錄裡::
 
@@ -36,9 +37,7 @@ more
 :cp -i: 詢問y or n
 
 
-改檔名
----------------
-
+**改檔名**
 
 大寫改小寫::
 
@@ -58,8 +57,8 @@ for loop::
   done
 
 
-找檔案
--------------
+**找檔案**
+
 
 找目錄名稱::
 
@@ -106,10 +105,10 @@ coding convert::
 
 
 工具 utils
-================
+-----------------------
 
-grep
--------
+* grep
+
 
 :-i: 忽略大小寫
 :-n: 輸出行號
@@ -123,7 +122,7 @@ grep
 
 
 壓縮/解壓縮 compress/depress
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 ::
@@ -144,7 +143,7 @@ grep
 bzip2 的壓縮率比較大, 運算時間長
 
 編輯
--------------
+^^^^^^^^^^^^^^^
 
 * `AWK 简明教程 | 酷壳 - CoolShell.cn <http://coolshell.cn/articles/9070.html>`__
 
@@ -154,7 +153,7 @@ vim硬是要存檔::
 
 
 網路
-============
+^^^^^^^^^^^^^^^^^
 ::
 
   $ lsof # list open files
@@ -190,10 +189,10 @@ curl::
   curl http://example.com
   curl http://example -d"tag=foo&cat=bar" # 這個預設會送POST
   curl http://example/edit -XPOST # http method
-
+  crul http://example/api -F user=mouse -F passwd=cheese
 
 Service
-===========
+-------------------
 
 關掉uwsgi的process::
 

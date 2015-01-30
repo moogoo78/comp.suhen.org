@@ -66,14 +66,14 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Command 常用指令</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#script">script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">檔案</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#utils">工具 utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">網路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#service">Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system">System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crontab">Crontab</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#system">System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
@@ -189,24 +189,8 @@
             
   <div class="section" id="command">
 <h1>Command 常用指令<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-03-28</td>
-</tr>
-<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">docs</td>
-</tr>
-<tr class="field-even field"><th class="field-name">slug:</th><td class="field-body">unix_command</td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="script">
-<h2>script<a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="snippets">
-<h3>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
+<h2>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
 <p>把&#8221;/t&#8221;分隔的檔案轉成sql語法, 用awk和sed</p>
 <div class="highlight-bash"><div class="highlight"><pre>awk -F <span class="s1">&#39;\t&#39;</span> <span class="s1">&#39;{print &quot;INSERT INTO word (\&quot;s3id\&quot;,\&quot;content\&quot;,\&quot;freq\&quot;,\&quot;translate\&quot;,\&quot;ex1\&quot;,\&quot;ex1_translate\&quot;,\&quot;ex2\&quot;,\&quot;ex2_translate\&quot;) VALUES(\&quot;&quot;$1&quot;\&quot;,\&quot;&quot;$2&quot;\&quot;,\&quot;&quot;$3&quot;\&quot;,\&quot;&quot;$4&quot;\&quot;,\&quot;&quot;$5&quot;\&quot;,\&quot;&quot;$6&quot;\&quot;,\&quot;&quot;$7&quot;\&quot;,\&quot;&quot;$8&quot;\&quot;);&quot;}&#39;</span> data_all_u.txt <span class="p">|</span> sed -e <span class="s1">&#39;s/^M//g&#39;</span> &gt; out.sql
 </pre></div>
@@ -220,6 +204,9 @@
 <li><a class="reference external" href="http://robertmuth.blogspot.tw/2012/08/better-bash-scripting-in-15-minutes.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=fav">Robert Muth: Better Bash Scripting in 15 Minutes</a></li>
 <li><a class="reference external" href="http://www.grymoire.com/Unix/sed.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=code">Sed - An Introduction and Tutorial</a></li>
 </ul>
+<p>顯示 uxxx =&gt; unicode 文字:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="k">$(</span>curl http://127.0.0.1:5000/api/info<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -238,8 +225,7 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="id2">
-<h3>改檔名<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>改檔名</strong></p>
 <p>大寫改小寫:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr &#39;A-Z&#39; &#39;a-z&#39;`; done
 </pre></div>
@@ -255,9 +241,7 @@
 done
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>找檔案<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>找檔案</strong></p>
 <p>找目錄名稱:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ find / -type d -name &quot;dir_name&quot;
 </pre></div>
@@ -297,11 +281,11 @@ $ cat test.txt | iconv -f utf-8 -t big5
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="utils">
 <h2>工具 utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="grep">
-<h3>grep<a class="headerlink" href="#grep" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>grep</li>
+</ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -326,7 +310,6 @@ $ cat test.txt | iconv -f utf-8 -t big5
 </tr>
 </tbody>
 </table>
-</div>
 <div class="section" id="compress-depress">
 <h3>壓縮/解壓縮 compress/depress<a class="headerlink" href="#compress-depress" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre>## tar
@@ -345,8 +328,8 @@ $ bzip2 -d foo.bz2 # 把 foo.bz2 變 foo
 </div>
 <p>bzip2 的壓縮率比較大, 運算時間長</p>
 </div>
-<div class="section" id="id4">
-<h3>編輯<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>編輯<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="http://coolshell.cn/articles/9070.html">AWK 简明教程 | 酷壳 - CoolShell.cn</a></li>
 </ul>
@@ -355,9 +338,8 @@ $ bzip2 -d foo.bz2 # 把 foo.bz2 變 foo
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>網路<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>網路<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre>$ lsof # list open files
 $ lsof -n # network files
 $ lsof -i # monitors network connections in real time
@@ -389,7 +371,9 @@ dig foobar.com mx
 <div class="highlight-python"><div class="highlight"><pre>curl http://example.com
 curl http://example -d&quot;tag=foo&amp;cat=bar&quot; # 這個預設會送POST
 curl http://example/edit -XPOST # http method
+crul http://example/api -F user=mouse -F passwd=cheese
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="service">
@@ -402,8 +386,9 @@ curl http://example/edit -XPOST # http method
 <div class="highlight-python"><div class="highlight"><pre>$ python -m SimpleHTTPServer 8080
 </pre></div>
 </div>
+</div>
 <div class="section" id="crontab">
-<h3>Crontab<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h3>
+<h2>Crontab<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h2>
 <p>分鐘 小時 日期 月份 週</p>
 <p>每5min一次:</p>
 <div class="highlight-python"><div class="highlight"><pre>*/5 * * * * /home/moogoo/test.sh
@@ -433,12 +418,11 @@ curl http://example/edit -XPOST # http method
 </div>
 </div>
 <div class="section" id="system">
-<h2>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h2>
+<h1>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h1>
 <p>語系:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ locale -a # 目前系統支援語系
 $ dpkg-reconfigure locales 安裝語系
 </pre></div>
-</div>
 </div>
 </div>
 
