@@ -103,28 +103,8 @@ coding convert::
   # Big5 編碼跟 UTF-8 編碼之間的轉換,如 UTF-8 轉 Big5
   $ cat test.txt | iconv -f utf-8 -t big5
 
-
-工具 utils
------------------------
-
-* grep
-
-
-:-i: 忽略大小寫
-:-n: 輸出行號
-:-c: 計算次數
-:-a: binary 檔用 text 檔案
-:-A: 顯示後幾行 (after)
-:-B: 顯示前幾行 (before)
-:-C: 顯示前後幾行
-:-v: --invert-match
-:-V: version
-
-
 壓縮/解壓縮 compress/depress
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
   ## tar
@@ -142,18 +122,26 @@ coding convert::
 
 bzip2 的壓縮率比較大, 運算時間長
 
-編輯
-^^^^^^^^^^^^^^^
+
+**grep:**
+
+:-i: 忽略大小寫
+:-n: 輸出行號
+:-c: 計算次數
+:-a: binary 檔用 text 檔案
+:-A: 顯示後幾行 (after)
+:-B: 顯示前幾行 (before)
+:-C: 顯示前後幾行
+:-v: --invert-match
+:-V: version
+
 
 * `AWK 简明教程 | 酷壳 - CoolShell.cn <http://coolshell.cn/articles/9070.html>`__
 
-vim硬是要存檔::
-
-  :w !sudo tee %
 
 
 網路
-^^^^^^^^^^^^^^^^^
+----------------
 ::
 
   $ lsof # list open files
@@ -191,6 +179,7 @@ curl::
   curl http://example/edit -XPOST # http method
   crul http://example/api -F user=mouse -F passwd=cheese
 
+
 Service
 -------------------
 
@@ -205,7 +194,7 @@ Service
 
 
 Crontab
--------
+~~~~~~~~~~~~
 分鐘 小時 日期 月份 週 
 
 每5min一次::
@@ -236,10 +225,61 @@ start::
 
 
 
-System
-===========
+locale
+-------------------------
 
 語系::
 
   $ locale -a # 目前系統支援語系
   $ dpkg-reconfigure locales 安裝語系
+
+
+tools
+----------
+
+tmux
+~~~~~~~~~~~
+# 開新視窗
+C-b c
+
+# 前/後一個視窗
+C-b n/p 
+
+# 分割上下pane
+C-b "
+
+# 分割左右pane
+C-b %
+
+# 重整pane(幫你排)
+C-b SPACE
+
+# 調整視窗大小
+C-b 按著不放再按上下左右
+
+# 移動到另一視窗
+C-b 上下左右
+C-b o
+
+# 視窗交換位址
+ 
+C-b C-o
+
+# 顯示時間
+C-b t
+
+# 把目前tmux session丟到背景去 (回到原本terminal)
+C-b d
+
+# 回到剛才的tmux session
+tmux attach
+
+# help
+C-b ?
+
+scroll::
+  
+  Ctrl-b [ 上/下/左/右 , q 離開
+
+* `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
+* `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__

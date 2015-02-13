@@ -1,12 +1,10 @@
-Emacs 小抄
-################
-:date: 2013-04-26 18:37
-:tags: docs
-:category: computer
-:slug: emacs
+Emacs
+=================
 
-Tips
-========
+
+常用
+--------------
+
 自動補齊::
 
   M-/
@@ -38,6 +36,7 @@ Tips
   M-x replace-regexp RET ^ RET SPACE SPACE" RET ;; 開頭加3個空白和"
   M-x replace-regexp RET $ RET ", RET ;; 結尾加"
 
+
 每行加2空白::
 
   M-x cua-mode
@@ -49,11 +48,11 @@ Tips
 **參考**
 `polls - The single most useful Emacs feature - Stack Overflow <http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature>`__
 
-Basic
-============
+基本操作
+--------------
 
 檔案
---------------
+~~~~~~~~
 
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html
 
@@ -65,7 +64,7 @@ C-x C-v        find-alternate-file
 
 
 移動 Movement
---------------
+~~~~~~~~~~~~~~~~~~~~~
 
 ============   ========================================================
 M-<            beginning-of-buffer
@@ -79,7 +78,7 @@ search: M-c 切換case-sensitivity
 M-x occur 找出某字串在此 buffer 那裡現出
 
 編輯 Editing
-------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ===================== ================================
 M-x string-replace    replace
@@ -96,7 +95,7 @@ M-\                   刪除游標前後全部空白, tab
 ===================== ================================
 
 Register and Bookmark
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ============   ====================================================================
 C-x r SPACE    設定register, 出現Point to register後輸入一字元
@@ -115,7 +114,7 @@ C-x r l        list bookmark
 * M-x bookmark-delete <RET> bookmark名字 <RET>
 
 Coding
---------
+~~~~~~~~~~~~~
 
 ===========================   =========================
 C-h C <RET>                   看目前coding
@@ -128,13 +127,86 @@ C-x <RET> c raw-text <RET>    load unibyte
 ===========================   =========================
 
 
-特殊符號
-----------------------
+特殊符號:
 
-- C-q C-j 換行符號, Windows編輯器的^M: M-x replace-string [ENTER] C-q C-m [ENTER] \n [ENTER]
+C-q C-j 換行符號, Windows編輯器的^M: M-x replace-string [ENTER] C-q C-m [ENTER] \n [ENTER]
+
+
+Macro
+~~~~~~~~~~~~
+
+1. ``C-x (`` 開始錄製
+2. 胡搞瞎搞
+3. ``C-x )`` 結束
+4. ``C-x e`` ABASE
+
+----
+
+* 執行多次 ``C-u 次數 C-x e``
+* ``C-x C-k n FOO`` 給macro取名字
+* ``M-x FOO`` 執行
+* ``M-x insert-kbd-macro`` 把macro存到設定檔, 他會問你要存那個macro name
+
+  
+Regular Expression
+~~~~~~~~~~~~~~~~~~
+
+指令::
+
+  M-x replace-regexp <RET> regexp <RET> newstring <RET>
+
+
+特殊字
+
+- ``\&’`` 完整的匹配字
+- ``\d`` d是數字, 表示匹配在第幾個group (back reference)
+- ``\#`` 累加, 發生第幾次,第一次從0開始
+- ``\,`` Lisp expression
+- ``\?`` 詢問
+
+**範例**
+
+數字編號::
+
+  1987:Bogotá
+  5243:Fabergé
+
+  \(.+:\)
+  \#.
+
+  0.Bogotá
+  1.Fabergé
+
+  如果要從1開始:
+  \,(1+ \#). 
+
+
+HTML H降級::
+
+  <h1>silly</h1>
+  <h2>walk</h2>
+
+  <\(/?\)h\([0-9]\)>
+  <\1h\,(1+ \#2)>
+
+  <h2>silly</h2>
+  <h3>walk</h3>
+
+
+HTML link換成rst格式::
+
+  <a href=\"\(.+\)\"\(.*\)>\(.+\)</a>
+  ->
+  `\3 <\1>`__
+
+參考
+
+* `Regexp Replace - GNU Emacs Manual <http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexp-Replace.html>`__
+* `EmacsWiki: Replace Regexp <http://www.emacswiki.org/emacs/ReplaceRegexp>`__
+
 
 Help
--------------
+~~~~~~~~~~~~~~~~~~~~
 
 ============  ===================================
 C-h ?         help的help, SPACE和Backspace上下移動
@@ -147,11 +219,42 @@ C-h b         M-x describe-bindings
 ============  ===================================
 
 
+shell
+~~~~~~~~~~~~~~~~~~
+
+============  =============================================================================
+M-x shell     開一個buffer 
+M-x term      Emacs Lisp 寫的 terminal emulator
+M-x eshell    Emacs Lisp 實作的 shell, 可以 redirect output 到 Emacs 的 buffer
+M-! cmd       直接執行, 輸出另外開一個buffer
+C-u M-! cmd   直接執行, 輸出在目前游標位置
+============  =============================================================================
+
+.. note:: 要再開另外一個 shell 就把原本 buffer 改名字就可以了
+
+term:
+
+* C-c C-k char mode, 每個字元都會被送到 subshell 處理
+* C-c C-j line mode
+
+
+`What is the difference between shell, eshell, and term in Emacs? - Unix & Linux Stack Exchange <http://unix.stackexchange.com/questions/104325/what-is-the-difference-between-shell-eshell-and-term-in-emacs>`__
+
+configure
+-------------------
+
+Font: 
+M-x describe-font 看現在用的字形
+
+* `my-dot-emacs-file - steveyegge2 <https://sites.google.com/site/steveyegge2/my-dot-emacs-file>`__
+
+
 Modes
-===========
+------------------
 
 Dired
------
+~~~~~~~~~~~
+
 M-x dired
 
 ======  ======================================= 
@@ -176,7 +279,9 @@ g       refresh
 ======  =======================================
 
 批次改檔名
-^^^^^^^^^^^^
+~~~~~~~~~~~~~~
+
+在Dired模式下，**C-x C-q** 進入修改模式，或是執行 **wdired-change-to-wdired-mode**, 這時改檔名就像改一般文字檔一樣，可以用 *query-replace*, *query-replace-regexp* 或 *cua-mode* , 改完後 **C-c C-c** 送出, 或是 **C-c C-Esc** 取消就可以了,  比寫script直覺多了。
 
 ==========  =============================
 C-x C-q     wdired-change-to-wdired-mode 
@@ -186,16 +291,13 @@ C-c C-Esc   wdired-abort-changes
 
 .. note:: C-x C-q (23.1以後)
 
+ref:
 
-
-
-
-
-ref: `Emacs: Rename Files Interactively by Pattern (regex; wdired) <http://ergoemacs.org/emacs/rename_file_pattern.html>`__
+*  `XahLee <http://xahlee.org>`__ 的一篇文章: `Emacs: Rename Files Interactively by Pattern (regex; wdired) <http://ergoemacs.org/emacs/rename_file_pattern.html>`__ ，用Emacs來處理批次改檔名實在太方便了。
 
 
 Org-mode
---------------
+~~~~~~~~~~~~~~~~~
 
 預設開啟狀態::
 
@@ -207,8 +309,8 @@ Org-mode
   #+STARTUP: hideblocks
   #+STARTUP: nohideblock
 
+
 移動
-^^^^^^^^
 
 ==========  ===========================
 C-c C-n/p   下/上一個outline
@@ -216,13 +318,14 @@ C-c C-f/b   下/上一個outline (同lever)
 C-c C-u     上一層
 ==========  ===========================
 
-Agenda
-^^^^^^^^
-C-c C-x C-s archive
-C-c [ 把檔案加入agenda
+Agenda:
+
+* C-c C-x C-s archive
+* C-c [ 把檔案加入agenda
+
 
 Calc
---------
+~~~~~~~~
 
 M-x calc
 
@@ -244,7 +347,7 @@ Radix-Modes::
 
 
 HTML
-------------
+~~~~~~~~~~~~~~
 
 ==========  ====================================================
 C-c C-t     加tag, 然後照指示加attribute: property, value.
@@ -267,7 +370,7 @@ C-c C-h     看說明
 ==========  ====================================================
 
 Graphviz (dot)
------------------
+~~~~~~~~~~~~~~~~~~
 
 ==========  ====================================================
 C-c c       compile dot ($ dot -Tpng foo.dot > foo.png)
@@ -277,63 +380,79 @@ C-c p       display png
 `Graphviz dot mode for emacs <http://users.skynet.be/ppareit/projects/graphviz-dot-mode/graphviz-dot-mode.html>`__
 
 Others Mode
---------------
+~~~~~~~~~~~~~~~~~~~
 
 - M-x artist-mode
 - M-x toggle-debug-on-error
 
-Version Control
-================
+
+
+其他 modes
+--------------
+
+Version Control:
 
 ======== ============================
 C-x v v  commit (C-c C-c結束)
 C-x v d  version control status
 ======== ============================
 
-Adv. Mode
-==========
 * `Deft <http://jblevins.org/projects/deft/>`__ - 快速找筆記, 檔案修改工具
 
+elist 套件
+---------------
 
-configure
-=======================
+elscreen
+~~~~~~~~~~~~
 
-Font
---------
-M-x describe-font 看現在用的字形
+我以為在Emacs一直沒有好的tab顯示模式，以前用過 `tabbar mode <http://emacswiki.org/emacs/TabBarMode>`__ ，也覺得不是很好用，原來只是我固陋寡聞沒見過ElScreen這個elist套件。
 
-* `my-dot-emacs-file - steveyegge2 <https://sites.google.com/site/steveyegge2/my-dot-emacs-file>`__
+下載elscreen.el: ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/
 
-shell
-=============
+elscreen.el只有一個檔案，但是他要依附一套 `APEL <https://github.com/jeffgran/APEL>`__ 才可以運作。
 
-============  =============================================================================
-M-x shell     開一個buffer 
-M-x term      Emacs Lisp 寫的 terminal emulator
-M-x eshell    Emacs Lisp 實作的 shell, 可以 redirect output 到 Emacs 的 buffer
-M-! cmd       直接執行, 輸出另外開一個buffer
-C-u M-! cmd   直接執行, 輸出在目前游標位置
-============  =============================================================================
+::
 
-.. note:: 要再開另外一個 shell 就把原本 buffer 改名字就可以了
-
-term
-----------
-
-* C-c C-k char mode, 每個字元都會被送到 subshell 處理
-* C-c C-j line mode
+  ;; elscreen
+  (add-to-list 'load-path (concat my-path "goodies/APEL"))
+  (load "elscreen" "ElScreen" )
+  (setq elscreen-display-tab t)
+   
+  (global-set-key (kbd "C-x t") 'elscreen-create)
+  (global-set-key (kbd "C-x w") 'elscreen-kill)  
+  (global-set-key (kbd "M-t") 'elscreen-previous) ;;transpose-words
+  (global-set-key (kbd "M-n") 'elscreen-next)  
 
 
-`What is the difference between shell, eshell, and term in Emacs? - Unix & Linux Stack Exchange <http://unix.stackexchange.com/questions/104325/what-is-the-difference-between-shell-eshell-and-term-in-emacs>`__
-          ('Another social link', '#'),)
-          ('Another social link', '#'),)
-          ('Another social link', '#'),)
-          ('Another social link', '#'),)
-          ('Another social link', '#'),)
-          ('Another social link', '#'),)
+參考:
 
+- `elscreen 改め tabbar のインストールログ - テクノ組曲 <http://d.hatena.ne.jp/plasticster/20110825/1314271209>`__
+- `emacs-fu: keeping related buffers together with elscreen <http://emacs-fu.blogspot.tw/2009/07/keeping-related-buffers-together-with.html>`__
+
+skeleton
+~~~~~~~~~~~~
+
+用 `Pelican <|filename|/computer/pelican.md>`_ 寫blog時都要輸入一堆metadata很麻煩, 利用 `Emacs <|filename|/computer/emacs.rst>`_ 的skeleton-mode可以很快產生template, 接受mini-buffer輸入, insert lisp function...超方便!!
+
+
+.. code-block:: cl
+
+  (define-skeleton insert-pelican-template
+    "Insert templete for pelican static blog system"
+    "" (skeleton-read "Title: ")?\n
+    "#############################" ?\n
+    ":date: " (insert-current-date) ?\n
+    ":category: " (skeleton-read "category: ") ?\n
+    ":tags: " (skeleton-read "tags: ") ?\n
+    ":slug: " (skeleton-read "slug: ") ?\n
+  )
+
+
+參考: 
+
+* `EmacsWiki: Skeleton Mode <http://www.emacswiki.org/emacs/SkeletonMode>`__
 
 ref
-=======
+-------
 
 * `Emacs Mini Manual (PART 1) - THE BASICS <http://tuhdo.github.io/emacs-tutor.html?utm_source=hackernewsletter&utm_medium=email&utm_term=books>`__

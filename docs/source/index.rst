@@ -9,38 +9,14 @@ CompDocs
 MooGoo's note about computer usage.
 
 
-devel
------------
-
 .. toctree::
    :maxdepth: 2
               
    database
-   command_line
+   emacs      
+   git
+   command_line   
+   software
    python
    python_frameworks
-
-
-software
------------
-
-.. toctree::
-   :maxdepth: 1
-              
-   git
-   software
-   sphinx
-
-Emacs
---------
-
-.. toctree::
-   :maxdepth: 1
-
-   emacs
-   emacs_macro
-   emacs_dired_rename
-   emacs_newline
-   emacs_elscreen
-   emacs_replace_regexp
-   emacs_skeleton
+   sphinx   
