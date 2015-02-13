@@ -1,19 +1,11 @@
 Software
-################
-:date: 2013-03-28
-:category: computer
-:tags: docs
+================
 
-
-
-Desktop Tips
-========================
-
-System
-----------
+Desktop
+---------------------------
 
 Mac OSX
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~
 
 (Mac的Option也是Alt鍵)
 
@@ -75,8 +67,43 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
   iTunes -> Perference -> Devices -> 刪除備份
 
 
-Browser
------------
+好用軟體
+~~~~~~~~~~~~~~~~~~~~~
+
+Internet:
+
+* bt - Deluge (Linux)
+* IRC Client (OS X)
+* `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
+
+  1. Install Charles.app
+  2. iOS add SSL certificate (不管 https 可忽略)
+  3. 設定 proxy: iOS 的 Wi-Fi, HTTP PROXY 改 Manual
+
+    * Server: 裝 Charles.app 的電腦 IP (要在同一個網路下)
+    * Port: 8888
+
+  4. Charles.app 會收到 request, 按 accept 就可以了
+  5. 操作 iOS 的 APP, Charles.app 就有資料了
+
+
+ebook:
+
+* `calibre - E-book management <http://calibre-ebook.com/>`__
+
+系統工具:
+
+osx mount ext2/3: `FUSE for OS X <http://osxfuse.github.com/>`__ + `fuse-ext2 <http://sourceforge.net/projects/fuse-ext2/>`__
+
+
+DevTools:
+
+* `PixelWindow <http://www.pixelwindowapp.com/>`__ resolution ruler
+* `meld <http://meldmerge.org/>`__: $ homebrew install meld
+
+
+Browser / Internet
+----------------------
 
 browser 網址輸入以下, 可以當記事本::
 
@@ -84,7 +111,7 @@ browser 網址輸入以下, 可以當記事本::
 
 
 Firefox
-^^^^^^^^^^^
+~~~~~~~~~~~~
 
 快速鍵 (整理過, 只列出自己常用)::
 
@@ -113,14 +140,13 @@ Firefox
     F11 fullscreen    
     F7 鍵盤瀏覽
 
-Developer's tools
-^^^^^^^^^^^^^^^^^^^
+**Developer's tools:**
+
 scratchpad: 按shift+F4
 
 * [重新介紹 Firefox 開發者工具之二 | 訊息中心 | Mozilla Taiwan](http://blog.mozilla.com.tw/posts/4200/reintroducing-the-firefox-developer-tools-part-2-the-scratchpad-and-the-style-editor)
 
-Browser plugin/extensions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Browser plugin/extensions:
 
 * 顯示網站使用fromeworks, web server, service...
 
@@ -129,62 +155,10 @@ Browser plugin/extensions
   * `Find your extension, accelerator and addon for the browsers safari, internet explorer(ie), chrome and firefox <http://www.tcpiputils.com/browser-extensions-addons-accelerators>`__ (Chrome, Firefox, Opera, Safari)
 
 
-Web Service
-===============
-
-Gmail
---------------------
-
-shortcut:
-
-* j / k: 下/上
-* x: check
-* ' / ~ : next tab /previous tab
-* m: mark
-* gi / ga: goto inbox/archive
-
-`Keyboard shortcuts for Gmail - Gmail Help <https://support.google.com/mail/answer/6594?hl=en>`__
-
-
-好用軟體
-============
-
 Internet
-----------
+~~~~~~~~~~~
 
-* bt - Deluge (Linux)
-* IRC Client (OS X)
-* `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
-
-  1. Install Charles.app
-  2. iOS add SSL certificate (不管 https 可忽略)
-  3. 設定 proxy: iOS 的 Wi-Fi, HTTP PROXY 改 Manual
-
-    * Server: 裝 Charles.app 的電腦 IP (要在同一個網路下)
-    * Port: 8888
-
-  4. Charles.app 會收到 request, 按 accept 就可以了
-  5. 操作 iOS 的 APP, Charles.app 就有資料了
-
-ebook
-------
-
-* `calibre - E-book management <http://calibre-ebook.com/>`__
-
-系統工具
--------------
-
-osx mount ext2/3: `FUSE for OS X <http://osxfuse.github.com/>`__ + `fuse-ext2 <http://sourceforge.net/projects/fuse-ext2/>`__
-
-
-DevTools
-----------------
-
-* `PixelWindow <http://www.pixelwindowapp.com/>`__ resolution ruler
-* `meld <http://meldmerge.org/>`__: $ homebrew install meld
-
-HTML5 Slides
------------------
+HTML5 Slides:
 
 * `impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz <http://bartaz.github.io/impress.js/#/bored>`__
 * `hakimel/reveal.js <https://github.com/hakimel/reveal.js>`__
@@ -192,71 +166,20 @@ HTML5 Slides
 
 
 VIM
-=============
+-------------
 
 行號::
 
   :set nonu
   :set nu
 
+vim硬是要存檔::
 
-Command Line
-===================
+  :w !sudo tee %
 
-tmux
----------
-# 開新視窗
-C-b c
-
-# 前/後一個視窗
-C-b n/p 
-
-# 分割上下pane
-C-b "
-
-# 分割左右pane
-C-b %
-
-# 重整pane(幫你排)
-C-b SPACE
-
-# 調整視窗大小
-C-b 按著不放再按上下左右
-
-# 移動到另一視窗
-C-b 上下左右
-C-b o
-
-# 視窗交換位址
- 
-C-b C-o
-
-# 顯示時間
-C-b t
-
-# 把目前tmux session丟到背景去 (回到原本terminal)
-C-b d
-
-# 回到剛才的tmux session
-tmux attach
-
-# help
-C-b ?
-
-scroll::
-  
-  Ctrl-b [ 上/下/左/右 , q 離開
-
-* `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
-* `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
-
-
-
-Tools
-===============
 
 dot (grphviz)
-----------------
+-----------------------
 
 
 example::
@@ -284,7 +207,8 @@ ref:
 
 
 ffmpeg
-----------------
+-------------
+
 usage::
 
   ffmpeg -i [source] [target]
@@ -308,8 +232,10 @@ usage::
   $ ffmpeg -formats 
 
 
-Tips
-^^^^^^^
+----
+
+**Tips:**
+
 右上角watermark::
 
   $ ffmpeg –i inputvideo.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]" outputvideo.flv
@@ -334,3 +260,4 @@ examples::
   $ ffmpeg -i silent.mp3 -af "volume=10dB" noise.mp3
   $ ffmpeg -i silent.mp3 -af "volume=-5dB" noise.mp3
   $ ffmpeg -f inputfile -vcodec copy -af "volume/10dB" outputfile
+

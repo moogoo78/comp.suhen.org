@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Emacs 小抄 &mdash; CompDocs 1.0 documentation</title>
+  <title>Emacs &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -66,14 +66,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#script">script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#utils">工具 utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#id5">網路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#system">System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html#system">System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
@@ -130,14 +130,13 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Emacs 小抄</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic">Basic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modes">Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-control">Version Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adv-mode">Adv. Mode</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">常用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">基本操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configure">configure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#shell">shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modes">Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">其他 modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elist">elist 套件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ref">ref</a></li>
 </ul>
 </li>
@@ -176,7 +175,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Emacs 小抄</li>
+    <li>Emacs</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="_sources/emacs.txt" rel="nofollow"> View page source</a>
@@ -188,23 +187,9 @@
           <div role="main">
             
   <div class="section" id="emacs">
-<h1>Emacs 小抄<a class="headerlink" href="#emacs" title="Permalink to this headline">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-04-26 18:37</td>
-</tr>
-<tr class="field-even field"><th class="field-name">tags:</th><td class="field-body">docs</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">category:</th><td class="field-body">computer</td>
-</tr>
-<tr class="field-even field"><th class="field-name">slug:</th><td class="field-body">emacs</td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="tips">
-<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<h1>Emacs<a class="headerlink" href="#emacs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>常用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>自動補齊:</p>
 <div class="highlight-python"><div class="highlight"><pre>M-/
 </pre></div>
@@ -244,10 +229,10 @@ C-RET
 <p><strong>參考</strong>
 <a class="reference external" href="http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature">polls - The single most useful Emacs feature - Stack Overflow</a></p>
 </div>
-<div class="section" id="basic">
-<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>檔案<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h2>基本操作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>檔案<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html</a></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -335,8 +320,9 @@ C-RET
 </tr>
 </tbody>
 </table>
+</div>
 <div class="section" id="register-and-bookmark">
-<h4>Register and Bookmark<a class="headerlink" href="#register-and-bookmark" title="Permalink to this headline">¶</a></h4>
+<h3>Register and Bookmark<a class="headerlink" href="#register-and-bookmark" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
@@ -377,7 +363,6 @@ C-RET
 <li>M-x bookmark-delete &lt;RET&gt; bookmark名字 &lt;RET&gt;</li>
 </ul>
 </div>
-</div>
 <div class="section" id="coding">
 <h3>Coding<a class="headerlink" href="#coding" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -409,11 +394,75 @@ C-RET
 </tr>
 </tbody>
 </table>
+<p>特殊符號:</p>
+<p>C-q C-j 換行符號, Windows編輯器的^M: M-x replace-string [ENTER] C-q C-m [ENTER] n [ENTER]</p>
 </div>
-<div class="section" id="id2">
-<h3>特殊符號<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="macro">
+<h3>Macro<a class="headerlink" href="#macro" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">C-x</span> <span class="pre">(</span></tt> 開始錄製</li>
+<li>胡搞瞎搞</li>
+<li><tt class="docutils literal"><span class="pre">C-x</span> <span class="pre">)</span></tt> 結束</li>
+<li><tt class="docutils literal"><span class="pre">C-x</span> <span class="pre">e</span></tt> ABASE</li>
+</ol>
+<hr class="docutils" />
 <ul class="simple">
-<li>C-q C-j 換行符號, Windows編輯器的^M: M-x replace-string [ENTER] C-q C-m [ENTER] n [ENTER]</li>
+<li>執行多次 <tt class="docutils literal"><span class="pre">C-u</span> <span class="pre">次數</span> <span class="pre">C-x</span> <span class="pre">e</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">C-x</span> <span class="pre">C-k</span> <span class="pre">n</span> <span class="pre">FOO</span></tt> 給macro取名字</li>
+<li><tt class="docutils literal"><span class="pre">M-x</span> <span class="pre">FOO</span></tt> 執行</li>
+<li><tt class="docutils literal"><span class="pre">M-x</span> <span class="pre">insert-kbd-macro</span></tt> 把macro存到設定檔, 他會問你要存那個macro name</li>
+</ul>
+</div>
+<div class="section" id="regular-expression">
+<h3>Regular Expression<a class="headerlink" href="#regular-expression" title="Permalink to this headline">¶</a></h3>
+<p>指令:</p>
+<div class="highlight-python"><div class="highlight"><pre>M-x replace-regexp &lt;RET&gt; regexp &lt;RET&gt; newstring &lt;RET&gt;
+</pre></div>
+</div>
+<p>特殊字</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">\&amp;’</span></tt> 完整的匹配字</li>
+<li><tt class="docutils literal"><span class="pre">\d</span></tt> d是數字, 表示匹配在第幾個group (back reference)</li>
+<li><tt class="docutils literal"><span class="pre">\#</span></tt> 累加, 發生第幾次,第一次從0開始</li>
+<li><tt class="docutils literal"><span class="pre">\,</span></tt> Lisp expression</li>
+<li><tt class="docutils literal"><span class="pre">\?</span></tt> 詢問</li>
+</ul>
+<p><strong>範例</strong></p>
+<p>數字編號:</p>
+<div class="highlight-python"><div class="highlight"><pre>1987:Bogotá
+5243:Fabergé
+
+\(.+:\)
+\#.
+
+0.Bogotá
+1.Fabergé
+
+如果要從1開始:
+\,(1+ \#).
+</pre></div>
+</div>
+<p>HTML H降級:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;h1&gt;silly&lt;/h1&gt;
+&lt;h2&gt;walk&lt;/h2&gt;
+
+&lt;\(/?\)h\([0-9]\)&gt;
+&lt;\1h\,(1+ \#2)&gt;
+
+&lt;h2&gt;silly&lt;/h2&gt;
+&lt;h3&gt;walk&lt;/h3&gt;
+</pre></div>
+</div>
+<p>HTML link換成rst格式:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;a href=\&quot;\(.+\)\&quot;\(.*\)&gt;\(.+\)&lt;/a&gt;
+-&gt;
+`\3 &lt;\1&gt;`__
+</pre></div>
+</div>
+<p>參考</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexp-Replace.html">Regexp Replace - GNU Emacs Manual</a></li>
+<li><a class="reference external" href="http://www.emacswiki.org/emacs/ReplaceRegexp">EmacsWiki: Replace Regexp</a></li>
 </ul>
 </div>
 <div class="section" id="help">
@@ -448,6 +497,50 @@ C-RET
 </tbody>
 </table>
 </div>
+<div class="section" id="shell">
+<h3>shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>M-x shell</td>
+<td>開一個buffer</td>
+</tr>
+<tr class="row-even"><td>M-x term</td>
+<td>Emacs Lisp 寫的 terminal emulator</td>
+</tr>
+<tr class="row-odd"><td>M-x eshell</td>
+<td>Emacs Lisp 實作的 shell, 可以 redirect output 到 Emacs 的 buffer</td>
+</tr>
+<tr class="row-even"><td>M-! cmd</td>
+<td>直接執行, 輸出另外開一個buffer</td>
+</tr>
+<tr class="row-odd"><td>C-u M-! cmd</td>
+<td>直接執行, 輸出在目前游標位置</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">要再開另外一個 shell 就把原本 buffer 改名字就可以了</p>
+</div>
+<p>term:</p>
+<ul class="simple">
+<li>C-c C-k char mode, 每個字元都會被送到 subshell 處理</li>
+<li>C-c C-j line mode</li>
+</ul>
+<p><a class="reference external" href="http://unix.stackexchange.com/questions/104325/what-is-the-difference-between-shell-eshell-and-term-in-emacs">What is the difference between shell, eshell, and term in Emacs? - Unix &amp; Linux Stack Exchange</a></p>
+</div>
+</div>
+<div class="section" id="configure">
+<h2>configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
+<p>Font:
+M-x describe-font 看現在用的字形</p>
+<ul class="simple">
+<li><a class="reference external" href="https://sites.google.com/site/steveyegge2/my-dot-emacs-file">my-dot-emacs-file - steveyegge2</a></li>
+</ul>
 </div>
 <div class="section" id="modes">
 <h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
@@ -516,8 +609,10 @@ C-RET
 </tr>
 </tbody>
 </table>
-<div class="section" id="id3">
-<h4>批次改檔名<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id4">
+<h3>批次改檔名<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>在Dired模式下，<strong>C-x C-q</strong> 進入修改模式，或是執行 <strong>wdired-change-to-wdired-mode</strong>, 這時改檔名就像改一般文字檔一樣，可以用 <em>query-replace</em>, <em>query-replace-regexp</em> 或 <em>cua-mode</em> , 改完後 <strong>C-c C-c</strong> 送出, 或是 <strong>C-c C-Esc</strong> 取消就可以了,  比寫script直覺多了。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="26%" />
@@ -539,8 +634,10 @@ C-RET
 <p class="first admonition-title">Note</p>
 <p class="last">C-x C-q (23.1以後)</p>
 </div>
-<p>ref: <a class="reference external" href="http://ergoemacs.org/emacs/rename_file_pattern.html">Emacs: Rename Files Interactively by Pattern (regex; wdired)</a></p>
-</div>
+<p>ref:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://xahlee.org">XahLee</a> 的一篇文章: <a class="reference external" href="http://ergoemacs.org/emacs/rename_file_pattern.html">Emacs: Rename Files Interactively by Pattern (regex; wdired)</a> ，用Emacs來處理批次改檔名實在太方便了。</li>
+</ul>
 </div>
 <div class="section" id="org-mode">
 <h3>Org-mode<a class="headerlink" href="#org-mode" title="Permalink to this headline">¶</a></h3>
@@ -554,8 +651,7 @@ C-RET
 <span class="c">#+STARTUP: nohideblock</span>
 </pre></div>
 </div>
-<div class="section" id="id4">
-<h4>移動<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>移動</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="27%" />
@@ -573,12 +669,11 @@ C-RET
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="agenda">
-<h4>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h4>
-<p>C-c C-x C-s archive
-C-c [ 把檔案加入agenda</p>
-</div>
+<p>Agenda:</p>
+<ul class="simple">
+<li>C-c C-x C-s archive</li>
+<li>C-c [ 把檔案加入agenda</li>
+</ul>
 </div>
 <div class="section" id="calc">
 <h3>Calc<a class="headerlink" href="#calc" title="Permalink to this headline">¶</a></h3>
@@ -701,8 +796,9 @@ d r ;然後按2到36選進位數
 </ul>
 </div>
 </div>
-<div class="section" id="version-control">
-<h2>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>其他 modes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Version Control:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
@@ -717,67 +813,52 @@ d r ;然後按2到36選進位數
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="adv-mode">
-<h2>Adv. Mode<a class="headerlink" href="#adv-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://jblevins.org/projects/deft/">Deft</a> - 快速找筆記, 檔案修改工具</li>
 </ul>
 </div>
-<div class="section" id="configure">
-<h2>configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="font">
-<h3>Font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h3>
-<p>M-x describe-font 看現在用的字形</p>
+<div class="section" id="elist">
+<h2>elist 套件<a class="headerlink" href="#elist" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="elscreen">
+<h3>elscreen<a class="headerlink" href="#elscreen" title="Permalink to this headline">¶</a></h3>
+<p>我以為在Emacs一直沒有好的tab顯示模式，以前用過 <a class="reference external" href="http://emacswiki.org/emacs/TabBarMode">tabbar mode</a> ，也覺得不是很好用，原來只是我固陋寡聞沒見過ElScreen這個elist套件。</p>
+<p>下載elscreen.el: <a class="reference external" href="ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/">ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/</a></p>
+<p>elscreen.el只有一個檔案，但是他要依附一套 <a class="reference external" href="https://github.com/jeffgran/APEL">APEL</a> 才可以運作。</p>
+<div class="highlight-python"><div class="highlight"><pre>;; elscreen
+(add-to-list &#39;load-path (concat my-path &quot;goodies/APEL&quot;))
+(load &quot;elscreen&quot; &quot;ElScreen&quot; )
+(setq elscreen-display-tab t)
+
+(global-set-key (kbd &quot;C-x t&quot;) &#39;elscreen-create)
+(global-set-key (kbd &quot;C-x w&quot;) &#39;elscreen-kill)
+(global-set-key (kbd &quot;M-t&quot;) &#39;elscreen-previous) ;;transpose-words
+(global-set-key (kbd &quot;M-n&quot;) &#39;elscreen-next)
+</pre></div>
+</div>
+<p>參考:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://sites.google.com/site/steveyegge2/my-dot-emacs-file">my-dot-emacs-file - steveyegge2</a></li>
+<li><a class="reference external" href="http://d.hatena.ne.jp/plasticster/20110825/1314271209">elscreen 改め tabbar のインストールログ - テクノ組曲</a></li>
+<li><a class="reference external" href="http://emacs-fu.blogspot.tw/2009/07/keeping-related-buffers-together-with.html">emacs-fu: keeping related buffers together with elscreen</a></li>
 </ul>
 </div>
+<div class="section" id="skeleton">
+<h3>skeleton<a class="headerlink" href="#skeleton" title="Permalink to this headline">¶</a></h3>
+<p>用 <a class="reference external" href="|filename|/computer/pelican.md">Pelican</a> 寫blog時都要輸入一堆metadata很麻煩, 利用 <a class="reference external" href="|filename|/computer/emacs.rst">Emacs</a> 的skeleton-mode可以很快產生template, 接受mini-buffer輸入, insert lisp function...超方便!!</p>
+<div class="highlight-cl"><div class="highlight"><pre><span class="p">(</span><span class="nv">define-skeleton</span> <span class="nv">insert-pelican-template</span>
+  <span class="s">&quot;Insert templete for pelican static blog system&quot;</span>
+  <span class="s">&quot;&quot;</span> <span class="p">(</span><span class="nv">skeleton-read</span> <span class="s">&quot;Title: &quot;</span><span class="p">)</span><span class="nv">?\n</span>
+  <span class="s">&quot;#############################&quot;</span> <span class="nv">?\n</span>
+  <span class="s">&quot;:date: &quot;</span> <span class="p">(</span><span class="nv">insert-current-date</span><span class="p">)</span> <span class="nv">?\n</span>
+  <span class="s">&quot;:category: &quot;</span> <span class="p">(</span><span class="nv">skeleton-read</span> <span class="s">&quot;category: &quot;</span><span class="p">)</span> <span class="nv">?\n</span>
+  <span class="s">&quot;:tags: &quot;</span> <span class="p">(</span><span class="nv">skeleton-read</span> <span class="s">&quot;tags: &quot;</span><span class="p">)</span> <span class="nv">?\n</span>
+  <span class="s">&quot;:slug: &quot;</span> <span class="p">(</span><span class="nv">skeleton-read</span> <span class="s">&quot;slug: &quot;</span><span class="p">)</span> <span class="nv">?\n</span>
+<span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="shell">
-<h2>shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="13%" />
-<col width="87%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>M-x shell</td>
-<td>開一個buffer</td>
-</tr>
-<tr class="row-even"><td>M-x term</td>
-<td>Emacs Lisp 寫的 terminal emulator</td>
-</tr>
-<tr class="row-odd"><td>M-x eshell</td>
-<td>Emacs Lisp 實作的 shell, 可以 redirect output 到 Emacs 的 buffer</td>
-</tr>
-<tr class="row-even"><td>M-! cmd</td>
-<td>直接執行, 輸出另外開一個buffer</td>
-</tr>
-<tr class="row-odd"><td>C-u M-! cmd</td>
-<td>直接執行, 輸出在目前游標位置</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">要再開另外一個 shell 就把原本 buffer 改名字就可以了</p>
-</div>
-<div class="section" id="term">
-<h3>term<a class="headerlink" href="#term" title="Permalink to this headline">¶</a></h3>
+<p>參考:</p>
 <ul class="simple">
-<li>C-c C-k char mode, 每個字元都會被送到 subshell 處理</li>
-<li>C-c C-j line mode</li>
+<li><a class="reference external" href="http://www.emacswiki.org/emacs/SkeletonMode">EmacsWiki: Skeleton Mode</a></li>
 </ul>
-<dl class="docutils">
-<dt><a class="reference external" href="http://unix.stackexchange.com/questions/104325/what-is-the-difference-between-shell-eshell-and-term-in-emacs">What is the difference between shell, eshell, and term in Emacs? - Unix &amp; Linux Stack Exchange</a></dt>
-<dd>(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
-(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
-(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
-(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
-(&#8216;Another social link&#8217;, &#8216;#&#8217;),)
-(&#8216;Another social link&#8217;, &#8216;#&#8217;),)</dd>
-</dl>
 </div>
 </div>
 <div class="section" id="ref">
