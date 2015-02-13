@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Web Develop &mdash; CompDocs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="&lt; Python &gt;" href="python.html"/>
+        <link rel="prev" title="Database筆記 (MySQL, SQLite)" href="database.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> CompDocs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#id11">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#snippets">snippets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">名詞</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#html">HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#css">CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#javascript">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web Server / daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#id2">算數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#io-shell-commond-line">IO / shell / commond line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#coding">coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#shell">shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#coding-style">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#practice">Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#id4">整理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#reference">reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#decorator">decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#package">Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#id1">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#flask">Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#id2">Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">常用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">基本操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#configure">configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id5">其他 modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#elist">elist 套件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ref">ref</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#basic">Basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#git-command">git command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#id1">other</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#setting">setting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#locale">locale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software.html#desktop">Desktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#browser-internet">Browser / Internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#vim">VIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#dot-grphviz">dot (grphviz)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#ffmpeg">ffmpeg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx - reST (reStructuredText)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html#id1">使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html#id2">語法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html#id4">參考資料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html#themes">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html#publish">Publish</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">CompDocs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Web Develop</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/web_develop.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="web-develop">
+<h1>Web Develop<a class="headerlink" href="#web-develop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>名詞<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Webhooks: &#8220;user-defined HTTP callbacks&#8221;</p>
+</div>
+<div class="section" id="html">
+<h2>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Tips_for_authoring_fast-loading_HTML_pages">Tips for authoring fast-loading HTML pages - Web developer guide | MDN</a> - 效能要讀</li>
+</ul>
+</div>
+<div class="section" id="css">
+<h2>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://channel9.msdn.com/Series/HTML5-CSS3-Fundamentals-Development-for-Absolute-Beginners">HTML5 &amp; CSS3 Fundamentals: Development for Absolute Beginners | Channel 9</a> 初學課程video</li>
+<li><a class="reference external" href="http://learn.shayhowe.com/advanced-html-css/">An Advanced Guide to HTML &amp; CSS</a> 進階架構</li>
+<li><a class="reference external" href="http://www.netmagazine.com/features/truth-about-structuring-html5-page">The truth about structuring an HTML5 page | Feature | .net magazine</a></li>
+<li><a class="reference external" href="http://www.icoding.co/2013/06/knowledge-about-z-index-2">» 你從未瞭解過的 z-index | iCoding</a></li>
+</ul>
+<div class="section" id="id2">
+<h3>基本語法<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">border</span><span class="nd">:5px</span> <span class="nt">solid</span> <span class="nt">red</span><span class="o">;</span> <span class="c">/* 常用style: none, dotted, dashed, solid, double */</span>
+<span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span><span class="m">#99ff99</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.w3schools.com/css/css_border.asp">CSS Border</a></li>
+<li><a class="reference external" href="http://dev.opera.com/articles/view/zebra-striping-tables-with-css3/">Zebra striping tables with CSS3 - Dev.Opera</a></li>
+</ul>
+</div>
+<div class="section" id="position-box">
+<h3>position, box<a class="headerlink" href="#position-box" title="Permalink to this headline">¶</a></h3>
+<p>layout (float, clear):</p>
+<div class="highlight-python"><div class="highlight"><pre>|=========== header ==========|
+|                             |
+|== section ==| |== section ==|
+| float: left;   float: right;|
+|=========== footer ==========|
+|          clear:both;        |
+|-----------------------------|
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">section</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">aside</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">320px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">footer</span> <span class="p">{</span>
+    <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>css:</p>
+<blockquote>
+<div><p>:::css
+.center {</p>
+<blockquote>
+<div>width:xxxpx;margin-left:auto;margin-right:auto;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h3>應用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>圖片塞滿browser</p>
+<ul class="simple">
+<li><a class="reference external" href="http://paulmason.name/item/full-screen-background-image-pure-css-code">Full Screen Background Image - Pure CSS Code</a></li>
+</ul>
+<p>CSS3:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(IMG_0083.JPG)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span> <span class="k">fixed</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>表格列加刪除線</p>
+<ul class="simple">
+<li><a class="reference external" href="http://codepen.io/nericksx/pen/CKjbe">Table Row Strikethrough</a></li>
+</ul>
+<p>參考:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* http://www.teachparentstech.org/images/checkbox.gif */</span>
+
+<span class="nf">#content</span> <span class="nc">.boxlabel</span><span class="p">{</span>
+<span class="k">color</span><span class="o">:</span><span class="m">#999</span><span class="p">;</span>
+<span class="k">background</span><span class="o">:</span> <span class="sx">url(../images/checkbox.gif)</span> <span class="n">no</span><span class="o">-</span><span class="n">repeat00</span><span class="p">;</span>
+<span class="k">height</span><span class="o">:</span> <span class="m">28px</span><span class="p">;</span>
+<span class="k">padding-left</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="k">padding-right</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span> <span class="nc">.boxlabel.selected</span><span class="p">{</span>
+<span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">32</span><span class="o">,</span> <span class="m">25</span><span class="o">,</span> <span class="m">25</span><span class="p">);</span>
+<span class="k">background-position</span><span class="o">:</span><span class="m">0-42px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="javascript">
+<h2>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jquery">
+<h3>jQuery<a class="headerlink" href="#jquery" title="Permalink to this headline">¶</a></h3>
+<p>(DOM) ready:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span> <span class="nb">document</span> <span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// Handler for .ready() called.</span>
+<span class="p">});</span>
+
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// Handler for .ready() called.</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>工具<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>layout:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.placehold.it/">Placehold.it - Quick and simple image placeholders</a></li>
+<li><a class="reference external" href="https://gomockingbird.com/mockingbird/">Mockingbird</a></li>
+</ul>
+<p>color:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://nipponcolors.com/">NIPPON COLORS - 日本の伝統色</a> (Firefox有問題)</li>
+<li><a class="reference external" href="http://jxnblk.github.io/Spectral/">Spectral</a> 找色/配色工具 (快速簡潔)</li>
+</ul>
+<p>Font:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://chengyinliu.com/whatfont.html">WhatFont Tool - The easiest way to inspect fonts in webpages « Chengyin Liu</a> 方便看網頁字體的bookmarklet</li>
+</ul>
+<p>### 資源</p>
+<ul class="simple">
+<li>[✿ Our favorite set — CopyPasteCharacter.com](<a class="reference external" href="http://copypastecharacter.com/">http://copypastecharacter.com/</a>)</li>
+<li>[NounProject](<a class="reference external" href="http://thenounproject.com/">http://thenounproject.com/</a>) 剪影 icon</li>
+</ul>
+</div>
+</div>
+<div class="section" id="web-server-daemon">
+<h2>Web Server / daemon<a class="headerlink" href="#web-server-daemon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gunicorn">
+<h3>gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gunicorn main:app -b 0.0.0.0
+
+<span class="c"># port 80 好像不行</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uwsgi">
+<h3>uwsgi<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># kill existing uwsgi</span>
+ps aux<span class="p">|</span>grep uwsgi <span class="p">|</span>awk <span class="s1">&#39;{ print $2}&#39;</span> <span class="p">|</span> xargs --no-run-if-empty sudo <span class="nb">kill</span> -9
+sleep 1
+<span class="c"># start with virtualhost setting</span>
+sudo uwsgi -s :9090 -M -p <span class="m">4</span> --vhost <span class="p">&amp;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nginx">
+<h3>nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h3>
+<p>redirect test.com to www.test.com</p>
+<div class="highlight-text"><div class="highlight"><pre>server {
+    server_name test.com;
+    return 301 $scheme://www.test.com$request_uri;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache">
+<h3>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h3>
+<p>Mac apache folder:</p>
+<blockquote>
+<div>/Library/WebServer/Documents</div></blockquote>
+</div>
+<div class="section" id="php">
+<h3>PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h3>
+<p>PHP session:</p>
+<blockquote>
+<div>/var/lib/php/session</div></blockquote>
+<p>php start:</p>
+<blockquote>
+<div>sudo /etc/init.d/php_cgi start</div></blockquote>
+</div>
+</div>
+<div class="section" id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<p>### ab</p>
+<blockquote>
+<div>ab -k -c 1000 -n 1000 <a class="reference external" href="http://testme.com">http://testme.com</a></div></blockquote>
+<p>參數:</p>
+<blockquote>
+<div>:::text
+k: HTTP Keep Alive
+c: concurrency (同時連線)
+n: num of requests (測試的request總數, 用完就結束)
+t: timelimit
+p: postfile
+T: content-type
+h: help</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python.html" class="btn btn-neutral float-right" title="&lt; Python &gt;"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database.html" class="btn btn-neutral" title="Database筆記 (MySQL, SQLite)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Suhen.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

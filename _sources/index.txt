@@ -9,14 +9,24 @@ CompDocs
 MooGoo's note about computer usage.
 
 
+Tech
+---------------
 .. toctree::
    :maxdepth: 2
-              
+
    database
+   web_develop
+   python
+   python_frameworks
+
+
+software
+---------------
+.. toctree::
+   :maxdepth: 2
+
    emacs      
    git
    command_line   
    software
-   python
-   python_frameworks
    sphinx   
