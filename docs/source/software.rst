@@ -67,6 +67,12 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
   iTunes -> Perference -> Devices -> 刪除備份
 
 
+做開機 usb disk::
+  
+  $ diskutil list
+  $ diskutil unmountDisk /dev/diskN
+  $ sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
+
 好用軟體
 ~~~~~~~~~~~~~~~~~~~~~
 
