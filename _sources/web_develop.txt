@@ -1,148 +1,13 @@
 Web Develop
 ========================
 
-名詞
------------
 
 Webhooks: "user-defined HTTP callbacks"
 
 
-HTML
--------
-
-* `Tips for authoring fast-loading HTML pages - Web developer guide | MDN <https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Tips_for_authoring_fast-loading_HTML_pages>`__ - 效能要讀
-
-
-CSS
------------
-
-* `HTML5 & CSS3 Fundamentals: Development for Absolute Beginners | Channel 9 <http://channel9.msdn.com/Series/HTML5-CSS3-Fundamentals-Development-for-Absolute-Beginners>`__ 初學課程video
-* `An Advanced Guide to HTML & CSS <http://learn.shayhowe.com/advanced-html-css/>`__ 進階架構
-* `The truth about structuring an HTML5 page | Feature | .net magazine <http://www.netmagazine.com/features/truth-about-structuring-html5-page>`__
-* `» 你從未瞭解過的 z-index | iCoding <http://www.icoding.co/2013/06/knowledge-about-z-index-2>`__
-
-
-基本語法
-~~~~~~~~~~~~
-
-.. code-block:: css
-
-    border:5px solid red; /* 常用style: none, dotted, dashed, solid, double */
-    tr:nth-child(odd) { background-color:#99ff99; }
-
-* `CSS Border <http://www.w3schools.com/css/css_border.asp>`__
-* `Zebra striping tables with CSS3 - Dev.Opera <http://dev.opera.com/articles/view/zebra-striping-tables-with-css3/>`__
-
-position, box
-~~~~~~~~~~~~~~~~~~~~~~
-
-layout (float, clear)::
-
-    |=========== header ==========|
-    |                             |
-    |== section ==| |== section ==|
-    | float: left;   float: right;|
-    |=========== footer ==========|
-    |          clear:both;        |
-    |-----------------------------|
-
-
-.. code-block:: css
-               
-    section {
-        float: left;
-        margin: 10px;
-        width: 600px;
-    }
-    aside {
-        float: right;
-        margin: 10px;
-        width: 320px;
-    }
-    footer {
-        clear: both;
-    }
-
-
-css:
-
-    :::css
-    .center {
-        width:xxxpx;margin-left:auto;margin-right:auto;
-    }
-
-
-應用
-~~~~~~~~~~~~
-
-圖片塞滿browser
-
-* `Full Screen Background Image - Pure CSS Code <http://paulmason.name/item/full-screen-background-image-pure-css-code>`__
-
-CSS3:
-
-.. code-block:: css
-                
-    html { 
-      background: url(IMG_0083.JPG) no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
-
-表格列加刪除線
-
-* `Table Row Strikethrough <http://codepen.io/nericksx/pen/CKjbe>`__
-
-
-
-參考:
-
-.. code-block:: css
-                
-    /* http://www.teachparentstech.org/images/checkbox.gif */
-     
-    #content .boxlabel{
-    color:#999;
-    background: url(../images/checkbox.gif) no-repeat00;
-    height: 28px;
-    padding-left: 20px;
-    padding-right:10px;
-    cursor: pointer;
-    }
-     
-    #content .boxlabel.selected{
-    color: rgb(32, 25, 25);
-    background-position:0-42px;
-    }
-
-
-
-JavaScript
-----------------
-
-jQuery
-~~~~~~~~~~
-
-
-(DOM) ready:
-
-.. code-block:: javascript
-                
-    $( document ).ready(function() {
-    // Handler for .ready() called.
-    });
-
-
-    $(function() {
-    // Handler for .ready() called.
-    });
-
 
 工具
-~~~~~~~~
+---------------
 
 layout:
 
@@ -160,7 +25,8 @@ Font:
 
 
   
-### 資源
+資源
+------------------
 
 * [✿ Our favorite set — CopyPasteCharacter.com](http://copypastecharacter.com/)
 * [NounProject](http://thenounproject.com/) 剪影 icon
@@ -242,3 +108,4 @@ Performance
     p: postfile
     T: content-type
     h: help
+

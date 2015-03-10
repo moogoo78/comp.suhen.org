@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; CompDocs 1.0 documentation</title>
+  <title>JavaScript &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -29,7 +28,9 @@
   
 
   
-    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="HTML" href="html.html"/>
+        <link rel="prev" title="Web Develop" href="web_develop.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -56,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
@@ -71,14 +72,14 @@
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#id1">特色</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#debug-tools-console">Debug Tools (console)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#tips">Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#adv">Adv.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">JavaScript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">特色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug-tools-console">Debug Tools (console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adv">Adv.</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="html.html">HTML</a><ul>
@@ -194,8 +195,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>JavaScript</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/javascript.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -203,16 +206,187 @@
 </div>
           <div role="main">
             
+  <div class="section" id="javascript">
+<h1>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://developer.mozilla.org/en/JavaScript/Guide">JavaScript Guide - MDN Docs</a></li>
+<li><a class="reference external" href="http://www.domenlightenment.com/">DOM Enlightenment - Exploring the relationship between JavaScript and the modern HTML DOM</a></li>
+<li><a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
+<li><a class="reference external" href="http://www.2ality.com/2012/12/arrays.html">Arrays in JavaScript</a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>特色<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-good-part">
+<h3>The Good part<a class="headerlink" href="#the-good-part" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Javascript簡單型別: 數值, 字串, boolean, null, undefinde都是物件。容器是物件的特性，有key, value。</li>
+<li>prototype linkage: 繼承，減少初始化時間，與記憶體消耗。</li>
+<li>object literal: {...}</li>
+<li>取用用 <tt class="docutils literal"><span class="pre">.</span></tt> 或 <tt class="docutils literal"><span class="pre">[</span> <span class="pre">]</span></tt> 都可以 ( . 比較簡單)</li>
+<li>update: 有name存在時會取代舊值, 沒name時會自動增加到object裡</li>
+<li>reference: 物件不會被複製，用reference傳遞</li>
+<li>enum<ul>
+<li>for (name in alist) { ... }<ul>
+<li>要過濾hasOwnProperty和typeof檢查型別</li>
+<li>不會照原本順序</li>
+</ul>
+</li>
+<li>用for (var i=0; i&lt; len ; i++) { ... }<ul>
+<li>不用檢查型別</li>
+<li>會照原本順序</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>不良<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>建立一個全域物件當作全域變數 =&gt; 避免全域變數濫用</li>
+<li>在每個函式起始處宣告所有變數 =&gt; JavaScript沒有區塊範圍 (函式中區塊內的變數到處可見)</li>
+<li>parseInt要使用進制 =&gt; 數字是10進制，字申是8進制</li>
+</ul>
+</div>
+</div>
+<div class="section" id="snippets">
+<h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
+<p>redirect:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// HTTP redirect</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;http://stackoverflow.com&quot;</span><span class="p">);</span>
 
-<h1 id="index">Index</h1>
+<span class="c1">// clicking on a link</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">&quot;http://stackoverflow.com&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="library-framework">
+<h2>Library / Framework<a class="headerlink" href="#library-framework" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jquery">
+<h3>jQuery<a class="headerlink" href="#jquery" title="Permalink to this headline">¶</a></h3>
+<p>(DOM) ready:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span> <span class="nb">document</span> <span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// Handler for .ready() called.</span>
+<span class="p">});</span>
 
-<div class="genindex-jumpbox">
- 
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// Handler for .ready() called.</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul>
+<li><dl class="first docutils">
+<dt>plug-in</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://cherne.net/brian/resources/jquery.hoverIntent.html">hoverIntent jQuery Plug-in</a> 下拉選單</li>
+<li><a class="reference external" href="http://www.erichynds.com/jquery/jquery-ui-multiselect-widget/">jQuery UI Multiple Select Widget | Eric Hynds</a> 漂亮的multi select</li>
+<li>jqzoom</li>
+<li><a class="reference external" href="http://fancyapps.com/fancybox/">fancyBox - Fancy jQuery Lightbox Alternative</a>   (要license)</li>
+<li><a class="reference external" href="http://lokeshdhakar.com/projects/lightbox2/">Lightbox 2</a></li>
+<li><a class="reference external" href="http://mozilla.github.com/pdf.js/">mozilla/pdf.js &#64; GitHub</a> PDF reader</li>
+<li><a class="reference external" href="http://www.fieg.nl/infinite-ajax-scroll-a-jquery-plugin">Infinite Ajax Scroll, a jQuery plugin — FIEG</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="debug-tools-console">
+<h2>Debug Tools (console)<a class="headerlink" href="#debug-tools-console" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://code.google.com/intl/zh-TW/chrome/devtools/docs/console.html">Chrome Developer Tools: Console - Google Chrome Developer Tools - Google Code</a></li>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=4mf_yNLlgic&amp;feature=youtube_gdata">Become a Javascript Console Power-User - YouTube</a></li>
+</ul>
+<p>General:</p>
+<div class="highlight-python"><div class="highlight"><pre>console.log()
+console.dir() -  除了log外還可以看DOM的屬性
+console.time() / console.timeEnd() - 做benchmark
+inspect(foo) - 顯示此一物件在HTML的位置
+$0 - ??
+$0.outerHTML
+$$(&#39;textarea&#39;) - 找出匹配的DOM
+monitorEvents($$(&#39;textarea&#39;)[0])
+monitorEvents($$(&#39;textarea&#39;)[0], &#39;key或mouse&#39;)
+keys(document) / values(document)
+copy(keys(document)) -  copy to clipboard
+</pre></div>
+</div>
+<p>Opera:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="o">//</span> <span class="n">jquery</span><span class="p">()</span>
+<span class="go">&quot;Loading jquery&quot;</span>
+<span class="go">jquery loaded</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jquery</span><span class="p">(</span><span class="s">&#39;div&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>原圖太大:</p>
+<div class="highlight-python"><div class="highlight"><pre>//lightbox.js
+
+preloader.onload = function() {
+$image.attr(&#39;src&#39;, _this.album[_this.currentImageIndex].link);
+$image.width = preloader.width;
+$image.height = preloader.height;
+return _this.sizeContainer(preloader.width, preloader.height);
+};
+//to
+preloader.onload = function() {
+$image.attr(&#39;src&#39;, _this.album[_this.currentImageIndex].link);
+if (preloader.width &gt; window.innerWidth * 0.9) {
+preloader.height = (window.innerWidth * 0.9 * preloader.height) / preloader.width;
+preloader.width = window.innerWidth * 0.9;
+}
+
+if (preloader.height &gt; window.innerHeight * 0.8) {
+preloader.width = (window.innerHeight * 0.8 * preloader.width) / preloader.height;
+preloader.height = window.innerHeight * 0.8;
+}
+$image.width = preloader.width;
+$image.height = preloader.height;
+$image.attr(&#39;width&#39;, preloader.width + &quot;px&quot;);
+return _this.sizeContainer(preloader.width, preloader.height);
+};
+
+//ligthbox.css:
+
+#lightbox img {
+width: auto;
+height: auto;
+}
+//to
+#lightbox img {
+/*width: auto;
+height: auto;*/
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="adv">
+<h2>Adv.<a class="headerlink" href="#adv" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://coolshell.cn/articles/6441.html">Javascript 面向对象编程 | 酷壳 - CoolShell.cn</a></li>
+</ul>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="html.html" class="btn btn-neutral float-right" title="HTML"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="web_develop.html" class="btn btn-neutral" title="Web Develop"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

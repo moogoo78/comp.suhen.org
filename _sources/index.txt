@@ -16,8 +16,11 @@ Tech
 
    database
    web_develop
+   javascript
+   html
+   css
+   python_frameworks   
    python
-   python_frameworks
    programming
 
 

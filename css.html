@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; CompDocs 1.0 documentation</title>
+  <title>CSS &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -29,7 +28,9 @@
   
 
   
-    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)" href="python_frameworks.html"/>
+        <link rel="prev" title="HTML" href="html.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -56,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
@@ -89,10 +90,10 @@
 <li class="toctree-l2"><a class="reference internal" href="html.html#spectial-character">spectial character</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="css.html">CSS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="css.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="css.html#snippets">Snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gallery">Gallery</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)</a><ul>
@@ -194,8 +195,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>CSS</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/css.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -203,16 +206,178 @@
 </div>
           <div role="main">
             
+  <div class="section" id="css">
+<h1>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic">
+<h3>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h3>
+<p>External:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot; /&gt;
+&lt;/head&gt;
+</pre></div>
+</div>
+<p>Internal(Embedded):</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+hr {color:sienna;}
+p {margin-left:20px;}
+body {background-image:url(&quot;images/back40.gif&quot;);}
+&lt;/style&gt;
+&lt;/head&gt;
+</pre></div>
+</div>
+<p>Inline:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;This is a paragraph.&lt;/p&gt;
+</pre></div>
+</div>
+<p>優先順序</p>
+<ol class="arabic simple">
+<li>!important</li>
+<li>Inline (HTML <tt class="docutils literal"><span class="pre">STYLE</span> <span class="pre">attribute</span></tt>)</li>
+<li>Internal (HTML 包在HEAD裡的 <tt class="docutils literal"><span class="pre">&lt;STYLE&gt;</span></tt>)</li>
+<li>External (HTML <tt class="docutils literal"><span class="pre">&lt;LINK&gt;</span></tt>)</li>
+<li>Browser default</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">相同屬性，後寫的會蓋掉前面的</p>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://channel9.msdn.com/Series/HTML5-CSS3-Fundamentals-Development-for-Absolute-Beginners">HTML5 &amp; CSS3 Fundamentals: Development for Absolute Beginners | Channel 9</a> 初學課程video</li>
+<li><a class="reference external" href="http://learn.shayhowe.com/advanced-html-css/">An Advanced Guide to HTML &amp; CSS</a> 進階架構</li>
+<li><a class="reference external" href="http://www.netmagazine.com/features/truth-about-structuring-html5-page">The truth about structuring an HTML5 page | Feature | .net magazine</a></li>
+<li><a class="reference external" href="http://www.icoding.co/2013/06/knowledge-about-z-index-2">» 你從未瞭解過的 z-index | iCoding</a></li>
+<li><a class="reference external" href="http://blog.xdite.net/posts/2012/01/29/css-tricks-summary/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+xxddite+(Blog.XDite.net)&amp;utm_content=Google+Reader">[讀書筆記] CSS 基礎技巧懶人包 - Blog.XDite.net</a></li>
+</ul>
+</div>
+<div class="section" id="position">
+<h3>定位 (position)<a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>static - default, 排排站, 一個疊一個</li>
+<li>relative - 保持距離</li>
+<li>absolute - 說在那就在那</li>
+<li>fixed - scroll也不動</li>
+<li>inherit - 聽父母的話</li>
+<li><a class="reference external" href="https://github.com/mwmnj/CSS-Positioning-101">CSS-Positioning-101/readme.txt at master · mwmnj/CSS-Positioning-101 · GitHub</a></li>
+<li><a class="reference external" href="http://www.alistapart.com/articles/css-positioning-101/">A List Apart: Articles: CSS Positioning 101</a></li>
+</ul>
+</div>
+<div class="section" id="box">
+<h3>Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">border</span><span class="nd">:5px</span> <span class="nt">solid</span> <span class="nt">red</span><span class="o">;</span> <span class="c">/* 常用style: none, dotted, dashed, solid, double */</span>
+<span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span><span class="m">#99ff99</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.w3schools.com/css/css_border.asp">CSS Border</a></li>
+<li><a class="reference external" href="http://dev.opera.com/articles/view/zebra-striping-tables-with-css3/">Zebra striping tables with CSS3 - Dev.Opera</a></li>
+</ul>
+</div>
+<div class="section" id="debug">
+<h3>Debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://inspire.twgg.org/c/programming/html-css/2011-11-14-03-39-39.html">最常用的10種CSS BUG解決方法與技巧 - 各大瀏覽器兼容 | InspireGate 派克空間</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="snippets">
+<h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
+<p>layout (float, clear):</p>
+<div class="highlight-python"><div class="highlight"><pre>|=========== header ==========|
+|                             |
+|== section ==| |== section ==|
+| float: left;   float: right;|
+|=========== footer ==========|
+|          clear:both;        |
+|-----------------------------|
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">section</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">aside</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">320px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">footer</span> <span class="p">{</span>
+    <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>css:</p>
+<blockquote>
+<div><p>:::css
+.center {</p>
+<blockquote>
+<div>width:xxxpx;margin-left:auto;margin-right:auto;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>position:</p>
+<div class="highlight-python"><div class="highlight"><pre>.left {float:left}; // left class
+{margin: 0 auto;} // center layout
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h3>應用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>圖片塞滿browser</p>
+<ul class="simple">
+<li><a class="reference external" href="http://paulmason.name/item/full-screen-background-image-pure-css-code">Full Screen Background Image - Pure CSS Code</a></li>
+</ul>
+<p>CSS3:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(IMG_0083.JPG)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span> <span class="k">fixed</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>表格列加刪除線</p>
+<ul class="simple">
+<li><a class="reference external" href="http://codepen.io/nericksx/pen/CKjbe">Table Row Strikethrough</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="gallery">
+<h2>Gallery<a class="headerlink" href="#gallery" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* http://www.teachparentstech.org/images/checkbox.gif */</span>
 
-<h1 id="index">Index</h1>
+<span class="nf">#content</span> <span class="nc">.boxlabel</span><span class="p">{</span>
+<span class="k">color</span><span class="o">:</span><span class="m">#999</span><span class="p">;</span>
+<span class="k">background</span><span class="o">:</span> <span class="sx">url(../images/checkbox.gif)</span> <span class="n">no</span><span class="o">-</span><span class="n">repeat00</span><span class="p">;</span>
+<span class="k">height</span><span class="o">:</span> <span class="m">28px</span><span class="p">;</span>
+<span class="k">padding-left</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="k">padding-right</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+<span class="p">}</span>
 
-<div class="genindex-jumpbox">
- 
+<span class="nf">#content</span> <span class="nc">.boxlabel.selected</span><span class="p">{</span>
+<span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">32</span><span class="o">,</span> <span class="m">25</span><span class="o">,</span> <span class="m">25</span><span class="p">);</span>
+<span class="k">background-position</span><span class="o">:</span><span class="m">0-42px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_frameworks.html" class="btn btn-neutral float-right" title="Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="html.html" class="btn btn-neutral" title="HTML"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
