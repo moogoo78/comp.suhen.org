@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Web Framework (SQLAlchemy, Django, Flask, Jinja2) &mdash; CompDocs 1.0 documentation</title>
+  <title>Python Web Framework (SQLAlchemy, Flask, Jinja2, Django) &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="GIT" href="git.html"/>
-        <link rel="prev" title="&lt; Python &gt;" href="python.html"/> 
+        <link rel="next" title="&lt; Python &gt;" href="python.html"/>
+        <link rel="prev" title="CSS" href="css.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -65,13 +65,42 @@
 <li class="toctree-l2"><a class="reference internal" href="database.html#snippets">snippets</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#script">script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#utils">工具 utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#id5">網路</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#system">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#id1">特色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#debug-tools-console">Debug Tools (console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#adv">Adv.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="html.html">HTML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="html.html#html5">HTML5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html#header">Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html#spectial-character">spectial character</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="css.html">CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="css.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sqlalchemy">SQLAlchemy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flask">Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jinja2">Jinja2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#django">Django</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
@@ -91,17 +120,22 @@
 <li class="toctree-l2"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flask">Flask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#django">Django</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Flask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jinja2">Jinja2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">常用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">基本操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#configure">configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id5">其他 modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#elist">elist 套件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ref">ref</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="git.html#quick-start">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#basic">Basic</a></li>
@@ -111,13 +145,21 @@
 <li class="toctree-l2"><a class="reference internal" href="git.html#setting">setting</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#locale">locale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="software.html#desktop-tips">Desktop Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#web-service">Web Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#id1">好用軟體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#desktop">Desktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#browser-internet">Browser / Internet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software.html#vim">VIM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#command-line">Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#dot-grphviz">dot (grphviz)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#ffmpeg">ffmpeg</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx - reST (reStructuredText)</a><ul>
@@ -128,31 +170,6 @@
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#publish">Publish</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs 小抄</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#tips">Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#basic">Basic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#version-control">Version Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#adv-mode">Adv. Mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#configure">configure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#shell">shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ref">ref</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="emacs_macro.html">強大的Emacs Macro 巨集</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs_macro.html#id1">基本操作</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="emacs_dired_rename.html">[Computer] 用Emacs dired-mode批次改檔名</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emacs_newline.html">[computer] Emacs輸入newline符號</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emacs_elscreen.html">Elscreen - Emacs好用的tab mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emacs_replace_regexp.html">[computer] 善用Emacs的replace-regexp</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs_replace_regexp.html#id1">範例</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="emacs_skeleton.html">用Emacs的skeleton快速建立pelican的blog內文</a></li>
 </ul>
 
         
@@ -176,7 +193,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)</li>
+    <li>Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="_sources/python_frameworks.txt" rel="nofollow"> View page source</a>
@@ -187,20 +204,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="python-web-framework-sqlalchemy-django-flask-jinja2">
-<h1>Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)<a class="headerlink" href="#python-web-framework-sqlalchemy-django-flask-jinja2" title="Permalink to this headline">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body">2013-04-09 11:36</td>
-</tr>
-<tr class="field-even field"><th class="field-name">category:</th><td class="field-body">computer</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body">docs</td>
-</tr>
-</tbody>
-</table>
+  <div class="section" id="python-web-framework-sqlalchemy-flask-jinja2-django">
+<h1>Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)<a class="headerlink" href="#python-web-framework-sqlalchemy-flask-jinja2-django" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sqlalchemy">
 <h2>SQLAlchemy<a class="headerlink" href="#sqlalchemy" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="setting">
@@ -286,9 +291,6 @@
 <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">distinct</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example">
-<h3>example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>in/limit/order:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">a_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Article</span><span class="o">.</span><span class="n">shop_id</span><span class="o">==</span><span class="n">g</span><span class="o">.</span><span class="n">shop_id</span><span class="p">,</span>
              <span class="n">Article</span><span class="o">.</span><span class="n">blog_id</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">blog_id</span><span class="p">))</span><span class="o">.</span>\
@@ -341,9 +343,7 @@ WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
 <div class="section" id="debug">
 <h3>debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries">http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries</a></p>
-</div>
-<div class="section" id="error">
-<h3>常見error<a class="headerlink" href="#error" title="Permalink to this headline">¶</a></h3>
+<p>常見error</p>
 <p>0.8更新:</p>
 <div class="highlight-python"><div class="highlight"><pre>&#39;dynamic&#39; loaders cannot be used with many-to-one/one-to-one relationships and/or uselist=False.
 </pre></div>
@@ -352,31 +352,55 @@ WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
 <p>changelog (0.8): <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.html#change-5f7f7241c49f5c13956148d68788a5b4">http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.html#change-5f7f7241c49f5c13956148d68788a5b4</a></p>
 <p>文件 (0.7): <a class="reference external" href="http://docs.sqlalchemy.org/en/rel_0_7/orm/collections.html#dynamic-relationship">http://docs.sqlalchemy.org/en/rel_0_7/orm/collections.html#dynamic-relationship</a></p>
 </div>
-</div>
 <div class="section" id="id1">
-<h2>比較<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>比較<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/">SQLAlchemy and You | Armin Ronacher&#8217;s Thoughts and Writings</a></li>
 </ul>
 </div>
+</div>
 <div class="section" id="flask">
 <h2>Flask<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="pattern">
-<h3>pattern<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h3>
+<p>request:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span> <span class="c"># client id</span>
+<span class="n">request</span><span class="o">.</span><span class="n">access_route</span> <span class="c"># all ip addresses from client (access_route[0]) to the last proxy server,</span>
+<span class="c"># 判斷環境變數 HTTP_X_FORWARDED_FOR</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><a class="reference external" href="http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/">charles leifer | Structuring flask apps, a how-to for those coming from Django</a></li>
 <li><a class="reference external" href="https://github.com/mitsuhiko/flask/tree/master/examples">lask/examples at master · mitsuhiko/flask</a></li>
 <li><a class="reference external" href="https://github.com/semirook/flask-kit">semirook/flask-kit</a></li>
 </ul>
+<div class="section" id="extensions-plugins">
+<h3>Extensions (Plugins)<a class="headerlink" href="#extensions-plugins" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://packages.python.org/Flask-Login/">Flask-Login documentation</a>, <a class="reference external" href="https://bitbucket.org/leafstorm/flask-login">leafstorm / flask-login / overview — Bitbucket</a></li>
+<li><a class="reference external" href="http://packages.python.org/Flask-WTF/">Flask-WTF</a>, <a class="reference external" href="http://wtforms.simplecodes.com/docs/dev/">WTForms Documentation</a>, <a class="reference external" href="https://bitbucket.org/danjac/flask-wtf">danjac / flask-wtf / overview — Bitbucket</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="jinja2">
+<h2>Jinja2<a class="headerlink" href="#jinja2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="bp">None</span><span class="p">)::</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="o">|</span><span class="n">sort</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="s">&#39;date&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">...</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="n">dictsort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;key&#39;</span><span class="p">)::</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mydict</span><span class="o">|</span><span class="n">dictsort</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="s">&#39;value&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">sort</span> <span class="n">the</span> <span class="nb">dict</span> <span class="n">by</span> <span class="n">key</span><span class="p">,</span> <span class="n">case</span> <span class="n">insensitive</span><span class="p">,</span> <span class="nb">sorted</span>
+    <span class="n">normally</span> <span class="ow">and</span> <span class="n">ordered</span> <span class="n">by</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="django">
 <h2>Django<a class="headerlink" href="#django" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="quick-start">
-<h3>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install Django
-$ django-admin.py startproject mysite
-$ python manage.py startapp myapp
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pip install Django
+<span class="nv">$ </span>django-admin.py startproject mysite
+<span class="nv">$ </span>python manage.py startapp myapp
 </pre></div>
 </div>
 <p>check version:</p>
@@ -384,59 +408,10 @@ $ python manage.py startapp myapp
 <span class="k">print</span> <span class="n">django</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="docs">
-<h3>docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https://docs.djangoproject.com/en/1.3/">Django | Django documentation | Django documentation</a></li>
 <li><a class="reference external" href="http://djangosnippets.org/snippets/1811/">Django snippets: django paginator</a></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>Flask<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>request:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span> <span class="c"># client id</span>
-<span class="n">request</span><span class="o">.</span><span class="n">access_route</span> <span class="c"># all ip addresses from client (access_route[0]) to the last proxy server,</span>
-<span class="c"># 判斷環境變數 HTTP_X_FORWARDED_FOR</span>
-</pre></div>
-</div>
-<div class="section" id="id3">
-<h3>Docs<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><a class="reference external" href="http://flask.pocoo.org/docs/">Flask documentation</a>, <a class="reference external" href="https://github.com/mitsuhiko/flask">github</a></li>
-<li><a class="reference external" href="http://jinja.pocoo.org/docs/">Jinja2 documentation</a></li>
-<li><a class="reference external" href="http://packages.python.org/Flask-SQLAlchemy/">Flask-SQLAlchemy documentation</a>, <a class="reference external" href="https://github.com/brosner/sqlalchemy">github</a>, <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/index.html">SQLAlchemy Documentation</a></li>
-<li><a class="reference external" href="http://packages.python.org/Flask-Login/">Flask-Login documentation</a>, <a class="reference external" href="https://bitbucket.org/leafstorm/flask-login">leafstorm / flask-login / overview — Bitbucket</a></li>
-<li><a class="reference external" href="http://packages.python.org/Flask-WTF/">Flask-WTF</a>, <a class="reference external" href="http://wtforms.simplecodes.com/docs/dev/">WTForms Documentation</a>, <a class="reference external" href="https://bitbucket.org/danjac/flask-wtf">danjac / flask-wtf / overview — Bitbucket</a></li>
-</ul>
-</div>
-<div class="section" id="tips">
-<h3>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h3>
-<p>看Flask版本:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">flask</span>
-
-<span class="n">flask</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-</div>
-<p>request.args
-request.form.getlist(&#8216;&#8217;)</p>
-</div>
-</div>
-<div class="section" id="jinja2">
-<h2>Jinja2<a class="headerlink" href="#jinja2" title="Permalink to this headline">¶</a></h2>
-<p>sort(value, reverse=False, case_sensitive=False, attribute=None):</p>
-<div class="highlight-python"><div class="highlight"><pre>{% for item in iterable|sort(attribute=&#39;date&#39;) %}
-  ...
-{% endfor %}
-</pre></div>
-</div>
-<p>dictsort(value, case_sensitive=False, by=&#8217;key&#8217;):</p>
-<div class="highlight-python"><div class="highlight"><pre>{% for item in mydict|dictsort(false, &#39;value&#39;) %}
-    sort the dict by key, case insensitive, sorted
-    normally and ordered by value.
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -446,10 +421,10 @@ request.form.getlist(&#8216;&#8217;)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="git.html" class="btn btn-neutral float-right" title="GIT"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python.html" class="btn btn-neutral float-right" title="&lt; Python &gt;"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="python.html" class="btn btn-neutral" title="&lt; Python &gt;"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="css.html" class="btn btn-neutral" title="CSS"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

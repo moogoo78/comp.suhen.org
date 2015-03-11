@@ -1,16 +1,13 @@
 
-Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)
-################################################################
-:date: 2013-04-09 11:36
-:category: computer
-:tags: docs
+Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)
+==============================================================
 
 
 SQLAlchemy
-==============
+---------------------------
 
 setting
------------------
+~~~~~~~~~~~~~~~~~~~~
 sqlite path::
 
   # sqlite://<nohostname>/<path>
@@ -26,7 +23,7 @@ import::
   from sqlalchemy.sql import func
 
 schema
----------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 column parameters::
 
@@ -68,7 +65,7 @@ http://docs.sqlalchemy.org/en/latest/orm/inheritance.html
 
 
 Query
------------
+~~~~~~~~~~~~~~~~
 
 rand::
 
@@ -98,9 +95,6 @@ between, like::
 
     from sqlalchemy import distinct
     session.query(func.count(distinct(User.name)))
-
-example
------------
 
 in/limit/order::
 
@@ -156,13 +150,13 @@ relationship, associate
   db.session.append(Bar.query.get(1))
   db.session.commit() 
 
+  
 debug
---------
+~~~~~~~~~~~~~
 http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries
 
 
 常見error
-------------
 
 0.8更新::
 
@@ -175,86 +169,67 @@ changelog (0.8): http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.htm
 文件 (0.7): http://docs.sqlalchemy.org/en/rel_0_7/orm/collections.html#dynamic-relationship
 
 比較
-========
+~~~~~~~~~~~
 * `SQLAlchemy and You | Armin Ronacher's Thoughts and Writings <http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/>`__
 
 
 Flask
-===========
+---------------
 
-pattern
----------
+request:
 
-* `charles leifer | Structuring flask apps, a how-to for those coming from Django <http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/>`__
-* `lask/examples at master · mitsuhiko/flask <https://github.com/mitsuhiko/flask/tree/master/examples>`__
-* `semirook/flask-kit <https://github.com/semirook/flask-kit>`__
-
-Django
-===========
-
-Quick Start
-------------
-
-::
-
-  $ pip install Django
-  $ django-admin.py startproject mysite
-  $ python manage.py startapp myapp
-
-check version::
-
-  import django
-  print django.get_version()
-
-
-docs
------
-* `Django | Django documentation | Django documentation <https://docs.djangoproject.com/en/1.3/>`__
-* `Django snippets: django paginator <http://djangosnippets.org/snippets/1811/>`__
-
-
-Flask
-===========
-
-request::
+.. code-block:: python
 
   request.remote_addr # client id
   request.access_route # all ip addresses from client (access_route[0]) to the last proxy server,
   # 判斷環境變數 HTTP_X_FORWARDED_FOR
 
+* `charles leifer | Structuring flask apps, a how-to for those coming from Django <http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/>`__
+* `lask/examples at master · mitsuhiko/flask <https://github.com/mitsuhiko/flask/tree/master/examples>`__
+* `semirook/flask-kit <https://github.com/semirook/flask-kit>`__
 
-Docs
------
-
-* `Flask documentation <http://flask.pocoo.org/docs/>`__, `github <https://github.com/mitsuhiko/flask>`__
-* `Jinja2 documentation <http://jinja.pocoo.org/docs/>`__
-* `Flask-SQLAlchemy documentation <http://packages.python.org/Flask-SQLAlchemy/>`__, `github <https://github.com/brosner/sqlalchemy>`__, `SQLAlchemy Documentation <http://docs.sqlalchemy.org/en/latest/index.html>`__
+  
+Extensions (Plugins)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 * `Flask-Login documentation <http://packages.python.org/Flask-Login/>`__, `leafstorm / flask-login / overview — Bitbucket <https://bitbucket.org/leafstorm/flask-login>`__
 * `Flask-WTF <http://packages.python.org/Flask-WTF/>`__, `WTForms Documentation <http://wtforms.simplecodes.com/docs/dev/>`__, `danjac / flask-wtf / overview — Bitbucket <https://bitbucket.org/danjac/flask-wtf>`__
 
-Tips
-------
-看Flask版本::
-
-  import flask
-
-  flask.__version__
-
-
-request.args
-request.form.getlist('')
-
+  
 Jinja2
-==============
+---------------------
 
-sort(value, reverse=False, case_sensitive=False, attribute=None)::
+.. code-block:: python
+
+  sort(value, reverse=False, case_sensitive=False, attribute=None)::
 
   {% for item in iterable|sort(attribute='date') %}
     ...
   {% endfor %}
 
-dictsort(value, case_sensitive=False, by='key')::
+  dictsort(value, case_sensitive=False, by='key')::
 
   {% for item in mydict|dictsort(false, 'value') %}
       sort the dict by key, case insensitive, sorted
       normally and ordered by value.
+
+
+Django
+--------------
+
+
+.. code-block:: bash
+
+  $ pip install Django
+  $ django-admin.py startproject mysite
+  $ python manage.py startapp myapp
+
+check version:
+
+.. code-block:: python
+
+  import django
+  print django.get_version()
+
+* `Django | Django documentation | Django documentation <https://docs.djangoproject.com/en/1.3/>`__
+* `Django snippets: django paginator <http://djangosnippets.org/snippets/1811/>`__
+
