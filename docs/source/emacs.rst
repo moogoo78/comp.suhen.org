@@ -1,6 +1,9 @@
 Emacs
 =================
 
+.. image:: http://www.emacswiki.org/pics/static/DrewsEmacsWindowCallouts.jpg
+
+via: http://www.emacswiki.org/emacs/ModeLine
 
 常用
 --------------
@@ -397,8 +400,21 @@ C-x v v  commit (C-c C-c結束)
 C-x v d  version control status
 ======== ============================
 
+deft
+-------
+
+`Deft <http://jblevins.org/projects/deft/>`__-
+
+======== =================
+C-c C-n  new
+C-c C-m  new, with prompt
+C-c C-r  rename
+C-c C-d  delete
+======== =================
+
 * `Deft <http://jblevins.org/projects/deft/>`__ - 快速找筆記, 檔案修改工具
 
+  
 elist 套件
 ---------------
 
