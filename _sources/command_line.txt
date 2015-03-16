@@ -179,7 +179,14 @@ curl::
   curl http://example/edit -XPOST # http method
   crul http://example/api -F user=mouse -F passwd=cheese
 
-
+  :-X: 	specify HTTP request method e.g. POST
+  :-H: 	specify request headers e.g. "Content-type: application/json"
+  :-d: 	specify request data e.g. '{"message":"Hello Data"}'
+  :--data-binary: 	specify binary request data e.g. @file.bin
+  :-i: 	shows the response headers
+  :-u: 	specify username and password e.g. "admin:secret"
+  :-v: 	enables verbose mode which outputs info such as request and response headers and errors
+  
 Service
 -------------------
 
