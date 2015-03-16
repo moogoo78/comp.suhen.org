@@ -1,5 +1,5 @@
 
-Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)
+Python Web Framework (SQLAlchemy, Jinja2, Django)
 ==============================================================
 
 
@@ -172,27 +172,6 @@ changelog (0.8): http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.htm
 ~~~~~~~~~~~
 * `SQLAlchemy and You | Armin Ronacher's Thoughts and Writings <http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/>`__
 
-
-Flask
----------------
-
-request:
-
-.. code-block:: python
-
-  request.remote_addr # client id
-  request.access_route # all ip addresses from client (access_route[0]) to the last proxy server,
-  # 判斷環境變數 HTTP_X_FORWARDED_FOR
-
-* `charles leifer | Structuring flask apps, a how-to for those coming from Django <http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/>`__
-* `lask/examples at master · mitsuhiko/flask <https://github.com/mitsuhiko/flask/tree/master/examples>`__
-* `semirook/flask-kit <https://github.com/semirook/flask-kit>`__
-
-  
-Extensions (Plugins)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-* `Flask-Login documentation <http://packages.python.org/Flask-Login/>`__, `leafstorm / flask-login / overview — Bitbucket <https://bitbucket.org/leafstorm/flask-login>`__
-* `Flask-WTF <http://packages.python.org/Flask-WTF/>`__, `WTForms Documentation <http://wtforms.simplecodes.com/docs/dev/>`__, `danjac / flask-wtf / overview — Bitbucket <https://bitbucket.org/danjac/flask-wtf>`__
 
   
 Jinja2
