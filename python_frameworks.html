@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Web Framework (SQLAlchemy, Flask, Jinja2, Django) &mdash; CompDocs 1.0 documentation</title>
+  <title>Python Web Framework (SQLAlchemy, Jinja2, Django) &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="&lt; Python &gt;" href="python.html"/>
+        <link rel="next" title="Flask" href="python_flask.html"/>
         <link rel="prev" title="CSS" href="css.html"/> 
 
   
@@ -96,11 +96,16 @@
 <li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python Web Framework (SQLAlchemy, Jinja2, Django)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flask">Flask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#django">Django</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_flask.html">Flask</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#settings">settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#structure">structure 目錄配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#extensions-plugins">Extensions (Plugins)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
@@ -120,6 +125,10 @@
 <li class="toctree-l2"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts_matrix.html#id2">字串</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
@@ -132,6 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#configure">configure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#id5">其他 modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#deft">deft</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#elist">elist 套件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#ref">ref</a></li>
 </ul>
@@ -193,7 +203,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)</li>
+    <li>Python Web Framework (SQLAlchemy, Jinja2, Django)</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="_sources/python_frameworks.txt" rel="nofollow"> View page source</a>
@@ -204,8 +214,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="python-web-framework-sqlalchemy-flask-jinja2-django">
-<h1>Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)<a class="headerlink" href="#python-web-framework-sqlalchemy-flask-jinja2-django" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="python-web-framework-sqlalchemy-jinja2-django">
+<h1>Python Web Framework (SQLAlchemy, Jinja2, Django)<a class="headerlink" href="#python-web-framework-sqlalchemy-jinja2-django" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sqlalchemy">
 <h2>SQLAlchemy<a class="headerlink" href="#sqlalchemy" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="setting">
@@ -359,27 +369,6 @@ WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
 </ul>
 </div>
 </div>
-<div class="section" id="flask">
-<h2>Flask<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h2>
-<p>request:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span> <span class="c"># client id</span>
-<span class="n">request</span><span class="o">.</span><span class="n">access_route</span> <span class="c"># all ip addresses from client (access_route[0]) to the last proxy server,</span>
-<span class="c"># 判斷環境變數 HTTP_X_FORWARDED_FOR</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><a class="reference external" href="http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/">charles leifer | Structuring flask apps, a how-to for those coming from Django</a></li>
-<li><a class="reference external" href="https://github.com/mitsuhiko/flask/tree/master/examples">lask/examples at master · mitsuhiko/flask</a></li>
-<li><a class="reference external" href="https://github.com/semirook/flask-kit">semirook/flask-kit</a></li>
-</ul>
-<div class="section" id="extensions-plugins">
-<h3>Extensions (Plugins)<a class="headerlink" href="#extensions-plugins" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><a class="reference external" href="http://packages.python.org/Flask-Login/">Flask-Login documentation</a>, <a class="reference external" href="https://bitbucket.org/leafstorm/flask-login">leafstorm / flask-login / overview — Bitbucket</a></li>
-<li><a class="reference external" href="http://packages.python.org/Flask-WTF/">Flask-WTF</a>, <a class="reference external" href="http://wtforms.simplecodes.com/docs/dev/">WTForms Documentation</a>, <a class="reference external" href="https://bitbucket.org/danjac/flask-wtf">danjac / flask-wtf / overview — Bitbucket</a></li>
-</ul>
-</div>
-</div>
 <div class="section" id="jinja2">
 <h2>Jinja2<a class="headerlink" href="#jinja2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">sort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="bp">None</span><span class="p">)::</span>
@@ -421,7 +410,7 @@ WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python.html" class="btn btn-neutral float-right" title="&lt; Python &gt;"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python_flask.html" class="btn btn-neutral float-right" title="Flask"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="css.html" class="btn btn-neutral" title="CSS"><span class="fa fa-arrow-circle-left"></span> Previous</a>

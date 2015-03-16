@@ -19,7 +19,8 @@ Tech
    javascript
    html
    css
-   python_frameworks   
+   python_frameworks
+   python_flask
    python
    scripts_matrix
    programming
