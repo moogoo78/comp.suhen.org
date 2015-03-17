@@ -1,14 +1,9 @@
 Database筆記 (MySQL, SQLite)
-#####################################
-:date: 2013-05-09 18:23
-:category: computer
-:tags: manual
-:slug: database_manual
-
+===============================
 
 
 MySql
-=======================
+-------------
 
 Syntax
 
@@ -33,7 +28,8 @@ Syntax
 .. note:: MySQL的JOIN預設是 ``INNER JOIN`` ，另一種是LEFT OUTER JOIN，通常用 ``LEFT JOIN`` 就可以了。MySQL會優先處理JOIN，然後才是WHERE。
 
 cookbook
---------
+~~~~~~~~~~~~~
+
 CURD::
 
    INSERT INTO tbl_name (col1,col2) VALUES(15,col1*2);
@@ -97,7 +93,7 @@ status:
    SELECT COUNT(DISTINCT <col1>) FROM <table> WHERE <col2> ...
     
 function
------------
+~~~~~~~~~~~
 
 時間
 
@@ -111,30 +107,30 @@ ref: http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html
 
 
 Schema
---------------------
+~~~~~~~~~~~~~~~~
 
 原則
-^^^^^^^^^^
+
 * 小的好
 * 簡單的好, 如integers比characters好, 不用判斷collations
 * 不要用 **NULL**, 影響效能, 可以用 ``0``, ``空字串``\或 ``N``\等值來代替
 
 整數
-^^^^^^^^
+
 資料儲存上 ``TINYINT``, ``SMALLINT``, ``MEDIUMINT``, ``INT``, ``BIGINT``\各使用了8, 16, 26, 32, 64 bits, 數值範圍-2^(N-1)到2(N-1)-1, 加了 ``UNSIGNED``\後, 範圍從0到2^N-1. 但是MySQL在 **計算**\上是用64-bit的BIGINT來算, 就算是32-bit的系統
 
 MySQL使用的整數長度, 如INT(11), 並不會真的有儲存限制, 只是為了command-line client的顯示, 在儲存和計算上INT(1)和INT(20)是一樣的.
 
 實數
-^^^^^^^^
+
 浮點數可以用 ``FLOAT`` (4 bytes), ``DOUBLE`` (8 bytes), ``DECIMAL`` 等格式, MySQL在浮點數的計算上都是用DOUBLE, 資料儲存上以DECIMAL為佳
 
 VARCHAR和CHAR
-^^^^^^^^^^^^^^^^^
+
 ``VARCHAR``\是可變長度, 會用1到2byte存字串長度(MyISAM或InnoDB), ``CHAR``\是固字長度, 用來存Y/N, MD5值等.
 
 時間
-^^^^^^^^
+
 ``DATETIME`` 以YYYYMMDDHHMMSS的格式儲存, 範圍從1001到9999年, 8 bytes
 
 ``TIMESTAMP`` 以Unix timestamp格式, 範圍從1970到2038 (格林威治標準時間)
@@ -143,12 +139,12 @@ VARCHAR和CHAR
 
 
 其他
-^^^^^^^^^^^^^^
+
 ``BLOB``\和 ``TEXT``\不同的是TEXT會有character set和collation, BLOB沒有
 
 
 最佳化
-------------------
+~~~~~~~~~~~~~
 所有資料表最佳化
 
 .. code-block:: sql
@@ -172,7 +168,8 @@ s: silent mode (output only errors)
 .. note:: mysql要先停
 
 Tools
---------
+~~~~~~~~~~
+
 `mysqlreport Documentation <http://hackmysql.com/mysqlreportdoc>`__::
 
   mysqlreport  --user MY_USER --password MY_PASS
@@ -188,7 +185,7 @@ Tools
 
 
 常用處理
------------------
+~~~~~~~~~~~~~~
 
 
 第一次設定::
@@ -201,8 +198,9 @@ Tools
 
 via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root-password/>`__
 
-忘記root密碼
-^^^^^^^^^^^^^^^^^^
+
+忘記root密碼:
+
 1.\ 先關掉mysql server::
 
   sudo /etc/init.d/mysql stop
@@ -230,8 +228,8 @@ via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root
 
 * `Resetting the MySQL Root Password - SmartMachines - Joyent Customer Wiki <http://wiki.joyent.com/display/smart/Resetting+the+MySQL+Root+Password>`__
 
-連接外部資料庫
-^^^^^^^^^^^^^^^^^^^^^^^^^
+連接外部資料庫:
+
 1.\ 改my.cnf(通常在/etc下)::
 
   # skip-networking 此行註解掉
@@ -258,7 +256,8 @@ via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root
 
 
 資料庫編碼
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
+
 列出MySQL各種編碼變數::
 
    show variables like "character%";
@@ -271,8 +270,7 @@ php的 ``mysql_query("SET NAMES UTF8");`` 相當於MySQL::
 
 編碼順序: **client -> connect -> server -> connect -> client**
 
-亂碼處理
-^^^^^^^^^^^^^^^^^^^
+亂碼處理:
 
 原本是latin1(ISO 8859-1)編碼, 要改成utf-8:
 
@@ -283,7 +281,7 @@ php的 ``mysql_query("SET NAMES UTF8");`` 相當於MySQL::
 
 
 command
------------
+~~~~~~~~~~~~~~~~~
 
 .. code-block:: sql
 
@@ -306,7 +304,7 @@ command
 
 
 Server Management
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 安裝, 以Debian為例::
 
@@ -322,8 +320,8 @@ Server Management
    # /var/lib/mysql
 
 
-Mac OS X
-^^^^^^^^^^
+Mac OS X:
+
 從 MySql (http://dev.mysql.com/downloads/mysql/) 找適何的package，裝完後:
 
 binary:: 
@@ -338,8 +336,8 @@ path::
 .. note:: 原本沒有 /etc/my.cnf, 可以從 /usr/local/mysql/support-files/ 找一個官方範本來改
 
 
-Import / Export
-^^^^^^^^^^^^^^^^^^^^^^
+**Import / Export**
+
 倒整個資料庫::
 
    $ mysqldump ---u myuser -p myuser_db > myuser_db.sql
@@ -376,7 +374,7 @@ Import / Export
 
    
 Configuration
-----------------------
+~~~~~~~~~~~~~~~~~~~~
 
 my.cnf選用(/usr/share/mysql/下)
 
@@ -411,7 +409,7 @@ my.cnf::
 .. note:: MySQL安裝時不一定會產生
 
 Q & A
---------
+~~~~~~~~~~~~~
 
 error: MySQL server has gone away::
 
@@ -424,12 +422,12 @@ error: MySQL server has gone away::
 
 
 others
-------------------
+~~~~~~~~~~~~~~~~
 * `探討 MySQL 授權 | Ant's ATField <http://antbsd.twbbs.org/~ant/wordpress/?p=2259>`__
 
 
 Sqlite
-===============
+------------
 
 常用指令 ::
 
@@ -459,17 +457,8 @@ ref
    ** type
    - [[http://www.systn.com/data/articles/304_tw.html][mysql中char與varchar的區別]]
 
-
-比較
-===========
-
-:MySQL: RAND()
-:Sqlite: RANDOM()
-
-MySQL有ROW_NUMBER(), Sqlite沒有, 只能用SQL語法的奇技淫巧來達成.
-
 snippets
-===============
+~~~~~~~~~~~
 
 單字表沒有照abc排, 要照字母順序排序(num)
 
@@ -488,3 +477,18 @@ snippets
 .. code-block:: sql
 
   select count(*),lower(substr(english, 1, 1)) as c from words group by c
+
+
+
+比較
+--------------------
+
+:MySQL: RAND()
+:Sqlite: RANDOM()
+
+MySQL有ROW_NUMBER(), Sqlite沒有, 只能用SQL語法的奇技淫巧來達成.
+
+
+DB 特性討論:
+
+* `Goodbye MongoDB, Hello PostgreSQL <http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/>`__

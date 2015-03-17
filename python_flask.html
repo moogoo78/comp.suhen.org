@@ -61,8 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#id11">比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#snippets">snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
@@ -231,8 +230,7 @@
 <h2>settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>設定檔放在一起 (config.py)，容易比較，敏感資料從 os.environ.get(&#8216;foo&#8217;) 取得</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;APP_ENV&#39;</span><span class="p">,</span><span class="s">&#39;DevConfig&#39;</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span>
-    <span class="s">&#39;config.%&#39;</span> <span class="o">%</span> <span class="n">env</span><span class="p">))</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="s">&#39;config.</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">env</span><span class="p">)</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;ENV&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">env</span>
 </pre></div>
@@ -240,9 +238,8 @@
 </div>
 <div class="section" id="structure">
 <h2>structure 目錄配置<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="vt">
-<h3>中央集權 - 大V大T<a class="headerlink" href="#vt" title="Permalink to this headline">¶</a></h3>
-<p>我們同一家</p>
+<div class="section" id="id1">
+<h3>中央集權 - 我們同一家<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>結構層次簡單，方便資源/功能共享，</p>
 <div class="highlight-text"><div class="highlight"><pre>app/
     __init.py
@@ -260,9 +257,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>地方自治 - 小V小T<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>自己的 template, view 自己管</p>
+<div class="section" id="template-view">
+<h3>地方自治 - 自己的 template, view 自己管<a class="headerlink" href="#template-view" title="Permalink to this headline">¶</a></h3>
 <p>層次多，改 admin 時, views, static, templates 都在附近, 不用移來移去</p>
 <p>別的網站要用可以整包搬 ?</p>
 <div class="highlight-text"><div class="highlight"><pre>app/
