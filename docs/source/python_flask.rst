@@ -23,8 +23,7 @@ settings
 .. code-block:: python
 
    env = os.environ.get('APP_ENV','DevConfig')
-   app.config.from_object(
-       'config.%' % env))
+   app.config.from_object('config.%s' % env)
 
    app.config['ENV'] = env
 
@@ -32,10 +31,8 @@ settings
 structure 目錄配置
 ------------------------
 
-中央集權 - 大V大T
+中央集權 - 我們同一家
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-我們同一家
 
 結構層次簡單，方便資源/功能共享，
   
@@ -56,10 +53,8 @@ structure 目錄配置
        models.py
 
 
-地方自治 - 小V小T
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-自己的 template, view 自己管
+地方自治 - 自己的 template, view 自己管
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 層次多，改 admin 時, views, static, templates 都在附近, 不用移來移去
 
