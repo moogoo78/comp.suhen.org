@@ -28,7 +28,9 @@
   
 
   
-    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Programming 程式開發" href="programming.html"/>
+        <link rel="prev" title="&lt; Python &gt;" href="python.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -55,12 +57,11 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#id11">比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#snippets">snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
@@ -94,11 +95,16 @@
 <li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (SQLAlchemy, Flask, Jinja2, Django)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (SQLAlchemy, Jinja2, Django)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#flask">Flask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_flask.html">Flask</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#settings">settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#structure">structure 目錄配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#extensions-plugins">Extensions (Plugins)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
@@ -116,6 +122,10 @@
 <li class="toctree-l2"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#package">Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">比較</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">字串</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
@@ -209,8 +219,8 @@
 <h2>字串<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="68%" />
-<col width="32%" />
+<col width="60%" />
+<col width="40%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">JavaScript</th>
@@ -220,6 +230,15 @@
 <tbody valign="top">
 <tr class="row-even"><td>null, undefined</td>
 <td>None</td>
+</tr>
+<tr class="row-odd"><td>str.toUpperCase()
+str.toLowerCase()
+&#8220;abcde&#8221;.substr(1, 3)
+// bcd</td>
+<td>str.lower()
+str.upper()
+&#8216;abcde&#8217;[1:3]
+# bc</td>
 </tr>
 </tbody>
 </table>
@@ -234,6 +253,15 @@ null == undefined            // true</p>
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="programming.html" class="btn btn-neutral float-right" title="Programming 程式開發"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python.html" class="btn btn-neutral" title="&lt; Python &gt;"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
