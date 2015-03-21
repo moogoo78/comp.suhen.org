@@ -36,7 +36,12 @@ more
 :xargs -n 1: 把每一行command line輸出當作一個參數
 :cp -i: 詢問y or n
 
+        
+把目錄下的檔案變成字串輸出 (jpg embedded markdown syntax)::
+        
+  $ find *.JPG -exec echo "\![](/images/nature/150214/{})" \; > out.txt
 
+  
 **改檔名**
 
 大寫改小寫::
