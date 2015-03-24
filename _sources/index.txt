@@ -36,3 +36,11 @@ software
    command_line   
    software
    sphinx   
+
+
+Service
+---------------
+.. toctree::
+   :maxdepth: 2
+
+   aws_eb_flask
