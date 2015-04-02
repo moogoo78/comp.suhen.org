@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; CompDocs 1.0 documentation</title>
+  <title>Vagrant, Docker &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -29,7 +28,8 @@
   
 
   
-    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="Deploying Flask (Python) to AWS Elastic Beanstalk" href="aws_eb_flask.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -57,8 +57,10 @@
         
         
             <ul>
-<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
@@ -66,17 +68,6 @@
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
@@ -104,8 +95,19 @@
 <li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="lua.html">Lua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (Django, Jinja2)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_flask.html">Flask</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#settings">settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#structure">structure 目錄配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_flask.html#extensions-plugins">Extensions (Plugins)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#id2">算數</a></li>
@@ -126,11 +128,8 @@
 <li class="toctree-l2"><a class="reference internal" href="scripts_matrix.html#id2">字串</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Frameworks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#flask">Flask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 </ul>
@@ -180,13 +179,15 @@
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#publish">Publish</a></li>
 </ul>
 </li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart">quickstart</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="vagrant_and_docker.html">Vagrant, Docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vagrant_and_docker.html#vagrant">Vagrant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vagrant_and_docker.html#docker">Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Vagrant, Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vagrant">Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -212,8 +213,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Vagrant, Docker</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/vagrant_and_docker.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -221,16 +224,105 @@
 </div>
           <div role="main">
             
+  <div class="section" id="vagrant-docker">
+<h1>Vagrant, Docker<a class="headerlink" href="#vagrant-docker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vagrant">
+<h2>Vagrant<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h2>
+<p>方便快速產生虛擬機環境的工具,</p>
+<p>需安裝: VirtualBox</p>
+<div class="section" id="quickstart">
+<h3>QuickStart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<p>設定檔 Vagrantfile (init 後產生, Ruby synctax)</p>
+<p>快速:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ vagrant init chef/centos-6.5 # 他只是產生 box 設定爲 chef/centos-xx 的 Vagrantfile
+$ vagrant up
+$ vagrant ssh
 
-<h1 id="index">Index</h1>
+# box 另外裝 centos
+$ vagrant box add chef/centos-7.0
+# 列出現在有 image
+$ vagrant box list
+</pre></div>
+</div>
+<p><a class="reference external" href="https://atlas.hashicorp.com/boxes/search">Discover Vagrant Boxes | Atlas by HashiCorp</a></p>
+<p>要改 Vagrantfile:</p>
+<div class="highlight-python"><div class="highlight"><pre>Vagrant.configure(&quot;2&quot;) do |config|
+    config.vm.box = &quot;chef/centos-6.5&quot;
+    config.vm.network &quot;forwarded_port&quot;, guest: 5000, host: 8080 # host 的 127.0.0.1:8080 會連到 guest 的 port 5000
+end
+</pre></div>
+</div>
+<p>其他commend:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant reload
+<span class="nv">$ </span>vagrant list
+<span class="nv">$ </span>vagrant status
+<span class="nv">$ </span>vagrant halt
+</pre></div>
+</div>
+<p>ssh 進入, 開始弄環境</p>
+<p>python version:</p>
+<div class="highlight-python"><div class="highlight"><pre>Python 2.6.6 (r266:84292, Nov 22 2013, 12:16:22)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-4)] on linux2
 
-<div class="genindex-jumpbox">
- 
+# 系統
+$ yum update -y
+$ sudo yum install -y git vim # tools
+$ sudo yum install -y gcc mysql-python mysql-devel python-devel # for mysql-python
+</pre></div>
+</div>
+<p>python 開發:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python get-pip.py
+$ sudo pip install virtualenv virtualenvwrapper
+</pre></div>
+</div>
+<p>加到 .bashrc</p>
+<blockquote>
+<div>export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/bin/virtualenvwrapper.sh</div></blockquote>
+<p>記得加完後, sourec .bashrc</p>
+<p>## flask</p>
+<p>設定成 external 外面才可以連進來</p>
+<blockquote>
+<div>::: python
+app.run(host=&#8216;0.0.0.0&#8217;)</div></blockquote>
+</div>
+</div>
+<div class="section" id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<p>Mac OS X</p>
+<ol class="arabic simple">
+<li>download Boot2Docker-x.x.x.pkg and install</li>
+<li>init docker</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>boot2docker init
+<span class="nv">$ </span>boot2docker start
+</pre></div>
+</div>
+<p>看到以下訊息, 要設定幾個環境變數:</p>
+<p>&gt; To connect the Docker client to the Docker daemon, please set: export DOCKER_HOST=tcp://192.168.59.103:2375</p>
+<p>測試:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run hello-world
+</pre></div>
+</div>
+<p>安裝最新 centos:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run centos:centos6 /bin/bash
+</pre></div>
+</div>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="aws_eb_flask.html" class="btn btn-neutral" title="Deploying Flask (Python) to AWS Elastic Beanstalk"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
