@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="JavaScript" href="javascript.html"/>
-        <link rel="prev" title="Database筆記 (MySQL, SQLite)" href="database.html"/> 
+        <link rel="next" title="Database筆記 (MySQL, SQLite)" href="database.html"/>
+        <link rel="prev" title="Programming 程式開發" href="programming.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -58,18 +58,27 @@
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#id11">比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#snippets">snippets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#design">Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">資源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web Server / daemon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
@@ -80,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#debug-tools-console">Debug Tools (console)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#tips">Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#adv">Adv.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#compare-jquery-vanilla-javascript">compare jQuery &amp; vanilla JavaScript</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="html.html">HTML</a><ul>
@@ -96,16 +106,8 @@
 <li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (SQLAlchemy, Django, Flask, Jinja2)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#id1">比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#flask">Flask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#id2">Flask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#id2">算數</a></li>
@@ -122,8 +124,15 @@
 <li class="toctree-l2"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts_matrix.html#id2">字串</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Frameworks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#flask">Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
 </ul>
 </li>
 </ul>
@@ -134,6 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#configure">configure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#id5">其他 modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#deft">deft</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#elist">elist 套件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#ref">ref</a></li>
 </ul>
@@ -170,6 +180,15 @@
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#id4">參考資料</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#themes">Themes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#publish">Publish</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart">quickstart</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant_and_docker.html">Vagrant, Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vagrant_and_docker.html#vagrant">Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant_and_docker.html#docker">Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -209,6 +228,43 @@
   <div class="section" id="web-develop">
 <h1>Web Develop<a class="headerlink" href="#web-develop" title="Permalink to this headline">¶</a></h1>
 <p>Webhooks: &#8220;user-defined HTTP callbacks&#8221;</p>
+<div class="section" id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typography">
+<h3>Typography<a class="headerlink" href="#typography" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://practicaltypography.com/typography-in-ten-minutes.html">http://practicaltypography.com/typography-in-ten-minutes.html</a></p>
+<ol class="arabic simple">
+<li>body text - 最重要, 最先決定</li>
+<li>point size - 通常印刷品 10-12 point, web: 15-25 pixels</li>
+<li>line spacing - 行距: 120-145% point size</li>
+</ol>
+<p>4. line length - 45-90 characters per line, 印刷品: page margins larger than the traditional one inch. web page: it usually means not allowing the text to flow to the edges of the browser window.
+* 不要用系統預設 font</p>
+<p>重點: <a class="reference external" href="http://practicaltypography.com/summary-of-key-rules.html">http://practicaltypography.com/summary-of-key-rules.html</a>
+全文: <a class="reference external" href="http://practicaltypography.com/">http://practicaltypography.com/</a></p>
+<p><a class="reference external" href="http://www.presslabs.com/blog/web-typography-for-non-designers/">Web Typography for non-designers - Presslabs</a></p>
+<ol class="arabic">
+<li><p class="first">Leading (space between lines)</p>
+<p><tt class="docutils literal"><span class="pre">line-height</span></tt>:120%-150% of font size</p>
+</li>
+<li><p class="first">Measure (length of one line of text)</p>
+<p><tt class="docutils literal"><span class="pre">max-width</span></tt>: 45-75 characters</p>
+</li>
+<li><p class="first">Kerning (space between pairs of letters)</p>
+<p>自己看着辦</p>
+</li>
+<li><p class="first">Tracking (space between letters)</p>
+<p><tt class="docutils literal"><span class="pre">letter-spacing</span></tt>: positive or negative</p>
+</li>
+<li><p class="first">Alignment (paragraph alignment)</p>
+<p><tt class="docutils literal"><span class="pre">text-align</span></tt>: left, right, center, justify</p>
+</li>
+<li><p class="first">Size (text size)</p>
+<p><tt class="docutils literal"><span class="pre">font-size</span></tt>: ratio: 1,618/phi</p>
+</li>
+</ol>
+</div>
+</div>
 <div class="section" id="id1">
 <h2>工具<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>layout:</p>
@@ -303,10 +359,10 @@ h: help</div></blockquote>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="javascript.html" class="btn btn-neutral float-right" title="JavaScript"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="database.html" class="btn btn-neutral float-right" title="Database筆記 (MySQL, SQLite)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="database.html" class="btn btn-neutral" title="Database筆記 (MySQL, SQLite)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="programming.html" class="btn btn-neutral" title="Programming 程式開發"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

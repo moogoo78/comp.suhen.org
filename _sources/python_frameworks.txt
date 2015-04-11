@@ -114,6 +114,8 @@ Jinja2
 SQLAlchemy
 ---------------------------
 
+`SQLAlchemy Latest Documentation <http://docs.sqlalchemy.org/en/latest/>`__
+
 Snippets
 ~~~~~~~~~~~~~~~~~~~~
 

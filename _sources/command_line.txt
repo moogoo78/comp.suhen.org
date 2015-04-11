@@ -25,7 +25,10 @@ more
 
    echo -e "$(curl http://127.0.0.1:5000/api/info)"
              
-  
+
+
+用 less +F 代替 tail -f (可以 Ctrl-c 跳出, F 再度回到追蹤模式)
+   
 檔案
 ---------------
 
