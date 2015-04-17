@@ -216,6 +216,8 @@ project 目錄下有 docs, mymod
   
   $ sphinx-apidoc -F -o docs mymod
 
+如果是 HTTP API 可以用 `sphinxcontrib.httpdomain <https://pythonhosted.org/sphinxcontrib-httpdomain/>`__ , 還有 ``sphinxcontrib.autohttp.flask`` 自動產生 flask 的 API Doc
+  
   
 修改 conf.py(project/docs/source)::
 

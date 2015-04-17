@@ -63,6 +63,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a></li>
@@ -412,6 +413,7 @@ b) zwai
 <div class="highlight-python"><div class="highlight"><pre>$ sphinx-apidoc -F -o docs mymod
 </pre></div>
 </div>
+<p>如果是 HTTP API 可以用 <a class="reference external" href="https://pythonhosted.org/sphinxcontrib-httpdomain/">sphinxcontrib.httpdomain</a> , 還有 <tt class="docutils literal"><span class="pre">sphinxcontrib.autohttp.flask</span></tt> 自動產生 flask 的 API Doc</p>
 <p>修改 conf.py(project/docs/source):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s">&#39;../../mymod&#39;</span><span class="p">))</span>
 </pre></div>
