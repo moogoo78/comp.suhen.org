@@ -106,6 +106,8 @@ replace ::
   
   datetime.strptime(dtime.strftime('%Y-%m-%d'), '%Y-%m-%d') # 取得年月日0分0時0秒
 
+  iso_time = time.strftime("%Y-%m-%dT%H:%M:%S", tuple_time)
+  
   # 常用
   ## 取得當周的第1天跟最後一天
   d = datetime(2014, 1, 15)
@@ -121,6 +123,8 @@ replace ::
 
   # timeit
 
+
+* `WorkingWithTime - Python Wiki <https://wiki.python.org/moin/WorkingWithTime>`__
 * `Measure Time in Python - time.time() vs time.clock() - Python Central <http://www.pythoncentral.io/measure-time-in-python-time-time-vs-time-clock/>`__
 
 
