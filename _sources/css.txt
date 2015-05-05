@@ -58,7 +58,7 @@ Inline::
 
 * `CSS-Positioning-101/readme.txt at master · mwmnj/CSS-Positioning-101 · GitHub <https://github.com/mwmnj/CSS-Positioning-101>`__ 
 * `A List Apart: Articles: CSS Positioning 101 <http://www.alistapart.com/articles/css-positioning-101/>`__
-
+* `How to Center in CSS <http://howtocenterincss.com/>`__ 置中產生器
 
 Box
 ~~~~~~~~~~~~~~~  

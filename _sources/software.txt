@@ -1,11 +1,8 @@
 Software
 ================
 
-Desktop
+桌面軟體設定 - Mac OSX
 ---------------------------
-
-Mac OSX
-~~~~~~~~~~~
 
 (Mac的Option也是Alt鍵)
 
@@ -73,49 +70,24 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
   $ diskutil unmountDisk /dev/diskN
   $ sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
 
-好用軟體
-~~~~~~~~~~~~~~~~~~~~~
-
-Internet:
-
-* bt - Deluge (Linux)
-* IRC Client (OS X)
-* `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
-
-  1. Install Charles.app
-  2. iOS add SSL certificate (不管 https 可忽略)
-  3. 設定 proxy: iOS 的 Wi-Fi, HTTP PROXY 改 Manual
-
-    * Server: 裝 Charles.app 的電腦 IP (要在同一個網路下)
-    * Port: 8888
-
-  4. Charles.app 會收到 request, 按 accept 就可以了
-  5. 操作 iOS 的 APP, Charles.app 就有資料了
-
-
-ebook:
-
-* `calibre - E-book management <http://calibre-ebook.com/>`__
-
-系統工具:
-
-osx mount ext2/3: `FUSE for OS X <http://osxfuse.github.com/>`__ + `fuse-ext2 <http://sourceforge.net/projects/fuse-ext2/>`__
-
-
-DevTools:
-
-* `PixelWindow <http://www.pixelwindowapp.com/>`__ resolution ruler
-* `meld <http://meldmerge.org/>`__: $ homebrew install meld
-
 
 Browser / Internet
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 browser 網址輸入以下, 可以當記事本::
 
   data:text/html, <html contenteditable>
 
 
+Browser plugin/extensions:
+
+* 顯示網站使用fromeworks, web server, service...
+
+  * `Chrome Sniffer | Bao's Blog <http://www.nqbao.com/chrome-sniffer>`__ (Chrome)
+  * `Wappalyzer <http://wappalyzer.com/>`__ (Firefox)
+  * `Find your extension, accelerator and addon for the browsers safari, internet explorer(ie), chrome and firefox <http://www.tcpiputils.com/browser-extensions-addons-accelerators>`__ (Chrome, Firefox, Opera, Safari)
+
+    
 Firefox
 ~~~~~~~~~~~~
 
@@ -146,124 +118,41 @@ Firefox
     F11 fullscreen    
     F7 鍵盤瀏覽
 
-**Developer's tools:**
 
 scratchpad: 按shift+F4
 
 * [重新介紹 Firefox 開發者工具之二 | 訊息中心 | Mozilla Taiwan](http://blog.mozilla.com.tw/posts/4200/reintroducing-the-firefox-developer-tools-part-2-the-scratchpad-and-the-style-editor)
 
-Browser plugin/extensions:
-
-* 顯示網站使用fromeworks, web server, service...
-
-  * `Chrome Sniffer | Bao's Blog <http://www.nqbao.com/chrome-sniffer>`__ (Chrome)
-  * `Wappalyzer <http://wappalyzer.com/>`__ (Firefox)
-  * `Find your extension, accelerator and addon for the browsers safari, internet explorer(ie), chrome and firefox <http://www.tcpiputils.com/browser-extensions-addons-accelerators>`__ (Chrome, Firefox, Opera, Safari)
-
-
-Internet
-~~~~~~~~~~~
-
-HTML5 Slides:
-
-* `impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz <http://bartaz.github.io/impress.js/#/bored>`__
-* `hakimel/reveal.js <https://github.com/hakimel/reveal.js>`__
-
-
-
-VIM
--------------
-
-行號::
-
-  :set nonu
-  :set nu
-
-vim硬是要存檔::
-
-  :w !sudo tee %
-
-
-dot (grphviz)
------------------------
-
-
-example::
-
-  digraph foo {
-    hello [shape="diamond", label="hihi \nhello"]
-    world
-    hello -> world [label="Y"]
-  }
-
-
-輸出png::
-
-  dot foo.dot -Tpng -o foo.png
-
-.. note:: -T: format -o: output
-
-.. note:: 註解用\/* \*/ 或 //，像C++一樣
-
-ref:
-
-* `Node Shapes | Graphviz - Graph Visualization Software <http://www.graphviz.org/content/node-shapes>`__
-* `The DOT Language | Graphviz - Graph Visualization Software <http://www.graphviz.org/content/dot-language>`__
-* `Gallery | Graphviz - Graph Visualization Software <http://www.graphviz.org/Gallery.php>`__
-
-
-ffmpeg
--------------
-
-usage::
-
-  ffmpeg -i [source] [target]
-
-.. note:: -vcodec
-
-.. note:: -s 100x100
-
-.. note:: -t 10 (前10秒)
-
-.. note:: -vf crop=100:100 (切中間100x100), crop=in_w-480:in_h(左右各切240)
-
-.. note:: -aspect 4:3
-
-列出所有codecs::
-
-  $ ffmpeg -codecs
-
-列出所有file format::
-
-  $ ffmpeg -formats 
-
-
-----
-
-**Tips:**
-
-右上角watermark::
-
-  $ ffmpeg –i inputvideo.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]" outputvideo.flv
-
-via: `How to watermark a video using FFmpeg | iDude.net <http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/>`__
-
-
-examples::
-
-  $ ffmpeg -i filename.webm -acodec libmp3lame -aq 4 filename.mp3
   
-  # convert MTS to mp4
-  $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
+好用軟體
+-----------------
+
+開發工具
+~~~~~~~~
+
+* `Sequel Pro <http://www.sequelpro.com/>`__ MySQL client
+* `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
   
-  # movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
-  $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+  1. Install Charles.app
+  2. iOS add SSL certificate (不管 https 可忽略)
+  3. 設定 proxy: iOS 的 Wi-Fi, HTTP PROXY 改 Manual
 
-  # show meta data
-  $ ffmpeg -i <foo.mp4> -f ffmetadata <out.txt>
+    * Server: 裝 Charles.app 的電腦 IP (要在同一個網路下)
+    * Port: 8888
 
-  # 大小聲
-  $ ffmpeg -i silent.mp3 -af "volume=10dB" noise.mp3
-  $ ffmpeg -i silent.mp3 -af "volume=-5dB" noise.mp3
-  $ ffmpeg -f inputfile -vcodec copy -af "volume/10dB" outputfile
+  4. Charles.app 會收到 request, 按 accept 就可以了
+  5. 操作 iOS 的 APP, Charles.app 就有資料了
+     
+* `PixelWindow <http://www.pixelwindowapp.com/>`__ resolution ruler
+* `meld <http://meldmerge.org/>`__: $ homebrew install meld
+     
+應用
+~~~~~~~~
 
+* bt - Deluge (Linux)
+* `calibre - E-book management <http://calibre-ebook.com/>`__ ebook reader
+
+系統工具
+~~~~~~~~~~~~~~
+
+osx mount ext2/3: `FUSE for OS X <http://osxfuse.github.com/>`__ + `fuse-ext2 <http://sourceforge.net/projects/fuse-ext2/>`__
