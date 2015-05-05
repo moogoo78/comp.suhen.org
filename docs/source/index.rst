@@ -9,24 +9,25 @@ CompDocs
 MooGoo's note about computer usage.
 
 
-Tech
+Development
 ---------------
 .. toctree::
    :maxdepth: 2
-
-   database
+      
+   programming
    web_develop
+   database
+   server
    javascript
    html
    css
-   python_frameworks
-   python_flask
+   lua
    python
-   scripts_matrix
-   programming
+   scripts_matrix   
+   python_frameworks
 
 
-software
+Applications
 ---------------
 .. toctree::
    :maxdepth: 2
@@ -36,11 +37,6 @@ software
    command_line   
    software
    sphinx   
-
-
-Service
----------------
-.. toctree::
-   :maxdepth: 2
-
    aws_eb_flask
+   vagrant_and_docker
+

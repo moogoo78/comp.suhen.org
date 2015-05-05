@@ -25,7 +25,10 @@ more
 
    echo -e "$(curl http://127.0.0.1:5000/api/info)"
              
-  
+
+
+用 less +F 代替 tail -f (可以 Ctrl-c 跳出, F 再度回到追蹤模式)
+   
 檔案
 ---------------
 
@@ -295,3 +298,100 @@ scroll::
 
 * `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
 * `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
+
+  VIM
+-------------
+
+行號::
+
+  :set nonu
+  :set nu
+
+vim硬是要存檔::
+
+  :w !sudo tee %
+
+
+dot (grphviz)
+-----------------------
+
+
+example::
+
+  digraph foo {
+    hello [shape="diamond", label="hihi \nhello"]
+    world
+    hello -> world [label="Y"]
+  }
+
+
+輸出png::
+
+  dot foo.dot -Tpng -o foo.png
+
+.. note:: -T: format -o: output
+
+.. note:: 註解用\/* \*/ 或 //，像C++一樣
+
+ref:
+
+* `Node Shapes | Graphviz - Graph Visualization Software <http://www.graphviz.org/content/node-shapes>`__
+* `The DOT Language | Graphviz - Graph Visualization Software <http://www.graphviz.org/content/dot-language>`__
+* `Gallery | Graphviz - Graph Visualization Software <http://www.graphviz.org/Gallery.php>`__
+
+
+ffmpeg
+-------------
+
+usage::
+
+  ffmpeg -i [source] [target]
+
+.. note:: -vcodec
+
+.. note:: -s 100x100
+
+.. note:: -t 10 (前10秒)
+
+.. note:: -vf crop=100:100 (切中間100x100), crop=in_w-480:in_h(左右各切240)
+
+.. note:: -aspect 4:3
+
+列出所有codecs::
+
+  $ ffmpeg -codecs
+
+列出所有file format::
+
+  $ ffmpeg -formats 
+
+
+----
+
+**Tips:**
+
+右上角watermark::
+
+  $ ffmpeg –i inputvideo.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]" outputvideo.flv
+
+via: `How to watermark a video using FFmpeg | iDude.net <http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/>`__
+
+
+examples::
+
+  $ ffmpeg -i filename.webm -acodec libmp3lame -aq 4 filename.mp3
+  
+  # convert MTS to mp4
+  $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
+  
+  # movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
+  $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+
+  # show meta data
+  $ ffmpeg -i <foo.mp4> -f ffmetadata <out.txt>
+
+  # 大小聲
+  $ ffmpeg -i silent.mp3 -af "volume=10dB" noise.mp3
+  $ ffmpeg -i silent.mp3 -af "volume=-5dB" noise.mp3
+  $ ffmpeg -f inputfile -vcodec copy -af "volume/10dB" outputfile
+

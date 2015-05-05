@@ -174,3 +174,82 @@ Adv.
 -----
 * `Javascript 面向对象编程 | 酷壳 - CoolShell.cn <http://coolshell.cn/articles/6441.html>`__
 
+
+
+compare jQuery & vanilla JavaScript
+----------------------------------------
+
+.. code-block :: javascript
+
+    // Doucment ready
+    $(document).ready(function() {
+      // code…
+    });
+     
+    document.addEventListener("DOMContentLoaded", function() {
+      // code…
+    });
+     
+    // select all divs
+    var divs = $("div");
+    
+    var divs = document.querySelectorAll("div");
+
+    // add class
+    newDiv.addClass("foo");
+    
+    newDiv.classList.add("foo");
+
+    // toggle class
+    newDiv.toggleClass("foo");
+    
+    newDiv.classList.toggle("foo");
+
+    // click
+    $("a").click(function() {
+      // code…
+    })
+        
+    [].forEach.call(document.querySelectorAll("a"), function(el) {
+      el.addEventListener("click", function() {
+        // code…
+      });
+    });
+     
+    // append
+    $("body").append($("<p/>"));
+    
+    document.body.appendChild(document.createElement("p"));
+
+    // add attr
+    $("img").filter(":first").attr("alt", "My image");
+     
+    document.querySelector("img").setAttribute("alt", "My image");
+
+    // find parent
+    var parent = $("#about").parent();
+     
+    var parent = document.getElementById("about").parentNode;
+     
+    // clone
+    var clonedElement = $("#about").clone();
+     
+    var clonedElement = document.getElementById("about").cloneNode(true);
+     
+    // clear childs
+    $("#wrap").empty();
+     
+    var wrap = document.getElementById("wrap");
+    while(wrap.firstChild) wrap.removeChild(wrap.firstChild);
+     
+    // check has child nodes
+    if($("#wrap").is(":empty")) { ... }
+     
+    if(!document.getElementById("wrap").hasChildNodes()) { ... }
+     
+     
+    // next sibling
+    var nextElement = $("#wrap").next();
+     
+    var nextElement = document.getElementById("wrap").nextSibling;
+     

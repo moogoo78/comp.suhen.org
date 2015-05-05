@@ -4,6 +4,50 @@ Web Develop
 
 Webhooks: "user-defined HTTP callbacks"
 
+Design
+-------------
+
+Typography
+~~~~~~~~~~~~~
+
+http://practicaltypography.com/typography-in-ten-minutes.html
+
+1. body text - 最重要, 最先決定
+2. point size - 通常印刷品 10-12 point, web: 15-25 pixels
+3. line spacing - 行距: 120-145% point size
+4. line length - 45-90 characters per line, 印刷品: page margins larger than the traditional one inch. web page: it usually means not allowing the text to flow to the edges of the browser window.
+* 不要用系統預設 font
+
+重點: http://practicaltypography.com/summary-of-key-rules.html
+全文: http://practicaltypography.com/
+
+
+`Web Typography for non-designers - Presslabs <http://www.presslabs.com/blog/web-typography-for-non-designers/>`__
+
+1. Leading (space between lines)
+   
+   ``line-height``:120%-150% of font size
+   
+2. Measure (length of one line of text)
+   
+   ``max-width``: 45-75 characters
+
+3. Kerning (space between pairs of letters)
+   
+   自己看着辦
+   
+4. Tracking (space between letters)
+   
+   ``letter-spacing``: positive or negative
+   
+5. Alignment (paragraph alignment)
+   
+   ``text-align``: left, right, center, justify
+
+6. Size (text size)
+   
+   ``font-size``: ratio: 1,618/phi
+
 
 
 工具

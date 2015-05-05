@@ -1,31 +1,130 @@
+Python Web Frameworks
+========================================
 
-Python Web Framework (SQLAlchemy, Jinja2, Django)
-==============================================================
+Flask
+--------
 
+API
+~~~~~~
+
+request:
+
+.. code-block:: python
+
+  request.remote_addr # client id
+  request.access_route # all ip addresses from client (access_route[0]) to the last proxy server,
+  # 判斷環境變數 HTTP_X_FORWARDED_FOR
+
+* `charles leifer | Structuring flask apps, a how-to for those coming from Django <http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/>`__
+* `lask/examples at master · mitsuhiko/flask <https://github.com/mitsuhiko/flask/tree/master/examples>`__
+* `semirook/flask-kit <https://github.com/semirook/flask-kit>`__
+
+
+
+Best Practice
+~~~~~~~~~~~~~~~~~~
+
+settings:
+
+設定檔放在一起 (config.py)，容易比較，敏感資料從 os.environ.get('foo') 取得
+
+.. code-block:: python
+
+   env = os.environ.get('APP_ENV','DevConfig')
+   app.config.from_object('config.%s' % env)
+
+   app.config['ENV'] = env
+
+
+structure 目錄配置:
+
+**1.中央集權** 我們同一家
+
+結構層次簡單，方便資源/功能共享，
+  
+.. code-block:: text
+
+   app/
+       __init.py
+       static/
+       templates/
+           api/
+           admin/
+           user/
+       views/
+           __init__.py
+           api.py
+           admin.py
+           user.py
+       models.py
+
+
+**2地方自治** - 自己的 template, view 自己管
+
+層次多，改 admin 時, views, static, templates 都在附近, 不用移來移去
+
+別的網站要用可以整包搬 ?   
+
+.. code-block:: text
+
+   app/
+       __init.py
+       api/
+           __init__.py
+           views.py
+           static/
+           templates/
+       admin/
+           __init__.py
+           views.py
+           static/
+           templates/       
+       user/
+           __init__.py
+           views.py
+           static/
+           templates/
+       models.py       
+
+Extensions (Plugins)
+~~~~~~~~~~~~~~~~~~~~~
+
+* `Flask-Login documentation <http://packages.python.org/Flask-Login/>`__, `leafstorm / flask-login / overview — Bitbucket <https://bitbucket.org/leafstorm/flask-login>`__
+* `Flask-WTF <http://packages.python.org/Flask-WTF/>`__, `WTForms Documentation <http://wtforms.simplecodes.com/docs/dev/>`__, `danjac / flask-wtf / overview — Bitbucket <https://bitbucket.org/danjac/flask-wtf>`__
+
+
+Jinja2
+---------------------
+
+.. code-block:: python
+
+  sort(value, reverse=False, case_sensitive=False, attribute=None)::
+
+  {% for item in iterable|sort(attribute='date') %}
+    ...
+  {% endfor %}
+
+  dictsort(value, case_sensitive=False, by='key')::
+
+  {% for item in mydict|dictsort(false, 'value') %}
+      sort the dict by key, case insensitive, sorted
+      normally and ordered by value.
+    
 
 SQLAlchemy
 ---------------------------
 
-setting
+`SQLAlchemy Latest Documentation <http://docs.sqlalchemy.org/en/latest/>`__
+
+Snippets
 ~~~~~~~~~~~~~~~~~~~~
-sqlite path::
-
-  # sqlite://<nohostname>/<path>
-  # where <path> is relative:
-  engine = create_engine('sqlite:///foo.db')
-
-  # or absolute, starting with a slash:
-  engine = create_engine('sqlite:////absolute/path/to/foo.db')
 
 import::
 
   from flask.ext.sqlalchemy import BaseQuery
   from sqlalchemy.sql import func
-
-schema
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-column parameters::
+  
+Scheme::
 
   primary_key =True
   nullable=False
@@ -33,8 +132,6 @@ column parameters::
   default
   onupdate
   index=True
-
-* `Schema Definition Language — SQLAlchemy 0.7 Documentation <http://docs.sqlalchemy.org/en/rel_0_7/core/schema.html>`__
 
 mapper_args::
 
@@ -57,15 +154,17 @@ relationship+filter::
       lazy="dynamic",
       backref='sale_event')
 
-  products.filter_by(type=1).all()
+  products.filter_by(<cond>).all
+      
+sqlite path::
 
+  # sqlite://<nohostname>/<path>
+  # where <path> is relative:
+  engine = create_engine('sqlite:///foo.db')
 
+  # or absolute, starting with a slash:
+  engine = create_engine('sqlite:////absolute/path/to/foo.db')
 
-http://docs.sqlalchemy.org/en/latest/orm/inheritance.html
-
-
-Query
-~~~~~~~~~~~~~~~~
 
 rand::
 
@@ -91,7 +190,7 @@ between, like::
             filter(API2Log.dtime.between(i[0], i[1]),
                    API2Log.data.like('%%%s%%' % j['data']))
 
-.. code-block:: python
+distinct::
 
     from sqlalchemy import distinct
     session.query(func.count(distinct(User.name)))
@@ -150,13 +249,24 @@ relationship, associate
   db.session.append(Bar.query.get(1))
   db.session.commit() 
 
-  
-debug
-~~~~~~~~~~~~~
-http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries
+
+self-relation::
+
+    class Organization(db.Model, Base):
+    
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.Unicode(128))
+        parent_id = db.Column(db.Integer, db.ForeignKey('organization.id'))
+
+        parent = db.relationship('Organization', remote_side=[id])
+
+.. note:: remote_side - used for self-referential relationships, indicates the column or list of columns that form the “remote side” of the relationship.
+
+
 
 
 常見error
+~~~~~~~~~~~~
 
 0.8更新::
 
@@ -168,28 +278,15 @@ changelog (0.8): http://docs.sqlalchemy.org/en/latest/changelog/changelog_08.htm
 
 文件 (0.7): http://docs.sqlalchemy.org/en/rel_0_7/orm/collections.html#dynamic-relationship
 
-比較
+debug
+
+http://pythonhosted.org/Flask-SQLAlchemy/api.html#flask.ext.sqlalchemy.get_debug_queries
+
+ref
 ~~~~~~~~~~~
+
 * `SQLAlchemy and You | Armin Ronacher's Thoughts and Writings <http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/>`__
-
-
-  
-Jinja2
----------------------
-
-.. code-block:: python
-
-  sort(value, reverse=False, case_sensitive=False, attribute=None)::
-
-  {% for item in iterable|sort(attribute='date') %}
-    ...
-  {% endfor %}
-
-  dictsort(value, case_sensitive=False, by='key')::
-
-  {% for item in mydict|dictsort(false, 'value') %}
-      sort the dict by key, case insensitive, sorted
-      normally and ordered by value.
+ 
 
 
 Django
