@@ -186,7 +186,8 @@ curl::
   curl http://example -d"tag=foo&cat=bar" # 這個預設會送POST
   curl http://example/edit -XPOST # http method
   crul http://example/api -F user=mouse -F passwd=cheese
-
+  curl --X POST -F "foo=bar" -F "myfile=@pathto.local" http://example.com/upload # 上傳檔案
+ 
   :-X: 	specify HTTP request method e.g. POST
   :-H: 	specify request headers e.g. "Content-type: application/json"
   :-d: 	specify request data e.g. '{"message":"Hello Data"}'

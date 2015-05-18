@@ -404,6 +404,7 @@ dig foobar.com mx
 curl http://example -d&quot;tag=foo&amp;cat=bar&quot; # 這個預設會送POST
 curl http://example/edit -XPOST # http method
 crul http://example/api -F user=mouse -F passwd=cheese
+curl --X POST -F &quot;foo=bar&quot; -F &quot;myfile=@pathto.local&quot; http://example.com/upload # 上傳檔案
 
 :-X:  specify HTTP request method e.g. POST
 :-H:  specify request headers e.g. &quot;Content-type: application/json&quot;
