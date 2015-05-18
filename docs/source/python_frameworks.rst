@@ -92,6 +92,19 @@ Extensions (Plugins)
 * `Flask-Login documentation <http://packages.python.org/Flask-Login/>`__, `leafstorm / flask-login / overview — Bitbucket <https://bitbucket.org/leafstorm/flask-login>`__
 * `Flask-WTF <http://packages.python.org/Flask-WTF/>`__, `WTForms Documentation <http://wtforms.simplecodes.com/docs/dev/>`__, `danjac / flask-wtf / overview — Bitbucket <https://bitbucket.org/danjac/flask-wtf>`__
 
+snippets
+~~~~~~~~~~~
+
+回傳下載連結:
+
+.. code-block:: python
+
+  from flask import make_response
+  
+  response = make_response(<binary>)
+  response.headers["Content-Disposition"] = "attachment; filename=<download.zip>"
+  return response  
+
 
 Jinja2
 ---------------------

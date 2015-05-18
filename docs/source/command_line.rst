@@ -186,7 +186,8 @@ curl::
   curl http://example -d"tag=foo&cat=bar" # 這個預設會送POST
   curl http://example/edit -XPOST # http method
   crul http://example/api -F user=mouse -F passwd=cheese
-
+  curl --X POST -F "foo=bar" -F "myfile=@pathto.local" http://example.com/upload # 上傳檔案
+ 
   :-X: 	specify HTTP request method e.g. POST
   :-H: 	specify request headers e.g. "Content-type: application/json"
   :-d: 	specify request data e.g. '{"message":"Hello Data"}'
@@ -299,7 +300,7 @@ scroll::
 * `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
 * `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
 
-  VIM
+VIM
 -------------
 
 行號::
@@ -357,41 +358,64 @@ usage::
 
 .. note:: -aspect 4:3
 
+          
 列出所有codecs::
 
   $ ffmpeg -codecs
 
+  
 列出所有file format::
 
   $ ffmpeg -formats 
 
 
-----
+Snippets
+~~~~~~~~~~~~~~~
 
-**Tips:**
+**convert:**
 
-右上角watermark::
-
-  $ ffmpeg –i inputvideo.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]" outputvideo.flv
-
-via: `How to watermark a video using FFmpeg | iDude.net <http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/>`__
-
-
-examples::
+.. code-block:: bash
 
   $ ffmpeg -i filename.webm -acodec libmp3lame -aq 4 filename.mp3
   
   # convert MTS to mp4
   $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
   
-  # movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
-  $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+
+**meta data:**
+
+.. code-block:: bash
 
   # show meta data
   $ ffmpeg -i <foo.mp4> -f ffmetadata <out.txt>
+  
+  $ ffprobe
 
+  
+**manuplate:**
+
+.. code-block:: bash
+
+  # clip movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
+  $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+
+  # video 右上角加 watermark:   
+  $ ffmpeg –i inputvideo.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]" outputvideo.flv
+
+via: `How to watermark a video using FFmpeg | iDude.net <http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/>`__
+
+**聲音:**  
+
+.. code-block:: bash
+                
+  #聲音檔前面加 1 秒靜音:  
+  $ ffmpeg -f lavfi -i aevalsrc=0:0:0:0:0:0::duration=1 silence.mp3 # 產生 1 秒靜音 mp3
+  $ ffmpeg -i concat:"silence.mp3|original.mp3" -codec copy combined.mp3 # 合併
+  
   # 大小聲
   $ ffmpeg -i silent.mp3 -af "volume=10dB" noise.mp3
   $ ffmpeg -i silent.mp3 -af "volume=-5dB" noise.mp3
   $ ffmpeg -f inputfile -vcodec copy -af "volume/10dB" outputfile
+
+
 

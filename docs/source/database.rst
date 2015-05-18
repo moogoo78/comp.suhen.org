@@ -68,6 +68,15 @@ LIMIT
     ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;    
 
 
+每個月統計
+                
+.. code-block:: sql
+   
+    SELECT YEAR(dtime), MONTH(dtime), COUNT(*)
+    FROM api2_log 
+    WHERE cls = 'talkingapp' AND act = 'update_stat'
+    GROUP BY YEAR(dtime),MONTH(dtime)
+
     
 status:
 
