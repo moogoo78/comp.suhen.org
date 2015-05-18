@@ -357,10 +357,12 @@ usage::
 
 .. note:: -aspect 4:3
 
+          
 列出所有codecs::
 
   $ ffmpeg -codecs
 
+  
 列出所有file format::
 
   $ ffmpeg -formats 
@@ -371,7 +373,7 @@ Snippets
 
 **convert:**
 
-.. code-block::
+.. code-block:: bash
 
   $ ffmpeg -i filename.webm -acodec libmp3lame -aq 4 filename.mp3
   

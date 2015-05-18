@@ -578,6 +578,12 @@ C-b ?</p>
 </pre></div>
 </div>
 <p><strong>convert:</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ffmpeg -i filename.webm -acodec libmp3lame -aq <span class="m">4</span> filename.mp3
+
+<span class="c"># convert MTS to mp4</span>
+<span class="nv">$ </span>ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
+</pre></div>
+</div>
 <p><strong>meta data:</strong></p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># show meta data</span>
 <span class="nv">$ </span>ffmpeg -i &lt;foo.mp4&gt; -f ffmetadata &lt;out.txt&gt;
