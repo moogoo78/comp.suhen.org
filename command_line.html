@@ -164,6 +164,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#service">Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#locale">locale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools">tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dot-grphviz">dot (grphviz)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ffmpeg">ffmpeg</a></li>
 </ul>
@@ -495,14 +496,14 @@ C-b ?</p>
 <div class="highlight-python"><div class="highlight"><pre>Ctrl-b [ 上/下/左/右 , q 離開
 </pre></div>
 </div>
-<ul>
-<li><p class="first"><a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">tmux shortcuts &amp; cheatsheet</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://gist.github.com/andreyvit/2921703">tmux cheatsheet</a></p>
-<p>VIM</p>
-</li>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">tmux shortcuts &amp; cheatsheet</a></li>
+<li><a class="reference external" href="https://gist.github.com/andreyvit/2921703">tmux cheatsheet</a></li>
 </ul>
-<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="vim">
+<h2>VIM<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h2>
 <p>行號:</p>
 <div class="highlight-python"><div class="highlight"><pre>:set nonu
 :set nu
@@ -511,7 +512,6 @@ C-b ?</p>
 <p>vim硬是要存檔:</p>
 <div class="highlight-python"><div class="highlight"><pre>:w !sudo tee %
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="dot-grphviz">
@@ -577,6 +577,8 @@ C-b ?</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -formats
 </pre></div>
 </div>
+<div class="section" id="id3">
+<h3>Snippets<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><strong>convert:</strong></p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ffmpeg -i filename.webm -acodec libmp3lame -aq <span class="m">4</span> filename.mp3
 
@@ -610,6 +612,7 @@ C-b ?</p>
 <span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=-5dB&quot;</span> noise.mp3
 <span class="nv">$ </span>ffmpeg -f inputfile -vcodec copy -af <span class="s2">&quot;volume/10dB&quot;</span> outputfile
 </pre></div>
+</div>
 </div>
 </div>
 </div>

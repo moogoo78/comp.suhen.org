@@ -299,7 +299,7 @@ scroll::
 * `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
 * `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
 
-  VIM
+VIM
 -------------
 
 行號::
@@ -369,7 +369,7 @@ usage::
 
 
 Snippets
-^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 **convert:**
 
