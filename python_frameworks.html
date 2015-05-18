@@ -164,14 +164,13 @@
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#locale">locale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg">ffmpeg</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="software.html#desktop">Desktop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#browser-internet">Browser / Internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#vim">VIM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#ffmpeg">ffmpeg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#mac-osx">桌面軟體設定 - Mac OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#id1">好用軟體</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx - reST (reStructuredText)</a><ul>
@@ -302,6 +301,17 @@
 <li><a class="reference external" href="http://packages.python.org/Flask-WTF/">Flask-WTF</a>, <a class="reference external" href="http://wtforms.simplecodes.com/docs/dev/">WTForms Documentation</a>, <a class="reference external" href="https://bitbucket.org/danjac/flask-wtf">danjac / flask-wtf / overview — Bitbucket</a></li>
 </ul>
 </div>
+<div class="section" id="snippets">
+<h3>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
+<p>回傳下載連結:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">make_response</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="o">&lt;</span><span class="n">binary</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">&quot;Content-Disposition&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;attachment; filename=&lt;download.zip&gt;&quot;</span>
+<span class="k">return</span> <span class="n">response</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="jinja2">
 <h2>Jinja2<a class="headerlink" href="#jinja2" title="Permalink to this headline">¶</a></h2>
@@ -322,8 +332,8 @@
 <div class="section" id="sqlalchemy">
 <h2>SQLAlchemy<a class="headerlink" href="#sqlalchemy" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://docs.sqlalchemy.org/en/latest/">SQLAlchemy Latest Documentation</a></p>
-<div class="section" id="snippets">
-<h3>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Snippets<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>import:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">BaseQuery</span>
 <span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">func</span>

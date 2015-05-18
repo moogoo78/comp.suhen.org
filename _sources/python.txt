@@ -22,11 +22,18 @@ snippets:
   # -.- coding: utf-8 -.-
 
   import sys
+
+  def main(arg1):
+      print arg1
+    
   if __name__ == '__main__':
       if len(sys.argv) > 1:
           main(sys.argv[1])
 
-
+  ## walk 
+  for root, dirs, files in os.walk(src):
+      print root, dirs, files
+          
 struct dict:
 
 .. code-block:: python

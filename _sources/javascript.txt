@@ -5,7 +5,8 @@ JavaScript
 Tutorial
 -------------
 
-* `JavaScript Guide - MDN Docs <https://developer.mozilla.org/en/JavaScript/Guide>`__ 
+* `JavaScript Guide - MDN Docs <https://developer.mozilla.org/en/JavaScript/Guide>`__
+* `A re-introduction to JavaScript (JS tutorial) - JavaScript | MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript>`__ 
 * `DOM Enlightenment - Exploring the relationship between JavaScript and the modern HTML DOM <http://www.domenlightenment.com/>`__
 * `Google JavaScript Style Guide <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`__
 * `Arrays in JavaScript <http://www.2ality.com/2012/12/arrays.html>`__

@@ -577,29 +577,32 @@ C-b ?</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -formats
 </pre></div>
 </div>
-<hr class="docutils" />
-<p><strong>Tips:</strong></p>
-<p>右上角watermark:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg –i inputvideo.avi -vf &quot;movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]&quot; outputvideo.flv
+<p><strong>convert:</strong></p>
+<p><strong>meta data:</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># show meta data</span>
+<span class="nv">$ </span>ffmpeg -i &lt;foo.mp4&gt; -f ffmetadata &lt;out.txt&gt;
+
+<span class="nv">$ </span>ffprobe
+</pre></div>
+</div>
+<p><strong>manuplate:</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># clip movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)</span>
+<span class="nv">$ </span>ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
+
+<span class="c"># video 右上角加 watermark:</span>
+<span class="nv">$ </span>ffmpeg –i inputvideo.avi -vf <span class="s2">&quot;movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]&quot;</span> outputvideo.flv
 </pre></div>
 </div>
 <p>via: <a class="reference external" href="http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/">How to watermark a video using FFmpeg | iDude.net</a></p>
-<p>examples:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -i filename.webm -acodec libmp3lame -aq 4 filename.mp3
+<p><strong>聲音:</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#聲音檔前面加 1 秒靜音:</span>
+<span class="nv">$ </span>ffmpeg -f lavfi -i <span class="nv">aevalsrc</span><span class="o">=</span>0:0:0:0:0:0::duration<span class="o">=</span><span class="m">1</span> silence.mp3 <span class="c"># 產生 1 秒靜音 mp3</span>
+<span class="nv">$ </span>ffmpeg -i concat:<span class="s2">&quot;silence.mp3|original.mp3&quot;</span> -codec copy combined.mp3 <span class="c"># 合併</span>
 
-# convert MTS to mp4
-$ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
-
-# movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)
-$ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
-
-# show meta data
-$ ffmpeg -i &lt;foo.mp4&gt; -f ffmetadata &lt;out.txt&gt;
-
-# 大小聲
-$ ffmpeg -i silent.mp3 -af &quot;volume=10dB&quot; noise.mp3
-$ ffmpeg -i silent.mp3 -af &quot;volume=-5dB&quot; noise.mp3
-$ ffmpeg -f inputfile -vcodec copy -af &quot;volume/10dB&quot; outputfile
+<span class="c"># 大小聲</span>
+<span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=10dB&quot;</span> noise.mp3
+<span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=-5dB&quot;</span> noise.mp3
+<span class="nv">$ </span>ffmpeg -f inputfile -vcodec copy -af <span class="s2">&quot;volume/10dB&quot;</span> outputfile
 </pre></div>
 </div>
 </div>
