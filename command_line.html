@@ -612,6 +612,9 @@ C-b ?</p>
 <span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=10dB&quot;</span> noise.mp3
 <span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=-5dB&quot;</span> noise.mp3
 <span class="nv">$ </span>ffmpeg -f inputfile -vcodec copy -af <span class="s2">&quot;volume/10dB&quot;</span> outputfile
+
+<span class="c"># 剪接</span>
+<span class="nv">$ </span>ffmpeg -ss 23:05 -t 8:20 -i file.mp3 out.mp3 <span class="c"># 從 23 分 5 秒開始, 剪 9 分 20 秒的內容</span>
 </pre></div>
 </div>
 </div>
