@@ -35,11 +35,12 @@ MooGoo's note about computer.
    :maxdepth: 2
    :caption: Software
              
-   emacs      
-   git
+   soft/emacs      
+   soft/git
    command_line   
    os_desktop
-   sphinx   
+   soft/sphinx   
    aws_eb_flask
-   vagrant_and_docker
+   soft/vagrant_and_docker
+   soft/pelican
    qna
