@@ -312,7 +312,18 @@ vim硬是要存檔::
 
   :w !sudo tee %
 
+pandoc
+----------
 
+轉換各種檔案格式
+
+ex: markdown 轉 rst
+
+.. code-block:: bash
+
+   pandoc -f markdown -t rst -o output.rst input.md
+
+  
 dot (grphviz)
 -----------------------
 
