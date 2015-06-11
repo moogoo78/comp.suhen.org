@@ -53,6 +53,9 @@ http://practicaltypography.com/typography-in-ten-minutes.html
 工具
 ---------------
 
+
+* `SoFresh! - It makes your CSS yummy. <http://sofresh.redpik.net/>`__ 更改 CSS 不用一直更新
+
 layout:
 
 * `Placehold.it - Quick and simple image placeholders <http://www.placehold.it/>`__

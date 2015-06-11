@@ -7,7 +7,10 @@ Tutorial
 -----------
 
 * `CSS - no layout <http://learnlayout.com/no-layout.html>`__ 範例清楚, 簡潔明瞭
+* http://zh-tw.learnlayout.com/
+* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Layout
 
+  
 Basic
 ~~~~~~~~~~~
 
@@ -114,7 +117,8 @@ layout (float, clear)::
 
 css:
 
-    :::css
+.. code-block:: css
+    
     .center {
         width:xxxpx;margin-left:auto;margin-right:auto;
     }

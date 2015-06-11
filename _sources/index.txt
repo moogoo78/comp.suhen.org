@@ -6,18 +6,22 @@
 CompDocs
 =============
 
-MooGoo's note about computer usage.
+MooGoo's note about computer.
 
 
-Development
----------------
 .. toctree::
    :maxdepth: 2
-      
+   :caption: Development
+
    programming
-   web_develop
+   web_develop             
    database
    server
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Programming Language
+
    javascript
    html
    css
@@ -26,17 +30,16 @@ Development
    scripts_matrix   
    python_frameworks
 
-
-Applications
----------------
+   
 .. toctree::
    :maxdepth: 2
-
+   :caption: Software
+             
    emacs      
    git
    command_line   
-   software
+   os_desktop
    sphinx   
    aws_eb_flask
    vagrant_and_docker
-
+   qna

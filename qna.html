@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lua &mdash; CompDocs 1.0 documentation</title>
+  <title>常見錯誤解決 &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Python" href="python.html"/>
-        <link rel="prev" title="CSS" href="css.html"/> 
+        <link rel="next" title="Emacs" href="emacs.html"/>
+        <link rel="prev" title="Python Web Frameworks" href="python_frameworks.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -163,7 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua.html">Lua</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#regular-expression">regular expression</a></li>
@@ -236,8 +236,8 @@
 <li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見錯誤解決</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">常見錯誤解決</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aws">AWS</a></li>
 </ul>
 </li>
 </ul>
@@ -399,11 +399,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Lua</li>
+    <li>常見錯誤解決</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/lua.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/qna.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -412,11 +412,33 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="lua">
-<h1>Lua<a class="headerlink" href="#lua" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference external" href="https://www.ptt.cc/bbs/GameDesign/M.1340896795.A.F29.html">[程式] Coroutine: 入門篇 - 看板 GameDesign - 批踢踢實業坊</a></li>
-</ul>
+  <div class="section" id="id1">
+<h1>常見錯誤解決<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aws">
+<h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
+<p>eb cli 出現錯誤 (MacOS X Yosemite)</p>
+<div class="highlight-bash"><div class="highlight"><pre>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">&quot;/Library/Frameworks/Python.framework/Versions/2.7/bin/eb&quot;</span>, line 5, in &lt;module&gt;
+    from pkg_resources import load_entry_point
+  File <span class="s2">&quot;build/bdist.macosx-10.6-intel/egg/pkg_resources.py&quot;</span>, line 2912, in &lt;module&gt;
+
+  File <span class="s2">&quot;build/bdist.macosx-10.6-intel/egg/pkg_resources.py&quot;</span>, line 550, in _build_master
+
+  File <span class="s2">&quot;build/bdist.macosx-10.6-intel/egg/pkg_resources.py&quot;</span>, line 563, in _build_from_requirements
+    keys2.append<span class="o">(</span>dist.key<span class="o">)</span>
+  File <span class="s2">&quot;build/bdist.macosx-10.6-intel/egg/pkg_resources.py&quot;</span>, line 742, in resolve
+
+pkg_resources.DistributionNotFound: <span class="nv">six</span><span class="o">==</span>1.8.0
+</pre></div>
+</div>
+<p>solved:</p>
+<ol class="arabic simple">
+<li>sudo pip install &#8211;upgrade setuptools</li>
+<li>sudo pip uninstall awsebcli</li>
+<li>sudo pip install awsebcli</li>
+<li>eb &#8211;version</li>
+</ol>
+</div>
 </div>
 
 
@@ -425,10 +447,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python.html" class="btn btn-neutral float-right" title="Python" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="emacs.html" class="btn btn-neutral float-right" title="Emacs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="css.html" class="btn btn-neutral" title="CSS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python_frameworks.html" class="btn btn-neutral" title="Python Web Frameworks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>比較 &mdash; CompDocs 1.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -28,12 +28,14 @@
   
 
   
-    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Programming 程式開發" href="programming.html"/>
-        <link rel="prev" title="&lt; Python &gt;" href="python.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Python Web Frameworks" href="python_frameworks.html"/>
+        <link rel="prev" title="Python" href="python.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,41 +46,98 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> CompDocs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> CompDocs
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#typography">Typography</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#apache">Apache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#php">PHP</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#id1">最佳化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#tools">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#id2">常用處理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#id3">資料庫編碼</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#command">command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#server-management">Server Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#q-a">Q &amp; A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#others">others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database.html#snippets">snippets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#id1">特色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#id1">特色</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html#the-good-part">The Good part</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html#id2">不良</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#debug-tools-console">Debug Tools (console)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#tips">Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#adv">Adv.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#compare-jquery-vanilla-javascript">compare jQuery &amp; vanilla JavaScript</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="html.html">HTML</a><ul>
@@ -90,37 +149,68 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="css.html">CSS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="css.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="css.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#tutorial">Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#snippets">Snippets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="css.html#id1">應用</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="css.html#gallery">Gallery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Framework (SQLAlchemy, Jinja2, Django)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#regular-expression">regular expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#list-compension">list compension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#string">string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#time">日期/時間 time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#file">file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#modules">Modules</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python_flask.html">Flask</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python_flask.html#settings">settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_flask.html#structure">structure 目錄配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_flask.html#extensions-plugins">Extensions (Plugins)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#overview">overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#id1">引數</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#build-in-functions">build-in functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#regex">regex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#json">json</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">&lt; Python &gt;</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python.html#quick-start">Quick Start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#basic">Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#id2">算數</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#io-shell-commond-line">IO / shell / commond line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#coding">coding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#shell">shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#tips">Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#coding-style">Coding Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#syntax">syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#id3">coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#array">array排序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#list">list 找出最常出現</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#simple-http-server">simple http server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#coding-style">Coding Style</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#comments-google-style">Comments (google style)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#practice">Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#id4">整理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#reference">reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#reference">reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#tutorial">Tutorial</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#decorator">decorator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#package">Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#package">Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#easy-install">easy_install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#pip">pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#id5">推薦</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
 </ul>
 </li>
@@ -128,59 +218,166 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">字串</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Frameworks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#flask">Flask</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#api">API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#best-practice">Best Practice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#extensions-plugins">Extensions (Plugins)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#snippets">snippets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#jinja2">Jinja2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#sqlalchemy">SQLAlchemy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#id1">Snippets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#error">常見error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_frameworks.html#ref">ref</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_frameworks.html#django">Django</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">常見錯誤解決</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">常用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">基本操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">基本操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id3">檔案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#movement">移動 Movement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#editing">編輯 Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#register-and-bookmark">Register and Bookmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#coding">Coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#macro">Macro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#regular-expression">Regular Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#help">Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#shell">shell</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#configure">configure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes">Modes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#dired">Dired</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id4">批次改檔名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#org-mode">Org-mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#html">HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#graphviz-dot">Graphviz (dot)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#others-mode">Others Mode</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#id5">其他 modes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#deft">deft</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#elist">elist 套件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#elist">elist 套件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#elscreen">elscreen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#skeleton">skeleton</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#ref">ref</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="git.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#quick-start">Quick Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="git.html#init">init</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#basic">Basic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#git-command">git command</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#git-command">git command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-clone-add">git clone / add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-reset-revert">git reset / revert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-log">git log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-commit-checkout-stash">git commit / checkout / stash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-branch-merge">git branch / merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-tag">git tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#other">other</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#undo">undo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="git.html#git-clonebranch">git clone某一個branch</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#id1">other</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#setting">setting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#locale">locale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#tmux">tmux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg">ffmpeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#id3">Snippets</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="software.html#desktop">Desktop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#browser-internet">Browser / Internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#vim">VIM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#ffmpeg">ffmpeg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software.html#browser-internet">Browser / Internet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="software.html#firefox">Firefox</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="software.html#opera">Opera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#id1">好用軟體</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software.html#id2">開發工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software.html#id3">應用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#id4">系統工具</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software.html#id5">工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#leopardmavericks-archive">從Leopard升級到Mavericks (Archive)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software.html#mavericks">1. 下載Mavericks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software.html#id6">2. 製作開機磁碟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software.html#id7">3. 安裝</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx - reST (reStructuredText)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#id1">使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html#id2">語法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html#id2">語法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sphinx.html#id3">文件結構</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#id4">參考資料</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#themes">Themes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html#publish">Publish</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart">quickstart</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant_and_docker.html">Vagrant, Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vagrant_and_docker.html#vagrant">Vagrant</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vagrant_and_docker.html#quickstart">QuickStart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant_and_docker.html#docker">Docker</a></li>
+</ul>
+</li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -205,13 +402,15 @@
     <li>比較</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/scripts_matrix.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/scripts_matrix.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="id1">
 <h1>比較<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
@@ -256,10 +455,10 @@ null == undefined            // true</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="programming.html" class="btn btn-neutral float-right" title="Programming 程式開發"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python_frameworks.html" class="btn btn-neutral float-right" title="Python Web Frameworks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="python.html" class="btn btn-neutral" title="&lt; Python &gt;"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python.html" class="btn btn-neutral" title="Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -271,9 +470,10 @@ null == undefined            // true</p>
         &copy; Copyright 2015, Suhen.
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
