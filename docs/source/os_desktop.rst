@@ -1,4 +1,4 @@
-Software
+OS & Desktop
 ================
 
 桌面軟體設定 - Mac OSX
@@ -70,9 +70,10 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
   $ diskutil unmountDisk /dev/diskN
   $ sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
 
-
+* `UNetbootin - Homepage and Downloads <http://unetbootin.sourceforge.net/>`__
+  
 Browser / Internet
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 browser 網址輸入以下, 可以當記事本::
 
@@ -123,12 +124,23 @@ scratchpad: 按shift+F4
 
 * [重新介紹 Firefox 開發者工具之二 | 訊息中心 | Mozilla Taiwan](http://blog.mozilla.com.tw/posts/4200/reintroducing-the-firefox-developer-tools-part-2-the-scratchpad-and-the-style-editor)
 
+
+Opera
+^^^^^^^^^^^^^^^^^^^^   
+
+spead dial 設定::
+
+  opera://flags/#experimental-start-page
+
+* `JsonViewer 延伸套件 - Opera 外掛程式 <https://addons.opera.com/zh-tw/extensions/details/jsonviewer/?display=en>`__
+* `Push to Kindle 延伸套件 - Opera 外掛程式 <https://addons.opera.com/zh-tw/extensions/details/push-to-kindle/?display=en>`__
+
   
 好用軟體
 -----------------
 
 開發工具
-~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^   
 
 * `Sequel Pro <http://www.sequelpro.com/>`__ MySQL client
 * `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
@@ -147,12 +159,75 @@ scratchpad: 按shift+F4
 * `meld <http://meldmerge.org/>`__: $ homebrew install meld
      
 應用
-~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 * bt - Deluge (Linux)
 * `calibre - E-book management <http://calibre-ebook.com/>`__ ebook reader
 
+
 系統工具
-~~~~~~~~~~~~~~
+-----------
+
+無法格式化 500 GB 或更大的磁碟, 無法寫入設備上最後的區塊
+
+`磁碟工具程式：無法格式化 500 GB 或更大的磁碟 <http://support.apple.com/kb/TS2644?viewlocale=zh_TW&locale=zh_TW>`__
+
+
+工具
+^^^^^^^^^^^^^^^^^^^^   
 
 osx mount ext2/3: `FUSE for OS X <http://osxfuse.github.com/>`__ + `fuse-ext2 <http://sourceforge.net/projects/fuse-ext2/>`__
+
+
+
+從Leopard升級到Mavericks (Archive)
+------------------------------------
+
+家裡一台很舊的iMac，作業系統跑Leopard (OS X 10.5.8)，很多軟體都不支援如 LINE桌面版... ，或是連Chrome都不更新了，倒是Firefox還很照顧這些老電腦...
+
+最近Mavericks開放免費更新，我的MacBook Air (Lion) 免費升級新的Mavericks後，覺得很好用，實在也很想更新這台iMac，Leopard一般是無法直接升級到Mavericks的，除非花一點錢，先升級成Snow Leopard (OS X 10.6)，才可以免費升級到Mavericks。但是網路上果然有解決方法！！
+
+參考這篇: `How to install Mavericks over Leopard | Macworld <http://www.macworld.com/article/2056564/how-to-install-mavericks-over-leopard.html>`__
+
+
+
+1. 下載Mavericks
+^^^^^^^^^^^^^^^^^^^^   
+
+我的MacBook Air已經更新10.9了，但還是可以再下載。
+
+改一個系統檔:
+
+::
+   
+    /System/Library/CoreServices/SystemVersion.plist
+    # 把10.9的地方改稱10.8
+
+然後到iTunes Mavericks官方頁面[Mavericks](https://itunes.apple.com/tw/app/id675248567?mt=12)就可以"重新"下載了。下載完的檔案會放在 */Applications/Install\ OS\ X\ Mavericks.app*，大概有5G多，iTunes載完會自動跳出安裝視窗，但是先不理他，可以把這個目錄copy到其他地方，不然系統以為安裝完後就會自動殺掉。
+
+2. 製作開機磁碟
+^^^^^^^^^^^^^^^^^^^^
+
+用Terminal打入以下:
+
+.. code-block:: bash
+                
+    sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/MY_EXTURNAL_HD --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction
+
+訊息跑完後就好了。(原本磁碟內容會消除)
+
+ref: `How to make a bootable Mavericks install drive | Macworld <http://www.macworld.com/article/2056561/how-to-make-a-bootable-mavericks-install-drive.html>`__
+
+
+3. 安裝
+^^^^^^^^^^^^^^^
+
+改系統檔(不確定這是不是一定要):
+
+::
+   
+    /System/Library/CoreServices/SystemVersion.plist
+    # 把10.5.8改成10.68
+
+
+    外接硬碟接上iMac，重新開機。開機時按住*Option*會跳出選擇開機磁碟，就選剛才製作好的開機碟。就會開始自動安裝了。

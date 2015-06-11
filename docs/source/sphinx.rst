@@ -153,13 +153,13 @@ PHP::
    `<http://example.com>`
 
 
-內部連結, 在某個rst文件裡的任何一個地方定義::
+內部連結, 在某個rst文件裡的任何一個地方定義 (底線開頭)::
 
-   .. _test_label:
+   .. _my-reference-label:
 
 連結::
 
-   :ref:`標題文字<test_label>`
+   詳細內容請看 :ref:`標題文字<my-reference-label>` 或 :ref:`my-reference-label` (不用底線)
 
 或是用::
 
@@ -167,6 +167,7 @@ PHP::
 
 會自動把文件標題抓出來: 
 
+`Inline markup — Sphinx 1.3.1+ documentation <http://sphinx-doc.org/markup/inline.html#cross-referencing-arbitrary-locations>`__
 
 **表格 (Tables)**
 

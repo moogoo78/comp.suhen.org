@@ -417,5 +417,6 @@ via: `How to watermark a video using FFmpeg | iDude.net <http://www.idude.net/in
   $ ffmpeg -i silent.mp3 -af "volume=-5dB" noise.mp3
   $ ffmpeg -f inputfile -vcodec copy -af "volume/10dB" outputfile
 
-
+  # 剪接
+  $ ffmpeg -ss 23:05 -t 8:20 -i file.mp3 out.mp3 # 從 23 分 5 秒開始, 剪 9 分 20 秒的內容
 

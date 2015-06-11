@@ -153,9 +153,30 @@ read::
       print line # 讀出每一行
   f.close()
 
+  
+Modules
+-------------
 
+MySQLdb::
 
+  import MySQLdb
 
+  db = MySQLdb.connect(host='localhost', user='root', passwd='123456', db='db_name', charset='utf8')
+  # charset 沒設定預設是 latin-1
+
+  cur = db.cursor() 
+
+  cur.execute("SELECT * FROM book")
+
+  for row in cur.fetchall():
+      print row[1]
+
+  cur.fetchone()
+
+  # 如果 INSERT 或 UPDATE就要
+  db.commit()
+
+  
 Basic
 ====================
 

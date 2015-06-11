@@ -3,8 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-#SPHINXBUILD   = sphinx-build
-SPHINXBUILD   = /Users/moogoo/venv/compdocs/bin/sphinx-build
+SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = ../../gh-pages
 
