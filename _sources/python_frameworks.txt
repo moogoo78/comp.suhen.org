@@ -250,6 +250,8 @@ foreign key constraint
 
 relationship, associate
 
+* `Basic Relationship Patterns — SQLAlchemy 1.0 Documentation <http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html>`__
+
 .. code-block:: python
 
   # db.Table

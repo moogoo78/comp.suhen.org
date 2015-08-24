@@ -30,13 +30,19 @@ Syntax
 cookbook
 ~~~~~~~~~~~~~
 
-CURD::
+CRUD:
+
+.. code-block:: sql
 
    INSERT INTO tbl_name (col1,col2) VALUES(15,col1*2);
    INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);
    UPDATE user SET password=password('新密碼') where user='root';　
+   DELETE FROM user where id = xx;
 
-以中文筆畫排序::
+
+以中文筆畫排序:
+
+.. code-block:: sql
 
    CONVERT( 欄位名稱 using big5) 。
 
