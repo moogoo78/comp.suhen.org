@@ -331,6 +331,8 @@ xlrd (python-excel)
        title = sheet.row_values(i)[2]
        descr = sheet.row_values(i)[5]
 
+       
+* `The xlrd Module <https://secure.simplistix.co.uk/svn/xlrd/trunk/xlrd/doc/xlrd.html?p=4966>`__
   
 Tutorial
 --------------
@@ -512,12 +514,8 @@ reference
 ------------------
 
 * `Arrow: better dates and times for Python — Arrow 0.4.4 documentation <http://crsmithdev.com/arrow/>`__
-  
-Tutorial
-~~~~~~~~~~~~~
-
-* `Mosky Liu, Pinkoi | SlideShare <http://www.slideshare.net/moskytw>`__
-
+* `Mosky Liu, Pinkoi | SlideShare <http://www.slideshare.net/moskytw>`__ good tutorial
+* `Intermediate Python — Python Tips 0.1 documentation <http://book.pythontips.com/en/latest/index.html>`__ 好用進階, tips
 
 
 Package
