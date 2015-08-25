@@ -1,7 +1,7 @@
 CSS
 =====
 
-* `sanitize.css <http://jonathantneal.github.io/sanitize.css/>`__ - 進化的 reset.css, normalize.css
+* `BEMIT: Taking the BEM Naming Convention a Step Further – CSS Wizardry – CSS, OOCSS, front-end architecture, performance and more, by Harry Roberts <http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/>`__ 好用的命名法
   
 Tutorial
 -----------

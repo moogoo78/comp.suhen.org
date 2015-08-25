@@ -17,6 +17,7 @@ MooGoo's note about computer.
    web_develop             
    database
    server
+   design
    
 .. toctree::
    :maxdepth: 2

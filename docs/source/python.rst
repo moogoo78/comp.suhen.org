@@ -1,13 +1,9 @@
 Python
-#####################
-:date: 2013-07-10 14:02
-:category: computer
-:tags: docs
-
+================
 
 
 Quick Start
-============
+-------------------
 
 path::
 
@@ -46,7 +42,9 @@ if/else三元運算 (ternary operator)::
 
 
 regular expression
-------------------
+~~~~~~~~~~~~~~~~~~~~~~~
+
+re.search()跟re.match()的不同, match()是字串開頭也要符合, search()只要字串中間有符合的pattern就可以了
 
 只留a-z, A-Z, 0-9:
 
@@ -59,9 +57,12 @@ parse出每個sql欄位
 
   # (1, 'The Three Little Pigs', '三隻小豬', 350, '這是有關於三隻...', 28, 16000, 'en', 280, ''),
   m = re.match(r'\((\d+), \'(.*)\', \'(.*)\', (\d+), \'(.*)\', (\d+), (\d+), \'(.*)\', (\d+), \'(.*)\'\)', i)
+  
+`7.2. re — Regular expression operations — Python v2.7.6 documentation <http://docs.python.org/2/library/re.html#search-vs-match>`__
 
 list compension
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
+
 印出a到z
 
 .. code-block:: python
@@ -81,19 +82,21 @@ lambda function::
   lower ('bb', 'aa') # aa
 
 string
---------------
+~~~~~~~~~~~~~~~~~~~~~~~
+
 format::
 
   '{0:.2f}'.format(init_scale) # 小數點後兩位
   '{0:02d}'.format(dtime.tm_mon) # 補2位0
-
+  '{:.1%}'.format(1/3.0) # 百分比 '33.3%'
+  
 replace ::
 
   string.replace('old', 'new')
 
 
 日期/時間 time
---------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **time format**
 
@@ -136,7 +139,8 @@ replace ::
 
 
 file
---------
+~~~~~~~~~
+
 
 write::
 
@@ -153,35 +157,188 @@ read::
       print line # 讀出每一行
   f.close()
 
+
+json
+~~~~~~~~~~~~~
+
+.. code-block:: python
+
+  # obj to json string (serialize)
+  json.dumps({'foo':'bar'}, ensure_ascii=False) # ensure_ascii = False (Default: True), 中文不會變成 u\xxxx 的 unicode 格式
+
+  # obj to json fp
+  json.dump({'foo':'bar'}, fp)
+
+  # json fp to obj
+  json.load(fp)
+
+  # json string
+  json.loads(s)
+
+
+算數
+~~~~~~~~~~
+
+.. code-block:: python
+
+  import random
+
+  random.randint(0,9)
+  # ''.join([str(random.randint(1,9)) for i in range(5)]) # 產生5個0-9的字串
+
+  random.random() # 產生 [0.0, 1.0) 的亂數
+
+  # test 百分比
+  a = 0
+  b = 0
+  c = 0
+  for i in range(10000):
+      r = random.random()
+      if r >= 0.95: # 5 %
+          c += 1
+      elif r >= 0.70 and r < 0.95: # 25 %
+          b += 1
+      else: # 70 %
+          a+= 1
+  print a, b,c, a/10000.0, b/10000.0, c/10000.0
+
+
+IO / shell / commond line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`15.1. os — Miscellaneous operating system interfaces — Python v2.7.3 documentation <http://docs.python.org/2/library/os.html>`__
+
+檢查目錄存在::
+
+  os.path.exists('/etc/passwd')
+
+subprocess::
+
+  import subprocess
+  subprocess.call(["ls", "-l"]) # 輸入是list, pipe要用popen, 安全一點
+  subprocess.call(["ls -l"], shell=True) # 完全用系統的shell, pipe, wildcards, 家目錄~都可以用, 參數直接給字串就可以了, 也許會有輸入不乾淨(shell injection)的風險
+
+
+常用::
+
+  os.getcwd()
+  os.mkdir(src)
+  os.rename(src, dst)
+
+coding
+~~~~~~~~~~
+
+UnicodeEncodeError::
+
+  import sys
+  reload(sys)
+  sys.setdefaultencoding('utf-8')
+
+* `宅之力: 解決方法: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe4 in position 0: ordinal not in range(128) <http://blog.wahahajk.com/2009/08/unicodedecodeerror-ascii-codec-cant.html>`__
+
+shell
+~~~~~~~~~
+
+多種方法:
+
+* os.system()
+* os.popen()
+* subprocess.Popen()
+* subprocess.call()
+
+參考:
+
+* `shell - Calling an external command in Python - Stack Overflow <http://stackoverflow.com/questions/89228/calling-an-external-command-in-python>`__
+
+subprocess::
+
+  subprocess.call('ls -al', shell=True)
+
   
+simple http server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在當下目錄::
+
+  $ python -m SimpleHTTPServer # 預設的port 8000, http://127.0.0.1:8000
+
+try/except  
+~~~~~~~~~~~~~~
+
+exceptions and/or logging
+
+.. code-block:: python
+
+  class SillyWalkMinistry(Exception):
+      """ handle exception """
+      pass
+
+  try:
+      do_silly(value)
+  except AttributeError as e:
+      log.info('')
+      do_invisible(v)
+  except Exception as e:
+      log.debug(str(e))
+      raise SillyWalkMinistry(e)
+      
 Modules
--------------
+---------------------------
 
-MySQLdb::
+MySQLdb
+~~~~~~~~~~~~~~~~
 
-  import MySQLdb
+.. code-block:: python
 
-  db = MySQLdb.connect(host='localhost', user='root', passwd='123456', db='db_name', charset='utf8')
-  # charset 沒設定預設是 latin-1
+    import MySQLdb
 
-  cur = db.cursor() 
+    db = MySQLdb.connect(host='localhost', user='root', passwd='123456', db='db_name', charset='utf8')
+    # charset 沒設定預設是 latin-1
 
-  cur.execute("SELECT * FROM book")
+    cur = db.cursor() 
 
-  for row in cur.fetchall():
-      print row[1]
+    cur.execute("SELECT * FROM book")
 
-  cur.fetchone()
+    for row in cur.fetchall():
+        print row[1]
 
-  # 如果 INSERT 或 UPDATE就要
-  db.commit()
+    cur.fetchone()
 
+    # 如果 INSERT 或 UPDATE就要
+    db.commit()
+
+
+
+Image, PIL, Pillow
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+在 Mac (OSX 10.9) 上用 pip (python 2.7) 裝 Pillow / PIL 失敗
+
+.. code-block:: python
+
+  # 用 homebrew 安裝
+  $ brew install Homebrew/python/pillow
+  # error: 顯示要link jpeg
+  $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
+
+
+xlrd (python-excel)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+   
+   book = xlrd.open_workbook('foo.xlsx')
+   sheet = book.sheet_by_name(u'工作表1')
+
+   for i in range(1,sheet.nrows):
+       title = sheet.row_values(i)[2]
+       descr = sheet.row_values(i)[5]
+
+       
+* `The xlrd Module <https://secure.simplistix.co.uk/svn/xlrd/trunk/xlrd/doc/xlrd.html?p=4966>`__
   
-Basic
-====================
+Tutorial
+--------------
 
 overview
--------------
+~~~~~~~~~~~~~~~~
 functions are objects in Python, just like everything else. (If you find that confusing wait till you hear that classes are objects in Python, just like everything else!)
 
 
@@ -193,7 +350,7 @@ pprint::
 
 
 引數
----------
+~~~~~~~~~~~~~
 引數傳遞:
 
 1. 傳值, 引數不回被改
@@ -219,7 +376,7 @@ pprint::
 
 
 build-in functions
---------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 filter(function, iterable)::
 
   [item for item in iterable if function(item)]
@@ -249,113 +406,12 @@ any(iterable)::
       return False
 
 
-regex
----------
-re.search()跟re.match()的不同, match()是字串開頭也要符合, search()只要字串中間有符合的pattern就可以了
-
-`7.2. re — Regular expression operations — Python v2.7.6 documentation <http://docs.python.org/2/library/re.html#search-vs-match>`__
-
-json
-------
-
-.. code-block:: python
-
-  # obj to json string (serialize)
-  json.dumps({'foo':'bar'}, ensure_ascii=False) # ensure_ascii = False (Default: True), 中文不會變成 u\xxxx 的 unicode 格式
-
-  # obj to json fp
-  json.dump({'foo':'bar'}, fp)
-
-  # json fp to obj
-  json.load(fp)
-
-  # json string
-  json.loads(s)
-
-
-算數
-===================
-
-.. code-block:: python
-
-  import random
-
-  random.randint(0,9)
-  # ''.join([str(random.randint(1,9)) for i in range(5)]) # 產生5個0-9的字串
-
-  random.random() # 產生 [0.0, 1.0) 的亂數
-
-  # test 百分比
-  a = 0
-  b = 0
-  c = 0
-  for i in range(10000):
-      r = random.random()
-      if r >= 0.95: # 5 %
-          c += 1
-      elif r >= 0.70 and r < 0.95: # 25 %
-          b += 1
-      else: # 70 %
-          a+= 1
-  print a, b,c, a/10000.0, b/10000.0, c/10000.0
-
-
-IO / shell / commond line
-================================
-`15.1. os — Miscellaneous operating system interfaces — Python v2.7.3 documentation <http://docs.python.org/2/library/os.html>`__
-
-檢查目錄存在::
-
-  os.path.exists('/etc/passwd')
-
-subprocess::
-
-  import subprocess
-  subprocess.call(["ls", "-l"]) # 輸入是list, pipe要用popen, 安全一點
-  subprocess.call(["ls -l"], shell=True) # 完全用系統的shell, pipe, wildcards, 家目錄~都可以用, 參數直接給字串就可以了, 也許會有輸入不乾淨(shell injection)的風險
-
-
-常用::
-
-  os.getcwd()
-  os.mkdir(src)
-  os.rename(src, dst)
-
-coding
-===============
-
-UnicodeEncodeError::
-
-  import sys
-  reload(sys)
-  sys.setdefaultencoding('utf-8')
-
-* `宅之力: 解決方法: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe4 in position 0: ordinal not in range(128) <http://blog.wahahajk.com/2009/08/unicodedecodeerror-ascii-codec-cant.html>`__
-
-shell
-=========
-
-多種方法:
-
-* os.system()
-* os.popen()
-* subprocess.Popen()
-* subprocess.call()
-
-參考:
-
-* `shell - Calling an external command in Python - Stack Overflow <http://stackoverflow.com/questions/89228/calling-an-external-command-in-python>`__
-
-subprocess::
-
-  subprocess.call('ls -al', shell=True)
-
 
 Tips
-=======
+--------------
 
 syntax
------------------
+~~~~~~~~~~~~~~
 變數決定class名稱::
 
   all_class = { 'my_class' : my_class }
@@ -364,14 +420,14 @@ syntax
 
 
 coding
-------------------
+~~~~~~~~~~~~
 只留ASCII::
 
   print "".join(filter(lambda x: ord(x)<128, did))
 
 
 array排序
-------------------
+~~~~~~~~~~~~~~~~~
 有個dict有title和date二個key, 要指定用date來排序::
 
   list = []
@@ -386,7 +442,7 @@ array排序
 
 
 list 找出最常出現
---------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 利用 build-in function 的 max, set, count (另外 collections 也有 most_commons 的函式可用)::
 
@@ -395,21 +451,14 @@ list 找出最常出現
     max(set(cards), key=cards.count)
 
 
-simple http server
----------------------
-在當下目錄::
-
-  $ python -m SimpleHTTPServer # 預設的port 8000, http://127.0.0.1:8000
-
 
 Coding Style
-===============
+-------------------------
 * `The Pocoo Style Guide — Pocoo <http://www.pocoo.org/internal/styleguide/>`__
 * `Google Python Style Guide <http://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`__
 * `Code Style — The Hitchhiker's Guide to Python <http://docs.python-guide.org/en/latest/writing/style/>`__
 
-Comments (google style)
-----------------------------
+Comments (google style):
 
 .. code-block:: python
 
@@ -444,31 +493,10 @@ Comments (google style)
         """
         pass
 
-Practice
-====================
-exceptions and/or logging
-
-.. code-block:: python
-
-  class SillyWalkMinistry(Exception):
-      """ handle exception """
-      pass
-
-  try:
-      do_silly(value)
-  except AttributeError as e:
-      log.info('')
-      do_invisible(v)
-  except Exception as e:
-      log.debug(str(e))
-      raise SillyWalkMinistry(e)
-
-
-
-
+       
 
 整理
-===========
+~~~~~~~~~~~
 
 小括弧整理程式碼::
 
@@ -483,16 +511,55 @@ exceptions and/or logging
 .. note:: 斜線結尾不好看, 很難注意
 
 reference
-==============
+------------------
 
-Tutorial
-----------
-`Mosky Liu, Pinkoi | SlideShare <http://www.slideshare.net/moskytw>`__
+* `Arrow: better dates and times for Python — Arrow 0.4.4 documentation <http://crsmithdev.com/arrow/>`__
+* `Mosky Liu, Pinkoi | SlideShare <http://www.slideshare.net/moskytw>`__ good tutorial
+* `Intermediate Python — Python Tips 0.1 documentation <http://book.pythontips.com/en/latest/index.html>`__ 好用進階, tips
 
 
+Package
+---------------
+
+easy_install
+
+upgrade pip::
+
+  easy_install --upgrade pip
+
+pip:
+
+.. code-block:: shell
+
+  pip --version
+
+~/.pip/pip.conf
+
+.. code-block:: text
+
+  [global]
+  index-url = http://d.pypi.python.org/simple
+
+  [install]
+  use-mirrors = true
+  mirrors =
+      http://d.pypi.python.org
+      http://b.pypi.python.org
+
+
+連不到d.pypi.python.org...時::
+
+  pip install -i http://pypi.python.org/simple PACKAGE
+
+
+`PyPI Mirror Status <http://www.pypi-mirrors.org/>`__
+
+
+Advance
+-------------------
 
 decorator
-==============
+~~~~~~~~~~~~~~
 
 沒用 from functools import wraps 的話, function的資訊會跑掉, 重複(reentrant) 會有問題, 傳參數的話會變只有最後一個
 
@@ -578,58 +645,3 @@ via: http://stackoverflow.com/questions/308999/what-does-functools-wraps-do
      
     # > My speach is FP with Python
     # > took 5.96046447754e-06
-
-
-Package
-================
-
-easy_install
--------------------
-
-upgrade pip::
-
-  easy_install --upgrade pip
-
-pip
------------
-
-pip::
-
-  pip --version
-
-~/.pip/pip.conf::
-
-  [global]
-  index-url = http://d.pypi.python.org/simple
-
-  [install]
-  use-mirrors = true
-  mirrors =
-      http://d.pypi.python.org
-      http://b.pypi.python.org
-
-
-連不到d.pypi.python.org...時::
-
-  pip install -i http://pypi.python.org/simple PACKAGE
-
-
-`PyPI Mirror Status <http://www.pypi-mirrors.org/>`__
-
-
-推薦
--------
-
-* `Arrow: better dates and times for Python — Arrow 0.4.4 documentation <http://crsmithdev.com/arrow/>`__
-
-
-
-Image, PIL, Pillow
-========================
-
-在 Mac (OSX 10.9) 上用 pip (python 2.7) 裝 Pillow / PIL 失敗::
-
-  # 用 homebrew 安裝
-  $ brew install Homebrew/python/pillow
-  # error: 顯示要link jpeg
-  $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
