@@ -1,7 +1,29 @@
 Programming 程式開發
 ========================
 
-`Keep a Changelog <http://keepachangelog.com/>`__
+Changelog
+-----------------
+
+* `Keep a Changelog <http://keepachangelog.com/>`__
+
+.. code::
+
+    ## New in 0.7.3
+     
+    * [ADDED]: The ability to choose an alias email as the default from address.
+    * [ADDED]: A 'Show More' button to show the full body for email replies.
+    * [FIXED]: Responder chain issues that could prevent some shortcut keys from functioning.
+    * [FIXED]: Navigating the inbox using J/K will now scroll to the new selection.
+    * [FIXED]: A few minor crash reports.
+     
+    ## New in 0.7.2
+     
+    * [ADDED]: Support for click and drag to swipe.
+    * [IMPROVED]: Design and layout of the source list.
+    * [IMPROVED]: Design and layout of the email thread view.
+    * [IMPROVED]: From address field in the compose window is now just a clickable label.
+    * [FIXED]: A crash that could occur when auto completing the To/CC/BCC fields.
+    * [FIXED]: Several other rare crashes from 0.7.1.          
 
 
 API:
