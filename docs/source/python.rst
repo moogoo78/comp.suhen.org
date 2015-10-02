@@ -136,7 +136,7 @@ replace ::
 
 * `WorkingWithTime - Python Wiki <https://wiki.python.org/moin/WorkingWithTime>`__
 * `Measure Time in Python - time.time() vs time.clock() - Python Central <http://www.pythoncentral.io/measure-time-in-python-time-time-vs-time-clock/>`__
-
+* `Date and Time Representation in Python <http://www.seehuhn.de/pages/pdate>`__ good!
 
 file
 ~~~~~~~~~

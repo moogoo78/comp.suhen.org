@@ -140,8 +140,9 @@ spead dial 設定::
 -----------------
 
 開發工具
-^^^^^^^^^^^^^^^^^^^^   
+^^^^^^^^^^^^^^^^^^^^
 
+* 好用的內建 diff, command line: opendiff (開 FileMerge)
 * `Sequel Pro <http://www.sequelpro.com/>`__ MySQL client
 * `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
   
