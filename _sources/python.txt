@@ -306,6 +306,12 @@ MySQLdb
     db.commit()
 
 
+常見 error
+
+.. code-block:: bash
+                
+    # _mysql.so Library not loaded: libmysqlclient.16.dylib
+    sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/lib/libmysqlclient.18.
 
 Image, PIL, Pillow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -558,6 +564,10 @@ pip:
 Advance
 -------------------
 
+
+* `How a Python function can find the name of its caller « Python recipes « ActiveState Code <http://code.activestate.com/recipes/579105-how-a-python-function-can-find-the-name-of-its-cal/>`__ 得到 caller 的名字
+
+
 decorator
 ~~~~~~~~~~~~~~
 
@@ -645,3 +655,9 @@ via: http://stackoverflow.com/questions/308999/what-does-functools-wraps-do
      
     # > My speach is FP with Python
     # > took 5.96046447754e-06
+
+
+Pandas
+---------------------
+
+* `jvns/pandas-cookbook <https://github.com/jvns/pandas-cookbook>`__
