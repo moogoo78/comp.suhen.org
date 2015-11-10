@@ -1,4 +1,4 @@
-常見問題解決
+問題解決
 ================
 
 AWS
@@ -87,3 +87,13 @@ push notification
 
 -  GCM 的 token 亂給也可以加到 SNS 的 endpoint, 如果 APNS 的話 token
    亂給 boto 會收到 400 的錯誤
+
+
+Python package (pip)
+-----------------------
+
+pip install gevent
+
+.. code-block:: bash
+
+   FLAGS='-std=c99' pip install gevent
