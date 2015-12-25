@@ -64,8 +64,12 @@ redirect:
   // clicking on a link
   window.location.href = "http://stackoverflow.com";
 
+DOM 操作  
+-----------------
 
+* `DOM Tips and Techniques: Parent, Child, and Siblings <http://www.sitepoint.com/dom-tips-techniques-parent-child-siblings/>`__
   
+
 Library / Framework
 ---------------------
 

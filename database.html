@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#schema">Schema</a></li>
@@ -136,6 +136,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -215,6 +216,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -328,6 +330,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -401,10 +404,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -447,7 +451,7 @@
   <div class="section" id="database-mysql-sqlite">
 <h1>Database筆記 (MySQL, SQLite)<a class="headerlink" href="#database-mysql-sqlite" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="mysql">
-<h2>MySql<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h2>
+<h2>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h2>
 <p>Syntax</p>
 <div class="highlight-sql"><div class="highlight"><pre>[ALL | DISTINCT | DISTINCTROW ]
   [HIGH_PRIORITY]
@@ -668,6 +672,10 @@ mysql&gt; update user set Host=&#39;11.22.33.44&#39; where user=&#39;使用者�
 <p>4.重開mysql</p>
 <p>5.測試能不能連:</p>
 <div class="highlight-python"><div class="highlight"><pre>mysql -h 主機 -u root -p
+</pre></div>
+</div>
+<p>資料庫 data</p>
+<div class="highlight-python"><div class="highlight"><pre>Mac: /usr/local/mysql/data/
 </pre></div>
 </div>
 </div>
