@@ -347,7 +347,47 @@ Radix-Modes::
 * `GNU Emacs Calc Manual <http://www.gnu.org/software/emacs/manual/html_mono/calc.html>`__
 * `EmacsWiki: Advanced Desk Calculator <http://www.emacswiki.org/emacs/AdvancedDeskCalculator>`__
 
+  
+Magit
+~~~~~~~~~~~~~
 
+原來 Emacs 操作 git 這麼好用.
+
+安裝:
+
+使用 EPLA (Emacs 24 版後的 package)
+
+.. code-block:: lisp
+  
+  (require 'package)
+  (add-to-list 'package-archives
+      '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+  (add-to-list 'package-archives
+      '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  (add-to-list 'package-archives
+  '("melpa" . "http://melpa.org/packages/") t)
+  
+  ;; 更新套件名單        
+  M-x package-refresh-contents RET
+  ;; 安装 magit
+  M-x package-install RET magit RET
+
+操作:
+
+``M-x magit-status`` 看到熟悉的 git status 畫面, 按 ``Tab`` 细節展開或收起来, 可以看到更動的原始碼
+
+檔案名稱上按 ``s`` 加到 stage (magit-stage), 大寫 ``S`` 全部加到 stage, ``u``: unstage (magit-unstage), ``U``: unstage all (magit-reset-index)
+
+``c c`` 寫 commit message, ``C-c C-c`` 送出
+
+``P P`` push (magit-push-popup) [好像不行, 用 ``P u`` ?]
+
+``F F`` push (magit-pull-popup) [好像不行, 用 ``F u`` ?]
+
+* `Emacs: magit-mode Tutorial <http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html>`__
+* `github: magit <https://github.com/magit/magit>`__
+
+  
 
 HTML
 ~~~~~~~~~~~~~~
