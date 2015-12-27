@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database.html#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#schema">Schema</a></li>
@@ -136,6 +136,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -215,6 +216,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../python.html#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts_matrix.html">比較</a><ul>
@@ -262,6 +264,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">批次改檔名</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#org-mode">Org-mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magit">Magit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#html">HTML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#graphviz-dot">Graphviz (dot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#others-mode">Others Mode</a></li>
@@ -328,6 +331,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../os_desktop.html#firefox">Firefox</a></li>
@@ -401,10 +405,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -966,6 +971,36 @@ d r ;然後按2到36選進位數
 <ul class="simple">
 <li><a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_mono/calc.html">GNU Emacs Calc Manual</a></li>
 <li><a class="reference external" href="http://www.emacswiki.org/emacs/AdvancedDeskCalculator">EmacsWiki: Advanced Desk Calculator</a></li>
+</ul>
+</div>
+<div class="section" id="magit">
+<h3>Magit<a class="headerlink" href="#magit" title="Permalink to this headline">¶</a></h3>
+<p>原來 Emacs 操作 git 這麼好用.</p>
+<p>安裝:</p>
+<p>使用 EPLA (Emacs 24 版後的 package)</p>
+<div class="highlight-lisp"><div class="highlight"><pre><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa-stable&quot;</span> <span class="o">.</span> <span class="s">&quot;http://stable.melpa.org/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;marmalade&quot;</span> <span class="o">.</span> <span class="s">&quot;http://marmalade-repo.org/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span>
+<span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="o">.</span> <span class="s">&quot;http://melpa.org/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="c1">;; 更新套件名單</span>
+<span class="nv">M-x</span> <span class="nv">package-refresh-contents</span> <span class="nv">RET</span>
+<span class="c1">;; 安装 magit</span>
+<span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">RET</span> <span class="nv">magit</span> <span class="nv">RET</span>
+</pre></div>
+</div>
+<p>操作:</p>
+<p><code class="docutils literal"><span class="pre">M-x</span> <span class="pre">magit-status</span></code> 看到熟悉的 git status 畫面, 按 <code class="docutils literal"><span class="pre">Tab</span></code> 细節展開或收起来, 可以看到更動的原始碼</p>
+<p>檔案名稱上按 <code class="docutils literal"><span class="pre">s</span></code> 加到 stage (magit-stage), 大寫 <code class="docutils literal"><span class="pre">S</span></code> 全部加到 stage, <code class="docutils literal"><span class="pre">u</span></code>: unstage (magit-unstage), <code class="docutils literal"><span class="pre">U</span></code>: unstage all (magit-reset-index)</p>
+<p><code class="docutils literal"><span class="pre">c</span> <span class="pre">c</span></code> 寫 commit message, <code class="docutils literal"><span class="pre">C-c</span> <span class="pre">C-c</span></code> 送出</p>
+<p><code class="docutils literal"><span class="pre">P</span> <span class="pre">P</span></code> push (magit-push-popup) [好像不行, 用 <code class="docutils literal"><span class="pre">P</span> <span class="pre">u</span></code> ?]</p>
+<p><code class="docutils literal"><span class="pre">F</span> <span class="pre">F</span></code> push (magit-pull-popup) [好像不行, 用 <code class="docutils literal"><span class="pre">F</span> <span class="pre">u</span></code> ?]</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html">Emacs: magit-mode Tutorial</a></li>
+<li><a class="reference external" href="https://github.com/magit/magit">github: magit</a></li>
 </ul>
 </div>
 <div class="section" id="html">
