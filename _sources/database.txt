@@ -2,7 +2,7 @@ Database筆記 (MySQL, SQLite)
 ===============================
 
 
-MySql
+MySQL
 -------------
 
 Syntax
@@ -269,7 +269,12 @@ via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root
  
   mysql -h 主機 -u root -p
 
+  
+資料庫 data ::
 
+  Mac: /usr/local/mysql/data/ 
+
+  
 資料庫編碼
 ~~~~~~~~~~~~~~~~
 

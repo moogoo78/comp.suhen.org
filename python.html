@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
@@ -136,6 +136,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -215,6 +216,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -329,6 +331,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -402,10 +405,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -562,6 +566,7 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 <ul class="simple">
 <li><a class="reference external" href="https://wiki.python.org/moin/WorkingWithTime">WorkingWithTime - Python Wiki</a></li>
 <li><a class="reference external" href="http://www.pythoncentral.io/measure-time-in-python-time-time-vs-time-clock/">Measure Time in Python - time.time() vs time.clock() - Python Central</a></li>
+<li><a class="reference external" href="http://www.seehuhn.de/pages/pdate">Date and Time Representation in Python</a> good!</li>
 </ul>
 </div>
 <div class="section" id="file">
@@ -719,6 +724,11 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 
 <span class="c"># 如果 INSERT 或 UPDATE就要</span>
 <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>常見 error</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># _mysql.so Library not loaded: libmysqlclient.16.dylib</span>
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/lib/libmysqlclient.18.
 </pre></div>
 </div>
 </div>
@@ -954,6 +964,9 @@ mirrors =
 </div>
 <div class="section" id="advance">
 <h2>Advance<a class="headerlink" href="#advance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://code.activestate.com/recipes/579105-how-a-python-function-can-find-the-name-of-its-cal/">How a Python function can find the name of its caller « Python recipes « ActiveState Code</a> 得到 caller 的名字</li>
+</ul>
 <div class="section" id="decorator">
 <h3>decorator<a class="headerlink" href="#decorator" title="Permalink to this headline">¶</a></h3>
 <p>沒用 from functools import wraps 的話, function的資訊會跑掉, 重複(reentrant) 會有問題, 傳參數的話會變只有最後一個</p>
@@ -1036,6 +1049,12 @@ mirrors =
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/jvns/pandas-cookbook">jvns/pandas-cookbook</a></li>
+</ul>
 </div>
 </div>
 

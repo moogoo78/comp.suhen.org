@@ -1,6 +1,44 @@
 OS & Desktop
 ================
 
+Linux - Debian - LXDE
+-------------------------
+
+
+Dell inspiron 15 5000::
+
+  # 缺 2 個 non-free 的 package
+  # sourcelist 的 main 後面加上 non-free
+  apt-get update
+  
+  sudo apt-get install firmware-realtek
+  sudo apt-get install firmware-iwlwifi
+
+  # 視窗畫面拖拉很慢
+  sudo apt-get install compton
+
+桌面::
+
+  # 改啟動檔 ``.config/lxsession/LXDE/autostart``::
+  @setxkbmap dvorak -option ctrl:nocaps
+  @lxterminal
+  @compton
+
+  # 羅馬拼音
+  # apt-get install scim-pinyin
+
+
+套件::
+
+  # 開發  
+  sudo apt-get install build-essential python-dev (centos: python-devel?)
+  # web devel
+  sudo apt-get install libmysqlclient-dev (centos: mysql-python)
+  
+
+
+
+
 桌面軟體設定 - Mac OSX
 ---------------------------
 
@@ -140,8 +178,9 @@ spead dial 設定::
 -----------------
 
 開發工具
-^^^^^^^^^^^^^^^^^^^^   
+^^^^^^^^^^^^^^^^^^^^
 
+* 好用的內建 diff, command line: opendiff (開 FileMerge)
 * `Sequel Pro <http://www.sequelpro.com/>`__ MySQL client
 * `Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS & SSL Proxy / Reverse Proxy <http://www.charlesproxy.com/>`__
   

@@ -48,7 +48,7 @@ The Good part
 * 在每個函式起始處宣告所有變數 => JavaScript沒有區塊範圍 (函式中區塊內的變數到處可見)
 * parseInt要使用進制 => 數字是10進制，字申是8進制
 
-.. todo:: float的0.1 + 0.2 不等於0.3?
+.. note:: float的0.1 + 0.2 不等於0.3?
 
 
 Snippets
@@ -64,8 +64,12 @@ redirect:
   // clicking on a link
   window.location.href = "http://stackoverflow.com";
 
+DOM 操作  
+-----------------
 
+* `DOM Tips and Techniques: Parent, Child, and Siblings <http://www.sitepoint.com/dom-tips-techniques-parent-child-siblings/>`__
   
+
 Library / Framework
 ---------------------
 
@@ -106,6 +110,7 @@ jQuery
 Debug Tools (console)
 --------------------------
 
+* `Useful JavaScript debugging tips you didn't know <https://raygun.io/blog/2015/06/useful-javascript-debugging-tips-you-didnt-know/>`__
 * `Chrome Developer Tools: Console - Google Chrome Developer Tools - Google Code <http://code.google.com/intl/zh-TW/chrome/devtools/docs/console.html>`__
 * `Become a Javascript Console Power-User - YouTube <http://www.youtube.com/watch?v=4mf_yNLlgic&feature=youtube_gdata>`__
 
@@ -180,7 +185,7 @@ Tips
 Adv.
 -----
 * `Javascript 面向对象编程 | 酷壳 - CoolShell.cn <http://coolshell.cn/articles/6441.html>`__
-
+* `Checklist for your new Open Source JavaScript Project | Eric Douglas <http://ericdouglas.github.io/2015/09/27/checklist-for-your-new-open-source-javascript-project/>`__ javascript 想要 open source 公諸世人的注意 (打包) 事項
 
 
 compare jQuery & vanilla JavaScript
