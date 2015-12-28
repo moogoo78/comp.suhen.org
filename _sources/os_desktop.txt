@@ -48,8 +48,20 @@ Desktop shortcut file (Firefox Developer Edition)::
   Type=Application
     
   
-  
+Browser - bookmarklet
+----------------------------
 
+markdown syntax:
+
+.. code-block:: javascript
+
+   javascript:(function(){t='['+decodeURIComponent(document.title)+']('+decodeURIComponent(window.location.href)+')';win=window.open('','_new','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=150');win.document.write('<form><textarea name="a" rows="5" cols="50" onClick="javascript:this.form.a.focus();this.form.a.select();">'+t+'</textarea></form>');})()
+
+reST syntax:
+
+.. code-block:: javascript
+
+   javascript:(function(){t='`'+decodeURIComponent(document.title)+' <'+decodeURIComponent(window.location.href)+'>`__';win=window.open('','_new','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=150');win.document.write('<form><textarea name="a" rows="5" cols="50" onClick="javascript:this.form.a.focus();this.form.a.select();">'+t+'</textarea></form>');})()
 
 
 桌面軟體設定 - Mac OSX
