@@ -36,6 +36,19 @@ Dell inspiron 15 5000::
   sudo apt-get install libmysqlclient-dev (centos: mysql-python)
   
 
+Desktop shortcut file (Firefox Developer Edition)::
+
+  [Desktop Entry]
+  Encoding=UTF-8
+  Name=Firefox Developer Edition
+  Comment=Open Firefox Developer Edition
+  Icon=/home/sh/M/tools/firefox-developer/browser/icons/mozicon128.png
+  Exec=/home/sh/M/tools/firefox-developer/firefox
+  Terminal=false
+  Type=Application
+    
+  
+  
 
 
 
