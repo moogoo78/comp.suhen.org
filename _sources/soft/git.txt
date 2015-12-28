@@ -154,16 +154,13 @@ git branch::
     git branch -m old new # rename branch
     git branch -a # --all, list both remote-tracking branches and local branches
     git brnach -r # list or delete (-d) the remote-tracking branches
-    
+
+
 git merge::
 
     git mergetool kdiff3
     git merge --abort, 不要merge了
-  
-    git fetch origin
-    git rebase -i origin/master    
 
-    
 git分master跟branchA, 在master下 **$ git merge branchA** 會把branchA更改過的merge到master裡, 反之, 在branchA下 **$ git merge master** 會把master更新的家到branchA, branchA改過的不會影響master
 
 git tag
@@ -194,35 +191,18 @@ git reflog ::
 
 undo
 ----
-
-* 還沒commit (local)
-  
-  * ``git reset --hard HEAD``
-  * ``git checkout HEAD hello.rb``
-     
-* push 後發現錯誤 (public)
-
-  * ``git revert HEAD`` # 回上個commit, 並建立一新commit
-  * ``git revert HEAD^`` # 回上上個commit, 並建立一新commit
-     
-* 改 comment message
-  
-  ``git commit --amend``
-
-* [branch] 在 master 改完, 要把更新改到 branch
-
-  ``git branch feature``, ``git reset --hard origin/master``, and ``git checkout feature`` # 不要用 ``git checkout -b`` (因爲還沒要切到 branch, 只是先開 branch)
-
-* 大量 undo/redo
-
-  改了一堆後, 發現另一個方法比較好, 有些 commit 要, 有些不要
-  
-  ``git rebase -i <earlier SHA>`` # -i: interactive, squash, fixup, pick
+1. 還沒commit
+a) git reset --hard HEAD
+b) git checkout HEAD hello.rb
+2. commit後發現錯誤
+a) git revert HEAD # 回上個commit, 並建立一新commit
+b) git revert HEAD^ # 回上上個commit, 並建立一新commit
+3. 
+git commit --amend
 
 
-* `Git Book - Undoing in Git - Reset, Checkout and Revert <http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>`__
-* `How to undo (almost) anything with Git <https://github.com/blog/2019-how-to-undo-almost-anything-with-git>`__ 好用!
-  
+`Git Book - Undoing in Git - Reset, Checkout and Revert <http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>`__
+
 Tips
 =====
 
@@ -252,9 +232,7 @@ other
 * `Why Git is Better Than X <http://whygitisbetterthanx.com/>`__
 * `Git Magic - Preface <http://www-cs-students.stanford.edu/~blynn/gitmagic/>`__
 * `Git 教育訓練課程投影片 (2012) | ihower { blogging } <http://ihower.tw/blog/archives/6696/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+ihower+({|ihower.tw|+blog+})&utm_content=Google+Reader>`__
-* guides (快速) `guides/protocol/git at master · thoughtbot/guides <https://github.com/thoughtbot/guides/tree/master/protocol/git>`__
 
-  
 setting
 ==========
 

@@ -262,6 +262,7 @@
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#id4">批次改檔名</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#org-mode">Org-mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#magit">Magit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#html">HTML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#graphviz-dot">Graphviz (dot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#others-mode">Others Mode</a></li>
@@ -620,9 +621,6 @@ git brnach -r # list or delete (-d) the remote-tracking branches
 <p>git merge:</p>
 <div class="highlight-python"><div class="highlight"><pre>git mergetool kdiff3
 git merge --abort, 不要merge了
-
-git fetch origin
-git rebase -i origin/master
 </pre></div>
 </div>
 <p>git分master跟branchA, 在master下 <strong>$ git merge branchA</strong> 會把branchA更改過的merge到master裡, 反之, 在branchA下 <strong>$ git merge master</strong> 會把master更新的家到branchA, branchA改過的不會影響master</p>
@@ -654,34 +652,15 @@ git tag -a v0.1.1 #abc123 為某版本加tag
 </div>
 <div class="section" id="undo">
 <h3>undo<a class="headerlink" href="#undo" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first">還沒commit (local)</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">hello.rb</span></code></li>
-</ul>
-</li>
-<li><p class="first">push 後發現錯誤 (public)</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD</span></code> # 回上個commit, 並建立一新commit</li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD^</span></code> # 回上上個commit, 並建立一新commit</li>
-</ul>
-</li>
-<li><p class="first">改 comment message</p>
-<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code></p>
-</li>
-<li><p class="first">[branch] 在 master 改完, 要把更新改到 branch</p>
-<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">feature</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">origin/master</span></code>, and <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">feature</span></code> # 不要用 <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> (因爲還沒要切到 branch, 只是先開 branch)</p>
-</li>
-<li><p class="first">大量 undo/redo</p>
-<p>改了一堆後, 發現另一個方法比較好, 有些 commit 要, 有些不要</p>
-<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">&lt;earlier</span> <span class="pre">SHA&gt;</span></code> # -i: interactive, squash, fixup, pick</p>
-</li>
-<li><p class="first"><a class="reference external" href="http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html">Git Book - Undoing in Git - Reset, Checkout and Revert</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git">How to undo (almost) anything with Git</a> 好用!</p>
-</li>
-</ul>
+<p>1. 還沒commit
+a) git reset &#8211;hard HEAD
+b) git checkout HEAD hello.rb
+2. commit後發現錯誤
+a) git revert HEAD # 回上個commit, 並建立一新commit
+b) git revert HEAD^ # 回上上個commit, 並建立一新commit
+3.
+git commit &#8211;amend</p>
+<p><a class="reference external" href="http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html">Git Book - Undoing in Git - Reset, Checkout and Revert</a></p>
 </div>
 </div>
 <div class="section" id="tips">
@@ -713,7 +692,6 @@ git tag -a v0.1.1 #abc123 為某版本加tag
 <li><a class="reference external" href="http://whygitisbetterthanx.com/">Why Git is Better Than X</a></li>
 <li><a class="reference external" href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">Git Magic - Preface</a></li>
 <li><a class="reference external" href="http://ihower.tw/blog/archives/6696/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+ihower+({|ihower.tw|+blog+})&amp;utm_content=Google+Reader">Git 教育訓練課程投影片 (2012) | ihower { blogging }</a></li>
-<li>guides (快速) <a class="reference external" href="https://github.com/thoughtbot/guides/tree/master/protocol/git">guides/protocol/git at master · thoughtbot/guides</a></li>
 </ul>
 </div>
 <div class="section" id="setting">

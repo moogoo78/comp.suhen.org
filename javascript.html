@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
@@ -136,7 +136,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#jquery">jQuery</a></li>
 </ul>
@@ -216,7 +215,6 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -264,6 +262,7 @@
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#id4">批次改檔名</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#org-mode">Org-mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#magit">Magit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#html">HTML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#graphviz-dot">Graphviz (dot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#others-mode">Others Mode</a></li>
@@ -330,7 +329,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -404,11 +402,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -493,10 +490,6 @@
 <li>在每個函式起始處宣告所有變數 =&gt; JavaScript沒有區塊範圍 (函式中區塊內的變數到處可見)</li>
 <li>parseInt要使用進制 =&gt; 數字是10進制，字申是8進制</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">float的0.1 + 0.2 不等於0.3?</p>
-</div>
 </div>
 </div>
 <div class="section" id="snippets">
@@ -509,12 +502,6 @@
 <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">&quot;http://stackoverflow.com&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="dom">
-<h2>DOM 操作<a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="http://www.sitepoint.com/dom-tips-techniques-parent-child-siblings/">DOM Tips and Techniques: Parent, Child, and Siblings</a></li>
-</ul>
 </div>
 <div class="section" id="library-framework">
 <h2>Library / Framework<a class="headerlink" href="#library-framework" title="Permalink to this headline">¶</a></h2>
@@ -558,7 +545,6 @@
 <div class="section" id="debug-tools-console">
 <h2>Debug Tools (console)<a class="headerlink" href="#debug-tools-console" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://raygun.io/blog/2015/06/useful-javascript-debugging-tips-you-didnt-know/">Useful JavaScript debugging tips you didn&#8217;t know</a></li>
 <li><a class="reference external" href="http://code.google.com/intl/zh-TW/chrome/devtools/docs/console.html">Chrome Developer Tools: Console - Google Chrome Developer Tools - Google Code</a></li>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=4mf_yNLlgic&amp;feature=youtube_gdata">Become a Javascript Console Power-User - YouTube</a></li>
 </ul>
@@ -631,7 +617,6 @@ height: auto;*/
 <h2>Adv.<a class="headerlink" href="#adv" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://coolshell.cn/articles/6441.html">Javascript 面向对象编程 | 酷壳 - CoolShell.cn</a></li>
-<li><a class="reference external" href="http://ericdouglas.github.io/2015/09/27/checklist-for-your-new-open-source-javascript-project/">Checklist for your new Open Source JavaScript Project | Eric Douglas</a> javascript 想要 open source 公諸世人的注意 (打包) 事項</li>
 </ul>
 </div>
 <div class="section" id="compare-jquery-vanilla-javascript">
