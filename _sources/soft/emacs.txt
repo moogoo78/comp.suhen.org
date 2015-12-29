@@ -380,9 +380,9 @@ Magit
 
 ``c c`` 寫 commit message, ``C-c C-c`` 送出
 
-``P P`` push (magit-push-popup) [好像不行, 用 ``P u`` ?]
+``P p`` push (magit-push-popup) [好像不行, 用 ``P u`` ?]
 
-``F F`` push (magit-pull-popup) [好像不行, 用 ``F u`` ?]
+``F p`` push (magit-pull-popup) [好像不行, 用 ``F u`` ?]
 
 * `Emacs: magit-mode Tutorial <http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html>`__
 * `github: magit <https://github.com/magit/magit>`__
