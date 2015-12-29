@@ -24,9 +24,9 @@ Dell inspiron 15 5000::
   @lxterminal
   @compton
 
-  # 羅馬拼音
-  # apt-get install scim-pinyin
-
+  ## 輸入法
+  sudo apt-get install scim-pinyin # 拼音
+  sudo apt-get install scim-anthy # 日文
 
 套件::
 
