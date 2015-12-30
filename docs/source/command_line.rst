@@ -195,7 +195,28 @@ curl::
   :-i: 	shows the response headers
   :-u: 	specify username and password e.g. "admin:secret"
   :-v: 	enables verbose mode which outputs info such as request and response headers and errors
+
+
+
+SSH
+--------------
+
+.ssh/config::
   
+  Host qll-staging
+      HostName 123.123.123.123
+      Port 22
+      IdentityFile /path/to/foo.pem
+      User ec2-user
+
+  Host bitbucket-moogoo
+      HostName bitbucket.org
+      User git 
+      PreferredAuthentications publickey
+      IdentityFile path/to/id_rsa-bitbucket
+      IdentitiesOnly yes 
+
+        
 Service
 -------------------
 
