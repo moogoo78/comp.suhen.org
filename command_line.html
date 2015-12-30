@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
@@ -136,6 +136,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -215,6 +216,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -310,6 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#crontab">Crontab</a></li>
 </ul>
@@ -329,6 +332,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -402,10 +407,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -633,6 +639,24 @@ curl --X POST -F &quot;foo=bar&quot; -F &quot;myfile=@pathto.local&quot; http://
 :-i:  shows the response headers
 :-u:  specify username and password e.g. &quot;admin:secret&quot;
 :-v:  enables verbose mode which outputs info such as request and response headers and errors
+</pre></div>
+</div>
+</div>
+<div class="section" id="ssh">
+<h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
+<p>.ssh/config:</p>
+<div class="highlight-python"><div class="highlight"><pre>Host qll-staging
+    HostName 123.123.123.123
+    Port 22
+    IdentityFile /path/to/foo.pem
+    User ec2-user
+
+Host bitbucket-moogoo
+    HostName bitbucket.org
+    User git
+    PreferredAuthentications publickey
+    IdentityFile path/to/id_rsa-bitbucket
+    IdentitiesOnly yes
 </pre></div>
 </div>
 </div>
