@@ -47,6 +47,23 @@ Desktop shortcut file (Firefox Developer Edition)::
   Terminal=false
   Type=Application
     
+
+Screenshot::
+
+  $ sudo apt-get install scrot (depends gnome-screenshot)
+
+
+`How to take screenshots - LXDE.org <http://wiki.lxde.org/en/How_to_take_screenshots>`__
+
+  
+QR Code::
+  
+  # decode
+  $ sudo apt-get install zbar-tools
+  $ zbarimg "image file name" # /usr/bin/zbarimg
+
+  
+`Linux World: QR code: Encode and Decode QR code on linux command line <http://tuxthink.blogspot.tw/2014/01/qr-code-encode-and-decode-qr-code-on.html>`__  
   
 Browser - bookmarklet
 ----------------------------
