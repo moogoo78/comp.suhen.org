@@ -119,7 +119,7 @@ git log::
     git shortlog -s # sum by author
 
     
-awesome analytic git log, gitstats::
+awesome analytic git log, **gitstats**::
 
   $ apt-get install gitstats
   $ gitstats /path/to/repo output_dir #ex: gitstats . out
