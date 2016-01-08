@@ -119,6 +119,15 @@ git log::
     git shortlog -s # sum by author
 
     
+awesome analytic git log, gitstats::
+
+  $ apt-get install gitstats
+  $ gitstats /path/to/repo output_dir #ex: gitstats . out
+  
+`GitStats - git history statistics generator <http://gitstats.sourceforge.net/>`__
+
+
+    
 git commit / checkout / stash
 -------------------------------
 git commit::
