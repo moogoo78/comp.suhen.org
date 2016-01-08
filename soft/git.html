@@ -312,6 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command_line.html#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../command_line.html#crontab">Crontab</a></li>
 </ul>
@@ -332,6 +333,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../os_desktop.html">OS &amp; Desktop</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../os_desktop.html#firefox">Firefox</a></li>
@@ -579,6 +581,9 @@ git log --pretty=format:&#39;%h was %an, %ar, message: %s&#39;
 git log --pretty=format:&#39;%h : %s&#39; --graph # 會有簡單的文字圖形化, 分支等.
 git log --pretty=format:&#39;%h : %s&#39; --topo-order --graph # 依照主分支排序
 git log --pretty=format:&#39;%h : %s&#39; --date-order --graph # 依照時間排序
+
+git rev-list --count [HEAD/master...] # sum commits
+git shortlog -s # sum by author
 </pre></div>
 </div>
 </div>
