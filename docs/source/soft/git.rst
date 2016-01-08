@@ -115,6 +115,10 @@ git log::
     git log --pretty=format:'%h : %s' --topo-order --graph # 依照主分支排序
     git log --pretty=format:'%h : %s' --date-order --graph # 依照時間排序
 
+    git rev-list --count [HEAD/master...] # sum commits
+    git shortlog -s # sum by author
+
+    
 git commit / checkout / stash
 -------------------------------
 git commit::
