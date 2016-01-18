@@ -187,6 +187,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#try-except">try/except</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#profiling">Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#image-pil-pillow">Image, PIL, Pillow</a></li>
@@ -312,6 +313,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
@@ -332,6 +334,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -703,6 +706,15 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="profiling">
+<h2>Profiling<a class="headerlink" href="#profiling" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://marcobonzanini.com/2015/01/05/my-python-code-is-slow-tips-for-profiling/">My Python Code is Slow? Tips for Profiling – Marco Bonzanini</a></p>
+<ul class="simple">
+<li>unix shell: time <code class="docutils literal"><span class="pre">time</span> <span class="pre">python</span> <span class="pre">-c</span> <span class="pre">&quot;import</span> <span class="pre">profile_test;</span></code></li>
+<li>python basic module: time.time(), timeit</li>
+<li>cProfile <code class="docutils literal"><span class="pre">pstats</span></code>, line_profiler <code class="docutils literal"><span class="pre">kernprof</span> <span class="pre">-v</span> <span class="pre">-l</span> <span class="pre">profile_test.py</span></code></li>
+</ul>
 </div>
 <div class="section" id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
