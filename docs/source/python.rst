@@ -279,6 +279,16 @@ exceptions and/or logging
   except Exception as e:
       log.debug(str(e))
       raise SillyWalkMinistry(e)
+
+
+
+Profiling
+---------------
+`My Python Code is Slow? Tips for Profiling – Marco Bonzanini <http://marcobonzanini.com/2015/01/05/my-python-code-is-slow-tips-for-profiling/>`__
+
+* unix shell: time ``time python -c "import profile_test;``
+* python basic module: time.time(), timeit  
+* cProfile ``pstats``, line_profiler ``kernprof -v -l profile_test.py``
       
 Modules
 ---------------------------
