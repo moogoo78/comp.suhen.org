@@ -373,8 +373,12 @@ ref:
 * `Gallery | Graphviz - Graph Visualization Software <http://www.graphviz.org/Gallery.php>`__
 
 
-ffmpeg
--------------
+ffmpeg / avconv
+-------------------------
+
+debian 改用 avconv (apt-get install libav-tools)
+
+`How to install FFmpeg on Debian? - Super User <http://superuser.com/questions/286675/how-to-install-ffmpeg-on-debian>`__
 
 usage::
 
