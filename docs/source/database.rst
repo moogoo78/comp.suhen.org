@@ -30,6 +30,12 @@ Syntax
 cookbook
 ~~~~~~~~~~~~~
 
+.. code-block:: sql
+
+   CREATE DATABASE mydb
+     DEFAULT CHARACTER SET utf8
+     DEFAULT COLLATE utf8_general_ci;
+
 CRUD:
 
 .. code-block:: sql
