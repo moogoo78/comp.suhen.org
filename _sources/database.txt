@@ -72,6 +72,14 @@ LIMIT
     FROM information_schema.TABLES 
     GROUP BY table_schema ;
 
+
+SELECT and UPDATE:    
+    
+.. code-block:: sql
+                    
+   UPDATE table_A LEFT JOIN table_B ON table_B.id = table_A.bid 
+   SET table_A.some_column = 'some_value' WHERE some_condition;    
+    
 增加欄位 add column:
 
 .. code-block:: sql
