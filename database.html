@@ -844,6 +844,14 @@ wait_timeout
 interactive_timeout
 </pre></div>
 </div>
+<p>error: Can&#8217;t connect to local MySQL server through socket &#8216;/var/lib/mysql/mysql.sock&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql 資料夾的權限錯誤, (因為把 /var/lib/mysql 搬到其他地方...)
+
+# 處理
+$ chown -R mysql:mysql /var/lib/mysql/*
+$ chmod -R 700 /var/lib/mysql/*
+</pre></div>
+</div>
 </div>
 <div class="section" id="others">
 <h3>others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
