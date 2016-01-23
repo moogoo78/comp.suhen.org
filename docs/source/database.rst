@@ -455,6 +455,15 @@ error: MySQL server has gone away::
 
 
 
+error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock'::
+
+  mysql 資料夾的權限錯誤, (因為把 /var/lib/mysql 搬到其他地方...)
+
+  # 處理
+  $ chown -R mysql:mysql /var/lib/mysql/*
+  $ chmod -R 700 /var/lib/mysql/*
+  
+
 others
 ~~~~~~~~~~~~~~~~
 * `探討 MySQL 授權 | Ant's ATField <http://antbsd.twbbs.org/~ant/wordpress/?p=2259>`__
