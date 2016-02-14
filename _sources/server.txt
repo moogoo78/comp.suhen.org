@@ -1,26 +1,9 @@
 Server 
 ==============
 
-BUILD_TOOLS='gcc python-devel'
-DEV_TOOLS='git vim'
-SERV_DB='mysql-devel mysql-python'
-
-debian, dpk
+Q and A
 -------------
 
-sudo apt-get update
-sudo apt-get -V upgrade
-sudo agt-get install -y $BUILD_TOOLS $DEV_TOOLS $SERV_DB
+* Q: perl locale warning zh_TW.UTF8
 
-centos, redhat RPM
---------------------
-
-sudo yum update -y
-sudo yum install -y $BUILD_TOOLS $DEV_TOOLS $SERV_DB
-
-
-
-
-pip
-
-virtualenvwrapper
+  A: dpkg-reconfigure locales, 選 zh_TW.UTF8

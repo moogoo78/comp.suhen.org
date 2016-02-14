@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
@@ -120,8 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#centos-redhat-rpm">centos, redhat RPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#q-and-a">Q and A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -136,6 +135,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -186,6 +186,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#try-except">try/except</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#profiling">Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
@@ -215,6 +216,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -310,6 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
@@ -322,13 +325,15 @@
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#pandoc">pandoc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg">ffmpeg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg-avconv">ffmpeg / avconv</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#id3">Snippets</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -402,10 +407,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -447,21 +453,13 @@
             
   <div class="section" id="server">
 <h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
-<p>BUILD_TOOLS=&#8217;gcc python-devel&#8217;
-DEV_TOOLS=&#8217;git vim&#8217;
-SERV_DB=&#8217;mysql-devel mysql-python&#8217;</p>
-<div class="section" id="debian-dpk">
-<h2>debian, dpk<a class="headerlink" href="#debian-dpk" title="Permalink to this headline">¶</a></h2>
-<p>sudo apt-get update
-sudo apt-get -V upgrade
-sudo agt-get install -y $BUILD_TOOLS $DEV_TOOLS $SERV_DB</p>
-</div>
-<div class="section" id="centos-redhat-rpm">
-<h2>centos, redhat RPM<a class="headerlink" href="#centos-redhat-rpm" title="Permalink to this headline">¶</a></h2>
-<p>sudo yum update -y
-sudo yum install -y $BUILD_TOOLS $DEV_TOOLS $SERV_DB</p>
-<p>pip</p>
-<p>virtualenvwrapper</p>
+<div class="section" id="q-and-a">
+<h2>Q and A<a class="headerlink" href="#q-and-a" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Q: perl locale warning zh_TW.UTF8</p>
+<p>A: dpkg-reconfigure locales, 選 zh_TW.UTF8</p>
+</li>
+</ul>
 </div>
 </div>
 

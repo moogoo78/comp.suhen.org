@@ -120,8 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#q-and-a">Q and A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -612,9 +611,13 @@ $ lsof -n -i4TCP:5000 | grep LISTEN # 找出port5000
 </div>
 <p>rsync:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
+$ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
 $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 </pre></div>
 </div>
+<ul class="simple">
+<li>[詳全文_資料備份同步工具簡介— rsync](<a class="reference external" href="http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742">http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742</a>)</li>
+</ul>
 <p>dns:</p>
 <div class="highlight-python"><div class="highlight"><pre>dig foobar.com        # simple query
 dig +trace foobar.com # detail
