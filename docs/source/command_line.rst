@@ -2,6 +2,22 @@ Command 常用指令
 =========================
 
 
+system disk
+--------------
+
+fdisk::
+  
+  $ fdisk -l
+  $ fdisk /dev/sdx
+
+  # 進入後用 m 看指令 (help)
+
+FAT32::
+    
+  $ mkdosfs -F 32 -I /dev/sdb1
+  $ dosfslabel /dev/sdb1 "NEWLABEL"
+
+
 snippets
 -------------
 把"/t"分隔的檔案轉成sql語法, 用awk和sed
@@ -167,6 +183,7 @@ rsync::
 
   $ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
   $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
+  $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳) --progress (顯示進度)
   $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 
 * [詳全文_資料備份同步工具簡介— rsync](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742)
