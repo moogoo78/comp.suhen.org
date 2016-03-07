@@ -79,6 +79,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_develop.html#typography">Typography</a></li>
 </ul>
@@ -306,6 +307,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">檔案</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#compress-depress">壓縮/解壓縮 compress/depress</a></li>
@@ -453,6 +455,21 @@
             
   <div class="section" id="command">
 <h1>Command 常用指令<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-disk">
+<h2>system disk<a class="headerlink" href="#system-disk" title="Permalink to this headline">¶</a></h2>
+<p>fdisk:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fdisk -l
+$ fdisk /dev/sdx
+
+# 進入後用 m 看指令 (help)
+</pre></div>
+</div>
+<p>FAT32:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdosfs -F 32 -I /dev/sdb1
+$ dosfslabel /dev/sdb1 &quot;NEWLABEL&quot;
+</pre></div>
+</div>
+</div>
 <div class="section" id="snippets">
 <h2>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
 <p>把&#8221;/t&#8221;分隔的檔案轉成sql語法, 用awk和sed</p>
@@ -612,6 +629,7 @@ $ lsof -n -i4TCP:5000 | grep LISTEN # 找出port5000
 <p>rsync:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
 $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
+$ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳) --progress (顯示進度)
 $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 </pre></div>
 </div>
