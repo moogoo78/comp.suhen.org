@@ -95,6 +95,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
@@ -299,6 +300,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -587,6 +589,39 @@ t: timelimit
 p: postfile
 T: content-type
 h: help</div></blockquote>
+</div>
+<div class="section" id="cache">
+<h2>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h2>
+<p>HTTP 1.0 用 Header 的 metadata: Expires 和 Pragma 來控制</p>
+<p>HTTP 1.1 用 Cache-Control:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">no-store:</th><td class="field-body">強制不 cache</td>
+</tr>
+<tr class="field-even field"><th class="field-name">no-cache:</th><td class="field-body">會 cache, 每次 request 判斷有更新 -&gt; 回 200, 沒更新 -&gt; 回 304</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">private:</th><td class="field-body">目前這個使用者可以用 (用於敏感資料)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">public:</th><td class="field-body">讓不同使用者用</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">must-revalidate:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">refresh 頁面時檢查?</td>
+</tr>
+</tbody>
+</table>
+<p>第一次發 request 到一個 URL, server 回傳 HTTP status code: 200, 同時會帶一個 <code class="docutils literal"><span class="pre">Last-Modified</span></code> 或是 <code class="docutils literal"><span class="pre">ETag</span> <span class="pre">tag</span></code>.</p>
+<p>瀏覽器收到, 如果再發同一個 request，就會夾帶 <code class="docutils literal"><span class="pre">If-Modified-Since</span></code> 或 <code class="docutils literal"><span class="pre">If-None-Match</span></code>, server 判斷後, 沒更新, 回傳 304 Not Modified， 時 (沒有回傳內容), 瀏覽器就用 Cache. (減少 response 內容)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Server 判斷檔案 cache 規則: 1. Last-Modified (最後修改時間, 用 GMT) 2. 資料內容驗證 (Hash)</p>
+</div>
+<p>Cache-Control: max-age=x秒, 效期限還沒到 瀏覽器不送 request, 直接拿 Cache</p>
+<ul class="simple">
+<li><a class="reference external" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">HTTP 快取 | Web Fundamentals - Google Developers</a></li>
+<li><a class="reference external" href="http://blog.toright.com/posts/3414/初探-http-1-1-cache-機制.html">初探 HTTP 1.1 Cache 機制 - Soul &amp; Shell Blog</a></li>
+</ul>
 </div>
 </div>
 

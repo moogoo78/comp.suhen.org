@@ -79,6 +79,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_develop.html#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../web_develop.html#typography">Typography</a></li>
 </ul>
@@ -94,6 +95,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, SQLite)</a><ul>
@@ -120,8 +122,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server.html#q-and-a">Q and A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
@@ -187,6 +188,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../python.html#try-except">try/except</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python.html#profiling">Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
@@ -298,6 +300,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -306,6 +309,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#id1">檔案</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
@@ -325,7 +329,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#pandoc">pandoc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command_line.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../command_line.html#ffmpeg">ffmpeg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command_line.html#ffmpeg-avconv">ffmpeg / avconv</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../command_line.html#id3">Snippets</a></li>
 </ul>
 </li>
@@ -702,6 +706,11 @@ git tag -a v0.1.1 #abc123 為某版本加tag
 </div>
 <div class="section" id="tips">
 <h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="commit">
+<h3>減少 commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<p>善用 git revert, git-bisect, git-rebase -i</p>
+<p><a class="reference external" href="https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/">5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH</a></p>
+</div>
 <div class="section" id="git-clonebranch">
 <h3>git clone某一個branch<a class="headerlink" href="#git-clonebranch" title="Permalink to this headline">¶</a></h3>
 <p>以github的Flask當例子，要抓Flask的website branch</p>
