@@ -239,6 +239,14 @@ undo
 Tips
 =====
 
+減少 commit
+-------------
+
+善用 git revert, git-bisect, git-rebase -i
+
+`5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH <https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/>`__
+
+
 git clone某一個branch
 ----------------------------
 以github的Flask當例子，要抓Flask的website branch

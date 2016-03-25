@@ -29,6 +29,10 @@ snippets:
   ## walk 
   for root, dirs, files in os.walk(src):
       print root, dirs, files
+
+  os.listdir()
+                
+                
           
 struct dict:
 
@@ -157,7 +161,11 @@ read::
       print line # 讀出每一行
   f.close()
 
+status::
 
+  os.path.getmtime(fpath) # last modified timestamp, (在 unix 可當做 create time, 另外: ``ctime``... )
+
+  
 json
 ~~~~~~~~~~~~~
 

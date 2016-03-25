@@ -162,3 +162,27 @@ Performance
     T: content-type
     h: help
 
+    
+Cache    
+----------
+
+HTTP 1.0 用 Header 的 metadata: Expires 和 Pragma 來控制
+
+HTTP 1.1 用 Cache-Control:
+
+:no-store: 強制不 cache
+:no-cache: 會 cache, 每次 request 判斷有更新 -> 回 200, 沒更新 -> 回 304
+:private: 目前這個使用者可以用 (用於敏感資料)
+:public: 讓不同使用者用
+:must-revalidate: refresh 頁面時檢查?
+
+第一次發 request 到一個 URL, server 回傳 HTTP status code: 200, 同時會帶一個 ``Last-Modified`` 或是 ``ETag tag``.
+
+瀏覽器收到, 如果再發同一個 request，就會夾帶 ``If-Modified-Since`` 或 ``If-None-Match``, server 判斷後, 沒更新, 回傳 304 Not Modified， 時 (沒有回傳內容), 瀏覽器就用 Cache. (減少 response 內容)
+
+.. note:: Server 判斷檔案 cache 規則: 1. Last-Modified (最後修改時間, 用 GMT) 2. 資料內容驗證 (Hash)
+
+Cache-Control: max-age=x秒, 效期限還沒到 瀏覽器不送 request, 直接拿 Cache
+
+* `HTTP 快取 | Web Fundamentals - Google Developers <https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching>`__
+* `初探 HTTP 1.1 Cache 機制 - Soul & Shell Blog <http://blog.toright.com/posts/3414/初探-http-1-1-cache-機制.html>`__
