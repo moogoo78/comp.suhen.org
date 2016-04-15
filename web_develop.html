@@ -79,6 +79,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nodejs-npm">NodeJS / NPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#typography">Typography</a></li>
@@ -457,6 +459,32 @@
             
   <div class="section" id="web-develop">
 <h1>Web Develop<a class="headerlink" href="#web-develop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nodejs-npm">
+<h2>NodeJS / NPM<a class="headerlink" href="#nodejs-npm" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager | Node.js</a></p>
+<p>install 最新 nodejs (debian的很舊):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+</pre></div>
+</div>
+<p>update npm:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo npm install npm -g
+</pre></div>
+</div>
+</div>
+<div class="section" id="gulp">
+<h2>gulp<a class="headerlink" href="#gulp" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first">var gulp = require(&#8216;gulp&#8217;);</p>
+<dl class="docutils">
+<dt>gulp.task(&#8216;default&#8217;, function() {</dt>
+<dd>// place code for your default task here</dd>
+</dl>
+<p class="last">});</p>
+</dd>
+</dl>
+</div>
 <div class="section" id="production">
 <h2>Production<a class="headerlink" href="#production" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

@@ -65,6 +65,14 @@ Inline::
 * `A List Apart: Articles: CSS Positioning 101 <http://www.alistapart.com/articles/css-positioning-101/>`__
 * `How to Center in CSS <http://howtocenterincss.com/>`__ 置中產生器
 
+**text-align**
+
+`Aligning text smartly in CSS <http://nocode.in/aligning-text-smartly-in-css/>`__ : 圖片標題: 一行字置中, 多行字靠左 
+利用 inline-block 特性 (`CSS - display: inline-block <http://zh-tw.learnlayout.com/inline-block.html>`__ )，, parent block 置中, child block
+  
+補充： `Inline Block and Float Demo <http://www.vanseodesign.com/blog/demo/inline-block/>`__
+
+  
 Box
 ~~~~~~~~~~~~~~~  
 
