@@ -2,6 +2,32 @@ Web Develop
 ========================
 
 
+
+NodeJS / NPM
+------------------
+
+`Installing Node.js via package manager | Node.js <https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions>`__
+
+install 最新 nodejs (debian的很舊)::
+
+  $ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  $ sudo apt-get install -y nodejs
+
+
+update npm::
+    
+  $ sudo npm install npm -g
+  
+gulp
+---------------
+
+::
+   var gulp = require('gulp');
+
+   gulp.task('default', function() {
+     // place code for your default task here
+   });  
+
 Production
 ----------------
 
