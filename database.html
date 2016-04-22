@@ -79,6 +79,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#gulp">gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_develop.html#typography">Typography</a></li>
 </ul>
@@ -94,6 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, SQLite)</a><ul>
@@ -120,8 +124,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#q-and-a">Q and A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -299,6 +302,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -307,6 +311,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
@@ -883,6 +888,12 @@ $ cat dumpfile.sql | sqlite3 new.db
 </ul>
 <div class="section" id="snippets">
 <h3>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
+<p>把 count, group by 起來的結果筆數全部加起來, 重點是 &#8220;as A&#8221; 要加</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="k">FROM</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">cnt</span>
+<span class="k">FROM</span> <span class="n">taibif_col</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">genus</span><span class="p">)</span> <span class="k">as</span> <span class="n">A</span>
+</pre></div>
+</div>
 <p>單字表沒有照abc排, 要照字母順序排序(num)</p>
 <div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t2</span> <span class="k">where</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">word</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">word</span><span class="p">))</span> <span class="k">as</span> <span class="n">NUM</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t1</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">foo</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
 </pre></div>

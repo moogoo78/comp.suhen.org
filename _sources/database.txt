@@ -503,6 +503,15 @@ ref
 snippets
 ~~~~~~~~~~~
 
+
+把 count, group by 起來的結果筆數全部加起來, 重點是 "as A" 要加
+
+.. code-block:: sql
+
+    SELECT SUM(cnt) FROM (SELECT COUNT(*) AS cnt
+    FROM taibif_col
+    GROUP BY genus) as A 
+
 單字表沒有照abc排, 要照字母順序排序(num)
 
 .. code-block:: sql
