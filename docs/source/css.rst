@@ -85,6 +85,16 @@ Box
 * `Zebra striping tables with CSS3 - Dev.Opera <http://dev.opera.com/articles/view/zebra-striping-tables-with-css3/>`__
 
 
+Methods
+---------------
+
+* `MaintainableCSS - an approach to writing modular, scalable and maintainable CSS | By Adam Silver <http://maintainablecss.com/>`__
+* `Pattern Lab | Build Atomic Design Systems <http://patternlab.io/>`__
+* `Home - Scalable and Modular Architecture for CSS <https://smacss.com/>`__
+* `Home · stubbornella/oocss Wiki <https://github.com/stubbornella/oocss/wiki>`__    
+    
+
+
 Debug
 ~~~~~~~~~~~
   
