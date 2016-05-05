@@ -163,6 +163,9 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
 </li>
@@ -837,6 +840,12 @@ key_buffer_size # 越大query越快, 但最好設定1/4, 不要超過一半的�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">MySQL安裝時不一定會產生</p>
+</div>
+<p><strong>調整 memory 用量</strong></p>
+<p><a class="reference external" href="https://blog.gslin.org/archives/2016/05/04/6537/調整-mysql-的記憶體用量/">調整 MySQL 的記憶體用量 | Gea-Suan Lin&#8217;s BLOG</a></p>
+<p>不要讓 VSZ 超過 90% 的 system memory:</p>
+<div class="highlight-python"><div class="highlight"><pre>ps ax -O vsz | grep mysqld # 看 vsz 佔了多少, 然後調整 innodb_buffer_pool_size
+</pre></div>
 </div>
 </div>
 <div class="section" id="q-a">

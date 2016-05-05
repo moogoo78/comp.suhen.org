@@ -442,6 +442,17 @@ my.cnf::
 
 .. note:: MySQL安裝時不一定會產生
 
+
+**調整 memory 用量**
+          
+`調整 MySQL 的記憶體用量 | Gea-Suan Lin's BLOG <https://blog.gslin.org/archives/2016/05/04/6537/調整-mysql-的記憶體用量/>`__
+
+
+不要讓 VSZ 超過 90% 的 system memory::
+  
+  ps ax -O vsz | grep mysqld # 看 vsz 佔了多少, 然後調整 innodb_buffer_pool_size
+
+          
 Q & A
 ~~~~~~~~~~~~~
 
