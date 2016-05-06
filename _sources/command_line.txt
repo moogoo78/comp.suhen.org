@@ -222,6 +222,10 @@ curl::
 SSH
 --------------
 
+create id_rsa, id_rsa.pub::
+  
+  ssh-keygen -t rsa
+
 .ssh/config::
   
   Host qll-staging
@@ -292,6 +296,11 @@ locale
   $ dpkg-reconfigure locales 安裝語系
 
 
+  $ export LC_ALL="en_US.UTF-8"
+  $ export LC_CTYPE="en_US.UTF-8"
+  $ sudo dpkg-reconfigure locales  
+
+  
 tools
 ----------
 

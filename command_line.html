@@ -79,6 +79,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_develop.html#typography">Typography</a></li>
@@ -95,6 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
@@ -118,10 +121,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#q-and-a">Q and A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -160,6 +159,9 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
 </li>
@@ -299,6 +301,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -666,6 +669,10 @@ curl --X POST -F &quot;foo=bar&quot; -F &quot;myfile=@pathto.local&quot; http://
 </div>
 <div class="section" id="ssh">
 <h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
+<p>create id_rsa, id_rsa.pub:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa
+</pre></div>
+</div>
 <p>.ssh/config:</p>
 <div class="highlight-python"><div class="highlight"><pre>Host qll-staging
     HostName 123.123.123.123
@@ -727,6 +734,11 @@ Host bitbucket-moogoo
 <p>語系:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ locale -a # 目前系統支援語系
 $ dpkg-reconfigure locales 安裝語系
+
+
+$ export LC_ALL=&quot;en_US.UTF-8&quot;
+$ export LC_CTYPE=&quot;en_US.UTF-8&quot;
+$ sudo dpkg-reconfigure locales
 </pre></div>
 </div>
 </div>
