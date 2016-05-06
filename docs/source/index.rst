@@ -16,7 +16,6 @@ MooGoo's note about computer.
    programming
    web_develop             
    database
-   server
    design
    
 .. toctree::
