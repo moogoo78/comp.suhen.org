@@ -14,7 +14,8 @@ MooGoo's note about computer.
    :caption: Development
 
    programming
-   web_develop             
+   web_develop
+   web_devoops          
    database
    design
    
