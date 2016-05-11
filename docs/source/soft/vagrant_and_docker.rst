@@ -31,7 +31,14 @@ QuickStart
     # 列出現在有 image
     $ vagrant box list
 
-`Discover Vagrant Boxes | Atlas by HashiCorp <https://atlas.hashicorp.com/boxes/search>`__
+    ## 2016
+    $ vagrant box add {url}
+    $ vagrant box list # 看 title 名稱
+    $ vagrant init {title}
+    $ vagrant up
+  
+* `A list of base boxes for Vagrant - Vagrantbox.es <http://www.vagrantbox.es/>`__
+* `Discover Vagrant Boxes | Atlas by HashiCorp <https://atlas.hashicorp.com/boxes/search>`__
 
 要改 Vagrantfile::
 
