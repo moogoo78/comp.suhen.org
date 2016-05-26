@@ -1,6 +1,16 @@
 Command 常用指令
 =========================
 
+package
+----------------
+
+APT::
+
+  $ apt-get install foo
+  $ apt-get remove foo --auto-remove
+  $ apt-get remove foo [--purge]
+  $ sudo apt-get autoremove --purge
+
 
 system disk
 --------------

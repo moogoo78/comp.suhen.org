@@ -88,16 +88,24 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#apache">Apache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#php">PHP</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#apache">Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
@@ -310,6 +318,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package">package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">檔案</a><ul>
@@ -458,6 +467,16 @@
             
   <div class="section" id="command">
 <h1>Command 常用指令<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="package">
+<h2>package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h2>
+<p>APT:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ apt-get install foo
+$ apt-get remove foo --auto-remove
+$ apt-get remove foo [--purge]
+$ sudo apt-get autoremove --purge
+</pre></div>
+</div>
+</div>
 <div class="section" id="system-disk">
 <h2>system disk<a class="headerlink" href="#system-disk" title="Permalink to this headline">¶</a></h2>
 <p>fdisk:</p>

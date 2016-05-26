@@ -88,19 +88,20 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#apache">Apache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#php">PHP</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apache">Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#php-environment">PHP environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python-environment">python environment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pillow-jpeg">Pillow jpeg 老問題</a></li>
 </ul>
@@ -317,6 +318,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#package">package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
@@ -465,6 +467,71 @@
             
   <div class="section" id="web-devoops">
 <h1>Web DevOops<a class="headerlink" href="#web-devoops" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web-server-daemon">
+<h2>Web server / Daemon<a class="headerlink" href="#web-server-daemon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="supervisor">
+<h3>supervisor<a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h3>
+<p>web 界面</p>
+<p>supervisord.cond:</p>
+<div class="highlight-python"><div class="highlight"><pre>;[inet_http_server]         ; inet (TCP) server disabled by default, 外連要改 0.0.0.0:9001
+;port=127.0.0.1:9001        ; (ip_address:port specifier, *:port for all iface)
+;username=user              ; (default is no username (open server))
+;password=123               ; (default is no password (open server))
+</pre></div>
+</div>
+</div>
+<div class="section" id="gunicorn">
+<h3>gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gunicorn main:app -b 0.0.0.0
+
+<span class="c"># port 80 好像不行</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uwsgi">
+<h3>uwsgi<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># kill existing uwsgi</span>
+ps aux<span class="p">|</span>grep uwsgi <span class="p">|</span>awk <span class="s1">&#39;{ print $2}&#39;</span> <span class="p">|</span> xargs --no-run-if-empty sudo <span class="nb">kill</span> -9
+sleep 1
+<span class="c"># start with virtualhost setting</span>
+sudo uwsgi -s :9090 -M -p <span class="m">4</span> --vhost <span class="p">&amp;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nginx">
+<h3>nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h3>
+<p>redirect test.com to www.test.com</p>
+<div class="highlight-text"><div class="highlight"><pre>server {
+    server_name test.com;
+    return 301 $scheme://www.test.com$request_uri;
+}
+</pre></div>
+</div>
+<p>上傳檔案限制</p>
+<div class="highlight-text"><div class="highlight"><pre># /etc/nginx/nginx.conf, 找 http, server or location
+# set client body size to 2M #
+client_max_body_size 2M;
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache">
+<h3>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h3>
+<p>Mac apache folder:</p>
+<blockquote>
+<div>/Library/WebServer/Documents</div></blockquote>
+</div>
+</div>
+<div class="section" id="php-environment">
+<h2>PHP environment<a class="headerlink" href="#php-environment" title="Permalink to this headline">¶</a></h2>
+<p>PHP session:</p>
+<div class="highlight-python"><div class="highlight"><pre>/var/lib/php/session
+</pre></div>
+</div>
+<p>php start:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo /etc/init.d/php_cgi start
+</pre></div>
+</div>
+</div>
 <div class="section" id="python-environment">
 <h2>python environment<a class="headerlink" href="#python-environment" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="pillow-jpeg">

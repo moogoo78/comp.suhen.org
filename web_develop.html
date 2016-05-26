@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Database筆記 (MySQL, SQLite)" href="database.html"/>
+        <link rel="next" title="Web DevOops" href="web_devoops.html"/>
         <link rel="prev" title="Programming 程式開發" href="programming.html"/> 
 
   
@@ -88,16 +88,24 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web Server / daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#apache">Apache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#php">PHP</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#apache">Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
@@ -121,10 +129,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#q-and-a">Q and A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -163,6 +167,9 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
 </li>
@@ -311,6 +318,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#package">package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
@@ -556,52 +564,6 @@ $ sudo apt-get install -y nodejs
 <li>[NounProject](<a class="reference external" href="http://thenounproject.com/">http://thenounproject.com/</a>) 剪影 icon</li>
 </ul>
 </div>
-<div class="section" id="web-server-daemon">
-<h2>Web Server / daemon<a class="headerlink" href="#web-server-daemon" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="gunicorn">
-<h3>gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gunicorn main:app -b 0.0.0.0
-
-<span class="c"># port 80 好像不行</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="uwsgi">
-<h3>uwsgi<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># kill existing uwsgi</span>
-ps aux<span class="p">|</span>grep uwsgi <span class="p">|</span>awk <span class="s1">&#39;{ print $2}&#39;</span> <span class="p">|</span> xargs --no-run-if-empty sudo <span class="nb">kill</span> -9
-sleep 1
-<span class="c"># start with virtualhost setting</span>
-sudo uwsgi -s :9090 -M -p <span class="m">4</span> --vhost <span class="p">&amp;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="nginx">
-<h3>nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h3>
-<p>redirect test.com to www.test.com</p>
-<div class="highlight-text"><div class="highlight"><pre>server {
-    server_name test.com;
-    return 301 $scheme://www.test.com$request_uri;
-}
-</pre></div>
-</div>
-</div>
-<div class="section" id="apache">
-<h3>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h3>
-<p>Mac apache folder:</p>
-<blockquote>
-<div>/Library/WebServer/Documents</div></blockquote>
-</div>
-<div class="section" id="php">
-<h3>PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h3>
-<p>PHP session:</p>
-<blockquote>
-<div>/var/lib/php/session</div></blockquote>
-<p>php start:</p>
-<blockquote>
-<div>sudo /etc/init.d/php_cgi start</div></blockquote>
-</div>
-</div>
 <div class="section" id="performance">
 <h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
 <p>### ab</p>
@@ -659,7 +621,7 @@ h: help</div></blockquote>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="database.html" class="btn btn-neutral float-right" title="Database筆記 (MySQL, SQLite)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="web_devoops.html" class="btn btn-neutral float-right" title="Web DevOops" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="programming.html" class="btn btn-neutral" title="Programming 程式開發" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
