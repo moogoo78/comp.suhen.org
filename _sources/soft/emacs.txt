@@ -251,10 +251,12 @@ M-x describe-font 看現在用的字形
 
 * `my-dot-emacs-file - steveyegge2 <https://sites.google.com/site/steveyegge2/my-dot-emacs-file>`__
 
+
 Spacemacs
 -------------------------
 
-`Spacemacs: Emacs advanced Kit focused on Evil <http://spacemacs.org/>`__
+* `Spacemacs: Emacs advanced Kit focused on Evil <http://spacemacs.org/>`__
+* `Configuring Spacemacs: A Tutorial - Tristan Hume <http://thume.ca/howto/2015/03/07/configuring-spacemacs-a-tutorial/>`__
 
 customization::
 
@@ -267,10 +269,6 @@ layers:
 - config.el: for miscellaneous configuration
 - funcs.el: for defining general utility functions
 - keybindings.el: for defining general keybindings
-
-
-
-* `Configuring Spacemacs: A Tutorial - Tristan Hume <http://thume.ca/howto/2015/03/07/configuring-spacemacs-a-tutorial/>`__
 
 
 Modes
