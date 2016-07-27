@@ -121,7 +121,9 @@ via: `recursive search and replace old with new string, inside files | commandli
 
   du -h | grep -v '[a-z]/.'
 
+列出各目錄大小(不顯示子目錄)::
 
+  du -h --max-depth=1
 
 coding convert::
 
@@ -267,6 +269,9 @@ Service
 
 Crontab
 ~~~~~~~~~~~~
+
+`crontab.guru - the cron schedule expression editor <http://crontab.guru/>`__
+
 分鐘 小時 日期 月份 週 
 
 每5min一次::
