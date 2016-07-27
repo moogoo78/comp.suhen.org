@@ -270,6 +270,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#configure">configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#spacemacs">Spacemacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#modes">Modes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#dired">Dired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#id4">批次改檔名</a></li>
@@ -386,6 +387,22 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#ec2">EC2 環境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#id1">設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id2">環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#custom-domain">custom domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#https">HTTPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#command">command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#problems">問題 / Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart-old">quickstart (old)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#eb-commend-tools">1. 安裝eb commend tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id5">2. 準備部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id6">3. 跑起來</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#id7">參考</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a><ul>
@@ -574,6 +591,10 @@ $ ls *.md | xargs sed -i -e &#39;s/static\///&#39; ## 把 所有的.md (markdown
 <div class="highlight-python"><div class="highlight"><pre>du -h | grep -v &#39;[a-z]/.&#39;
 </pre></div>
 </div>
+<p>列出各目錄大小(不顯示子目錄):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">du</span> <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
 <p>coding convert:</p>
 <div class="highlight-python"><div class="highlight"><pre># big5 to utf-8
 $ iconv -f big5 -t utf-8 big5.txt -o utf8.txt
@@ -720,6 +741,7 @@ Host bitbucket-moogoo
 </div>
 <div class="section" id="crontab">
 <h3>Crontab<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://crontab.guru/">crontab.guru - the cron schedule expression editor</a></p>
 <p>分鐘 小時 日期 月份 週</p>
 <p>每5min一次:</p>
 <div class="highlight-python"><div class="highlight"><pre>*/5 * * * * /home/moogoo/test.sh
