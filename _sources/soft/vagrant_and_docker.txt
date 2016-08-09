@@ -20,10 +20,15 @@ QuickStart
 
 設定檔 Vagrantfile (init 後產生, Ruby synctax)
 
-快速::
+快速:
+
+.. code-block:: bash
 
     $ vagrant init chef/centos-6.5 # 他只是產生 box 設定爲 chef/centos-xx 的 Vagrantfile
     $ vagrant up
+    # or
+    $ vagrant init debian/jessie64; vagrant up --provider virtualbox
+
     $ vagrant ssh
     
     # box 另外裝 centos
