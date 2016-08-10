@@ -35,6 +35,16 @@ Basic
 :Index: 目前要commit的 (Staging)
 :Working Dir: 目前修改工作區
 
+set editor::
+
+  git config --global core.editor "vim"
+  export GIT_EDITOR=vim
+  # or
+  export VISUAL=vim
+  export EDITOR="$VISUAL"
+  # VISUAL 跟 EDITOR 都要設
+
+
 git command
 ===========
 
