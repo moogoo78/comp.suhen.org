@@ -36,6 +36,9 @@ cookbook
      DEFAULT CHARACTER SET utf8
      DEFAULT COLLATE utf8_general_ci;
 
+   ALTER TABLE `user`
+   ADD `intro` text COLLATE 'utf8_general_ci' NULL AFTER `status`;
+
 CRUD:
 
 .. code-block:: sql
