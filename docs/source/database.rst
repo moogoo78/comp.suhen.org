@@ -39,6 +39,10 @@ cookbook
    ALTER TABLE `user`
    ADD `intro` text COLLATE 'utf8_general_ci' NULL AFTER `status`;
 
+   ALTER TABLE `run_log`
+   ADD `step` int(11) NULL;
+
+
 CRUD:
 
 .. code-block:: sql
@@ -481,6 +485,14 @@ error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.
 others
 ~~~~~~~~~~~~~~~~
 * `探討 MySQL 授權 | Ant's ATField <http://antbsd.twbbs.org/~ant/wordpress/?p=2259>`__
+
+
+PostgreSQl
+---------------
+
+debian package::
+
+  postgresql postgresql-client postgresql-server-dev
 
 
 Sqlite
