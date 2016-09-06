@@ -125,6 +125,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#others">others</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#postgresql">PostgreSQl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#snippets">snippets</a></li>
 </ul>
@@ -517,6 +518,9 @@ select_expr [, select_expr ...]
 
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="o">`</span><span class="k">user</span><span class="o">`</span>
 <span class="k">ADD</span> <span class="o">`</span><span class="n">intro</span><span class="o">`</span> <span class="nb">text</span> <span class="k">COLLATE</span> <span class="s1">&#39;utf8_general_ci&#39;</span> <span class="k">NULL</span> <span class="k">AFTER</span> <span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">run_log</span><span class="o">`</span>
+<span class="k">ADD</span> <span class="o">`</span><span class="n">step</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NULL</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>CRUD:</p>
@@ -898,6 +902,13 @@ $ chmod -R 700 /var/lib/mysql/*
 <ul class="simple">
 <li><a class="reference external" href="http://antbsd.twbbs.org/~ant/wordpress/?p=2259">探討 MySQL 授權 | Ant&#8217;s ATField</a></li>
 </ul>
+</div>
+</div>
+<div class="section" id="postgresql">
+<h2>PostgreSQl<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h2>
+<p>debian package:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgresql postgresql-client postgresql-server-dev
+</pre></div>
 </div>
 </div>
 <div class="section" id="sqlite">
