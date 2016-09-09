@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command 常用指令 &mdash; CompDocs 1.0 documentation</title>
+  <title>Web DevOops &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="OS &amp; Desktop" href="os_desktop.html"/>
-        <link rel="prev" title="GIT" href="soft/git.html"/> 
+        <link rel="next" title="Database筆記 (MySQL, SQLite)" href="database.html"/>
+        <link rel="prev" title="Web Develop" href="web_develop.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -72,7 +72,7 @@
           
           
               <p class="caption"><span class="caption-text">Development</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#guideline">Guideline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#changelog">Changelog</a></li>
@@ -93,18 +93,18 @@
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#apache">Apache</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apache">Apache</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#php-environment">PHP environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-environment">python environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pillow-jpeg">Pillow jpeg 老問題</a></li>
 </ul>
 </li>
 </ul>
@@ -256,7 +256,7 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Software</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="soft/emacs.html">Emacs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#id1">常用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#id2">基本操作</a><ul>
@@ -320,30 +320,30 @@
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#setting">setting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Command 常用指令</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#package">package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system-disk">system disk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#snippets">snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">檔案</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#compress-depress">壓縮/解壓縮 compress/depress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#package">package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">網路</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#service">Service</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#crontab">Crontab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#locale">locale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tools">tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tmux">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#locale">locale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#tmux">tmux</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#vim">VIM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pandoc">pandoc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ffmpeg-avconv">ffmpeg / avconv</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#pandoc">pandoc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg-avconv">ffmpeg / avconv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="command_line.html#id3">Snippets</a></li>
 </ul>
 </li>
 </ul>
@@ -471,11 +471,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Command 常用指令</li>
+    <li>Web DevOops</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/command_line.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/web_devoops.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -484,474 +484,80 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="command">
-<h1>Command 常用指令<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="package">
-<h2>package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h2>
-<p>APT:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ apt-get install foo
-$ apt-get remove foo --auto-remove
-$ apt-get remove foo [--purge]
-$ sudo apt-get autoremove --purge
+  <div class="section" id="web-devoops">
+<h1>Web DevOops<a class="headerlink" href="#web-devoops" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web-server-daemon">
+<h2>Web server / Daemon<a class="headerlink" href="#web-server-daemon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="supervisor">
+<h3>supervisor<a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h3>
+<p>web 界面</p>
+<p>supervisord.cond:</p>
+<div class="highlight-python"><div class="highlight"><pre>;[inet_http_server]         ; inet (TCP) server disabled by default, 外連要改 0.0.0.0:9001
+;port=127.0.0.1:9001        ; (ip_address:port specifier, *:port for all iface)
+;username=user              ; (default is no username (open server))
+;password=123               ; (default is no password (open server))
 </pre></div>
 </div>
 </div>
-<div class="section" id="system-disk">
-<h2>system disk<a class="headerlink" href="#system-disk" title="Permalink to this headline">¶</a></h2>
-<p>fdisk:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fdisk -l
-$ fdisk /dev/sdx
+<div class="section" id="gunicorn">
+<h3>gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gunicorn main:app -b 0.0.0.0
 
-# 進入後用 m 看指令 (help)
-</pre></div>
-</div>
-<p>FAT32:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ mkdosfs -F 32 -I /dev/sdb1
-$ dosfslabel /dev/sdb1 &quot;NEWLABEL&quot;
+<span class="c"># port 80 好像不行</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="snippets">
-<h2>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
-<p>把&#8221;/t&#8221;分隔的檔案轉成sql語法, 用awk和sed</p>
-<div class="highlight-bash"><div class="highlight"><pre>awk -F <span class="s1">&#39;\t&#39;</span> <span class="s1">&#39;{print &quot;INSERT INTO word (\&quot;s3id\&quot;,\&quot;content\&quot;,\&quot;freq\&quot;,\&quot;translate\&quot;,\&quot;ex1\&quot;,\&quot;ex1_translate\&quot;,\&quot;ex2\&quot;,\&quot;ex2_translate\&quot;) VALUES(\&quot;&quot;$1&quot;\&quot;,\&quot;&quot;$2&quot;\&quot;,\&quot;&quot;$3&quot;\&quot;,\&quot;&quot;$4&quot;\&quot;,\&quot;&quot;$5&quot;\&quot;,\&quot;&quot;$6&quot;\&quot;,\&quot;&quot;$7&quot;\&quot;,\&quot;&quot;$8&quot;\&quot;);&quot;}&#39;</span> data_all_u.txt <span class="p">|</span> sed -e <span class="s1">&#39;s/^M//g&#39;</span> &gt; out.sql
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">先用awk轉好, 再用sed去除最後換行符號, &#8220;^M&#8221;在commend-line裡要Ctrl-V + Ctrl-M表示</p>
-</div>
-<p>more</p>
-<ul class="simple">
-<li><a class="reference external" href="http://robertmuth.blogspot.tw/2012/08/better-bash-scripting-in-15-minutes.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=fav">Robert Muth: Better Bash Scripting in 15 Minutes</a></li>
-<li><a class="reference external" href="http://www.grymoire.com/Unix/sed.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=code">Sed - An Introduction and Tutorial</a></li>
-</ul>
-<p>顯示 uxxx =&gt; unicode 文字:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="k">$(</span>curl http://127.0.0.1:5000/api/info<span class="k">)</span><span class="s2">&quot;</span>
-</pre></div>
-</div>
-<p>用 less +F 代替 tail -f (可以 Ctrl-c 跳出, F 再度回到追蹤模式)</p>
-</div>
-<div class="section" id="id1">
-<h2>檔案<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>把檔案foo複製到以下全部目錄裡:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ find . -type d |xargs -n 1 cp -i foo
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">xargs -n 1:</th><td class="field-body">把每一行command line輸出當作一個參數</td>
-</tr>
-<tr class="field-even field"><th class="field-name">cp -i:</th><td class="field-body">詢問y or n</td>
-</tr>
-</tbody>
-</table>
-<p>把目錄下的檔案變成字串輸出 (jpg embedded markdown syntax):</p>
-<div class="highlight-python"><div class="highlight"><pre>$ find *.JPG -exec echo &quot;\![](/images/nature/150214/{})&quot; \; &gt; out.txt
-</pre></div>
-</div>
-<p>把一天前更動的檔案搬到...:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ find * -mtime -1; # 找出一天內的檔案
-$ find * -mtime -1 -exec mv {} PATH/TO/TARGET \; # 找出, 並搬
-# mtime: 更動, -n n天內, +n n天以上, atime: 存取 (access), ctime: 修改 (change)
-</pre></div>
-</div>
-<p><strong>改檔名</strong></p>
-<p>大寫改小寫:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr &#39;A-Z&#39; &#39;a-z&#39;`; done
-</pre></div>
-</div>
-<p>只取數字, JPG改jpg:</p>
-<div class="highlight-python"><div class="highlight"><pre>for i in *.JPG ; do mv &quot;$i&quot; `echo $i | tr -dc &#39;[0-9]&#39;`&quot;.jpg&quot; ; done
-</pre></div>
-</div>
-<p>for loop:</p>
-<div class="highlight-python"><div class="highlight"><pre>for f in *.html; do
-    base=`basename $f .html`
-    mv $f $bae.php
-done
-</pre></div>
-</div>
-<p><strong>找檔案</strong></p>
-<p>找目錄名稱:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ find / -type d -name &quot;dir_name&quot;
-</pre></div>
-</div>
-<p>刪除5分鐘內建立的檔案:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ find -cmin -5 -type f -exec rm -rf {} \;
-</pre></div>
-</div>
-<p>找出體積最大前十檔案/目錄:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ du -a /home | sort -n -r | head -n 10
-</pre></div>
-</div>
-<p>via: <a class="reference external" href="http://www.hkcode.com/linux-bsd-notes/693">Linux 下找出體積最大的檔案/目錄 – 網絡技術日誌</a></p>
-<p>某目錄下的全部檔案的字串:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ grep -rl flaskext . |xargs sed -i -e &#39;s/flaskext/flask.ext/&#39;
-
-$ ls *.md | xargs sed -i -e &#39;s/static\///&#39; ## 把 所有的.md (markdown) 檔裡的 &quot;static/&quot; 去掉
-</pre></div>
-</div>
-<p>via: <a class="reference external" href="http://www.commandlinefu.com/commands/view/4698/recursive-search-and-replace-old-with-new-string-inside-files">recursive search and replace old with new string, inside files | commandlinefu.com</a></p>
-<p>列出各目錄大小(不顯示子目錄):</p>
-<div class="highlight-python"><div class="highlight"><pre>du -h | grep -v &#39;[a-z]/.&#39;
-</pre></div>
-</div>
-<p>列出各目錄大小(不顯示子目錄):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">du</span> <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
-<p>coding convert:</p>
-<div class="highlight-python"><div class="highlight"><pre># big5 to utf-8
-$ iconv -f big5 -t utf-8 big5.txt -o utf8.txt
-
-# 簡體轉繁體
-$ cat test.txt | iconv -f gb2312 -t big5
-
-# 繁體轉簡體
-$ cat test.txt | iconv -f big5 -t gb2312
-
-# Big5 編碼跟 UTF-8 編碼之間的轉換,如 UTF-8 轉 Big5
-$ cat test.txt | iconv -f utf-8 -t big5
-</pre></div>
-</div>
-<div class="section" id="compress-depress">
-<h3>壓縮/解壓縮 compress/depress<a class="headerlink" href="#compress-depress" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre>## tar
-# compress (tar 打包, zip壓縮)
-$ tar -zcvf foo.tgz foo
-# decompress
-$ tar -zxvf foo.tgz
-
-$ tar -jcvf foo.tar.bz2 foo
-$ tar -jxvf too.tar.bz2
-
-## bzip2
-$ bzip2 foo # 會把 foo 變成 foo.bz2
-$ bzip2 -d foo.bz2 # 把 foo.bz2 變 foo
-</pre></div>
-</div>
-<p>bzip2 的壓縮率比較大, 運算時間長</p>
-<p><strong>grep:</strong></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">-i:</th><td class="field-body">忽略大小寫</td>
-</tr>
-<tr class="field-even field"><th class="field-name">-n:</th><td class="field-body">輸出行號</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">-c:</th><td class="field-body">計算次數</td>
-</tr>
-<tr class="field-even field"><th class="field-name">-a:</th><td class="field-body">binary 檔用 text 檔案</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">-A:</th><td class="field-body">顯示後幾行 (after)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">-B:</th><td class="field-body">顯示前幾行 (before)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">-C:</th><td class="field-body">顯示前後幾行</td>
-</tr>
-<tr class="field-even field"><th class="field-name">-v:</th><td class="field-body">&#8211;invert-match</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">-V:</th><td class="field-body">version</td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><a class="reference external" href="http://coolshell.cn/articles/9070.html">AWK 简明教程 | 酷壳 - CoolShell.cn</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>網路<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>$ lsof # list open files
-$ lsof -n # network files
-$ lsof -i # monitors network connections in real time
-$ iftop # shows bandwith usage per *connection*
-$ nethogs #shows the bandwith usage per *process*
-
-# iOS
-$ sudo lsof -i -P
-$ lsof -n -i4TCP:5000 | grep LISTEN # 找出port5000
-</pre></div>
-</div>
-<p>rsync:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
-$ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
-$ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳) --progress (顯示進度)
-$ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
-</pre></div>
-</div>
-<ul class="simple">
-<li>[詳全文_資料備份同步工具簡介— rsync](<a class="reference external" href="http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742">http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742</a>)</li>
-</ul>
-<p>dns:</p>
-<div class="highlight-python"><div class="highlight"><pre>dig foobar.com        # simple query
-dig +trace foobar.com # detail
-dig +short foobar.com # 不廢話
-dig foobar.com mx
-</pre></div>
-</div>
-<p><em>.</em> 表示the root of the hierarchy</p>
-<ul class="simple">
-<li><a class="reference external" href="http://blog.longwin.com.tw/2010/02/netstat-check-connect-2010/">使用 netstat 找出不正常的連線 | Tsung&#8217;s Blog</a></li>
-</ul>
-<p>curl:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl http://example.com
-curl http://example -d&quot;tag=foo&amp;cat=bar&quot; # 這個預設會送POST
-curl http://example/edit -XPOST # http method
-crul http://example/api -F user=mouse -F passwd=cheese
-curl --X POST -F &quot;foo=bar&quot; -F &quot;myfile=@pathto.local&quot; http://example.com/upload # 上傳檔案
-
-:-X:  specify HTTP request method e.g. POST
-:-H:  specify request headers e.g. &quot;Content-type: application/json&quot;
-:-d:  specify request data e.g. &#39;{&quot;message&quot;:&quot;Hello Data&quot;}&#39;
-:--data-binary:       specify binary request data e.g. @file.bin
-:-i:  shows the response headers
-:-u:  specify username and password e.g. &quot;admin:secret&quot;
-:-v:  enables verbose mode which outputs info such as request and response headers and errors
+<div class="section" id="uwsgi">
+<h3>uwsgi<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># kill existing uwsgi</span>
+ps aux<span class="p">|</span>grep uwsgi <span class="p">|</span>awk <span class="s1">&#39;{ print $2}&#39;</span> <span class="p">|</span> xargs --no-run-if-empty sudo <span class="nb">kill</span> -9
+sleep 1
+<span class="c"># start with virtualhost setting</span>
+sudo uwsgi -s :9090 -M -p <span class="m">4</span> --vhost <span class="p">&amp;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="ssh">
-<h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
-<p>create id_rsa, id_rsa.pub:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa
-</pre></div>
-</div>
-<p>.ssh/config:</p>
-<div class="highlight-python"><div class="highlight"><pre>Host qll-staging
-    HostName 123.123.123.123
-    Port 22
-    IdentityFile /path/to/foo.pem
-    User ec2-user
-
-Host bitbucket-moogoo
-    HostName bitbucket.org
-    User git
-    PreferredAuthentications publickey
-    IdentityFile path/to/id_rsa-bitbucket
-    IdentitiesOnly yes
-</pre></div>
-</div>
-</div>
-<div class="section" id="service">
-<h2>Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h2>
-<p>關掉uwsgi的process:</p>
-<div class="highlight-python"><div class="highlight"><pre>ps ca|grep uwsgi |awk &#39;{ print $1}&#39; | xargs --no-run-if-empty sudo kill -9
-</pre></div>
-</div>
-<p>快速靜態檔案server:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python -m SimpleHTTPServer 8080
-</pre></div>
-</div>
-<div class="section" id="crontab">
-<h3>Crontab<a class="headerlink" href="#crontab" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://crontab.guru/">crontab.guru - the cron schedule expression editor</a></p>
-<p>分鐘 小時 日期 月份 週</p>
-<p>每5min一次:</p>
-<div class="highlight-python"><div class="highlight"><pre>*/5 * * * * /home/moogoo/test.sh
-5 0 * * *
-</pre></div>
-</div>
-<p>每小時:</p>
-<div class="highlight-python"><div class="highlight"><pre>01 * * * * /home/moogoo/test.sh
-</pre></div>
-</div>
-<p>每天(半夜):</p>
-<div class="highlight-python"><div class="highlight"><pre>0 0 * * *
-</pre></div>
-</div>
-<p>每週:</p>
-<div class="highlight-python"><div class="highlight"><pre>0 0 * * 0
-</pre></div>
-</div>
-<p>每月:</p>
-<div class="highlight-python"><div class="highlight"><pre>0 0 1 * *
-</pre></div>
-</div>
-<p>start:</p>
-<div class="highlight-python"><div class="highlight"><pre>service crond start
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="locale">
-<h2>locale<a class="headerlink" href="#locale" title="Permalink to this headline">¶</a></h2>
-<p>語系:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ locale -a # 目前系統支援語系
-$ dpkg-reconfigure locales 安裝語系
-
-
-$ export LC_ALL=&quot;en_US.UTF-8&quot;
-$ export LC_CTYPE=&quot;en_US.UTF-8&quot;
-$ sudo dpkg-reconfigure locales
-</pre></div>
-</div>
-</div>
-<div class="section" id="tools">
-<h2>tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="tmux">
-<h3>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h3>
-<p># 開新視窗
-C-b c</p>
-<p># 前/後一個視窗
-C-b n/p</p>
-<p># 分割上下pane
-C-b &#8220;</p>
-<p># 分割左右pane
-C-b %</p>
-<p># 重整pane(幫你排)
-C-b SPACE</p>
-<p># 調整視窗大小
-C-b 按著不放再按上下左右</p>
-<p># 移動到另一視窗
-C-b 上下左右
-C-b o</p>
-<p># 視窗交換位址</p>
-<p>C-b C-o</p>
-<p># 顯示時間
-C-b t</p>
-<p># 把目前tmux session丟到背景去 (回到原本terminal)
-C-b d</p>
-<p># 回到剛才的tmux session
-tmux attach</p>
-<p># help
-C-b ?</p>
-<p>scroll:</p>
-<div class="highlight-python"><div class="highlight"><pre>Ctrl-b [ 上/下/左/右 , q 離開
-</pre></div>
-</div>
-<ul class="simple">
-<li><a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">tmux shortcuts &amp; cheatsheet</a></li>
-<li><a class="reference external" href="https://gist.github.com/andreyvit/2921703">tmux cheatsheet</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="vim">
-<h2>VIM<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h2>
-<p>行號:</p>
-<div class="highlight-python"><div class="highlight"><pre>:set nonu
-:set nu
-</pre></div>
-</div>
-<p>vim硬是要存檔:</p>
-<div class="highlight-python"><div class="highlight"><pre>:w !sudo tee %
-</pre></div>
-</div>
-</div>
-<div class="section" id="pandoc">
-<h2>pandoc<a class="headerlink" href="#pandoc" title="Permalink to this headline">¶</a></h2>
-<p>轉換各種檔案格式</p>
-<p>ex: markdown 轉 rst</p>
-<div class="highlight-bash"><div class="highlight"><pre>pandoc -f markdown -t rst -o output.rst input.md
-</pre></div>
-</div>
-</div>
-<div class="section" id="dot-grphviz">
-<h2>dot (grphviz)<a class="headerlink" href="#dot-grphviz" title="Permalink to this headline">¶</a></h2>
-<p>example:</p>
-<div class="highlight-python"><div class="highlight"><pre>digraph foo {
-  hello [shape=&quot;diamond&quot;, label=&quot;hihi \nhello&quot;]
-  world
-  hello -&gt; world [label=&quot;Y&quot;]
+<div class="section" id="nginx">
+<h3>nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h3>
+<p>redirect test.com to www.test.com</p>
+<div class="highlight-text"><div class="highlight"><pre>server {
+    server_name test.com;
+    return 301 $scheme://www.test.com$request_uri;
 }
 </pre></div>
 </div>
-<p>輸出png:</p>
-<div class="highlight-python"><div class="highlight"><pre>dot foo.dot -Tpng -o foo.png
+<p>上傳檔案限制</p>
+<div class="highlight-text"><div class="highlight"><pre># /etc/nginx/nginx.conf, 找 http, server or location
+# set client body size to 2M #
+client_max_body_size 2M;
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">-T: format -o: output</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">註解用/* */ 或 //，像C++一樣</p>
+<div class="section" id="apache">
+<h3>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h3>
+<p>Mac apache folder:</p>
+<blockquote>
+<div>/Library/WebServer/Documents</div></blockquote>
 </div>
-<p>ref:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.graphviz.org/content/node-shapes">Node Shapes | Graphviz - Graph Visualization Software</a></li>
-<li><a class="reference external" href="http://www.graphviz.org/content/dot-language">The DOT Language | Graphviz - Graph Visualization Software</a></li>
-<li><a class="reference external" href="http://www.graphviz.org/Gallery.php">Gallery | Graphviz - Graph Visualization Software</a></li>
-</ul>
 </div>
-<div class="section" id="ffmpeg-avconv">
-<h2>ffmpeg / avconv<a class="headerlink" href="#ffmpeg-avconv" title="Permalink to this headline">¶</a></h2>
-<p>debian 改用 avconv (apt-get install libav-tools)</p>
-<p><a class="reference external" href="http://superuser.com/questions/286675/how-to-install-ffmpeg-on-debian">How to install FFmpeg on Debian? - Super User</a></p>
-<p>usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="p">[</span><span class="n">target</span><span class="p">]</span>
+<div class="section" id="php-environment">
+<h2>PHP environment<a class="headerlink" href="#php-environment" title="Permalink to this headline">¶</a></h2>
+<p>PHP session:</p>
+<div class="highlight-python"><div class="highlight"><pre>/var/lib/php/session
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">-vcodec</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">-s 100x100</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">-t 10 (前10秒)</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">-vf crop=100:100 (切中間100x100), crop=in_w-480:in_h(左右各切240)</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">-aspect 4:3</p>
-</div>
-<p>列出所有codecs:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -codecs
+<p>php start:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo /etc/init.d/php_cgi start
 </pre></div>
 </div>
-<p>列出所有file format:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ffmpeg -formats
-</pre></div>
 </div>
-<div class="section" id="id3">
-<h3>Snippets<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p><strong>convert:</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ffmpeg -i filename.webm -acodec libmp3lame -aq <span class="m">4</span> filename.mp3
-
-<span class="c"># convert MTS to mp4</span>
-<span class="nv">$ </span>ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
-</pre></div>
-</div>
-<p><strong>meta data:</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># show meta data</span>
-<span class="nv">$ </span>ffmpeg -i &lt;foo.mp4&gt; -f ffmetadata &lt;out.txt&gt;
-
-<span class="nv">$ </span>ffprobe
-</pre></div>
-</div>
-<p><strong>manuplate:</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># clip movie range, from 00:45:00 to 00:48:00 (經過 3 分鐘)</span>
-<span class="nv">$ </span>ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k -ss 00:45:00.0 -t 00:03:00.0 out.mp4
-
-<span class="c"># video 右上角加 watermark:</span>
-<span class="nv">$ </span>ffmpeg –i inputvideo.avi -vf <span class="s2">&quot;movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]&quot;</span> outputvideo.flv
-</pre></div>
-</div>
-<p>via: <a class="reference external" href="http://www.idude.net/index.php/how-to-watermark-a-video-using-ffmpeg/">How to watermark a video using FFmpeg | iDude.net</a></p>
-<p><strong>聲音:</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c">#聲音檔前面加 1 秒靜音:</span>
-<span class="nv">$ </span>ffmpeg -f lavfi -i <span class="nv">aevalsrc</span><span class="o">=</span>0:0:0:0:0:0::duration<span class="o">=</span><span class="m">1</span> silence.mp3 <span class="c"># 產生 1 秒靜音 mp3</span>
-<span class="nv">$ </span>ffmpeg -i concat:<span class="s2">&quot;silence.mp3|original.mp3&quot;</span> -codec copy combined.mp3 <span class="c"># 合併</span>
-
-<span class="c"># 大小聲</span>
-<span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=10dB&quot;</span> noise.mp3
-<span class="nv">$ </span>ffmpeg -i silent.mp3 -af <span class="s2">&quot;volume=-5dB&quot;</span> noise.mp3
-<span class="nv">$ </span>ffmpeg -f inputfile -vcodec copy -af <span class="s2">&quot;volume/10dB&quot;</span> outputfile
-
-<span class="c"># 剪接</span>
-<span class="nv">$ </span>ffmpeg -ss 23:05 -t 8:20 -i file.mp3 out.mp3 <span class="c"># 從 23 分 5 秒開始, 剪 9 分 20 秒的內容</span>
+<div class="section" id="python-environment">
+<h2>python environment<a class="headerlink" href="#python-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pillow-jpeg">
+<h3>Pillow jpeg 老問題<a class="headerlink" href="#pillow-jpeg" title="Permalink to this headline">¶</a></h3>
+<p>Debian:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install libjpeg-dev
+$ pip install --no-cache-dir -I pillow # reinstall pillow
 </pre></div>
 </div>
 </div>
@@ -964,10 +570,10 @@ C-b ?</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="os_desktop.html" class="btn btn-neutral float-right" title="OS &amp; Desktop" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="database.html" class="btn btn-neutral float-right" title="Database筆記 (MySQL, SQLite)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="soft/git.html" class="btn btn-neutral" title="GIT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="web_develop.html" class="btn btn-neutral" title="Web Develop" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

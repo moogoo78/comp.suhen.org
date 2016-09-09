@@ -35,6 +35,16 @@ Basic
 :Index: 目前要commit的 (Staging)
 :Working Dir: 目前修改工作區
 
+set editor::
+
+  git config --global core.editor "vim"
+  export GIT_EDITOR=vim
+  # or
+  export VISUAL=vim
+  export EDITOR="$VISUAL"
+  # VISUAL 跟 EDITOR 都要設
+
+
 git command
 ===========
 
@@ -115,6 +125,19 @@ git log::
     git log --pretty=format:'%h : %s' --topo-order --graph # 依照主分支排序
     git log --pretty=format:'%h : %s' --date-order --graph # 依照時間排序
 
+    git rev-list --count [HEAD/master...] # sum commits
+    git shortlog -s # sum by author
+
+    
+awesome analytic git log, **gitstats**::
+
+  $ apt-get install gitstats
+  $ gitstats /path/to/repo output_dir #ex: gitstats . out
+  
+`GitStats - git history statistics generator <http://gitstats.sourceforge.net/>`__
+
+
+    
 git commit / checkout / stash
 -------------------------------
 git commit::
@@ -225,6 +248,14 @@ undo
   
 Tips
 =====
+
+減少 commit
+-------------
+
+善用 git revert, git-bisect, git-rebase -i
+
+`5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH <https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/>`__
+
 
 git clone某一個branch
 ----------------------------

@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Server" href="server.html"/>
-        <link rel="prev" title="Web Develop" href="web_develop.html"/> 
+        <link rel="next" title="Design" href="design.html"/>
+        <link rel="prev" title="Web DevOops" href="web_devoops.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -74,26 +74,39 @@
               <p class="caption"><span class="caption-text">Development</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#guideline">Guideline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#changelog">Changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#gulp">gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_develop.html#typography">Typography</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#apache">Apache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#php">PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#apache">Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, SQLite)</a><ul>
@@ -112,16 +125,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#others">others</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#postgresql">PostgreSQl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#snippets">snippets</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">比較</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -160,6 +169,9 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
 </li>
@@ -187,6 +199,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#try-except">try/except</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#profiling">Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
@@ -259,11 +272,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#configure">configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#spacemacs">Spacemacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#modes">Modes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#dired">Dired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#id4">批次改檔名</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#org-mode">Org-mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#magit">Magit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#html">HTML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#graphviz-dot">Graphviz (dot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#others-mode">Others Mode</a></li>
@@ -297,6 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -305,12 +321,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#package">package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
@@ -323,7 +342,7 @@
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#pandoc">pandoc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg">ffmpeg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg-avconv">ffmpeg / avconv</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#id3">Snippets</a></li>
 </ul>
 </li>
@@ -331,6 +350,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -369,6 +389,22 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#ec2">EC2 環境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#id1">設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id2">環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#custom-domain">custom domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#https">HTTPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#command">command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#problems">問題 / Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart-old">quickstart (old)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#eb-commend-tools">1. 安裝eb commend tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id5">2. 準備部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id6">3. 跑起來</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#id7">參考</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a><ul>
@@ -476,6 +512,17 @@ select_expr [, select_expr ...]
 </div>
 <div class="section" id="cookbook">
 <h3>cookbook<a class="headerlink" href="#cookbook" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">mydb</span>
+  <span class="k">DEFAULT</span> <span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8</span>
+  <span class="k">DEFAULT</span> <span class="k">COLLATE</span> <span class="n">utf8_general_ci</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="o">`</span><span class="k">user</span><span class="o">`</span>
+<span class="k">ADD</span> <span class="o">`</span><span class="n">intro</span><span class="o">`</span> <span class="nb">text</span> <span class="k">COLLATE</span> <span class="s1">&#39;utf8_general_ci&#39;</span> <span class="k">NULL</span> <span class="k">AFTER</span> <span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">run_log</span><span class="o">`</span>
+<span class="k">ADD</span> <span class="o">`</span><span class="n">step</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>CRUD:</p>
 <div class="highlight-sql"><div class="highlight"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">tbl_name</span> <span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="n">col2</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="n">col1</span><span class="o">*</span><span class="mi">2</span><span class="p">);</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">tbl_name</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">c</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
@@ -500,6 +547,11 @@ select_expr [, select_expr ...]
 <span class="k">sum</span><span class="p">(</span> <span class="n">data_free</span> <span class="p">)</span><span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="ss">&quot;Free Space in MB&quot;</span>
 <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p>SELECT and UPDATE:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">UPDATE</span> <span class="n">table_A</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">table_B</span> <span class="k">ON</span> <span class="n">table_B</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">table_A</span><span class="p">.</span><span class="n">bid</span>
+<span class="k">SET</span> <span class="n">table_A</span><span class="p">.</span><span class="n">some_column</span> <span class="o">=</span> <span class="s1">&#39;some_value&#39;</span> <span class="k">WHERE</span> <span class="n">some_condition</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>增加欄位 add column:</p>
@@ -819,6 +871,12 @@ key_buffer_size # 越大query越快, 但最好設定1/4, 不要超過一半的�
 <p class="first admonition-title">Note</p>
 <p class="last">MySQL安裝時不一定會產生</p>
 </div>
+<p><strong>調整 memory 用量</strong></p>
+<p><a class="reference external" href="https://blog.gslin.org/archives/2016/05/04/6537/調整-mysql-的記憶體用量/">調整 MySQL 的記憶體用量 | Gea-Suan Lin&#8217;s BLOG</a></p>
+<p>不要讓 VSZ 超過 90% 的 system memory:</p>
+<div class="highlight-python"><div class="highlight"><pre>ps ax -O vsz | grep mysqld # 看 vsz 佔了多少, 然後調整 innodb_buffer_pool_size
+</pre></div>
+</div>
 </div>
 <div class="section" id="q-a">
 <h3>Q &amp; A<a class="headerlink" href="#q-a" title="Permalink to this headline">¶</a></h3>
@@ -830,12 +888,27 @@ wait_timeout
 interactive_timeout
 </pre></div>
 </div>
+<p>error: Can&#8217;t connect to local MySQL server through socket &#8216;/var/lib/mysql/mysql.sock&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre>mysql 資料夾的權限錯誤, (因為把 /var/lib/mysql 搬到其他地方...)
+
+# 處理
+$ chown -R mysql:mysql /var/lib/mysql/*
+$ chmod -R 700 /var/lib/mysql/*
+</pre></div>
+</div>
 </div>
 <div class="section" id="others">
 <h3>others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="http://antbsd.twbbs.org/~ant/wordpress/?p=2259">探討 MySQL 授權 | Ant&#8217;s ATField</a></li>
 </ul>
+</div>
+</div>
+<div class="section" id="postgresql">
+<h2>PostgreSQl<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h2>
+<p>debian package:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgresql postgresql-client postgresql-server-dev
+</pre></div>
 </div>
 </div>
 <div class="section" id="sqlite">
@@ -861,6 +934,12 @@ $ cat dumpfile.sql | sqlite3 new.db
 </ul>
 <div class="section" id="snippets">
 <h3>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
+<p>把 count, group by 起來的結果筆數全部加起來, 重點是 &#8220;as A&#8221; 要加</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="k">FROM</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">cnt</span>
+<span class="k">FROM</span> <span class="n">taibif_col</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">genus</span><span class="p">)</span> <span class="k">as</span> <span class="n">A</span>
+</pre></div>
+</div>
 <p>單字表沒有照abc排, 要照字母順序排序(num)</p>
 <div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t2</span> <span class="k">where</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">word</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">word</span><span class="p">))</span> <span class="k">as</span> <span class="n">NUM</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t1</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">foo</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
 </pre></div>
@@ -901,10 +980,10 @@ $ cat dumpfile.sql | sqlite3 new.db
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="server.html" class="btn btn-neutral float-right" title="Server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="design.html" class="btn btn-neutral float-right" title="Design" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="web_develop.html" class="btn btn-neutral" title="Web Develop" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="web_devoops.html" class="btn btn-neutral" title="Web DevOops" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

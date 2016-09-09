@@ -30,6 +30,19 @@ Syntax
 cookbook
 ~~~~~~~~~~~~~
 
+.. code-block:: sql
+
+   CREATE DATABASE mydb
+     DEFAULT CHARACTER SET utf8
+     DEFAULT COLLATE utf8_general_ci;
+
+   ALTER TABLE `user`
+   ADD `intro` text COLLATE 'utf8_general_ci' NULL AFTER `status`;
+
+   ALTER TABLE `run_log`
+   ADD `step` int(11) NULL;
+
+
 CRUD:
 
 .. code-block:: sql
@@ -66,6 +79,14 @@ LIMIT
     FROM information_schema.TABLES 
     GROUP BY table_schema ;
 
+
+SELECT and UPDATE:    
+    
+.. code-block:: sql
+                    
+   UPDATE table_A LEFT JOIN table_B ON table_B.id = table_A.bid 
+   SET table_A.some_column = 'some_value' WHERE some_condition;    
+    
 增加欄位 add column:
 
 .. code-block:: sql
@@ -428,6 +449,17 @@ my.cnf::
 
 .. note:: MySQL安裝時不一定會產生
 
+
+**調整 memory 用量**
+          
+`調整 MySQL 的記憶體用量 | Gea-Suan Lin's BLOG <https://blog.gslin.org/archives/2016/05/04/6537/調整-mysql-的記憶體用量/>`__
+
+
+不要讓 VSZ 超過 90% 的 system memory::
+  
+  ps ax -O vsz | grep mysqld # 看 vsz 佔了多少, 然後調整 innodb_buffer_pool_size
+
+          
 Q & A
 ~~~~~~~~~~~~~
 
@@ -441,9 +473,26 @@ error: MySQL server has gone away::
 
 
 
+error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock'::
+
+  mysql 資料夾的權限錯誤, (因為把 /var/lib/mysql 搬到其他地方...)
+
+  # 處理
+  $ chown -R mysql:mysql /var/lib/mysql/*
+  $ chmod -R 700 /var/lib/mysql/*
+  
+
 others
 ~~~~~~~~~~~~~~~~
 * `探討 MySQL 授權 | Ant's ATField <http://antbsd.twbbs.org/~ant/wordpress/?p=2259>`__
+
+
+PostgreSQl
+---------------
+
+debian package::
+
+  postgresql postgresql-client postgresql-server-dev
 
 
 Sqlite
@@ -479,6 +528,15 @@ ref
 
 snippets
 ~~~~~~~~~~~
+
+
+把 count, group by 起來的結果筆數全部加起來, 重點是 "as A" 要加
+
+.. code-block:: sql
+
+    SELECT SUM(cnt) FROM (SELECT COUNT(*) AS cnt
+    FROM taibif_col
+    GROUP BY genus) as A 
 
 單字表沒有照abc排, 要照字母順序排序(num)
 

@@ -1,6 +1,32 @@
 Command 常用指令
 =========================
 
+package
+----------------
+
+APT::
+
+  $ apt-get install foo
+  $ apt-get remove foo --auto-remove
+  $ apt-get remove foo [--purge]
+  $ sudo apt-get autoremove --purge
+
+
+system disk
+--------------
+
+fdisk::
+  
+  $ fdisk -l
+  $ fdisk /dev/sdx
+
+  # 進入後用 m 看指令 (help)
+
+FAT32::
+    
+  $ mkdosfs -F 32 -I /dev/sdb1
+  $ dosfslabel /dev/sdb1 "NEWLABEL"
+
 
 snippets
 -------------
@@ -44,7 +70,14 @@ more
         
   $ find *.JPG -exec echo "\![](/images/nature/150214/{})" \; > out.txt
 
-  
+把一天前更動的檔案搬到...::
+
+
+  $ find * -mtime -1; # 找出一天內的檔案
+  $ find * -mtime -1 -exec mv {} PATH/TO/TARGET \; # 找出, 並搬
+  # mtime: 更動, -n n天內, +n n天以上, atime: 存取 (access), ctime: 修改 (change)
+
+
 **改檔名**
 
 大寫改小寫::
@@ -95,7 +128,9 @@ via: `recursive search and replace old with new string, inside files | commandli
 
   du -h | grep -v '[a-z]/.'
 
+列出各目錄大小(不顯示子目錄)::
 
+  du -h --max-depth=1
 
 coding convert::
 
@@ -166,8 +201,13 @@ bzip2 的壓縮率比較大, 運算時間長
 rsync::
 
   $ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
+  $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
+  $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳) --progress (顯示進度)
   $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 
+* [詳全文_資料備份同步工具簡介— rsync](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742)
+
+    
 dns::
 
   dig foobar.com        # simple query
@@ -195,7 +235,32 @@ curl::
   :-i: 	shows the response headers
   :-u: 	specify username and password e.g. "admin:secret"
   :-v: 	enables verbose mode which outputs info such as request and response headers and errors
+
+
+
+SSH
+--------------
+
+create id_rsa, id_rsa.pub::
   
+  ssh-keygen -t rsa
+
+.ssh/config::
+  
+  Host qll-staging
+      HostName 123.123.123.123
+      Port 22
+      IdentityFile /path/to/foo.pem
+      User ec2-user
+
+  Host bitbucket-moogoo
+      HostName bitbucket.org
+      User git 
+      PreferredAuthentications publickey
+      IdentityFile path/to/id_rsa-bitbucket
+      IdentitiesOnly yes 
+
+        
 Service
 -------------------
 
@@ -211,6 +276,9 @@ Service
 
 Crontab
 ~~~~~~~~~~~~
+
+`crontab.guru - the cron schedule expression editor <http://crontab.guru/>`__
+
 分鐘 小時 日期 月份 週 
 
 每5min一次::
@@ -250,6 +318,11 @@ locale
   $ dpkg-reconfigure locales 安裝語系
 
 
+  $ export LC_ALL="en_US.UTF-8"
+  $ export LC_CTYPE="en_US.UTF-8"
+  $ sudo dpkg-reconfigure locales  
+
+  
 tools
 ----------
 
@@ -352,8 +425,12 @@ ref:
 * `Gallery | Graphviz - Graph Visualization Software <http://www.graphviz.org/Gallery.php>`__
 
 
-ffmpeg
--------------
+ffmpeg / avconv
+-------------------------
+
+debian 改用 avconv (apt-get install libav-tools)
+
+`How to install FFmpeg on Debian? - Super User <http://superuser.com/questions/286675/how-to-install-ffmpeg-on-debian>`__
 
 usage::
 

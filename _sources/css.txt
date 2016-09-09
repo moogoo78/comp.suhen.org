@@ -65,6 +65,14 @@ Inline::
 * `A List Apart: Articles: CSS Positioning 101 <http://www.alistapart.com/articles/css-positioning-101/>`__
 * `How to Center in CSS <http://howtocenterincss.com/>`__ 置中產生器
 
+**text-align**
+
+`Aligning text smartly in CSS <http://nocode.in/aligning-text-smartly-in-css/>`__ : 圖片標題: 一行字置中, 多行字靠左 
+利用 inline-block 特性 (`CSS - display: inline-block <http://zh-tw.learnlayout.com/inline-block.html>`__ )，, parent block 置中, child block
+  
+補充： `Inline Block and Float Demo <http://www.vanseodesign.com/blog/demo/inline-block/>`__
+
+  
 Box
 ~~~~~~~~~~~~~~~  
 
@@ -75,6 +83,16 @@ Box
 
 * `CSS Border <http://www.w3schools.com/css/css_border.asp>`__
 * `Zebra striping tables with CSS3 - Dev.Opera <http://dev.opera.com/articles/view/zebra-striping-tables-with-css3/>`__
+
+
+Methods
+---------------
+
+* `MaintainableCSS - an approach to writing modular, scalable and maintainable CSS | By Adam Silver <http://maintainablecss.com/>`__
+* `Pattern Lab | Build Atomic Design Systems <http://patternlab.io/>`__
+* `Home - Scalable and Modular Architecture for CSS <https://smacss.com/>`__
+* `Home · stubbornella/oocss Wiki <https://github.com/stubbornella/oocss/wiki>`__    
+    
 
 
 Debug

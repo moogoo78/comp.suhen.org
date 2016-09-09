@@ -243,6 +243,7 @@ term:
 
 `What is the difference between shell, eshell, and term in Emacs? - Unix & Linux Stack Exchange <http://unix.stackexchange.com/questions/104325/what-is-the-difference-between-shell-eshell-and-term-in-emacs>`__
 
+
 configure
 -------------------
 
@@ -250,6 +251,25 @@ Font:
 M-x describe-font 看現在用的字形
 
 * `my-dot-emacs-file - steveyegge2 <https://sites.google.com/site/steveyegge2/my-dot-emacs-file>`__
+
+
+Spacemacs
+-------------------------
+
+* `Spacemacs: Emacs advanced Kit focused on Evil <http://spacemacs.org/>`__
+* `Configuring Spacemacs: A Tutorial - Tristan Hume <http://thume.ca/howto/2015/03/07/configuring-spacemacs-a-tutorial/>`__
+
+customization::
+
+  <SPC> : configuration-layer/create-layer RET
+
+
+layers:
+
+- packages.el: for specifying which packages the layer uses
+- config.el: for miscellaneous configuration
+- funcs.el: for defining general utility functions
+- keybindings.el: for defining general keybindings
 
 
 Modes
@@ -380,9 +400,9 @@ Magit
 
 ``c c`` 寫 commit message, ``C-c C-c`` 送出
 
-``P P`` push (magit-push-popup) [好像不行, 用 ``P u`` ?]
+``P p`` push (magit-push-popup) [好像不行, 用 ``P u`` ?]
 
-``F F`` push (magit-pull-popup) [好像不行, 用 ``F u`` ?]
+``F p`` push (magit-pull-popup) [好像不行, 用 ``F u`` ?]
 
 * `Emacs: magit-mode Tutorial <http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html>`__
 * `github: magit <https://github.com/magit/magit>`__

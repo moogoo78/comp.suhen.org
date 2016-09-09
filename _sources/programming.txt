@@ -1,6 +1,14 @@
 Programming 程式開發
 ========================
 
+
+
+Guideline
+------------
+
+* `api-guidelines/Guidelines.md at master · Microsoft/api-guidelines <https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md?utm_source=hackernewsletter&utm_medium=email&utm_term=code>`__
+
+
 Changelog
 -----------------
 

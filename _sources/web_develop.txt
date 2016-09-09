@@ -2,6 +2,38 @@ Web Develop
 ========================
 
 
+
+NodeJS / NPM
+------------------
+
+`Installing Node.js via package manager | Node.js <https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions>`__
+
+install 最新 nodejs (debian的很舊)::
+
+  $ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  $ sudo apt-get install -y nodejs
+
+
+update npm::
+    
+  $ sudo npm install npm -g
+  
+gulp
+---------------
+
+::
+   var gulp = require('gulp');
+
+   gulp.task('default', function() {
+     // place code for your default task here
+   });  
+
+Production
+----------------
+
+* `Building for Production: Web Applications — Monitoring | DigitalOcean <https://www.digitalocean.com/community/tutorials/building-for-production-web-applications-monitoring>`__
+
+
 Webhooks: "user-defined HTTP callbacks"
 
 Design
@@ -79,64 +111,6 @@ Font:
 * [NounProject](http://thenounproject.com/) 剪影 icon
 
 
-Web Server / daemon
--------------------------
-
-gunicorn
-~~~~~~~~~~~~~~
-
-.. code-block:: bash
-                
-    $ gunicorn main:app -b 0.0.0.0
-
-    # port 80 好像不行
-
-uwsgi
-~~~~~~~
-
-.. code-block:: bash
-
-    # kill existing uwsgi
-    ps aux|grep uwsgi |awk '{ print $2}' | xargs --no-run-if-empty sudo kill -9
-    sleep 1
-    # start with virtualhost setting
-    sudo uwsgi -s :9090 -M -p 4 --vhost &
-
-    
-nginx
-~~~~~~~~~~
-
-redirect test.com to www.test.com
-
-.. code-block:: text
-
-    server {
-        server_name test.com;
-        return 301 $scheme://www.test.com$request_uri;
-    }
-
-
-
-Apache
-~~~~~~~~~~~~
-
-Mac apache folder:
-
-    /Library/WebServer/Documents
-    
-
-PHP
-~~~~~~~~~
-
-PHP session:
-
-    /var/lib/php/session
-
-
-php start:
-
-    sudo /etc/init.d/php_cgi start
-
 
 Performance
 -----------------
@@ -156,3 +130,27 @@ Performance
     T: content-type
     h: help
 
+    
+Cache    
+----------
+
+HTTP 1.0 用 Header 的 metadata: Expires 和 Pragma 來控制
+
+HTTP 1.1 用 Cache-Control:
+
+:no-store: 強制不 cache
+:no-cache: 會 cache, 每次 request 判斷有更新 -> 回 200, 沒更新 -> 回 304
+:private: 目前這個使用者可以用 (用於敏感資料)
+:public: 讓不同使用者用
+:must-revalidate: refresh 頁面時檢查?
+
+第一次發 request 到一個 URL, server 回傳 HTTP status code: 200, 同時會帶一個 ``Last-Modified`` 或是 ``ETag tag``.
+
+瀏覽器收到, 如果再發同一個 request，就會夾帶 ``If-Modified-Since`` 或 ``If-None-Match``, server 判斷後, 沒更新, 回傳 304 Not Modified， 時 (沒有回傳內容), 瀏覽器就用 Cache. (減少 response 內容)
+
+.. note:: Server 判斷檔案 cache 規則: 1. Last-Modified (最後修改時間, 用 GMT) 2. 資料內容驗證 (Hash)
+
+Cache-Control: max-age=x秒, 效期限還沒到 瀏覽器不送 request, 直接拿 Cache
+
+* `HTTP 快取 | Web Fundamentals - Google Developers <https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching>`__
+* `初探 HTTP 1.1 Cache 機制 - Soul & Shell Blog <http://blog.toright.com/posts/3414/初探-http-1-1-cache-機制.html>`__

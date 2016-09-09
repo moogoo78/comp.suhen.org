@@ -14,9 +14,9 @@ MooGoo's note about computer.
    :caption: Development
 
    programming
-   web_develop             
+   web_develop
+   web_devoops          
    database
-   server
    design
    
 .. toctree::

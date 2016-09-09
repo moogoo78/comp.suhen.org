@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="CompDocs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Database筆記 (MySQL, SQLite)" href="database.html"/>
+        <link rel="next" title="Web DevOops" href="web_devoops.html"/>
         <link rel="prev" title="Programming 程式開發" href="programming.html"/> 
 
   
@@ -74,30 +74,43 @@
               <p class="caption"><span class="caption-text">Development</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#guideline">Guideline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#changelog">Changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nodejs-npm">NodeJS / NPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gulp">gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#typography">Typography</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web Server / daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#apache">Apache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#php">PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#apache">Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
@@ -112,16 +125,12 @@
 <li class="toctree-l3"><a class="reference internal" href="database.html#others">others</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#postgresql">PostgreSQl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#snippets">snippets</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -136,6 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -159,6 +169,9 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
 </li>
@@ -186,6 +199,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#try-except">try/except</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#profiling">Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
@@ -215,6 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -257,11 +272,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#configure">configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#spacemacs">Spacemacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#modes">Modes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#dired">Dired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#id4">批次改檔名</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#org-mode">Org-mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#magit">Magit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#html">HTML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#graphviz-dot">Graphviz (dot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#others-mode">Others Mode</a></li>
@@ -295,6 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -303,12 +321,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#package">package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
@@ -321,13 +342,15 @@
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#pandoc">pandoc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg">ffmpeg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg-avconv">ffmpeg / avconv</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#id3">Snippets</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -366,6 +389,22 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#ec2">EC2 環境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#id1">設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id2">環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#custom-domain">custom domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#https">HTTPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#command">command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#problems">問題 / Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#quickstart-old">quickstart (old)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#eb-commend-tools">1. 安裝eb commend tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id5">2. 準備部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aws_eb_flask.html#id6">3. 跑起來</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_eb_flask.html#id7">參考</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a><ul>
@@ -401,10 +440,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -446,7 +486,39 @@
             
   <div class="section" id="web-develop">
 <h1>Web Develop<a class="headerlink" href="#web-develop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nodejs-npm">
+<h2>NodeJS / NPM<a class="headerlink" href="#nodejs-npm" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager | Node.js</a></p>
+<p>install 最新 nodejs (debian的很舊):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+</pre></div>
+</div>
+<p>update npm:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo npm install npm -g
+</pre></div>
+</div>
+</div>
+<div class="section" id="gulp">
+<h2>gulp<a class="headerlink" href="#gulp" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first">var gulp = require(&#8216;gulp&#8217;);</p>
+<dl class="docutils">
+<dt>gulp.task(&#8216;default&#8217;, function() {</dt>
+<dd>// place code for your default task here</dd>
+</dl>
+<p class="last">});</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="production">
+<h2>Production<a class="headerlink" href="#production" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/building-for-production-web-applications-monitoring">Building for Production: Web Applications — Monitoring | DigitalOcean</a></li>
+</ul>
 <p>Webhooks: &#8220;user-defined HTTP callbacks&#8221;</p>
+</div>
 <div class="section" id="design">
 <h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="typography">
@@ -511,52 +583,6 @@
 <li>[NounProject](<a class="reference external" href="http://thenounproject.com/">http://thenounproject.com/</a>) 剪影 icon</li>
 </ul>
 </div>
-<div class="section" id="web-server-daemon">
-<h2>Web Server / daemon<a class="headerlink" href="#web-server-daemon" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="gunicorn">
-<h3>gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gunicorn main:app -b 0.0.0.0
-
-<span class="c"># port 80 好像不行</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="uwsgi">
-<h3>uwsgi<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># kill existing uwsgi</span>
-ps aux<span class="p">|</span>grep uwsgi <span class="p">|</span>awk <span class="s1">&#39;{ print $2}&#39;</span> <span class="p">|</span> xargs --no-run-if-empty sudo <span class="nb">kill</span> -9
-sleep 1
-<span class="c"># start with virtualhost setting</span>
-sudo uwsgi -s :9090 -M -p <span class="m">4</span> --vhost <span class="p">&amp;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="nginx">
-<h3>nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h3>
-<p>redirect test.com to www.test.com</p>
-<div class="highlight-text"><div class="highlight"><pre>server {
-    server_name test.com;
-    return 301 $scheme://www.test.com$request_uri;
-}
-</pre></div>
-</div>
-</div>
-<div class="section" id="apache">
-<h3>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h3>
-<p>Mac apache folder:</p>
-<blockquote>
-<div>/Library/WebServer/Documents</div></blockquote>
-</div>
-<div class="section" id="php">
-<h3>PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h3>
-<p>PHP session:</p>
-<blockquote>
-<div>/var/lib/php/session</div></blockquote>
-<p>php start:</p>
-<blockquote>
-<div>sudo /etc/init.d/php_cgi start</div></blockquote>
-</div>
-</div>
 <div class="section" id="performance">
 <h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
 <p>### ab</p>
@@ -573,6 +599,39 @@ p: postfile
 T: content-type
 h: help</div></blockquote>
 </div>
+<div class="section" id="cache">
+<h2>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h2>
+<p>HTTP 1.0 用 Header 的 metadata: Expires 和 Pragma 來控制</p>
+<p>HTTP 1.1 用 Cache-Control:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">no-store:</th><td class="field-body">強制不 cache</td>
+</tr>
+<tr class="field-even field"><th class="field-name">no-cache:</th><td class="field-body">會 cache, 每次 request 判斷有更新 -&gt; 回 200, 沒更新 -&gt; 回 304</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">private:</th><td class="field-body">目前這個使用者可以用 (用於敏感資料)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">public:</th><td class="field-body">讓不同使用者用</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">must-revalidate:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">refresh 頁面時檢查?</td>
+</tr>
+</tbody>
+</table>
+<p>第一次發 request 到一個 URL, server 回傳 HTTP status code: 200, 同時會帶一個 <code class="docutils literal"><span class="pre">Last-Modified</span></code> 或是 <code class="docutils literal"><span class="pre">ETag</span> <span class="pre">tag</span></code>.</p>
+<p>瀏覽器收到, 如果再發同一個 request，就會夾帶 <code class="docutils literal"><span class="pre">If-Modified-Since</span></code> 或 <code class="docutils literal"><span class="pre">If-None-Match</span></code>, server 判斷後, 沒更新, 回傳 304 Not Modified， 時 (沒有回傳內容), 瀏覽器就用 Cache. (減少 response 內容)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Server 判斷檔案 cache 規則: 1. Last-Modified (最後修改時間, 用 GMT) 2. 資料內容驗證 (Hash)</p>
+</div>
+<p>Cache-Control: max-age=x秒, 效期限還沒到 瀏覽器不送 request, 直接拿 Cache</p>
+<ul class="simple">
+<li><a class="reference external" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">HTTP 快取 | Web Fundamentals - Google Developers</a></li>
+<li><a class="reference external" href="http://blog.toright.com/posts/3414/初探-http-1-1-cache-機制.html">初探 HTTP 1.1 Cache 機制 - Soul &amp; Shell Blog</a></li>
+</ul>
+</div>
 </div>
 
 
@@ -581,7 +640,7 @@ h: help</div></blockquote>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="database.html" class="btn btn-neutral float-right" title="Database筆記 (MySQL, SQLite)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="web_devoops.html" class="btn btn-neutral float-right" title="Web DevOops" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="programming.html" class="btn btn-neutral" title="Programming 程式開發" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

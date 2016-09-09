@@ -74,30 +74,43 @@
               <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#guideline">Guideline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#changelog">Changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#gulp">gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#production">Production</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#design">Design</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_develop.html#typography">Typography</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id1">工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#web-server-daemon">Web Server / daemon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#gunicorn">gunicorn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#uwsgi">uwsgi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#nginx">nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#apache">Apache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web_develop.html#php">PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#nginx">nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#apache">Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, SQLite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#schema">Schema</a></li>
@@ -112,16 +125,12 @@
 <li class="toctree-l3"><a class="reference internal" href="database.html#others">others</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#postgresql">PostgreSQl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#snippets">snippets</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#id4">比較</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#debian-dpk">debian, dpk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#centos-redhat-rpm">centos, redhat RPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -136,6 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
@@ -159,6 +169,9 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#basic">Basic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#position">定位 (position)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
 </li>
@@ -186,6 +199,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#try-except">try/except</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#profiling">Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
@@ -215,6 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="python.html#decorator">decorator</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -257,11 +272,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#configure">configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#spacemacs">Spacemacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="soft/emacs.html#modes">Modes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#dired">Dired</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#id4">批次改檔名</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#org-mode">Org-mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#calc">Calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#magit">Magit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#html">HTML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#graphviz-dot">Graphviz (dot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/emacs.html#others-mode">Others Mode</a></li>
@@ -295,6 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -303,12 +321,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#package">package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#system-disk">system disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#snippets">snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id1">檔案</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#compress-depress">壓縮/解壓縮 compress/depress</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#id2">網路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#service">Service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#crontab">Crontab</a></li>
 </ul>
@@ -321,13 +342,15 @@
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#pandoc">pandoc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg">ffmpeg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command_line.html#ffmpeg-avconv">ffmpeg / avconv</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="command_line.html#id3">Snippets</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="os_desktop.html">OS &amp; Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#linux-debian-lxde">Linux - Debian - LXDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os_desktop.html#browser-bookmarklet">Browser - bookmarklet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_desktop.html#mac-osx">桌面軟體設定 - Mac OSX</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="os_desktop.html#browser-internet">Browser / Internet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="os_desktop.html#firefox">Firefox</a></li>
@@ -366,6 +389,22 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Deploying Flask (Python) to AWS Elastic Beanstalk</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ec2">EC2 環境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-domain">custom domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#https">HTTPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#command">command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problems">問題 / Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quickstart-old">quickstart (old)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eb-commend-tools">1. 安裝eb commend tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2. 準備部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3. 跑起來</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">參考</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a><ul>
@@ -401,10 +440,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="qna.html">常見問題解決</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#python-package-pip">Python package (pip)</a></li>
 </ul>
 </li>
 </ul>
@@ -449,19 +489,20 @@
 <div class="section" id="quickstart">
 <h2>quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <p>EB CLI (v3)</p>
-<blockquote>
-<div>$ pip install awsebcli</div></blockquote>
-<p>create app:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ eb init
-$ eb create my-silly-env
-$ eb open
-$ 改改改
-$ eb deploy
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pip install awsebcli
+</pre></div>
+</div>
+<p>create app</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>eb init
+<span class="nv">$ </span>eb create my-silly-env
+<span class="nv">$ </span>eb open
+<span class="nv">$ </span>改改改
+<span class="nv">$ </span>eb deploy
 </pre></div>
 </div>
 <p>command line 跟 v2 不一樣, 沒有 start, stop, aws.push 改用 create, terminate, deploy</p>
-<p>details: [EB Command Line Interface - AWS Elastic Beanstalk](<a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-reference-eb.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-reference-eb.html</a>)</p>
-<p># note</p>
+<p>details: <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-reference-eb.html">EB Command Line Interface - AWS Elastic Beanstalk</a></p>
+<p><strong>note:</strong></p>
 <ul class="simple">
 <li>http session -&gt; 用stateless (access token)</li>
 <li>自己存session
@@ -470,134 +511,53 @@ $ eb deploy
 * redis session manager
 * amazon DynamoDB session manager</li>
 </ul>
-<p># message, celery</p>
+<p><strong>message, celery:</strong></p>
 <ul class="simple">
-<li>[Celery with Amazon SQS - Stack Overflow](<a class="reference external" href="http://stackoverflow.com/questions/8048556/celery-with-amazon-sqs">http://stackoverflow.com/questions/8048556/celery-with-amazon-sqs</a>)</li>
-<li>[Using Django and Celery with Amazon SQS](<a class="reference external" href="http://www.caktusgroup.com/blog/2011/12/19/using-django-and-celery-amazon-sqs/">http://www.caktusgroup.com/blog/2011/12/19/using-django-and-celery-amazon-sqs/</a>)</li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/8048556/celery-with-amazon-sqs">Celery with Amazon SQS - Stack Overflow</a></li>
+<li><a class="reference external" href="http://www.caktusgroup.com/blog/2011/12/19/using-django-and-celery-amazon-sqs/">Using Django and Celery with Amazon SQS</a></li>
 </ul>
-<p># EC2 環境</p>
-<blockquote>
-<div>:::text
-# app 路徑
-/opt/python/current/app
-# stdout
-/opt/python/log/httpd.out
-# access_log
-/var/log/httpd/access_log</div></blockquote>
+</div>
+<div class="section" id="ec2">
+<h2>EC2 環境<a class="headerlink" href="#ec2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>[First impressions with Flask and Elastic Beanstalk - tushman.io](<a class="reference external" href="http://jtushman.github.io/blog/2013/06/12/first-impressions-with-flask-and-elastic-beanstalk/">http://jtushman.github.io/blog/2013/06/12/first-impressions-with-flask-and-elastic-beanstalk/</a>)</li>
+<li><a class="reference external" href="http://jtushman.github.io/blog/2013/06/12/first-impressions-with-flask-and-elastic-beanstalk/">First impressions with Flask and Elastic Beanstalk - tushman.io</a></li>
 </ul>
-<p># 問題 / Problems</p>
+</div>
+<div class="section" id="id1">
+<h2>設定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>環境<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>產生 <a href="#id3"><span class="problematic" id="id4">**</span></a>.ebextensions**目錄, 新增 python.config:</p>
 <ul class="simple">
-<li>requirements.txt 加了 bcrypt 會錯, 因為還要安裝 gcc 跟 libffi</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#command-options-python">Option Values - AWS Elastic Beanstalk</a></li>
 </ul>
-<p>.ebextensions/python.config:</p>
-<blockquote>
-<div><p>:::text
-packages:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>yum:</dt>
-<dd>libffi-devel: []
-gcc: []</dd>
-</dl>
-</div></blockquote>
-</div></blockquote>
-<p>[Django and Amazon AWS Elastic Beanstalk with S3 | Racing Tadpole](<a class="reference external" href="https://racingtadpole.com/blog/django-aws-eb-s3/">https://racingtadpole.com/blog/django-aws-eb-s3/</a>)
-# quickstart (old)</p>
-<p>## 1. 安裝eb commend tools</p>
-<p>下載: [AWS Elastic Beanstalk Command Line Tool : Sample Code &amp; Libraries : Amazon Web Services](<a class="reference external" href="http://aws.amazon.com/code/6752709412171743">http://aws.amazon.com/code/6752709412171743</a>)</p>
-<p>設定好路徑(以mac為例), 就可以開始了</p>
-<blockquote>
-<div><p>:::bash
-AWS-ElasticBeanstalk-CLI-2.5.1/eb/macosx/python2.7/eb</p>
-<p># 環境變數, 可以在shell下export或是寫在~/.elasticbeanstalk/aws_credential_file裡 (忘記是我自己加的還是eb工具自動加的)
-AWSAccessKeyId=Write your AWS access ID
-AWSSecretKey=Write your AWS secret key</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>或是</dt>
-<dd>:::bash
-brew install aws-elasticbeanstalk</dd>
-</dl>
-<p>## 2. 準備部署</p>
-<p>### WSGI</p>
-<p>預設是application.py:application, 自己要改application.py名字失敗..</p>
-<blockquote>
-<div>:::text
-[aws:elasticbeanstalk:container:python]
-...
-WSGIPath=my_fail_wsgi
-eb update?</div></blockquote>
-<p>### 連接原本的RDS
-要去RDS的security group那裡新增一個(因為等於是開了一個新的EC2)，通常是awseb-xxx 開頭的</p>
-<p>### Elastic Beanstalk沒有filesystem</p>
-<ul class="simple">
-<li>所以原本的media檔要改存到S3</li>
-<li>原本logger有自己存檔, 也要取消 (反正會出現在eb的log裡)</li>
-</ul>
-<p>## 3. 跑起來</p>
-<blockquote>
-<div><p>:::bash
-# 在git目錄下操作, 如果沒有repo就會叫你git init
-eb init
-# 會有選單, 開始勾選
-# 平台選這個
-64bit Amazon Linux 2013.09 running Python 2.7
-# 勾完後, 就可以啟動餓了
-eb start
-# 問你要用那個version deploy, 預設最新的
-# 等個幾分鐘</p>
-<p># 改程式後git commit
-# git aws.push -&gt; 自動傳到eb環境</p>
-<p># 其他指令
-eb status &#8211;verbose</p>
-</div></blockquote>
-<p>## 其他設定</p>
-<p>### 環境設定
-產生 <a href="#id1"><span class="problematic" id="id2">**</span></a>.ebextensions**目錄, 新增 python.config:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>option_settings:</dt>
-<dd><dl class="first last docutils">
-<dt>&#8220;aws:elasticbeanstalk:container:python:staticfiles&#8221;:</dt>
-<dd>&#8220;/static/&#8221;: &#8220;myapp/static/&#8221;</dd>
-</dl>
-</dd>
-</dl>
-<p># 更改程式進入點
-option_settings:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;aws:elasticbeanstalk:container:python&#8221;:</dt>
-<dd>WSGIPath: app/main.py</dd>
-</dl>
-</div></blockquote>
-</div></blockquote>
-<ul class="simple">
-<li>[Option Values - AWS Elastic Beanstalk](<a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#command-options-python">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#command-options-python</a>)</li>
-</ul>
-<p>### custom domain</p>
+</div>
+<div class="section" id="custom-domain">
+<h3>custom domain<a class="headerlink" href="#custom-domain" title="Permalink to this headline">¶</a></h3>
 <p>到原domain註冊商去加一筆CNAME, 指到EB提供的public url</p>
-<p>### HTTPS</p>
-<dl class="docutils">
-<dt>#### 1. startssl申請: 產生 ssl.crt, ssl.key (encrypted), 還有一組密碼</dt>
-<dd>[The Will Will Web | 免費申請 StartSSL™ 個人數位簽章與網站 SSL 憑證完全攻略](<a class="reference external" href="http://blog.miniasp.com/post/2013/01/10/The-Complete-Guide-Free-StartSSL-personal-and-web-site-ssl-tls-certificates.aspx">http://blog.miniasp.com/post/2013/01/10/The-Complete-Guide-Free-StartSSL-personal-and-web-site-ssl-tls-certificates.aspx</a>)</dd>
-</dl>
+</div>
+<div class="section" id="https">
+<h3>HTTPS<a class="headerlink" href="#https" title="Permalink to this headline">¶</a></h3>
+<p><strong>1. startssl申請: 產生 ssl.crt, ssl.key (encrypted), 還有一組密碼</strong></p>
+<p><a class="reference external" href="http://blog.miniasp.com/post/2013/01/10/The-Complete-Guide-Free-StartSSL-personal-and-web-site-ssl-tls-certificates.aspx">The Will Will Web | 免費申請 StartSSL™ 個人數位簽章與網站 SSL 憑證完全攻略</a></p>
 <p>產生private key:</p>
-<blockquote>
-<div>openssl rsa -in ssl.key -out private.key # 要求輸入那一組密碼</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>openssl rsa -in ssl.key -out private.key # 要求輸入那一組密碼
+</pre></div>
+</div>
 <p><strong>無效(self signed cert.):</strong></p>
 <p>private key:</p>
-<blockquote>
-<div>openssl genrsa 1024 &gt; privatekey.pem</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>openssl genrsa 1024 &gt; privatekey.pem
+</pre></div>
+</div>
 <p>cert. pem:</p>
-<blockquote>
-<div>openssl req -new -key privatekey.pem -out csr.pem</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>openssl req -new -key privatekey.pem -out csr.pem
+</pre></div>
+</div>
 <p>server cert:</p>
-<blockquote>
-<div>openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out server.crt # 會問一些問題</div></blockquote>
-<p>#### 2. 設定到AWS</p>
+<div class="highlight-python"><div class="highlight"><pre>openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out server.crt # 會問一些問題
+</pre></div>
+</div>
+<p><strong>2. 設定到AWS</strong></p>
 <p>下載 iam 命令列:</p>
 <blockquote>
 <div>pip install awscli</div></blockquote>
@@ -609,22 +569,89 @@ option_settings:</p>
 <div>iam-servercertupload -b server.crt -k privatekey.pem -s server -v</div></blockquote>
 <p>[[TODO]]</p>
 <p>然後AWS Management Console選EC2, load-balancer加入https (對應instance是http): SSL Certificate填入剛才的ssl.key, private.key</p>
-<p>[Configuring HTTPS for your AWS Elastic Beanstalk Environment - AWS Elastic Beanstalk](<a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https.html</a>)</p>
-<p>### 參考</p>
+<p><a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https.html">Configuring HTTPS for your AWS Elastic Beanstalk Environment - AWS Elastic Beanstalk</a></p>
+</div>
+</div>
+<div class="section" id="command">
+<h2>command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
+<p>eb stop / delete</p>
 <ul class="simple">
-<li>[Deploying a Flask Application to AWS Elastic Beanstalk - AWS Elastic Beanstalk](<a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_flask.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_flask.html</a>)</li>
-<li>[AWS Elastic Beanstalk FAQs](<a class="reference external" href="http://aws.amazon.com/elasticbeanstalk/faqs/">http://aws.amazon.com/elasticbeanstalk/faqs/</a>)</li>
-<li>[Using AWS Elastic Beanstalk with Amazon RDS - AWS Elastic Beanstalk](<a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html</a>)</li>
+<li>rds的security group要拿掉, 否則會失敗
+* 如果有eb start有create新的RDS, delete時會把那個RDS也殺掉</li>
 </ul>
-<p>## eb stop / delete</p>
+</div>
+<div class="section" id="problems">
+<h2>問題 / Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>rds的security group要拿掉, 否則會失敗</li>
-<li>如果有eb start有create新的RDS, delete時會把那個RDS也殺掉</li>
+<li>requirements.txt 加了 bcrypt 會錯, 因為還要安裝 gcc 跟 libffi</li>
 </ul>
-<p><a class="reference external" href="http://blog.uptill3.com/2012/08/25/python-on-elastic-beanstalk.html">http://blog.uptill3.com/2012/08/25/python-on-elastic-beanstalk.html</a>
-<a class="reference external" href="http://stackoverflow.com/questions/14077095/aws-elastic-beanstalk-running-a-cronjob">http://stackoverflow.com/questions/14077095/aws-elastic-beanstalk-running-a-cronjob</a>
-<a class="reference external" href="https://github.com/keithters/elasticbeanstalk-mysql-rds-flask">https://github.com/keithters/elasticbeanstalk-mysql-rds-flask</a>
-<a class="reference external" href="https://github.com/adamcrosby/elastic-flask-baseline">https://github.com/adamcrosby/elastic-flask-baseline</a></p>
+<p>.ebextensions/python.config:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://racingtadpole.com/blog/django-aws-eb-s3/">Django and Amazon AWS Elastic Beanstalk with S3 | Racing Tadpole</a></li>
+</ul>
+</div>
+<div class="section" id="quickstart-old">
+<h2>quickstart (old)<a class="headerlink" href="#quickstart-old" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="eb-commend-tools">
+<h3>1. 安裝eb commend tools<a class="headerlink" href="#eb-commend-tools" title="Permalink to this headline">¶</a></h3>
+<p>下載: <a class="reference external" href="http://aws.amazon.com/code/6752709412171743">AWS Elastic Beanstalk Command Line Tool : Sample Code &amp; Libraries : Amazon Web Services</a></p>
+<p>設定好路徑(以mac為例), 就可以開始了</p>
+<div class="highlight-bash"><div class="highlight"><pre>AWS-ElasticBeanstalk-CLI-2.5.1/eb/macosx/python2.7/eb
+
+<span class="c"># 環境變數, 可以在shell下export或是寫在~/.elasticbeanstalk/aws_credential_file裡 (忘記是我自己加的還是eb工具自動加的)</span>
+<span class="nv">AWSAccessKeyId</span><span class="o">=</span>Write your AWS access ID
+<span class="nv">AWSSecretKey</span><span class="o">=</span>Write your AWS secret key
+</pre></div>
+</div>
+<p>或是</p>
+</div>
+<div class="section" id="id5">
+<h3>2. 準備部署<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>WSGI</strong></p>
+<p>預設是application.py:application, 自己要改application.py名字失敗..</p>
+<p><strong>連接原本的RDS</strong></p>
+<p>要去RDS的security group那裡新增一個(因為等於是開了一個新的EC2)，通常是awseb-xxx 開頭的</p>
+<p><strong>Elastic Beanstalk沒有filesystem</strong></p>
+<ul class="simple">
+<li>所以原本的media檔要改存到S3</li>
+<li>原本logger有自己存檔, 也要取消 (反正會出現在eb的log裡)</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>3. 跑起來<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># 在git目錄下操作, 如果沒有repo就會叫你git init</span>
+eb init
+<span class="c"># 會有選單, 開始勾選</span>
+<span class="c"># 平台選這個</span>
+64bit Amazon Linux 2013.09 running Python 2.7
+<span class="c"># 勾完後, 就可以啟動餓了</span>
+eb start
+<span class="c"># 問你要用那個version deploy, 預設最新的</span>
+<span class="c"># 等個幾分鐘</span>
+
+<span class="c"># 改程式後git commit</span>
+<span class="c"># git aws.push -&gt; 自動傳到eb環境</span>
+
+<span class="c"># 其他指令</span>
+eb status --verbose
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>參考<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_flask.html">Deploying a Flask Application to AWS Elastic Beanstalk - AWS Elastic Beanstalk</a></li>
+<li><a class="reference external" href="http://aws.amazon.com/elasticbeanstalk/faqs/">AWS Elastic Beanstalk FAQs</a></li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html">Using AWS Elastic Beanstalk with Amazon RDS - AWS Elastic Beanstalk</a></li>
+</ul>
+<p>其他：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://blog.uptill3.com/2012/08/25/python-on-elastic-beanstalk.html">http://blog.uptill3.com/2012/08/25/python-on-elastic-beanstalk.html</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/14077095/aws-elastic-beanstalk-running-a-cronjob">http://stackoverflow.com/questions/14077095/aws-elastic-beanstalk-running-a-cronjob</a></li>
+<li><a class="reference external" href="https://github.com/keithters/elasticbeanstalk-mysql-rds-flask">https://github.com/keithters/elasticbeanstalk-mysql-rds-flask</a></li>
+<li><a class="reference external" href="https://github.com/adamcrosby/elastic-flask-baseline">https://github.com/adamcrosby/elastic-flask-baseline</a></li>
+</ul>
 </div>
 </div>
 
