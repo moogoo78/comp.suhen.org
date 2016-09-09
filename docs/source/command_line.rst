@@ -70,7 +70,14 @@ more
         
   $ find *.JPG -exec echo "\![](/images/nature/150214/{})" \; > out.txt
 
-  
+把一天前更動的檔案搬到...::
+
+
+  $ find * -mtime -1; # 找出一天內的檔案
+  $ find * -mtime -1 -exec mv {} PATH/TO/TARGET \; # 找出, 並搬
+  # mtime: 更動, -n n天內, +n n天以上, atime: 存取 (access), ctime: 修改 (change)
+
+
 **改檔名**
 
 大寫改小寫::
