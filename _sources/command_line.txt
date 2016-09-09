@@ -242,11 +242,19 @@ SSH
 --------------
 
 create id_rsa, id_rsa.pub::
+<<<<<<< HEAD
   
   ssh-keygen -t rsa
 
 .ssh/config::
   
+=======
+  
+  ssh-keygen -t rsa
+
+.ssh/config::
+  
+>>>>>>> 2369071f72a5e6e45877590dc00b2f8d4ac56271
   Host qll-staging
       HostName 123.123.123.123
       Port 22
