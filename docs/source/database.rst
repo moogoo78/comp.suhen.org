@@ -512,9 +512,7 @@ command:
    $ brew services start postgresql
 
 
-syntax:
-
-.. code-block::
+syntax::
 
    # environment
    $sudo -u postgres psql
