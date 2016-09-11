@@ -906,8 +906,42 @@ $ chmod -R 700 /var/lib/mysql/*
 </div>
 <div class="section" id="postgresql">
 <h2>PostgreSQl<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h2>
-<p>debian package:</p>
-<div class="highlight-python"><div class="highlight"><pre>postgresql postgresql-client postgresql-server-dev
+<p>command:</p>
+<div class="highlight-sql"><div class="highlight"><pre>## package
+# debian
+$ apt-get install postgresql postgresql-client postgresql-server-dev
+
+# OSX
+$ brew install postgresql
+
+# dump
+$ pg_dump -U USERNAME DBNAME &gt; dbexport.pgsql
+
+# import
+$ psql -f kals-db-20121218.backup.sql kals kals
+
+# first time (OSX)
+$ initdb /usr/local/var/postgres -E utf8
+
+# service (daemon)
+$ brew services start postgresql
+
+#
+$sudo -u postgres psql
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre># mysql: SHOW DATABASES
+# postgresql: \l
+# mysql: SHOW TABLES
+# postgresql: \d
+
+# mysql: SHOW COLUMNS
+# postgresql: \d table
+
+# mysql: DESCRIBE TABLE
+# postgresql: \d+ table
+
+# exit: \q
 </pre></div>
 </div>
 </div>
