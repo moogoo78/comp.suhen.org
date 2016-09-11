@@ -490,9 +490,46 @@ others
 PostgreSQl
 ---------------
 
-debian package::
+command:
 
-  postgresql postgresql-client postgresql-server-dev
+.. code-block:: sql
+
+   ## package             
+   # debian
+   $ apt-get install postgresql postgresql-client postgresql-server-dev
+                
+   # OSX
+   $ brew install postgresql
+
+   # dump
+   $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
+
+   # import 
+   $ psql -f kals-db-20121218.backup.sql kals kals
+
+   # first time (OSX)
+   $ initdb /usr/local/var/postgres -E utf8
+
+   # service (daemon)
+   $ brew services start postgresql
+
+   # 
+   $sudo -u postgres psql
+
+.. code-block:: sql
+
+   # mysql: SHOW DATABASES
+   # postgresql: \l
+   # mysql: SHOW TABLES
+   # postgresql: \d
+                
+   # mysql: SHOW COLUMNS
+   # postgresql: \d table
+
+   # mysql: DESCRIBE TABLE
+   # postgresql: \d+ table
+
+   # exit: \q
 
 
 Sqlite
