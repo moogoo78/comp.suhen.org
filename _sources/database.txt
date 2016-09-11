@@ -492,12 +492,10 @@ PostgreSQl
 
 command:
 
-.. code-block:: sql
-
-   ## package             
+.. code-block:: bash
+   ## package
    # debian
    $ apt-get install postgresql postgresql-client postgresql-server-dev
-                
    # OSX
    $ brew install postgresql
 
@@ -513,10 +511,13 @@ command:
    # service (daemon)
    $ brew services start postgresql
 
-   # 
-   $sudo -u postgres psql
 
-.. code-block:: sql
+syntax:
+
+.. code-block::
+
+   # environment
+   $sudo -u postgres psql
 
    # mysql: SHOW DATABASES
    # postgresql: \l
