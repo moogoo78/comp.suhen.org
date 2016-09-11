@@ -493,6 +493,7 @@ PostgreSQl
 command:
 
 .. code-block:: bash
+   
    ## package
    # debian
    $ apt-get install postgresql postgresql-client postgresql-server-dev
