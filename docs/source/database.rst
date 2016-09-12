@@ -490,15 +490,25 @@ others
 PostgreSQl
 ---------------
 
-command:
+
+mac php (with-postgresql):
+
+`Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
+
 
 .. code-block:: bash
 
    ## package
    # debian
    $ apt-get install postgresql postgresql-client postgresql-server-dev
+                
    # OSX
    $ brew install postgresql
+                
+
+command:
+
+.. code-block:: bash
 
    # dump
    $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
