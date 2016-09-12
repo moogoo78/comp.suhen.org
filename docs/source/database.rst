@@ -491,7 +491,7 @@ PostgreSQl
 ---------------
 
 
-mac php (with-postgresql):
+mac php (with-postgresql), 為了用 adminer.php:
 
 `Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
 
