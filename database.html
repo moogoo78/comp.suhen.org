@@ -906,14 +906,18 @@ $ chmod -R 700 /var/lib/mysql/*
 </div>
 <div class="section" id="postgresql">
 <h2>PostgreSQl<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h2>
-<p>command:</p>
+<p>mac php (with-postgresql):</p>
+<p><a class="reference external" href="https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/">Install PostgreSQL PHP extensions on Mac OS X</a></p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c">## package</span>
 <span class="c"># debian</span>
 <span class="nv">$ </span>apt-get install postgresql postgresql-client postgresql-server-dev
+
 <span class="c"># OSX</span>
 <span class="nv">$ </span>brew install postgresql
-
-<span class="c"># dump</span>
+</pre></div>
+</div>
+<p>command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># dump</span>
 <span class="nv">$ </span>pg_dump -U USERNAME DBNAME &gt; dbexport.pgsql
 
 <span class="c"># import</span>
