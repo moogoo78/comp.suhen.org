@@ -487,7 +487,7 @@ others
 * `探討 MySQL 授權 | Ant's ATField <http://antbsd.twbbs.org/~ant/wordpress/?p=2259>`__
 
 
-PostgreSQl
+PostgreSQL
 ---------------
 
 
@@ -512,9 +512,10 @@ command:
 
    # dump
    $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
+   $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql
 
    # import 
-   $ psql -f kals-db-20121218.backup.sql kals kals
+   $ psql -f backup.sql dbname dbuser
 
    # first time (OSX)
    $ initdb /usr/local/var/postgres -E utf8
