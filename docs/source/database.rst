@@ -490,7 +490,6 @@ others
 PostgreSQL
 ---------------
 
-
 mac php (with-postgresql), 為了用 adminer.php:
 
 `Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
@@ -500,7 +499,7 @@ mac php (with-postgresql), 為了用 adminer.php:
 
    ## package
    # debian
-   $ apt-get install postgresql postgresql-client postgresql-server-dev
+   $ apt-get install postgresql postgresql-client postgresql-server-dev-9.4 # or postgresql-server-dev-all
                 
    # OSX
    $ brew install postgresql
@@ -543,6 +542,13 @@ syntax::
    # exit: \q
 
 
+常用 SQL Syntax
+
+.. code-block:: sql
+   
+   ALTER DATABASE name RENAME TO new_name
+
+  
 Sqlite
 ------------
 

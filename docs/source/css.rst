@@ -10,7 +10,8 @@ Tutorial
 * http://zh-tw.learnlayout.com/
 * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Layout
 
-  
+
+
 Basic
 ~~~~~~~~~~~
 
@@ -84,7 +85,10 @@ Box
 * `CSS Border <http://www.w3schools.com/css/css_border.asp>`__
 * `Zebra striping tables with CSS3 - Dev.Opera <http://dev.opera.com/articles/view/zebra-striping-tables-with-css3/>`__
 
+Selector
+----------
 
+* `nth-child vs nth-of-type <https://bitsofco.de/nth-child-vs-nth-of-type/>`__
 Methods
 ---------------
 
