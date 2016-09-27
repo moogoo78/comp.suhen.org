@@ -171,6 +171,7 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#selector">Selector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
@@ -910,7 +911,7 @@ $ chmod -R 700 /var/lib/mysql/*
 <p><a class="reference external" href="https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/">Install PostgreSQL PHP extensions on Mac OS X</a></p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c">## package</span>
 <span class="c"># debian</span>
-<span class="nv">$ </span>apt-get install postgresql postgresql-client postgresql-server-dev
+<span class="nv">$ </span>apt-get install postgresql postgresql-client postgresql-server-dev-9.4 <span class="c"># or postgresql-server-dev-all</span>
 
 <span class="c"># OSX</span>
 <span class="nv">$ </span>brew install postgresql
@@ -947,6 +948,10 @@ $sudo -u postgres psql
 # postgresql: \d+ table
 
 # exit: \q
+</pre></div>
+</div>
+<p>常用 SQL Syntax</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="n">name</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">new_name</span>
 </pre></div>
 </div>
 </div>
