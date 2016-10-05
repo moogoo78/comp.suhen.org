@@ -94,9 +94,24 @@ format::
   '{0:02d}'.format(dtime.tm_mon) # 補2位0
   '{:.1%}'.format(1/3.0) # 百分比 '33.3%'
   
-replace ::
+replace::
 
   string.replace('old', 'new')
+
+
+coding::
+
+  u = unichr(40960) + u'abcd' + unichr(1972)   # type(u), unicode
+  utf8_version = u.encode('utf-8')             # Encode as UTF-8
+  type(utf8_version), utf8_version
+  # (<type 'str'>, '\xea\x80\x80abcd\xde\xb4')
+  u2 = utf8_version.decode('utf-8')            # Decode using UTF-8
+  u == u2                                      # The two strings match
+  True
+
+  ### format
+  'foo %s bar' % (foostr.decode('utf-8'))
+`Unicode HOWTO — Python 2.7.12 documentation <https://docs.python.org/2/howto/unicode.html>`__
 
 
 日期/時間 time

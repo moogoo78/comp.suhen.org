@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#cryptography">cryptography 安裝失敗</a></li>
 </ul>
 </li>
 </ul>
@@ -125,7 +126,7 @@
 <li class="toctree-l3"><a class="reference internal" href="database.html#others">others</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#postgresql">PostgreSQl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#postgresql">PostgreSQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#snippets">snippets</a></li>
 </ul>
@@ -171,6 +172,7 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#selector">Selector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
@@ -560,10 +562,24 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 <span class="s">&#39;{:.1%}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span> <span class="c"># 百分比 &#39;33.3%&#39;</span>
 </pre></div>
 </div>
-<p>replace</p>
+<p>replace:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;old&#39;</span><span class="p">,</span> <span class="s">&#39;new&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>coding:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">u</span> <span class="o">=</span> <span class="nb">unichr</span><span class="p">(</span><span class="mi">40960</span><span class="p">)</span> <span class="o">+</span> <span class="s">u&#39;abcd&#39;</span> <span class="o">+</span> <span class="nb">unichr</span><span class="p">(</span><span class="mi">1972</span><span class="p">)</span>   <span class="c"># type(u), unicode</span>
+<span class="n">utf8_version</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>             <span class="c"># Encode as UTF-8</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">utf8_version</span><span class="p">),</span> <span class="n">utf8_version</span>
+<span class="c"># (&lt;type &#39;str&#39;&gt;, &#39;\xea\x80\x80abcd\xde\xb4&#39;)</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="n">utf8_version</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>            <span class="c"># Decode using UTF-8</span>
+<span class="n">u</span> <span class="o">==</span> <span class="n">u2</span>                                      <span class="c"># The two strings match</span>
+<span class="bp">True</span>
+
+<span class="c">### format</span>
+<span class="s">&#39;foo </span><span class="si">%s</span><span class="s"> bar&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">foostr</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.python.org/2/howto/unicode.html">Unicode HOWTO — Python 2.7.12 documentation</a></p>
 </div>
 <div class="section" id="time">
 <h3>日期/時間 time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>

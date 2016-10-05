@@ -101,7 +101,7 @@ color:
 Font:
 
 * `WhatFont Tool - The easiest way to inspect fonts in webpages « Chengyin Liu <http://chengyinliu.com/whatfont.html>`__ 方便看網頁字體的bookmarklet
-
+* `Fount · Identify any web font you see. <https://fount.artequalswork.com/>`__ 很方便!!
 
   
 資源

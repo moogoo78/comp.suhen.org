@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="web_devoops.html#php-environment">PHP environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_devoops.html#python-environment">python environment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#pillow-jpeg">Pillow jpeg 老問題</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#cryptography">cryptography 安裝失敗</a></li>
 </ul>
 </li>
 </ul>
@@ -922,36 +923,43 @@ $ chmod -R 700 /var/lib/mysql/*
 <span class="nv">$ </span>pg_dump -U USERNAME DBNAME &gt; dbexport.pgsql
 <span class="nv">$ </span><span class="c"># PGPASSWORD=&quot;mypassword&quot; pg_dump -U myusername dbname 密碼 &gt; output.sql</span>
 
-<span class="c"># import</span>
+<span class="c">## import</span>
 <span class="nv">$ </span>psql -f backup.sql dbname dbuser
 
-<span class="c"># first time (OSX)</span>
-<span class="nv">$ </span>initdb /usr/local/var/postgres -E utf8
+<span class="c">## Debian Jessie</span>
+<span class="c"># first time</span>
+<span class="c"># createuser myuser</span>
 
+<span class="c">## OSX</span>
+<span class="c"># first time</span>
+<span class="nv">$ </span>initdb /usr/local/var/postgres -E utf8
 <span class="c"># service (daemon)</span>
 <span class="nv">$ </span>brew services start postgresql
 </pre></div>
 </div>
+<p><a class="reference external" href="https://wiki.debian.org/PostgreSql#Installation">PostgreSql - Debian Wiki</a></p>
 <p>syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre># environment
 $sudo -u postgres psql
 
 # mysql: SHOW DATABASES
-# postgresql: \l
+# pgres: \l
 # mysql: SHOW TABLES
-# postgresql: \d
+# pgres: \d
+# mysql: USE mydbname
+# pgres: \c  mydbname # \connect
 
 # mysql: SHOW COLUMNS
-# postgresql: \d table
+# pgres: \d table
 
 # mysql: DESCRIBE TABLE
-# postgresql: \d+ table
+# pgres: \d+ table ( \dt)
 
 # exit: \q
 </pre></div>
 </div>
 <p>常用 SQL Syntax</p>
-<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="n">name</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">new_name</span>
+<div class="highlight-sql"><div class="highlight"><pre>ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
 </pre></div>
 </div>
 </div>

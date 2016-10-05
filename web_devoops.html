@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#php-environment">PHP environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python-environment">python environment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pillow-jpeg">Pillow jpeg 老問題</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cryptography">cryptography 安裝失敗</a></li>
 </ul>
 </li>
 </ul>
@@ -125,7 +126,7 @@
 <li class="toctree-l3"><a class="reference internal" href="database.html#others">others</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#postgresql">PostgreSQl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#postgresql">PostgreSQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#snippets">snippets</a></li>
 </ul>
@@ -171,6 +172,7 @@
 <li class="toctree-l3"><a class="reference internal" href="css.html#box">Box</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="css.html#selector">Selector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="css.html#methods">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="css.html#debug">Debug</a></li>
 </ul>
@@ -560,6 +562,26 @@ client_max_body_size 2M;
 $ pip install --no-cache-dir -I pillow # reinstall pillow
 </pre></div>
 </div>
+</div>
+<div class="section" id="cryptography">
+<h3>cryptography 安裝失敗<a class="headerlink" href="#cryptography" title="Permalink to this headline">¶</a></h3>
+<p>似乎在 digital ocean 最便宜 image 才會發生. resource 不夠 (build 時會卡很久)</p>
+<p>sovle:</p>
+<div class="highlight-python"><div class="highlight"><pre># 做一個 512MB 的swap
+$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
+$ sudo chmod 600 /swapfile
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
+
+$ pip install cryptography # 就 ok 了, 神
+
+# 解除
+$ swapoff /swapfile
+$ rm /swapfile
+</pre></div>
+</div>
+<p>ref:</p>
+<p><a class="reference external" href="https://github.com/certbot/certbot/issues/2324">Running setup.py install for cryptography ... error command &#8216;x86_64-linux-gnu-gcc&#8217; failed with exit status 4 · Issue #2324 · certbot/certbot</a></p>
 </div>
 </div>
 </div>

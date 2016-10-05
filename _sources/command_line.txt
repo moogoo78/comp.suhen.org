@@ -10,7 +10,13 @@ APT::
   $ apt-get remove foo --auto-remove
   $ apt-get remove foo [--purge]
   $ sudo apt-get autoremove --purge
+  $ apt-cache policy foo # 看有什麼可以裝的版本
 
+log::
+
+  /var/log/apt/term.log
+  /var/log/apt/history.log
+  /var/log/dpkg.log
 
 system disk
 --------------
