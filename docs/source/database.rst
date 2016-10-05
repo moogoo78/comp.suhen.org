@@ -513,15 +513,20 @@ command:
    $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
    $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql
 
-   # import 
+   ## import 
    $ psql -f backup.sql dbname dbuser
 
-   # first time (OSX)
+   ## Debian Jessie
+   # first time                
+   # createuser myuser
+                
+   ## OSX
+   # first time
    $ initdb /usr/local/var/postgres -E utf8
-
-   # service (daemon)
+   # service (daemon)                
    $ brew services start postgresql
 
+`PostgreSql - Debian Wiki <https://wiki.debian.org/PostgreSql#Installation>`__
 
 syntax::
 
@@ -529,15 +534,17 @@ syntax::
    $sudo -u postgres psql
 
    # mysql: SHOW DATABASES
-   # postgresql: \l
+   # pgres: \l
    # mysql: SHOW TABLES
-   # postgresql: \d
-                
+   # pgres: \d
+   # mysql: USE mydbname
+   # pgres: \c  mydbname # \connect
+  
    # mysql: SHOW COLUMNS
-   # postgresql: \d table
+   # pgres: \d table
 
    # mysql: DESCRIBE TABLE
-   # postgresql: \d+ table
+   # pgres: \d+ table ( \dt)
 
    # exit: \q
 
@@ -546,7 +553,7 @@ syntax::
 
 .. code-block:: sql
    
-   ALTER DATABASE name RENAME TO new_name
+   ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
 
   
 Sqlite

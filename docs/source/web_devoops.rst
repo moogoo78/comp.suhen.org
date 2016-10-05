@@ -98,4 +98,26 @@ Debian::
   $ pip install --no-cache-dir -I pillow # reinstall pillow
 
 
+cryptography 安裝失敗
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+似乎在 digital ocean 最便宜 image 才會發生. resource 不夠 (build 時會卡很久)
+
+sovle::
+
+  # 做一個 512MB 的swap
+  $ sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
+  $ sudo chmod 600 /swapfile
+  $ sudo mkswap /swapfile
+  $ sudo swapon /swapfile
+
+  $ pip install cryptography # 就 ok 了, 神
+
+  # 解除
+  $ swapoff /swapfile
+  $ rm /swapfile
+
+ref:
+
+`Running setup.py install for cryptography ... error command 'x86_64-linux-gnu-gcc' failed with exit status 4 · Issue #2324 · certbot/certbot <https://github.com/certbot/certbot/issues/2324>`__
   
