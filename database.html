@@ -126,12 +126,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#others">others</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#postgresql">PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#postgresql">PostgreSQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sql-syntax">常用 SQL Syntax</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#sqlite">Sqlite</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#snippets">snippets</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">比較</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -908,6 +913,8 @@ $ chmod -R 700 /var/lib/mysql/*
 </div>
 <div class="section" id="postgresql">
 <h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
 <p>mac php (with-postgresql), 為了用 adminer.php:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/">Install PostgreSQL PHP extensions on Mac OS X</a></li>
@@ -921,7 +928,9 @@ $ chmod -R 700 /var/lib/mysql/*
 <span class="nv">$ </span>brew install postgresql
 </pre></div>
 </div>
-<p>command:</p>
+</div>
+<div class="section" id="id4">
+<h3>command<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># dump</span>
 <span class="nv">$ </span>pg_dump -U USERNAME DBNAME &gt; dbexport.pgsql
 <span class="nv">$ </span><span class="c"># PGPASSWORD=&quot;mypassword&quot; pg_dump -U myusername dbname 密碼 &gt; output.sql</span>
@@ -963,9 +972,12 @@ $sudo -u postgres psql
 # exit: \q
 </pre></div>
 </div>
-<p>常用 SQL Syntax</p>
+</div>
+<div class="section" id="sql-syntax">
+<h3>常用 SQL Syntax<a class="headerlink" href="#sql-syntax" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sql"><div class="highlight"><pre>ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="sqlite">
@@ -1011,8 +1023,8 @@ $ cat dumpfile.sql | sqlite3 new.db
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>比較<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>比較<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
