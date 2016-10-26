@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database筆記 (MySQL, SQLite) &mdash; CompDocs 1.0 documentation</title>
+  <title>Database筆記 (MySQL, PostgreSQL, SQLite) &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -75,7 +75,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#guideline">Guideline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="programming.html#changelog">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming.html#changelog-readme">Changelog &amp; README</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming.html#languages">Languages</a></li>
 </ul>
 </li>
@@ -110,7 +110,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, SQLite)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#function">function</a></li>
@@ -473,7 +473,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Database筆記 (MySQL, SQLite)</li>
+    <li>Database筆記 (MySQL, PostgreSQL, SQLite)</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -486,8 +486,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="database-mysql-sqlite">
-<h1>Database筆記 (MySQL, SQLite)<a class="headerlink" href="#database-mysql-sqlite" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="database-mysql-postgresql-sqlite">
+<h1>Database筆記 (MySQL, PostgreSQL, SQLite)<a class="headerlink" href="#database-mysql-postgresql-sqlite" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="mysql">
 <h2>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h2>
 <p>Syntax</p>
@@ -909,7 +909,10 @@ $ chmod -R 700 /var/lib/mysql/*
 <div class="section" id="postgresql">
 <h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h2>
 <p>mac php (with-postgresql), 為了用 adminer.php:</p>
-<p><a class="reference external" href="https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/">Install PostgreSQL PHP extensions on Mac OS X</a></p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/">Install PostgreSQL PHP extensions on Mac OS X</a></li>
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-9-4-on-debian-8">How To Install and Use PostgreSQL 9.4 on Debian 8 | DigitalOcean</a></li>
+</ul>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c">## package</span>
 <span class="c"># debian</span>
 <span class="nv">$ </span>apt-get install postgresql postgresql-client postgresql-server-dev-9.4 <span class="c"># or postgresql-server-dev-all</span>
@@ -941,6 +944,8 @@ $ chmod -R 700 /var/lib/mysql/*
 <p>syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre># environment
 $sudo -u postgres psql
+
+# ALTER DATABASE name RENAME TO newname
 
 # mysql: SHOW DATABASES
 # pgres: \l

@@ -1,5 +1,5 @@
-Database筆記 (MySQL, SQLite)
-===============================
+Database筆記 (MySQL, PostgreSQL, SQLite)
+==============================================
 
 
 MySQL
@@ -492,8 +492,8 @@ PostgreSQL
 
 mac php (with-postgresql), 為了用 adminer.php:
 
-`Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
-
+* `Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
+* `How To Install and Use PostgreSQL 9.4 on Debian 8 | DigitalOcean <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-9-4-on-debian-8>`__
 
 .. code-block:: bash
 
@@ -526,12 +526,15 @@ command:
    # service (daemon)                
    $ brew services start postgresql
 
+                
 `PostgreSql - Debian Wiki <https://wiki.debian.org/PostgreSql#Installation>`__
 
 syntax::
 
    # environment
    $sudo -u postgres psql
+
+   # ALTER DATABASE name RENAME TO newname
 
    # mysql: SHOW DATABASES
    # pgres: \l

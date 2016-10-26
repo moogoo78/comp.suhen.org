@@ -9,10 +9,11 @@ Guideline
 * `api-guidelines/Guidelines.md at master · Microsoft/api-guidelines <https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md?utm_source=hackernewsletter&utm_medium=email&utm_term=code>`__
 
 
-Changelog
------------------
+Changelog & README
+----------------------
 
 * `Keep a Changelog <http://keepachangelog.com/>`__
+* `noffle/art-of-readme: Learn the art of writing quality READMEs. <https://github.com/noffle/art-of-readme>`__
 
 .. code::
 
@@ -36,7 +37,8 @@ Changelog
 
 API:
 * `Best Practices for Designing a Pragmatic RESTful API | Vinay Sahni <http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#rate-limiting>`__
-  
+
+
 Languages
 ------------
 
