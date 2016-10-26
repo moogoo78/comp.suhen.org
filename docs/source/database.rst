@@ -490,6 +490,10 @@ others
 PostgreSQL
 ---------------
 
+
+Install
+~~~~~~~~~~~
+
 mac php (with-postgresql), 為了用 adminer.php:
 
 * `Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
@@ -505,7 +509,8 @@ mac php (with-postgresql), 為了用 adminer.php:
    $ brew install postgresql
                 
 
-command:
+command
+~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -553,6 +558,7 @@ syntax::
 
 
 常用 SQL Syntax
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: sql
    
