@@ -1,12 +1,33 @@
 OS & Desktop
 ================
 
-Linux - Debian - LXDE
+Linux
 -------------------------
+
+Cub
+^^^^^^^^^^^^^
+
+make boot usb disk:
+
+.. code-block:: bash
+
+  $ sudo dd if=/dev/zero of=/dev/sdX bs=1 count=512 
+  $ sudo dd if=/path/to/Chromixium-1.5-amd64.iso of=/dev/sdX bs=4M && sync
+  
+  # 在 OSX 上做:
+  # 先 unmount
+  $ diskutil umount /Volumes/MYUSB
+  $ sudo dd if=/dev/zero of=/dev/diskX bs=1 count=512 
+  $ sudo dd if=/path/to/Chromixium-1.5-amd64.iso of=/dev/diskX bs=4m && sync  # OSX 要用 m (小寫)
+
+
+
+Debian - LXDE
+^^^^^^^^^^^^^^^^^^
 
 
 Dell inspiron 15 5000::
-
+  
   # 缺 2 個 non-free 的 package
   # sourcelist 的 main 後面加上 non-free
   apt-get update
@@ -65,29 +86,9 @@ QR Code::
   
 `Linux World: QR code: Encode and Decode QR code on linux command line <http://tuxthink.blogspot.tw/2014/01/qr-code-encode-and-decode-qr-code-on.html>`__  
   
-Browser - bookmarklet
-----------------------------
-
-markdown syntax:
-
-.. code-block:: javascript
-
-   javascript:(function(){t='['+decodeURIComponent(document.title)+']('+decodeURIComponent(window.location.href)+')';win=window.open('','_new','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=150');win.document.write('<form><textarea name="a" rows="5" cols="50" onClick="javascript:this.form.a.focus();this.form.a.select();">'+t+'</textarea></form>');})()
-
-reST syntax:
-
-.. code-block:: javascript
-
-   javascript:(function(){t='`'+decodeURIComponent(document.title)+' <'+decodeURIComponent(window.location.href)+'>`__';win=window.open('','_new','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=150');win.document.write('<form><textarea name="a" rows="5" cols="50" onClick="javascript:this.form.a.focus();this.form.a.select();">'+t+'</textarea></form>');})()
-
-Wappalyzer
-
-.. code-block:: javascript
-
-   javascript: (function() { var d = document, e = d.getElementById('wappalyzer-container') ; if ( e !== null ) { d.body.removeChild(e); } var u = 'https://wappalyzer.com/bookmarklet/', t = new Date().getTime(), c = d.createElement('div'), p = d.createElement('div'), l = d.createElement('link'), s = d.createElement('script') ; c.setAttribute('id', 'wappalyzer-container'); l.setAttribute('rel', 'stylesheet'); l.setAttribute('href', u + 'css/wappalyzer.css'); d.head.appendChild(l); p.setAttribute('id', 'wappalyzer-pending'); p.setAttribute('style', 'background-image: url(' + u + 'images/pending.gif) !important'); c.appendChild(p); s.setAttribute('src', u + 'js/wappalyzer.js?' + t); s.onload = function() { s = d.createElement('script'); s.setAttribute('src', u + 'js/apps.js?' + t); s.onload = function() { s = d.createElement('script'); s.setAttribute('src', u + 'js/driver.js?' + t); c.appendChild(s); }; c.appendChild(s); }; c.appendChild(s); d.body.appendChild(c); })();                
 
    
-桌面軟體設定 - Mac OSX
+Mac OSX
 ---------------------------
 
 (Mac的Option也是Alt鍵)
@@ -157,16 +158,40 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
   $ sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
 
 * `UNetbootin - Homepage and Downloads <http://unetbootin.sourceforge.net/>`__
-  
-Browser / Internet
-^^^^^^^^^^^^^^^^^^^^^^
+
+
+Browser
+----------------------------
 
 browser 網址輸入以下, 可以當記事本::
 
   data:text/html, <html contenteditable>
 
+  
+my bookmarklet
+^^^^^^^^^^^^^^^^^^
 
-Browser plugin/extensions:
+markdown syntax:
+
+.. code-block:: javascript
+
+   javascript:(function(){t='['+decodeURIComponent(document.title)+']('+decodeURIComponent(window.location.href)+')';win=window.open('','_new','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=150');win.document.write('<form><textarea name="a" rows="5" cols="50" onClick="javascript:this.form.a.focus();this.form.a.select();">'+t+'</textarea></form>');})()
+
+reST syntax:
+
+.. code-block:: javascript
+
+   javascript:(function(){t='`'+decodeURIComponent(document.title)+' <'+decodeURIComponent(window.location.href)+'>`__';win=window.open('','_new','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=150');win.document.write('<form><textarea name="a" rows="5" cols="50" onClick="javascript:this.form.a.focus();this.form.a.select();">'+t+'</textarea></form>');})()
+
+Wappalyzer
+
+.. code-block:: javascript
+
+   javascript: (function() { var d = document, e = d.getElementById('wappalyzer-container') ; if ( e !== null ) { d.body.removeChild(e); } var u = 'https://wappalyzer.com/bookmarklet/', t = new Date().getTime(), c = d.createElement('div'), p = d.createElement('div'), l = d.createElement('link'), s = d.createElement('script') ; c.setAttribute('id', 'wappalyzer-container'); l.setAttribute('rel', 'stylesheet'); l.setAttribute('href', u + 'css/wappalyzer.css'); d.head.appendChild(l); p.setAttribute('id', 'wappalyzer-pending'); p.setAttribute('style', 'background-image: url(' + u + 'images/pending.gif) !important'); c.appendChild(p); s.setAttribute('src', u + 'js/wappalyzer.js?' + t); s.onload = function() { s = d.createElement('script'); s.setAttribute('src', u + 'js/apps.js?' + t); s.onload = function() { s = d.createElement('script'); s.setAttribute('src', u + 'js/driver.js?' + t); c.appendChild(s); }; c.appendChild(s); }; c.appendChild(s); d.body.appendChild(c); })();
+
+                
+Browser plugin/extensions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 顯示網站使用fromeworks, web server, service...
 
@@ -176,7 +201,7 @@ Browser plugin/extensions:
 
     
 Firefox
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 快速鍵 (整理過, 只列出自己常用)::
 
@@ -253,15 +278,11 @@ spead dial 設定::
 
 
 系統工具
------------
+^^^^^^^^^^^^^^
 
 無法格式化 500 GB 或更大的磁碟, 無法寫入設備上最後的區塊
 
 `磁碟工具程式：無法格式化 500 GB 或更大的磁碟 <http://support.apple.com/kb/TS2644?viewlocale=zh_TW&locale=zh_TW>`__
-
-
-工具
-^^^^^^^^^^^^^^^^^^^^   
 
 osx mount ext2/3: `FUSE for OS X <http://osxfuse.github.com/>`__ + `fuse-ext2 <http://sourceforge.net/projects/fuse-ext2/>`__
 

@@ -561,7 +561,8 @@ syntax::
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: sql
-   
+                
+   ALTER USER "user_name" WITH PASSWORD 'new_password';   # 改 user 密碼
    ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
 
   
