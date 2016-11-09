@@ -507,6 +507,16 @@ mac php (with-postgresql), 為了用 adminer.php:
                 
    # OSX
    $ brew install postgresql
+
+
+設定新密碼:
+
+.. code-block:: bash
+
+   $ sudo -u postgres psql postgres
+   postgres=# \password postgres
+
+
                 
 
 command
