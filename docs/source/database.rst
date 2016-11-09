@@ -517,7 +517,15 @@ mac php (with-postgresql), 為了用 adminer.php:
    postgres=# \password postgres
 
 
-                
+以後要用 psql 時 (不用 sudo -u postgres), 要改:
+
+.. code-block::
+
+   $ sudo vim /etc/postgresql/9.x/main/pg_hba.conf
+   # 找到 local all postgres peer # 把 peer 改 md5
+   $ sudo service postgresql restart
+
+
 
 command
 ~~~~~~~~~~~~~~~
