@@ -62,7 +62,8 @@ parse出每個sql欄位
   # (1, 'The Three Little Pigs', '三隻小豬', 350, '這是有關於三隻...', 28, 16000, 'en', 280, ''),
   m = re.match(r'\((\d+), \'(.*)\', \'(.*)\', (\d+), \'(.*)\', (\d+), (\d+), \'(.*)\', (\d+), \'(.*)\'\)', i)
   
-`7.2. re — Regular expression operations — Python v2.7.6 documentation <http://docs.python.org/2/library/re.html#search-vs-match>`__
+* `7.2. re — Regular expression operations — Python v2.7.6 documentation <http://docs.python.org/2/library/re.html#search-vs-match>`__
+* `Regular Expressions Are Nothing to Fear – Doug Hellmann <https://doughellmann.com/blog/2017/02/13/regular-expressions-are-nothing-to-fear/>`__ 好範例
 
 list compension
 ~~~~~~~~~~~~~~~~~~~~~~~
