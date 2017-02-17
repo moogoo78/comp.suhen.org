@@ -83,6 +83,10 @@ more
   $ find * -mtime -1 -exec mv {} PATH/TO/TARGET \; # 找出, 並搬
   # mtime: 更動, -n n天內, +n n天以上, atime: 存取 (access), ctime: 修改 (change)
 
+** 取出檔案的某幾行**
+
+  sed -n 144827,144878p access.log
+
 
 **改檔名**
 

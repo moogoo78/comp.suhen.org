@@ -572,6 +572,9 @@ $ find * -mtime -1 -exec mv {} PATH/TO/TARGET \; # 找出, 並搬
 # mtime: 更動, -n n天內, +n n天以上, atime: 存取 (access), ctime: 修改 (change)
 </pre></div>
 </div>
+<p>** 取出檔案的某幾行**</p>
+<blockquote>
+<div>sed -n 144827,144878p access.log</div></blockquote>
 <p><strong>改檔名</strong></p>
 <p>大寫改小寫:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr &#39;A-Z&#39; &#39;a-z&#39;`; done

@@ -174,6 +174,32 @@ CSS3:
     }
 
 
+字出血
+
+.. code-block:: css
+
+   p {
+     width: 200px;
+     border: 1px solid;
+     padding: 2px 5px;
+
+     /* BOTH of the following are required for text-overflow */
+     white-space: nowrap;
+     overflow: hidden;
+   }
+
+   .overflow-visible {
+       white-space: initial;
+   }
+
+   <p class="overflow-visible">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+要先 white-space: nowrap; 再設定 white-space: initial 才會有padding的切掉? why?:
+
+* `text-overflow - CSS | MDN <https://developer.mozilla.org/zh-TW/docs/Web/CSS/text-overflow>`__ 
+* `用 CSS 讓過長溢出的字省略變 ... @ Vexed's Blog :: 隨意窩 Xuite日誌 <http://blog.xuite.net/vexed/tech/22596484-用+CSS+讓過長溢出的字省略變+...>`__
+
+
 表格列加刪除線
 
 * `Table Row Strikethrough <http://codepen.io/nericksx/pen/CKjbe>`__
