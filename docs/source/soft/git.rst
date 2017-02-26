@@ -77,12 +77,32 @@ git rm/mv::
 
 git reset / revert
 ---------------------
+
+
 reset: 移動HEAD, 更改SHA referenct(git記錄), 檔案還是目前最新的狀態
 還沒commit 
 
-revert: rollback, 並且會有一個新的commit(不像reset是回到某個commit)
+revert: rollback, 並且會有一個新的commit(不像reset是回到某個commit) 會保留 commit log
 
-`Pro Git - Reset Demystified <http://progit.org/2011/07/11/reset.html>`__
+example::
+
+  # 原本
+  A -> B -> C ->
+
+  # revert, 回到 B, 產生一個新 commit (一路往前)
+  git revert C
+  A -> B -> C -> B ->
+
+  # reset, 清掉 commit log, 檔案保留目前狀態
+  git reset B
+  A -> B ->
+
+  # rebase, 同步 remote 跟 local
+ 
+
+* `Pro Git - Reset Demystified <http://progit.org/2011/07/11/reset.html>`__
+* `Reset, Checkout, and Revert | Atlassian Git Tutorial <https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting>`__
+
 git reset::
 
     git reset --soft HEAD~ # HEAD指回the parent of HEAD, Index和Working Directory都不動(因為soft嘛)
