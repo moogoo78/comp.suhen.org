@@ -587,9 +587,27 @@ git rm --cached # 從版本控管裡那掉，保留原檔
 <h3>git reset / revert<a class="headerlink" href="#git-reset-revert" title="Permalink to this headline">¶</a></h3>
 <p>reset: 移動HEAD, 更改SHA referenct(git記錄), 檔案還是目前最新的狀態
 還沒commit</p>
-<p>revert: rollback, 並且會有一個新的commit(不像reset是回到某個commit)</p>
-<p><a class="reference external" href="http://progit.org/2011/07/11/reset.html">Pro Git - Reset Demystified</a>
-git reset:</p>
+<p>revert: rollback, 並且會有一個新的commit(不像reset是回到某個commit) 會保留 commit log</p>
+<p>example:</p>
+<div class="highlight-python"><div class="highlight"><pre># 原本
+A -&gt; B -&gt; C -&gt;
+
+# revert, 回到 B, 產生一個新 commit (一路往前)
+git revert C
+A -&gt; B -&gt; C -&gt; B -&gt;
+
+# reset, 清掉 commit log, 檔案保留目前狀態
+git reset B
+A -&gt; B -&gt;
+
+# rebase, 同步 remote 跟 local
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://progit.org/2011/07/11/reset.html">Pro Git - Reset Demystified</a></li>
+<li><a class="reference external" href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting">Reset, Checkout, and Revert | Atlassian Git Tutorial</a></li>
+</ul>
+<p>git reset:</p>
 <div class="highlight-python"><div class="highlight"><pre>git reset --soft HEAD~ # HEAD指回the parent of HEAD, Index和Working Directory都不動(因為soft嘛)
 # 改一改再commit一次, 就是git commit --amend在做的事情一樣
 (修改放到staging area?)
