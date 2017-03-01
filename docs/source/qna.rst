@@ -1,6 +1,19 @@
 問題解決
 ================
 
+
+Web Server
+------------
+
+AWS OS (CentOS) sudo pip command not found
+
+.. code-block::
+
+   路徑問題, sudo 不用一般的 $PATH 環境變數 (/etc/sudoers 檔案裡的 secure_path 定義決定使用的PATH)
+   可以用 $ sudo `which pip` install xxx
+   也可以加 soft link: sudo ln -s /usr/local/bin/pip /usr/bin/pip
+
+
 AWS
 ---------
 
@@ -97,3 +110,6 @@ pip install gevent
 .. code-block:: bash
 
    FLAGS='-std=c99' pip install gevent
+
+
+
