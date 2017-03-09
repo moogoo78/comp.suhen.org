@@ -246,7 +246,9 @@ curl::
   :-u: 	specify username and password e.g. "admin:secret"
   :-v: 	enables verbose mode which outputs info such as request and response headers and errors
 
+wget::
 
+  wget -i url_list.txt # 下載文字檔內的 url
 
 SSH
 --------------
@@ -382,6 +384,11 @@ scroll::
 
 * `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
 * `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
+* `tmux cheatsheet <https://gist.github.com/henrik/1967800>`__
+
+conf
+
+* `Daniel Allen Deutsch <http://danielallendeutsch.com/blog/16-using-tmux-properly.html>`__
 
 VIM
 -------------
