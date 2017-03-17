@@ -181,6 +181,16 @@ status::
 
   os.path.getmtime(fpath) # last modified timestamp, (在 unix 可當做 create time, 另外: ``ctime``... )
 
+
+tempfile::
+
+  import tempfile
+  
+  temp = tempfile.NamedTemporaryFile # 可以用檔名取得
+  print temp.name
+  temp = tempfile.TemporaryFile # 只有 memory addr
+  temp.close() # 會自動砍掉
+
   
 json
 ~~~~~~~~~~~~~
@@ -317,6 +327,7 @@ Profiling
 Modules
 ---------------------------
 
+
 MySQLdb
 ~~~~~~~~~~~~~~~~
 
@@ -359,10 +370,26 @@ Image, PIL, Pillow
   $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
 
 
-xlrd (python-excel)
+Excel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: python
+比較新, 功能強
+
+檔名要 .xlsx, 不然認定格式不合
+
+openpyxl::
+
+  from openpyxl import load_workbook
+  wb = load_workbook(filename='large_file.xlsx', read_only=True)
+  sheet_name = wb.get_sheet_names()[0] # 預設第一個 sheet
+  ws = wb[sheet_name]
+
+  for row in ws.rows:
+      for cell in row:
+          print(cell.value)
+
+
+xlrd::
    
    book = xlrd.open_workbook('foo.xlsx')
    sheet = book.sheet_by_name(u'工作表1')
