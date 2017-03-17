@@ -210,7 +210,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#image-pil-pillow">Image, PIL, Pillow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#xlrd-python-excel">xlrd (python-excel)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excel">Excel</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a><ul>
@@ -448,6 +448,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#web-server">Web Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
@@ -651,6 +652,15 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 <div class="highlight-python"><div class="highlight"><pre><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span> <span class="c"># last modified timestamp, (在 unix 可當做 create time, 另外: ``ctime``... )</span>
 </pre></div>
 </div>
+<p>tempfile:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span> <span class="c"># 可以用檔名取得</span>
+<span class="k">print</span> <span class="n">temp</span><span class="o">.</span><span class="n">name</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryFile</span> <span class="c"># 只有 memory addr</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c"># 會自動砍掉</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="json">
 <h3>json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
@@ -816,8 +826,22 @@ $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
 </pre></div>
 </div>
 </div>
-<div class="section" id="xlrd-python-excel">
-<h3>xlrd (python-excel)<a class="headerlink" href="#xlrd-python-excel" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="excel">
+<h3>Excel<a class="headerlink" href="#excel" title="Permalink to this headline">¶</a></h3>
+<p>比較新, 功能強</p>
+<p>檔名要 .xlsx, 不然認定格式不合</p>
+<p>openpyxl:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">load_workbook</span>
+<span class="n">wb</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;large_file.xlsx&#39;</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">sheet_name</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">get_sheet_names</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 預設第一個 sheet</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[</span><span class="n">sheet_name</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ws</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>xlrd:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">book</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="s">&#39;foo.xlsx&#39;</span><span class="p">)</span>
 <span class="n">sheet</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">sheet_by_name</span><span class="p">(</span><span class="s">u&#39;工作表1&#39;</span><span class="p">)</span>
 
