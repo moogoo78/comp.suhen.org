@@ -702,6 +702,15 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 <span class="k">print</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">,</span> <span class="n">c</span><span class="o">/</span><span class="mf">10000.0</span>
 </pre></div>
 </div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># 交集</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">list_foo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_bar</span><span class="p">))</span>
+<span class="c"># 聯集</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">list_foo</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_bar</span><span class="p">))</span>
+
+<span class="c"># 過濾重覆</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">list_foo</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="io-shell-commond-line">
 <h3>IO / shell / commond line<a class="headerlink" href="#io-shell-commond-line" title="Permalink to this headline">¶</a></h3>

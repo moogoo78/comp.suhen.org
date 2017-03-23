@@ -237,6 +237,17 @@ json
   print a, b,c, a/10000.0, b/10000.0, c/10000.0
 
 
+.. code-block:: python 
+
+   # 交集
+   list(set(list_foo) & set(list_bar))
+   # 聯集
+   list(set(list_foo) | set(list_bar))
+
+   # 過濾重覆
+   list(set(list_foo))
+
+
 IO / shell / commond line
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `15.1. os — Miscellaneous operating system interfaces — Python v2.7.3 documentation <http://docs.python.org/2/library/os.html>`__
