@@ -95,6 +95,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web DevOops</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#service">service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#supervisor">supervisor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gunicorn">gunicorn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#uwsgi">uwsgi</a></li>
@@ -210,7 +211,7 @@
 <li class="toctree-l2"><a class="reference internal" href="python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python.html#xlrd-python-excel">xlrd (python-excel)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#excel">Excel</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#tutorial">Tutorial</a><ul>
@@ -448,6 +449,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#web-server">Web Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
@@ -495,6 +497,13 @@
 <h1>Web DevOops<a class="headerlink" href="#web-devoops" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="web-server-daemon">
 <h2>Web server / Daemon<a class="headerlink" href="#web-server-daemon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="service">
+<h3>service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>$ chkconfig
+$ chkconfig --level 2345 nginx on
+</pre></div>
+</div>
+</div>
 <div class="section" id="supervisor">
 <h3>supervisor<a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h3>
 <p>web 界面</p>
