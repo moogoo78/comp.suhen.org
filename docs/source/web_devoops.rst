@@ -8,6 +8,19 @@ Web DevOops
 Web server / Daemon
 ------------------------
 
+
+
+service
+~~~~~~~~~~~~~~
+
+
+::
+
+   $ chkconfig
+   $ chkconfig --level 2345 nginx on
+
+
+
 supervisor
 ~~~~~~~~~~~~~
 
