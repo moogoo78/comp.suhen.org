@@ -95,6 +95,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#service">service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
@@ -210,7 +211,7 @@
 <li class="toctree-l2"><a class="reference internal" href="python.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python.html#mysqldb">MySQLdb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python.html#image-pil-pillow">Image, PIL, Pillow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python.html#xlrd-python-excel">xlrd (python-excel)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#excel">Excel</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#tutorial">Tutorial</a><ul>
@@ -448,6 +449,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qna.html#web-server">Web Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#bitbucket-multiple-ssh-keys">bitbucket multiple ssh keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#push-notification">push notification</a></li>
@@ -508,6 +510,11 @@ $ sudo apt-get install -y nodejs
 </div>
 <div class="section" id="gulp">
 <h2>gulp<a class="headerlink" href="#gulp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>(sudo) npm install --global gulp-cli
+
+npm install --save-dev gulp
+</pre></div>
+</div>
 <dl class="docutils">
 <dt>::</dt>
 <dd><p class="first">var gulp = require(&#8216;gulp&#8217;);</p>

@@ -216,6 +216,11 @@ in/limit/order::
                limit(limit).\
                all()
 
+not in::
+
+  query.fliter(~table.property.in_(some_list))
+
+
 join::
 
   reg_list = db.session.query(User.name, User.email).\
@@ -237,6 +242,12 @@ join, or::
       filter(Product.shop_id==g.shop_id).\
       all()
 
+
+group, count::
+
+  # 用add_column 跟 func.count
+  books_by_cats = Book.query.filter(Book.lang_id==lang_id).add_columns(func.count('*')).group_by('category_id').all()
+  # 得到 [(<Book FOO>, 32), (<Book BAR> 16), ... ] 
 
 foreign key constraint
 

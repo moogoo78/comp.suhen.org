@@ -22,6 +22,13 @@ gulp
 ---------------
 
 ::
+
+  (sudo) npm install --global gulp-cli
+
+  npm install --save-dev gulp
+
+
+::
    var gulp = require('gulp');
 
    gulp.task('default', function() {
