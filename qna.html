@@ -497,6 +497,11 @@
 <div class="section" id="web-server">
 <h2>Web Server<a class="headerlink" href="#web-server" title="Permalink to this headline">¶</a></h2>
 <p>AWS OS (CentOS) sudo pip command not found</p>
+<div class="highlight-python"><div class="highlight"><pre>路徑問題, sudo 不用一般的 $PATH 環境變數 (/etc/sudoers 檔案裡的 secure_path 定義決定使用的PATH)
+可以用 $ sudo `which pip` install xxx
+也可以加 soft link: sudo ln -s /usr/local/bin/pip /usr/bin/pip
+</pre></div>
+</div>
 </div>
 <div class="section" id="aws">
 <h2>AWS<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h2>
