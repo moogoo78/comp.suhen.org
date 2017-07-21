@@ -80,6 +80,9 @@ sort list(用mydict的foo去排序)::
 
   output = sorted(mydict, key = lambda x:x['foo'])
 
+  xs = {'a': 4, 'b': 3, 'c': 2, 'd': 1}
+  sorted(xs.items(), key=lambda x: x[1])
+  
 
 lambda function::
 
