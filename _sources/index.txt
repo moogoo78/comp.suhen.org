@@ -44,4 +44,5 @@ MooGoo's note about computer.
    aws_eb_flask
    soft/vagrant_and_docker
    soft/pelican
+   soft/tmux   
    qna

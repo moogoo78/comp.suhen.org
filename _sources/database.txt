@@ -549,7 +549,9 @@ command
    # service (daemon)                
    $ brew services start postgresql
 
-                
+   ## export csv
+   $ psql -U user -d db_name -c "Copy (Select * From foo_table LIMIT 10) To STDOUT With CSV HEADER DELIMITER ',';" > foo_data.csv
+   
 `PostgreSql - Debian Wiki <https://wiki.debian.org/PostgreSql#Installation>`__
 
 syntax::

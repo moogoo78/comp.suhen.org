@@ -95,6 +95,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="web_devoops.html#web-server-daemon">Web server / Daemon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_devoops.html#service">service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#supervisor">supervisor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#gunicorn">gunicorn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="web_devoops.html#uwsgi">uwsgi</a></li>
@@ -191,14 +192,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lua.html">Lua</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-arguments">Function Arguments</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#regular-expression">regular expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#list-compension">list compension</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string">string</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#time">日期/時間 time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#file">file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#json">json</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">算數</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">算數</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#io-shell-commond-line">IO / shell / commond line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#coding">coding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#shell">shell</a></li>
@@ -215,19 +217,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">引數</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">引數</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-in-functions">build-in functions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#syntax">syntax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">coding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#array">array排序</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#list">list 找出最常出現</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#coding-style">Coding Style</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">整理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">整理</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#reference">reference</a></li>
@@ -237,6 +239,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pandas">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tricks">Tricks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -342,10 +345,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#locale">locale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command_line.html#tools">tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="command_line.html#tmux">tmux</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#vim">VIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#pandoc">pandoc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#dot-grphviz">dot (grphviz)</a></li>
@@ -447,6 +446,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#web-server">Web Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qna.html#aws">AWS</a></li>
@@ -528,6 +528,25 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="n">A</span> <span class="o">=</span> <span class="n">Y</span> <span class="k">if</span> <span class="n">X</span> <span class="k">else</span> <span class="n">Z</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="function-arguments">
+<h2>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline">¶</a></h2>
+<p>argument unpacking:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. code-block:: python
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>def myfunc(x, y, z):</dt>
+<dd>print(x, y, z)</dd>
+</dl>
+<p>tuple_vec = (1, 0, 1)
+dict_vec = {&#8216;x&#8217;: 1, &#8216;y&#8217;: 0, &#8216;z&#8217;: 1}</p>
+<p># &gt;&gt;&gt; myfunc(<a href="#id1"><span class="problematic" id="id2">*</span></a>tuple_vec)
+# 1, 0, 1</p>
+<p># &gt;&gt;&gt; myfunc(<a href="#id3"><span class="problematic" id="id4">**</span></a>dict_vec)
+# 1, 0, 1</p>
+</div></blockquote>
 <div class="section" id="regular-expression">
 <h3>regular expression<a class="headerlink" href="#regular-expression" title="Permalink to this headline">¶</a></h3>
 <p>re.search()跟re.match()的不同, match()是字串開頭也要符合, search()只要字串中間有符合的pattern就可以了</p>
@@ -555,6 +574,9 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 </div>
 <p>sort list(用mydict的foo去排序):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">output</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mydict</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">])</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>lambda function:</p>
@@ -678,8 +700,8 @@ m = re.match(r&#8217;((d+), &#8216;(.*)&#8217;, &#8216;(.*)&#8217;, (d+), &#8216
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>算數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>算數<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
@@ -876,8 +898,8 @@ $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>引數<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>引數<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>引數傳遞:</p>
 <ol class="arabic simple">
 <li>傳值, 引數不回被改</li>
@@ -944,8 +966,8 @@ $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>coding<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>coding<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>只留ASCII:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">ord</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">128</span><span class="p">,</span> <span class="n">did</span><span class="p">))</span>
 </pre></div>
@@ -1015,8 +1037,8 @@ $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
     <span class="k">pass</span>
 </pre></div>
 </div>
-<div class="section" id="id4">
-<h3>整理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>整理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>小括弧整理程式碼:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">B</span> <span class="o">+</span>
      <span class="n">C</span> <span class="o">+</span> <span class="n">D</span><span class="p">)</span>
@@ -1162,6 +1184,32 @@ mirrors =
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/jvns/pandas-cookbook">jvns/pandas-cookbook</a></li>
 </ul>
+</div>
+<div class="section" id="tricks">
+<h2>Tricks<a class="headerlink" href="#tricks" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;is&#8221; vs &#8220;==&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="ow">is</span> <span class="n">c</span>
+<span class="go">False</span>
+
+<span class="go"># • &quot;is&quot; expressions evaluate to True if two</span>
+<span class="go">#   variables point to the same object</span>
+
+<span class="go"># • &quot;==&quot; evaluates to True if the objects</span>
+<span class="go">#   referred to by the variables are equal</span>
+</pre></div>
+</div>
 </div>
 </div>
 
