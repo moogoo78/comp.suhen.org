@@ -27,6 +27,14 @@ Client::
     git push origin master (第一次之後只要打git push就可以了)
 
 
+Remote branch::
+
+  local(foo)> git push -u origin foo
+  remote> git checkout -b foo_test origin/foo # 可以不同branch name
+  # 之後
+  remote(foo_test)> git pull
+ 
+
 Basic
 =====
 **Tree Roles**

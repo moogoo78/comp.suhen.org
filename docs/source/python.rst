@@ -45,6 +45,29 @@ if/else三元運算 (ternary operator)::
   A = Y if X else Z
 
 
+
+Function Arguments
+---------------------------
+
+
+argument unpacking::
+
+
+.. code-block:: python
+
+    def myfunc(x, y, z):
+        print(x, y, z)
+
+    tuple_vec = (1, 0, 1)
+    dict_vec = {'x': 1, 'y': 0, 'z': 1}
+
+    # >>> myfunc(*tuple_vec)
+    # 1, 0, 1
+
+    # >>> myfunc(**dict_vec)
+    # 1, 0, 1
+
+
 regular expression
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -643,6 +666,7 @@ Advance
 * `How a Python function can find the name of its caller « Python recipes « ActiveState Code <http://code.activestate.com/recipes/579105-how-a-python-function-can-find-the-name-of-its-cal/>`__ 得到 caller 的名字
 
 
+
 decorator
 ~~~~~~~~~~~~~~
 
@@ -736,3 +760,31 @@ Pandas
 ---------------------
 
 * `jvns/pandas-cookbook <https://github.com/jvns/pandas-cookbook>`__
+
+
+
+Tricks
+-----------------
+
+"is" vs "=="::
+
+  >>> a = [1, 2, 3]
+  >>> b = a
+
+  >>> a is b
+  True
+  >>> a == b
+  True
+
+  >>> c = list(a)
+
+  >>> a == c
+  True
+  >>> a is c
+  False
+
+  # • "is" expressions evaluate to True if two 
+  #   variables point to the same object
+
+  # • "==" evaluates to True if the objects 
+  #   referred to by the variables are equal

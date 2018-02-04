@@ -334,61 +334,7 @@ locale
   $ export LC_CTYPE="en_US.UTF-8"
   $ sudo dpkg-reconfigure locales  
 
-  
-tools
-----------
 
-tmux
-~~~~~~~~~~~
-# 開新視窗
-C-b c
-
-# 前/後一個視窗
-C-b n/p 
-
-# 分割上下pane
-C-b "
-
-# 分割左右pane
-C-b %
-
-# 重整pane(幫你排)
-C-b SPACE
-
-# 調整視窗大小
-C-b 按著不放再按上下左右
-
-# 移動到另一視窗
-C-b 上下左右
-C-b o
-
-# 視窗交換位址
- 
-C-b C-o
-
-# 顯示時間
-C-b t
-
-# 把目前tmux session丟到背景去 (回到原本terminal)
-C-b d
-
-# 回到剛才的tmux session
-tmux attach
-
-# help
-C-b ?
-
-scroll::
-  
-  Ctrl-b [ 上/下/左/右 , q 離開
-
-* `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
-* `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
-* `tmux cheatsheet <https://gist.github.com/henrik/1967800>`__
-
-conf
-
-* `Daniel Allen Deutsch <http://danielallendeutsch.com/blog/16-using-tmux-properly.html>`__
 
 VIM
 -------------
