@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database筆記 (MySQL, PostgreSQL, SQLite) &mdash; CompDocs 1.0 documentation</title>
+  <title>Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB) &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -111,7 +111,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#function">function</a></li>
@@ -138,6 +138,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mongodb">MongoDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -479,7 +480,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Database筆記 (MySQL, PostgreSQL, SQLite)</li>
+    <li>Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -492,8 +493,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="database-mysql-postgresql-sqlite">
-<h1>Database筆記 (MySQL, PostgreSQL, SQLite)<a class="headerlink" href="#database-mysql-postgresql-sqlite" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="database-mysql-postgresql-sqlite-mongodb">
+<h1>Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)<a class="headerlink" href="#database-mysql-postgresql-sqlite-mongodb" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="mysql">
 <h2>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h2>
 <p>Syntax</p>
@@ -1051,6 +1052,20 @@ $ cat dumpfile.sql | sqlite3 new.db
 <ul class="simple">
 <li><a class="reference external" href="http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/">Goodbye MongoDB, Hello PostgreSQL</a></li>
 </ul>
+</div>
+<div class="section" id="mongodb">
+<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
+<p>debian 版本比較舊, 預設 apt 跑不起來</p>
+<p><a class="reference external" href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/">Install MongoDB Community Edition on Debian — MongoDB Manual 3.6</a></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mongod --dbpath db
+<span class="nv">$ </span>mongod --dbpath db --smallfiles
+</pre></div>
+</div>
+<p><strong>dump/import</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mongodump <span class="c"># 預設存成 dump 資料夾</span>
+<span class="nv">$ </span>mongorestort <span class="c"># 預設讀取 dump 資料夾</span>
+</pre></div>
+</div>
 </div>
 </div>
 

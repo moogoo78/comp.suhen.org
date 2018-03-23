@@ -1,5 +1,5 @@
-Database筆記 (MySQL, PostgreSQL, SQLite)
-==============================================
+Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)
+===================================================
 
 
 MySQL
@@ -525,7 +525,14 @@ mac php (with-postgresql), 為了用 adminer.php:
    # 找到 local all postgres peer # 把 peer 改 md5
    $ sudo service postgresql restart
 
+.. code-block::
 
+   建立在當前使用者:
+
+   postgres=# CREATE DATABASE mydbname ;
+   postgres=# CREATE DATABASE mydbname  OWNER myusername ;
+   postgres=# GRANT ALL PRIVILEGES ON DATABASE mydbname to myusername ;
+   ALTER ROLE myusername WITH superuser;
 
 command
 ~~~~~~~~~~~~~~~
@@ -661,3 +668,23 @@ MySQL有ROW_NUMBER(), Sqlite沒有, 只能用SQL語法的奇技淫巧來達成.
 DB 特性討論:
 
 * `Goodbye MongoDB, Hello PostgreSQL <http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/>`__
+
+MongoDB
+-------------
+
+debian 版本比較舊, 預設 apt 跑不起來
+
+`Install MongoDB Community Edition on Debian — MongoDB Manual 3.6 <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>`__
+
+.. code-block:: bash
+                
+  $ mongod --dbpath db
+  $ mongod --dbpath db --smallfiles
+
+
+**dump/import**
+
+.. code-block:: bash
+
+  $ mongodump # 預設存成 dump 資料夾
+  $ mongorestort # 預設讀取 dump 資料夾
