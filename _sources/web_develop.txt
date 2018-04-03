@@ -1,6 +1,27 @@
 Web Develop
 ========================
 
+local
+----------------
+
+Mac
+~~~~~~~~~~
+
+**nginx**
+
+::
+   
+  $ nginx -s [stop/start/reload]
+  /usr/local/etc/nginx
+
+**postgres**
+
+
+::
+
+   brew install php70-pdo-pgsql
+   brew services restart php70
+
 
 
 NodeJS / NPM

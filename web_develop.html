@@ -80,6 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#local">local</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mac">Mac</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#nodejs-npm">NodeJS / NPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#production">Production</a></li>
@@ -111,7 +115,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
@@ -138,6 +142,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#id5">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mongodb">MongoDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -494,6 +499,22 @@
             
   <div class="section" id="web-develop">
 <h1>Web Develop<a class="headerlink" href="#web-develop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="local">
+<h2>local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mac">
+<h3>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h3>
+<p><strong>nginx</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>$ nginx -s [stop/start/reload]
+/usr/local/etc/nginx
+</pre></div>
+</div>
+<p><strong>postgres</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>brew install php70-pdo-pgsql
+brew services restart php70
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="nodejs-npm">
 <h2>NodeJS / NPM<a class="headerlink" href="#nodejs-npm" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager | Node.js</a></p>
