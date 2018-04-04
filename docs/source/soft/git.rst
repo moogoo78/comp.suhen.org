@@ -101,11 +101,12 @@ example::
   git revert C
   A -> B -> C -> B ->
 
-  # reset, 清掉 commit log, 檔案保留目前狀態
+  # reset, 清掉 commit log, 檔案保留目前狀態 (C變成 unstaged)
   git reset B
   A -> B ->
 
   # rebase, 同步 remote 跟 local
+  # rebase -i 拿掉某些 commit 不想留下記錄 (要 pick...)
  
 
 * `Pro Git - Reset Demystified <http://progit.org/2011/07/11/reset.html>`__
