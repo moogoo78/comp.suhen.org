@@ -80,6 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_develop.html#local">local</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_develop.html#mac">Mac</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#production">Production</a></li>
@@ -111,7 +115,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#function">function</a></li>
@@ -138,6 +142,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../database.html#id5">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database.html#mongodb">MongoDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
@@ -604,11 +609,12 @@ A -&gt; B -&gt; C -&gt;
 git revert C
 A -&gt; B -&gt; C -&gt; B -&gt;
 
-# reset, 清掉 commit log, 檔案保留目前狀態
+# reset, 清掉 commit log, 檔案保留目前狀態 (C變成 unstaged)
 git reset B
 A -&gt; B -&gt;
 
 # rebase, 同步 remote 跟 local
+# rebase -i 拿掉某些 commit 不想留下記錄 (要 pick...)
 </pre></div>
 </div>
 <ul class="simple">
