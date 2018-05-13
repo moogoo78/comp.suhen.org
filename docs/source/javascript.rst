@@ -78,6 +78,13 @@ Library / Framework
   * `jQuery UI MultiSelect Widget by Eric Hynds <http://www.erichynds.com/examples/jquery-ui-multiselect-widget/demos/#filter>`__
   * `Chosen: A jQuery Plugin by Harvest to Tame Unwieldy Select Boxes <http://harvesthq.github.io/chosen/>`__
 
+    
+reactjs
+-------------------
+
+- changing an uncontrolled input => value 要給 default ex: value={this_value || ''}
+
+
 
 jQuery
 ~~~~~~~~~~
