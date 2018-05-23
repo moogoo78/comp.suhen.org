@@ -7,13 +7,21 @@ local
 Mac
 ~~~~~~~~~~
 
+
+**apache**
+
+::
+
+   $ sudo /usr/sbin/apachectl [start/stop/restart]
+   
 **nginx**
 
 ::
-   
-  $ nginx -s [stop/start/reload]
-  /usr/local/etc/nginx
-
+  
+  $ nginx -s [stop/reload]
+  /usr/local/etc/nginx # start
+  
+  
 **postgres**
 
 
