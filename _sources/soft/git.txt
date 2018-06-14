@@ -278,12 +278,22 @@ undo
 Tips
 =====
 
-減少 commit
--------------
+減少 commit(merge commit )
+----------------------------------
 
 善用 git revert, git-bisect, git-rebase -i
 
 `5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH <https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/>`__
+
+::
+   # a -> b1 -> b2 要變成 a -> b
+   git-rebase -i [a-hash]
+   
+   # pick b1
+   # pick b2 # 改成 squash b2
+   # 修改 commit message (可以 commit b2 的 message)
+   # 存檔離開就好了
+
 
 
 git clone某一個branch

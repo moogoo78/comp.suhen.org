@@ -158,7 +158,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#snippets">Snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#dom">DOM 操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#reactjs">reactjs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#jquery">jQuery</a></li>
 </ul>
 </li>
@@ -327,7 +328,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#commit">減少 commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -783,10 +784,20 @@ git tag -a v0.1.1 #abc123 為某版本加tag
 </div>
 <div class="section" id="tips">
 <h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="commit">
-<h3>減少 commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="commit-merge-commit">
+<h3>減少 commit(merge commit )<a class="headerlink" href="#commit-merge-commit" title="Permalink to this headline">¶</a></h3>
 <p>善用 git revert, git-bisect, git-rebase -i</p>
 <p><a class="reference external" href="https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/">5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH</a></p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first"># a -&gt; b1 -&gt; b2 要變成 a -&gt; b
+git-rebase -i [a-hash]</p>
+<p class="last"># pick b1
+# pick b2 # 改成 squash b2
+# 修改 commit message (可以 commit b2 的 message)
+# 存檔離開就好了</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="git-clonebranch">
 <h3>git clone某一個branch<a class="headerlink" href="#git-clonebranch" title="Permalink to this headline">¶</a></h3>
