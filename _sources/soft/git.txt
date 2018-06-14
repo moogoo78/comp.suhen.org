@@ -286,6 +286,7 @@ Tips
 `5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH <https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/>`__
 
 ::
+   
    # a -> b1 -> b2 要變成 a -> b
    git-rebase -i [a-hash]
    

@@ -788,16 +788,15 @@ git tag -a v0.1.1 #abc123 為某版本加tag
 <h3>減少 commit(merge commit )<a class="headerlink" href="#commit-merge-commit" title="Permalink to this headline">¶</a></h3>
 <p>善用 git revert, git-bisect, git-rebase -i</p>
 <p><a class="reference external" href="https://crealytics.com/blog/2010/07/09/5-reasons-keeping-git-commits-small/">5 Reasons for Keeping Your Git Commits as Small as You Can | Crealytics GmbH</a></p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><p class="first"># a -&gt; b1 -&gt; b2 要變成 a -&gt; b
-git-rebase -i [a-hash]</p>
-<p class="last"># pick b1
-# pick b2 # 改成 squash b2
-# 修改 commit message (可以 commit b2 的 message)
-# 存檔離開就好了</p>
-</dd>
-</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># a -&gt; b1 -&gt; b2 要變成 a -&gt; b</span>
+<span class="n">git</span><span class="o">-</span><span class="n">rebase</span> <span class="o">-</span><span class="n">i</span> <span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="nb">hash</span><span class="p">]</span>
+
+<span class="c"># pick b1</span>
+<span class="c"># pick b2 # 改成 squash b2</span>
+<span class="c"># 修改 commit message (可以 commit b2 的 message)</span>
+<span class="c"># 存檔離開就好了</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="git-clonebranch">
 <h3>git clone某一個branch<a class="headerlink" href="#git-clonebranch" title="Permalink to this headline">¶</a></h3>
