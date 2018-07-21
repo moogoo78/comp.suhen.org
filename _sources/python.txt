@@ -120,7 +120,9 @@ format::
   '{0:.2f}'.format(init_scale) # 小數點後兩位
   '{0:02d}'.format(dtime.tm_mon) # 補2位0
   '{:.1%}'.format(1/3.0) # 百分比 '33.3%'
-  
+
+`Python String Formatting Best Practices – Real Python <https://realpython.com/python-string-formatting/>`__
+
 replace::
 
   string.replace('old', 'new')
