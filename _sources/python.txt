@@ -790,3 +790,28 @@ Tricks
 
   # • "==" evaluates to True if the objects 
   #   referred to by the variables are equal
+
+
+
+Development
+---------------
+
+**pyenv**
+
+
+.. code-block:: bash
+                
+   $ brew update
+   $ brew install pyenv
+
+   $ pyenv init
+   # 複製貼上輸出到 ~/.zshrc
+
+   $ pyenv versions # 目前可用的版本
+   $ pyenv install -l # 看可安裝的版本
+   $ pyenv install 2.7.15
+
+   # pyenv rehash # 重 load shell
+   $ pyenv local 2.7.15
+   
+shell > local > global

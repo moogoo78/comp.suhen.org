@@ -246,6 +246,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pandas">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tricks">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development">Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -1217,6 +1218,25 @@ mirrors =
 <span class="go">#   referred to by the variables are equal</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<p><strong>pyenv</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew install pyenv
+
+<span class="nv">$ </span>pyenv init
+<span class="c"># 複製貼上輸出到 ~/.zshrc</span>
+
+<span class="nv">$ </span>pyenv versions <span class="c"># 目前可用的版本</span>
+<span class="nv">$ </span>pyenv install -l <span class="c"># 看可安裝的版本</span>
+<span class="nv">$ </span>pyenv install 2.7.15
+
+<span class="c"># pyenv rehash # 重 load shell</span>
+<span class="nv">$ </span>pyenv <span class="nb">local </span>2.7.15
+</pre></div>
+</div>
+<p>shell &gt; local &gt; global</p>
 </div>
 </div>
 
