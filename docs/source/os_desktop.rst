@@ -159,6 +159,15 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
 
 * `UNetbootin - Homepage and Downloads <http://unetbootin.sourceforge.net/>`__
 
+USB 外接硬碟不正常退出後找不到
+
+::
+
+   $ diskutil list # 看外接硬碟是不是真的在
+   $ duskutil unmountDisk disk2 # 看編號卸載, 有時候是 disk2s2
+   $ diskutil eject disk2 
+
+
 
 Browser
 ----------------------------
