@@ -525,14 +525,24 @@ mac php (with-postgresql), 為了用 adminer.php:
    # 找到 local all postgres peer # 把 peer 改 md5
    $ sudo service postgresql restart
 
-.. code-block::
+   
+建立在當前使用者:
 
-   建立在當前使用者:
+.. code-block::
 
    postgres=# CREATE DATABASE mydbname ;
    postgres=# CREATE DATABASE mydbname  OWNER myusername ;
    postgres=# GRANT ALL PRIVILEGES ON DATABASE mydbname to myusername ;
    ALTER ROLE myusername WITH superuser;
+
+
+
+sequence 亂掉 (restore data 會發生) => duplicate key error...
+.. code-block::
+
+   SELECT setval('my_sequence_name', (SELECT max(id) FROM my_table));
+
+
 
 command
 ~~~~~~~~~~~~~~~

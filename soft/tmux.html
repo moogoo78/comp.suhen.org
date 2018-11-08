@@ -80,6 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_develop.html#local">local</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_develop.html#mac">Mac</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#production">Production</a></li>
@@ -111,7 +115,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#function">function</a></li>
@@ -138,6 +142,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../database.html#id5">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database.html#mongodb">MongoDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
@@ -146,6 +151,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../javascript.html">JavaScript</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#es-6">ES 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#id1">特色</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#the-good-part">The Good part</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#id2">不良</a></li>
@@ -153,7 +159,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#snippets">Snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#dom">DOM 操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#reactjs">reactjs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#jquery">jQuery</a></li>
 </ul>
 </li>
@@ -240,6 +247,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python.html#pandas">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python.html#tricks">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python.html#development">Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts_matrix.html">比較</a><ul>
@@ -322,7 +330,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#tips">Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="git.html#commit">減少 commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -524,6 +532,8 @@ $ tmux a (attach)
 $ tmux ls: list
 $ tmux a -t &lt;session-name&gt;
 
+$ tmux new -s session_name自己取一個 session name (instead of number)
+
 # help
 &lt;prefix&gt; ?
 </pre></div>
@@ -538,9 +548,25 @@ $ tmux a -t &lt;session-name&gt;
 <li><a class="reference external" href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></li>
 <li><a class="reference external" href="https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa">A minimalist guide to tmux</a></li>
 </ul>
+<p>常用:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;prefix&gt; c Create a new window (with shell)
+&lt;prefix&gt; w Choose window from a list
+&lt;prefix&gt; 0 Switch to window 0 (by number )
+&lt;prefix&gt; , Rename the current window
+&lt;prefix&gt; % Split current pane horizontally into two panes
+&lt;prefix&gt; &quot; Split current pane vertically into two panes
+&lt;prefix&gt; o Go to the next pane
+&lt;prefix&gt; ; Toggle between current and previous pane
+&lt;prefix&gt; x Close the current pane
+</pre></div>
+</div>
 <p>conf</p>
 <ul class="simple">
 <li><a class="reference external" href="http://danielallendeutsch.com/blog/16-using-tmux-properly.html">Daniel Allen Deutsch</a></li>
+</ul>
+<p>tuts</p>
+<ul class="simple">
+<li><a class="reference external" href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux | Linuxize</a></li>
 </ul>
 </div>
 

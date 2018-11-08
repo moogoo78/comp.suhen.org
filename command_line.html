@@ -80,6 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#local">local</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#mac">Mac</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#production">Production</a></li>
@@ -111,7 +115,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="database.html#function">function</a></li>
@@ -138,6 +142,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html#id5">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#mongodb">MongoDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
@@ -146,6 +151,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#es-6">ES 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#id1">特色</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#the-good-part">The Good part</a></li>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#id2">不良</a></li>
@@ -153,7 +159,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#snippets">Snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#dom">DOM 操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#reactjs">reactjs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#jquery">jQuery</a></li>
 </ul>
 </li>
@@ -240,6 +247,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#tricks">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#development">Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -322,7 +330,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -905,6 +913,7 @@ $ sudo dpkg-reconfigure locales
 
 <span class="c"># convert MTS to mp4</span>
 <span class="nv">$ </span>ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
+<span class="nv">$ </span>ffmpeg -i input.MTS -s hd720 -b 6000k -ar <span class="m">44100</span> -ab 224k -ac <span class="m">2</span> output.mp4
 </pre></div>
 </div>
 <p><strong>meta data:</strong></p>

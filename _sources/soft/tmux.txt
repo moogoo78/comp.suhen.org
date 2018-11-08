@@ -34,6 +34,8 @@ Quick Start::
   $ tmux ls: list
   $ tmux a -t <session-name>
   
+  $ tmux new -s session_name自己取一個 session name (instead of number)
+
   # help
   <prefix> ?
 
@@ -45,7 +47,26 @@ scroll::
 * `tmux cheatsheet <https://gist.github.com/andreyvit/2921703>`__
 * `tmux cheatsheet <https://gist.github.com/henrik/1967800>`__
 * `A minimalist guide to tmux <https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa>`__
+
+
+常用::
   
+    <prefix> c Create a new window (with shell)
+    <prefix> w Choose window from a list
+    <prefix> 0 Switch to window 0 (by number )
+    <prefix> , Rename the current window
+    <prefix> % Split current pane horizontally into two panes
+    <prefix> " Split current pane vertically into two panes
+    <prefix> o Go to the next pane
+    <prefix> ; Toggle between current and previous pane
+    <prefix> x Close the current pane
+
+
+
 conf
 
 * `Daniel Allen Deutsch <http://danielallendeutsch.com/blog/16-using-tmux-properly.html>`__
+
+tuts
+
+* `Getting started with Tmux | Linuxize <https://linuxize.com/post/getting-started-with-tmux/>`__

@@ -431,8 +431,9 @@ Snippets
   
   # convert MTS to mp4
   $ ffmpeg -i 00026.MTS -vcodec mpeg4 -b:v 10M -acodec libfaac -b:a 192k out.mp4
-  
+  $ ffmpeg -i input.MTS -s hd720 -b 6000k -ar 44100 -ab 224k -ac 2 output.mp4  
 
+  
 **meta data:**
 
 .. code-block:: bash

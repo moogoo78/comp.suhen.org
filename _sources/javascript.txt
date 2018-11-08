@@ -11,9 +11,25 @@ Tutorial
 * `Google JavaScript Style Guide <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`__
 * `Arrays in JavaScript <http://www.2ality.com/2012/12/arrays.html>`__
 
+  
+ES 6
+----------------
+
+via: `The Difference Between Function and Block Scope in JavaScript <https://medium.com/@josephcardillo/the-difference-between-function-and-block-scope-in-javascript-4296b2322abe>`__
+
+.. note::
+   
+   var is function scope.
+   let and const are block scope.
+   Function scope is within the function.
+   Block scope is within curly brackets.
+   
+
 
 特色
 --------------
+
+
 
 The Good part
 ~~~~~~~~~~~~~~
