@@ -327,6 +327,7 @@
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-tag">git tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#other">other</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#undo">undo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#repo">repo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
@@ -706,8 +707,12 @@ $ lsof -n -i4TCP:5000 | grep LISTEN # 找出port5000
 <p>rsync:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
 $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
-$ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳) --progress (顯示進度)
+$ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳, --partial --progress) --progress (顯示進度)
 $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
+
+# -u: 不覆蓋比較新的檔案，只更新來源檔案時間大於目的檔案的時間
+# -z: 在傳輸的過程中進行壓縮
+# --bwlimit: 限制速度limit I/O bandwidth; KBytes per second
 </pre></div>
 </div>
 <ul class="simple">

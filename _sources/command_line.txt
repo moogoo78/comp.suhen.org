@@ -212,10 +212,14 @@ rsync::
 
   $ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
   $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
-  $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳) --progress (顯示進度)
+  $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳, --partial --progress) --progress (顯示進度)
   $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 
+  # -u: 不覆蓋比較新的檔案，只更新來源檔案時間大於目的檔案的時間
+  # -z: 在傳輸的過程中進行壓縮
+  # --bwlimit: 限制速度limit I/O bandwidth; KBytes per second
 * [詳全文_資料備份同步工具簡介— rsync](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742)
+
 
     
 dns::
