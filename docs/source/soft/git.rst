@@ -274,6 +274,17 @@ undo
 
 * `Git Book - Undoing in Git - Reset, Checkout and Revert <http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>`__
 * `How to undo (almost) anything with Git <https://github.com/blog/2019-how-to-undo-almost-anything-with-git>`__ 好用!
+
+
+repo
+-------
+
+換 origin::
+
+  git remote -v ;看 remote name
+  git remote set-url origin https://your.repo.git
+
+
   
 Tips
 =====
