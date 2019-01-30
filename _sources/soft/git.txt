@@ -275,6 +275,14 @@ undo
 * `Git Book - Undoing in Git - Reset, Checkout and Revert <http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>`__
 * `How to undo (almost) anything with Git <https://github.com/blog/2019-how-to-undo-almost-anything-with-git>`__ 好用!
 
+找回刪掉的檔案
+  
+.. code-block:: shell
+                
+   git log -- path/to/file 
+   git checkout {second to last commit} -- path/to/file
+  
+* `Find and restore a deleted file in a Git repository - Stack Overflow <https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository>`__  
 
 repo
 -------

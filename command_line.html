@@ -630,6 +630,12 @@ $ ls *.md | xargs sed -i -e &#39;s/static\///&#39; ## 把 所有的.md (markdown
 <div class="highlight-python"><div class="highlight"><pre><span class="n">du</span> <span class="o">-</span><span class="n">h</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
+<p>算檔案數量:</p>
+<div class="highlight-python"><div class="highlight"><pre>find [PATH] -type f | wc -l
+tree
+# counting hidden files?
+</pre></div>
+</div>
 <p>coding convert:</p>
 <div class="highlight-python"><div class="highlight"><pre># big5 to utf-8
 $ iconv -f big5 -t utf-8 big5.txt -o utf8.txt
@@ -710,8 +716,13 @@ $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔�
 $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳, --partial --progress) --progress (顯示進度)
 $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 
+# 傳一本停住 (不同 fs timestamp 比對問題?)
+$ rsync -vrc # (不管 linux 的 permission, 用 checksum 而不是 timestamp, 比較慢)
+$ rsync -Prc (P 有 process 比 v 好)
 # -u: 不覆蓋比較新的檔案，只更新來源檔案時間大於目的檔案的時間
 # -z: 在傳輸的過程中進行壓縮
+# -c: checksum
+# --inplace (target disk tmp 不夠大就要用這個)
 # --bwlimit: 限制速度limit I/O bandwidth; KBytes per second
 </pre></div>
 </div>

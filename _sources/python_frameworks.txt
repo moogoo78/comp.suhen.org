@@ -106,6 +106,18 @@ snippets
   return response  
 
 
+get request IP:
+
+.. code-block:: python
+                
+   ip = ''
+   if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+       #print(request.environ['REMOTE_ADDR'])
+       ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)        
+   else:
+       ip = request.environ.get('HTTP_X_FORWARDED_FOR', '') # if behind a proxy
+
+       
 Jinja2
 ---------------------
 

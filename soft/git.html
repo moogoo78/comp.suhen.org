@@ -783,6 +783,14 @@ git tag -a v0.1.1 #abc123 為某版本加tag
 <li><p class="first"><a class="reference external" href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git">How to undo (almost) anything with Git</a> 好用!</p>
 </li>
 </ul>
+<p>找回刪掉的檔案</p>
+<div class="highlight-shell"><div class="highlight"><pre>git log -- path/to/file
+git checkout <span class="o">{</span>second to last commit<span class="o">}</span> -- path/to/file
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository">Find and restore a deleted file in a Git repository - Stack Overflow</a></li>
+</ul>
 </div>
 <div class="section" id="repo">
 <h3>repo<a class="headerlink" href="#repo" title="Permalink to this headline">¶</a></h3>

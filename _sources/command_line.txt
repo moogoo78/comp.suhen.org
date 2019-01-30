@@ -142,6 +142,14 @@ via: `recursive search and replace old with new string, inside files | commandli
 
   du -h --max-depth=1
 
+
+算檔案數量::
+
+  find [PATH] -type f | wc -l
+  tree
+  # counting hidden files?
+
+  
 coding convert::
 
   # big5 to utf-8
@@ -215,8 +223,13 @@ rsync::
   $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳, --partial --progress) --progress (顯示進度)
   $ rsync -av -e ssh user@host:/etc /tmp 將遠端 /etc 備份到local主機的 /tmp 內
 
+  # 傳一本停住 (不同 fs timestamp 比對問題?)
+  $ rsync -vrc # (不管 linux 的 permission, 用 checksum 而不是 timestamp, 比較慢)
+  $ rsync -Prc (P 有 process 比 v 好)
   # -u: 不覆蓋比較新的檔案，只更新來源檔案時間大於目的檔案的時間
   # -z: 在傳輸的過程中進行壓縮
+  # -c: checksum
+  # --inplace (target disk tmp 不夠大就要用這個)
   # --bwlimit: 限制速度limit I/O bandwidth; KBytes per second
 * [詳全文_資料備份同步工具簡介— rsync](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1742)
 

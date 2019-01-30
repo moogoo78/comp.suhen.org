@@ -542,7 +542,13 @@ sequence 亂掉 (restore data 會發生) => duplicate key error...
 
    SELECT setval('my_sequence_name', (SELECT max(id) FROM my_table));
 
+export table (data & schema):
 
+.. code-block::
+
+   pg_dump -U xxx public.TABLE_NAME DATABASE_NAME > out.sql
+   pg_dump -U xxx -d DB_NAME -t TABLE_NAME > out.sql
+   
 
 command
 ~~~~~~~~~~~~~~~
