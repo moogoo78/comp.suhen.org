@@ -95,6 +95,10 @@
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#id2">資源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="web_develop.html#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_develop.html#rd-party-service">3rd Party Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web_develop.html#instagram">Instagram</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
@@ -327,6 +331,7 @@
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-tag">git tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#other">other</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#undo">undo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#repo">repo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
@@ -634,6 +639,10 @@ $ sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
 <div class="highlight-python"><div class="highlight"><pre>$ diskutil list # 看外接硬碟是不是真的在
 $ duskutil unmountDisk disk2 # 看編號卸載, 有時候是 disk2s2
 $ diskutil eject disk2
+# 常會看到 Volume time out while waiting to eject 的錯誤,
+# 也許被 fsck 搶先執行了
+$ pkill -f fsck
+$ diskutil eject disk2 #應該就 ok 了
 </pre></div>
 </div>
 </div>

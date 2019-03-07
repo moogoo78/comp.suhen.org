@@ -95,6 +95,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">資源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rd-party-service">3rd Party Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instagram">Instagram</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a><ul>
@@ -151,6 +155,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html#es-6">ES 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html#id1">特色</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#the-good-part">The Good part</a></li>
 <li class="toctree-l3"><a class="reference internal" href="javascript.html#id2">不良</a></li>
@@ -246,6 +251,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#pandas">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#tricks">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#development">Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripts_matrix.html">比較</a><ul>
@@ -325,10 +331,11 @@
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-tag">git tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#other">other</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#undo">undo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#repo">repo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soft/git.html#tips">Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit">減少 commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soft/git.html#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soft/git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -671,6 +678,29 @@ h: help</div></blockquote>
 <li><a class="reference external" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">HTTP 快取 | Web Fundamentals - Google Developers</a></li>
 <li><a class="reference external" href="http://blog.toright.com/posts/3414/初探-http-1-1-cache-機制.html">初探 HTTP 1.1 Cache 機制 - Soul &amp; Shell Blog</a></li>
 </ul>
+</div>
+<div class="section" id="rd-party-service">
+<h2>3rd Party Service<a class="headerlink" href="#rd-party-service" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="instagram">
+<h3>Instagram<a class="headerlink" href="#instagram" title="Permalink to this headline">¶</a></h3>
+<p><strong>API</strong>
+authorize:</p>
+<p>example <a class="reference external" href="https://codepen.io/chrysophyta/pen/QOdwaO">https://codepen.io/chrysophyta/pen/QOdwaO</a></p>
+<p><strong>不用 API 抓內容</strong>
+<a class="reference external" href="https://www.instagram.com">https://www.instagram.com</a>/{ig_id}/?__a=1 可以直接看到 JSON 內容，但可能會被擋: HTTP status 403，可以直接去該頁抓 window._sharedData 的 Inline JSON</p>
+<p>ex: 抓 recent media 的 thumbnail src</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;body&#39;</span><span class="p">)</span>
+<span class="n">script_tag</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;script&#39;</span><span class="p">)</span>
+<span class="n">raw_string</span> <span class="o">=</span> <span class="n">script_tag</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;window._sharedData =&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_string</span><span class="p">)</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;entry_data&#39;</span><span class="p">][</span><span class="s">&#39;ProfilePage&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;graphql&#39;</span><span class="p">][</span><span class="s">&#39;user&#39;</span><span class="p">][</span><span class="s">&#39;edge_owner_to_timeline_media&#39;</span><span class="p">][</span><span class="s">&#39;edges&#39;</span><span class="p">]:</span>
+    <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s">&#39;node&#39;</span><span class="p">][</span><span class="s">&#39;thumbnail_src&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

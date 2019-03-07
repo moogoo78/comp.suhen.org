@@ -80,6 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_develop.html#local">local</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_develop.html#mac">Mac</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#nodejs-npm">NodeJS / NPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#gulp">gulp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#production">Production</a></li>
@@ -91,6 +95,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#id2">資源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../web_develop.html#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web_develop.html#rd-party-service">3rd Party Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_develop.html#instagram">Instagram</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_devoops.html">Web DevOops</a><ul>
@@ -111,7 +119,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../database.html#mysql">MySQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#cookbook">cookbook</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../database.html#function">function</a></li>
@@ -138,6 +146,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../database.html#id5">比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database.html#mongodb">MongoDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
@@ -146,6 +155,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../javascript.html">JavaScript</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#es-6">ES 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#id1">特色</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#the-good-part">The Good part</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#id2">不良</a></li>
@@ -153,7 +163,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#snippets">Snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javascript.html#dom">DOM 操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#library-framework">Library / Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html#reactjs">reactjs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../javascript.html#jquery">jQuery</a></li>
 </ul>
 </li>
@@ -240,6 +251,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python.html#pandas">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python.html#tricks">Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python.html#development">Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts_matrix.html">比較</a><ul>
@@ -319,10 +331,11 @@
 <li class="toctree-l3"><a class="reference internal" href="git.html#git-tag">git tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html#other">other</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html#undo">undo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#repo">repo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#tips">Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="git.html#commit">減少 commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html#git-clonebranch">git clone某一個branch</a></li>
 </ul>
 </li>
@@ -967,6 +980,11 @@ M-x describe-font 看現在用的字形</p>
 </div>
 <div class="section" id="org-mode">
 <h3>Org-mode<a class="headerlink" href="#org-mode" title="Permalink to this headline">¶</a></h3>
+<p>download tgz:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH
+$ make
+</pre></div>
+</div>
 <p>預設開啟狀態:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c">#+STARTUP: overview</span>
 <span class="c">#+STARTUP: content</span>

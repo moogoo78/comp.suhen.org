@@ -165,7 +165,11 @@ USB 外接硬碟不正常退出後找不到
 
    $ diskutil list # 看外接硬碟是不是真的在
    $ duskutil unmountDisk disk2 # 看編號卸載, 有時候是 disk2s2
-   $ diskutil eject disk2 
+   $ diskutil eject disk2
+   # 常會看到 Volume time out while waiting to eject 的錯誤,
+   # 也許被 fsck 搶先執行了
+   $ pkill -f fsck
+   $ diskutil eject disk2 #應該就 ok 了
 
 
 

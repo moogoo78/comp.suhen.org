@@ -190,3 +190,32 @@ Cache-Control: max-age=x秒, 效期限還沒到 瀏覽器不送 request, 直接�
 
 * `HTTP 快取 | Web Fundamentals - Google Developers <https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching>`__
 * `初探 HTTP 1.1 Cache 機制 - Soul & Shell Blog <http://blog.toright.com/posts/3414/初探-http-1-1-cache-機制.html>`__
+
+
+3rd Party Service
+-----------------------
+
+Instagram
+~~~~~~~~~~~~
+
+**API**
+authorize:
+
+example https://codepen.io/chrysophyta/pen/QOdwaO
+
+**不用 API 抓內容**
+https://www.instagram.com/{ig_id}/?__a=1 可以直接看到 JSON 內容，但可能會被擋: HTTP status 403，可以直接去該頁抓 window._sharedData 的 Inline JSON
+
+ex: 抓 recent media 的 thumbnail src
+
+.. code-block:: python
+                
+    soup = BeautifulSoup(html, 'html.parser')
+    body = soup.find('body')
+    script_tag = body.find('script')
+    raw_string = script_tag.text.strip().replace('window._sharedData =', '').replace(';', '')
+    data = json.loads(raw_string)
+
+    ret = []
+    for i in data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']:
+        ret.append(i['node']['thumbnail_src'])

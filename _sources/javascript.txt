@@ -28,6 +28,12 @@ via: `The Difference Between Function and Block Scope in JavaScript <https://med
 
 特色
 --------------
+Javascript 的物件可以放任何東西
+
+.. code-block:: javascript
+
+          for … in // enumerable properties, 全部的 property (包括 function, property, 不是ownporperty (繼承的)也會列出…)
+          for… of // iterable objcet 只有 Array 會列出
 
 
 

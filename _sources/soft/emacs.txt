@@ -322,6 +322,12 @@ ref:
 Org-mode
 ~~~~~~~~~~~~~~~~~
 
+download tgz::
+  
+  $ export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH
+  $ make
+
+  
 預設開啟狀態::
 
   #+STARTUP: overview
