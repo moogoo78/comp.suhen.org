@@ -173,6 +173,23 @@ USB 外接硬碟不正常退出後找不到
 
 
 
+啟動 pre-install Apache
+
+.. code-block:: bash
+
+   sudo -s
+   apachectl start
+
+Document: /Library/WebServer/Documents
+conf: /etc/apache2/httpd.conf
+
+
+nginx
+
+Document: /usr/local/var/www
+conf: /usr/local/etc/nginx/nginx.conf
+
+
 Browser
 ----------------------------
 

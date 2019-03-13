@@ -645,6 +645,16 @@ $ pkill -f fsck
 $ diskutil eject disk2 #應該就 ok 了
 </pre></div>
 </div>
+<p>啟動 pre-install Apache</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo -s
+apachectl start
+</pre></div>
+</div>
+<p>Document: /Library/WebServer/Documents
+conf: /etc/apache2/httpd.conf</p>
+<p>nginx</p>
+<p>Document: /usr/local/var/www
+conf: /usr/local/etc/nginx/nginx.conf</p>
 </div>
 <div class="section" id="browser">
 <h2>Browser<a class="headerlink" href="#browser" title="Permalink to this headline">¶</a></h2>
