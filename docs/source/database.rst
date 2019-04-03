@@ -30,7 +30,7 @@ Syntax
 cookbook
 ~~~~~~~~~~~~~
 
-.. code-block:: sql
+.. code-block:: mysql
 
    CREATE DATABASE mydb
      DEFAULT CHARACTER SET utf8
@@ -45,7 +45,7 @@ cookbook
 
 CRUD:
 
-.. code-block:: sql
+.. code-block:: mysql
 
    INSERT INTO tbl_name (col1,col2) VALUES(15,col1*2);
    INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);
@@ -70,7 +70,7 @@ LIMIT
 
 查看database容量:
 
-.. code-block:: sql
+.. code-block:: mysql
 
     SELECT table_schema "database_name", 
     sum( data_length + index_length ) / 1024 / 
@@ -696,11 +696,12 @@ debian 版本比較舊, 預設 apt 跑不起來
                 
   $ mongod --dbpath db
   $ mongod --dbpath db --smallfiles
-
+  $ mongod --config /usr/local/etc/mongod.conf # macos
 
 **dump/import**
 
 .. code-block:: bash
 
   $ mongodump # 預設存成 dump 資料夾
-  $ mongorestort # 預設讀取 dump 資料夾
+  $ mongorestore # 預設讀取 dump 資料夾
+  $ mongorestore -d <db_name> --gzip <folder>

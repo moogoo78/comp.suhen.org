@@ -1,6 +1,15 @@
 Command 常用指令
 =========================
 
+
+macos 的 updatedb:
+
+.. code-block: bash
+
+   sudo /usr/libexec/locate.updatedb
+
+   
+
 package
 ----------------
 
