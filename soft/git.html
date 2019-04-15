@@ -281,6 +281,14 @@
     <span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">bare</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">repo</span> <span class="c1"># 把原本的repo轉成bare出來</span>
 </pre></div>
 </div>
+<p>clone all branches:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone --mirror git://example.com/repo repo.git # clone all branches
+$ mkdir new_proj
+$ cd new_proj
+$ mv repo.git new_proj/.git
+# remove bare=true in .git/config
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>git pull origin master相當於git fetch和git merge origin/master</p>

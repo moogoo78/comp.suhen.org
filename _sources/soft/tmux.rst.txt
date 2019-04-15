@@ -35,10 +35,17 @@ Quick Start::
   $ tmux a -t <session-name>
   
   $ tmux new -s session_name自己取一個 session name (instead of number)
-
+  $ tmux rename-session -t 0 my_new_name
+  
   # help
   <prefix> ?
 
+  $ tmux kill-session -t 0
+  $ tmux kill-session -t <session_name>
+  $ tmux kill-session -a # 全部
+  $ tmux kill-server
+
+  
 scroll::
   
   Ctrl-b [ 上/下/左/右 , q 離開
@@ -60,6 +67,14 @@ scroll::
     <prefix> o Go to the next pane
     <prefix> ; Toggle between current and previous pane
     <prefix> x Close the current pane
+
+
+copy-mode::
+
+  <prefix> [
+
+  # 按 space 開始移動選範圍, enter 結束
+  # <prefix> ] # 貼上
 
 
 

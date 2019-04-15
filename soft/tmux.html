@@ -211,9 +211,15 @@ $ tmux ls: list
 $ tmux a -t &lt;session-name&gt;
 
 $ tmux new -s session_name自己取一個 session name (instead of number)
+$ tmux rename-session -t 0 my_new_name
 
 # help
 &lt;prefix&gt; ?
+
+$ tmux kill-session -t 0
+$ tmux kill-session -t &lt;session_name&gt;
+$ tmux kill-session -a # 全部
+$ tmux kill-server
 </pre></div>
 </div>
 <p>scroll:</p>
@@ -236,6 +242,13 @@ $ tmux new -s session_name自己取一個 session name (instead of number)
 <span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">o</span> <span class="n">Go</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">pane</span>
 <span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="p">;</span> <span class="n">Toggle</span> <span class="n">between</span> <span class="n">current</span> <span class="ow">and</span> <span class="n">previous</span> <span class="n">pane</span>
 <span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">x</span> <span class="n">Close</span> <span class="n">the</span> <span class="n">current</span> <span class="n">pane</span>
+</pre></div>
+</div>
+<p>copy-mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="p">[</span>
+
+<span class="c1"># 按 space 開始移動選範圍, enter 結束</span>
+<span class="c1"># &lt;prefix&gt; ] # 貼上</span>
 </pre></div>
 </div>
 <p>conf</p>

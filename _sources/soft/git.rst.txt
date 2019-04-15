@@ -64,6 +64,17 @@ git clone::
     git clone ssh://host/~/repo/foo.git
 	git clone --bare /path/to/repo # 把原本的repo轉成bare出來
 
+
+clone all branches::
+  
+  $ git clone --mirror git://example.com/repo repo.git # clone all branches
+  $ mkdir new_proj
+  $ cd new_proj
+  $ mv repo.git new_proj/.git
+  # remove bare=true in .git/config
+
+
+    
 .. note:: git pull origin master相當於git fetch和git merge origin/master
 
 git add::
