@@ -1,6 +1,18 @@
 OS & Desktop
 ================
 
+
+Unix-like tools
+-----------------------
+
+**imagemagick**
+
+合併圖片 (左右)::
+
+  $ contert +append a.png b.png out.png
+
+
+
 Linux
 -------------------------
 
@@ -158,7 +170,9 @@ Mac 更新到iOX 10.9, pip安裝出現錯誤 (gcc編譯相關)::
   $ sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
 
 * `UNetbootin - Homepage and Downloads <http://unetbootin.sourceforge.net/>`__
+* `Balena Etcher <https://www.balena.io/etcher/>`__
 
+  
 USB 外接硬碟不正常退出後找不到
 
 ::
