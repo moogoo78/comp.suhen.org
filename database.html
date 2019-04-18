@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#sqlite">Sqlite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dump-to-csv">dump to csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#snippets">snippets</a></li>
 </ul>
 </li>
@@ -745,10 +746,29 @@ $ cat dumpfile.sql | sqlite3 new.db
 <span class="o">.</span><span class="n">quit</span>
 </pre></div>
 </div>
+<div class="section" id="dump-to-csv">
+<h3>dump to csv<a class="headerlink" href="#dump-to-csv" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">headers</span> <span class="n">on</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">mode</span> <span class="n">csv</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">output</span> <span class="n">data</span><span class="o">.</span><span class="n">csv</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">customerid</span><span class="p">,</span>
+   <span class="o">...&gt;</span>        <span class="n">firstname</span><span class="p">,</span>
+   <span class="o">...&gt;</span>        <span class="n">lastname</span><span class="p">,</span>
+   <span class="o">...&gt;</span>        <span class="n">company</span>
+   <span class="o">...&gt;</span>   <span class="n">FROM</span> <span class="n">customers</span><span class="p">;</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">quit</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sqlite3 -header -csv c:/sqlite/chinook.db <span class="s2">&quot;select * from tracks;&quot;</span> &gt; tracks.csv
+$ sqlite3 -header -csv c:/sqlite/chinook.db &lt; query.sql &gt; data.csv
+</pre></div>
+</div>
+<p>ref: <a class="reference external" href="http://www.sqlitetutorial.net/sqlite-tutorial/sqlite-export-csv/">Export SQLite Database To a CSV File</a></p>
 <p>ref</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.sqlite.org/sqlite.html">Command Line Shell For SQLite</a></p></li>
 </ul>
+</div>
 <div class="section" id="snippets">
 <h3>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h3>
 <p>把 count, group by 起來的結果筆數全部加起來, 重點是 “as A” 要加</p>

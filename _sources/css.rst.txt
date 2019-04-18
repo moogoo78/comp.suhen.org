@@ -5,6 +5,23 @@ CSS
 * `CSS Reference - A free visual guide to the most popular CSS properties. <http://cssreference.io/>`__  圖示各 CSS 屬性, 一覽無疑
 
 
+init
+------------
+
+58 bytes of css:
+
+.. code-block:: css
+                
+   main {
+       max-width: 38rem;
+       padding: 2rem;
+       margin: auto;
+   }
+
+
+`58 bytes of css to look great nearly everywhere <https://jrl.ninja/etc/1/?utm_source=hackernewsletter&utm_medium=email&utm_term=design>`__
+
+
 Tutorial
 -----------
 

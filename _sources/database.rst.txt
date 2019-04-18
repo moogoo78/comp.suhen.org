@@ -628,6 +628,30 @@ Sqlite
   .quit
 
 
+dump to csv
+~~~~~~~~~~~~~~~~~~
+
+.. code-block::
+
+   sqlite> .headers on
+   sqlite> .mode csv
+   sqlite> .output data.csv
+   sqlite> SELECT customerid,
+      ...>        firstname,
+      ...>        lastname,
+      ...>        company
+      ...>   FROM customers;
+   sqlite> .quit
+
+.. code-block:: bash
+
+    $ sqlite3 -header -csv c:/sqlite/chinook.db "select * from tracks;" > tracks.csv
+    $ sqlite3 -header -csv c:/sqlite/chinook.db < query.sql > data.csv
+    
+
+   
+ref: `Export SQLite Database To a CSV File <http://www.sqlitetutorial.net/sqlite-tutorial/sqlite-export-csv/>`__
+
 ref
 
 * `Command Line Shell For SQLite <http://www.sqlite.org/sqlite.html>`__
@@ -639,6 +663,8 @@ ref
    - [[http://www.student.tw/db/showthread.php?t=174156][【問題】Mysql 中的 MyIsam 與 InnoDB 之差異 - 深藍學生論壇]]
    ** type
    - [[http://www.systn.com/data/articles/304_tw.html][mysql中char與varchar的區別]]
+
+
 
 snippets
 ~~~~~~~~~~~
