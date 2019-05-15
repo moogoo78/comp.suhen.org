@@ -12,8 +12,8 @@ Quick Start::
   <prefix> x: Kill current window
   <prefix> d: Detach tmux (exit back to normal terminal)
   --
-  <prefix> n/p: 前/後一個視窗  
-  <prefix>": 分割上下pane  
+  <prefix> n/p: 前/後一個視窗
+  <prefix>": 分割上下pane
   <prefix> %: 分割左右pane
   <prefix> SPACE: 重整pane(幫你排)
   <prefix> 按著不放再按上下左右: 調整視窗大小
@@ -22,7 +22,7 @@ Quick Start::
   <prefix> 上下左右
   <prefix> o
 
-  # 視窗交換位址 
+  # 視窗交換位址
   <prefix> C-o
 
   # 顯示時間
@@ -30,13 +30,13 @@ Quick Start::
 
   # 回到剛才的tmux session
   $ tmux a (attach)
-  
+
   $ tmux ls: list
   $ tmux a -t <session-name>
-  
+
   $ tmux new -s session_name自己取一個 session name (instead of number)
   $ tmux rename-session -t 0 my_new_name
-  
+
   # help
   <prefix> ?
 
@@ -45,9 +45,9 @@ Quick Start::
   $ tmux kill-session -a # 全部
   $ tmux kill-server
 
-  
+
 scroll::
-  
+
   Ctrl-b [ 上/下/左/右 , q 離開
 
 * `tmux shortcuts & cheatsheet <https://gist.github.com/MohamedAlaa/2961058>`__
@@ -57,7 +57,7 @@ scroll::
 
 
 常用::
-  
+
     <prefix> c Create a new window (with shell)
     <prefix> w Choose window from a list
     <prefix> 0 Switch to window 0 (by number )
@@ -77,6 +77,9 @@ copy-mode::
   # <prefix> ] # 貼上
 
 
+switch-pane to other session::
+
+  <prefix>:move-pane -t 1:1 # session_name:window_name
 
 conf
 
