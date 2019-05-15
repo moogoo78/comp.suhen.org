@@ -67,44 +67,45 @@ LIMIT
   SELECT * FROM foo LIMIT 20
   SELECT * FROM foo LIMIT 20 OFFSET 40 -- 從40個以後抓20個
   SELECT * FROM foo LIMIT 40, 20 -- 同上
+  LIMIT -1 OFFSET 100 # 從 100 開始, 沒有限制 (SQLite)
 
 查看database容量:
 
 .. code-block:: mysql
 
-    SELECT table_schema "database_name", 
-    sum( data_length + index_length ) / 1024 / 
-    1024 "Data Base Size in MB", 
-    sum( data_free )/ 1024 / 1024 "Free Space in MB" 
-    FROM information_schema.TABLES 
+    SELECT table_schema "database_name",
+    sum( data_length + index_length ) / 1024 /
+    1024 "Data Base Size in MB",
+    sum( data_free )/ 1024 / 1024 "Free Space in MB"
+    FROM information_schema.TABLES
     GROUP BY table_schema ;
 
 
-SELECT and UPDATE:    
-    
+SELECT and UPDATE:
+
 .. code-block:: sql
-                    
-   UPDATE table_A LEFT JOIN table_B ON table_B.id = table_A.bid 
-   SET table_A.some_column = 'some_value' WHERE some_condition;    
-    
+
+   UPDATE table_A LEFT JOIN table_B ON table_B.id = table_A.bid
+   SET table_A.some_column = 'some_value' WHERE some_condition;
+
 增加欄位 add column:
 
 .. code-block:: sql
 
     ALTER TABLE contacts ADD email VARCHAR(60);
-    ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;    
+    ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;
 
 
 每個月統計
-                
+
 .. code-block:: sql
-   
+
     SELECT YEAR(dtime), MONTH(dtime), COUNT(*)
-    FROM api2_log 
+    FROM api2_log
     WHERE cls = 'talkingapp' AND act = 'update_stat'
     GROUP BY YEAR(dtime),MONTH(dtime)
 
-    
+
 status:
 
 .. code-block:: sql
@@ -112,7 +113,7 @@ status:
     SHOW TABLE STATUS;
 
 .. code-block:: bash
-                
+
     $ mysqlshow -uroot -p123456 --status db_name
 
 
@@ -120,14 +121,14 @@ status:
 統計相關:
 
 .. code-block:: sql
-                
+
    ---- 欄位 col1 出現超過 5 次:
    -- WHERE (放在 group 前面) 在這裏不能用, 要改用 having
    SELECT COUNT(*) AS cnt from <table> GROUP BY <col1> HAVING cnt > 5 ORDER BY cnt DESC;
-   
+
    -- 欄位 col1 不重複, 符合條件, 總共筆數
    SELECT COUNT(DISTINCT <col1>) FROM <table> WHERE <col2> ...
-    
+
 function
 ~~~~~~~~~~~
 
@@ -136,7 +137,7 @@ function
 .. code-block:: sql
 
   SELECT NOW(),CURDATE(),CURTIME() ; | 2012-06-04 14:19:42 | 2012-06-04 | 14:19:42 |
-  SELECT MONTH(FROM_UNIXTIME(add_date)) as month 
+  SELECT MONTH(FROM_UNIXTIME(add_date)) as month
   SELECT NOW(), NOW() - INTERVAL 1 DAY ;今天跟昨天
 
 ref: http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html
@@ -192,7 +193,7 @@ VARCHAR和CHAR
   $ mysqlcheck --all-databases --auto-repair
   $ mysqlcheck --all-databases --analyze
 
-  
+
 a: analyze, c: check, o: optimize, r: repair
 
 重建索引::
@@ -258,7 +259,7 @@ via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root
 
   mysqld_safe --init-file=/pathto/foo.txt &
 
-.. note:: flush privileges; 重載授權表 
+.. note:: flush privileges; 重載授權表
 
 參考
 
@@ -287,15 +288,15 @@ via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root
 4.\ 重開mysql
 
 5.\ 測試能不能連::
- 
+
   mysql -h 主機 -u root -p
 
-  
+
 資料庫 data ::
 
-  Mac: /usr/local/mysql/data/ 
+  Mac: /usr/local/mysql/data/
 
-  
+
 資料庫編碼
 ~~~~~~~~~~~~~~~~
 
@@ -318,7 +319,7 @@ php的 ``mysql_query("SET NAMES UTF8");`` 相當於MySQL::
 1. mysqldump -uroot -p mydb --default-character-set=latin1 > old.sql
 2. piconv -f utf8 -t utf8 old.sql> new.sql
 3. 打開new.sql裡面加 ``SET NAMES utf8``;
-4. mysql -uroot -pmypassword -Dmydb_new --default-character-set=utf8 < new.sql 
+4. mysql -uroot -pmypassword -Dmydb_new --default-character-set=utf8 < new.sql
 
 
 command
@@ -341,7 +342,7 @@ command
   SHOW FULL COLUMNS FROM tbl_name; #table 細節
   ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; # 改欄位編碼
 
-  SHOW GLOBAL VARIABLES; 
+  SHOW GLOBAL VARIABLES;
 
 
 Server Management
@@ -365,7 +366,7 @@ Mac OS X:
 
 從 MySql (http://dev.mysql.com/downloads/mysql/) 找適何的package，裝完後:
 
-binary:: 
+binary::
 
   /usr/local/mysql/bin/mysql
 
@@ -413,7 +414,7 @@ path::
 
    $ mysqldump -u db_user -p db_passwd db_name | mysql -u db2_user -p db2_passwd -h db2_host db2_name;
 
-   
+
 Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -438,7 +439,7 @@ my.cnf::
   default-storage-engine=InnoDB # 預設選用InnoDB
 
   # slow query
-  log-slow-queries=/tmp/slow-query.log # 
+  log-slow-queries=/tmp/slow-query.log #
   long_query_time = 3 #query超過2秒時，則會記錄
   log-queries-not-using-indexes
 
@@ -451,15 +452,15 @@ my.cnf::
 
 
 **調整 memory 用量**
-          
+
 `調整 MySQL 的記憶體用量 | Gea-Suan Lin's BLOG <https://blog.gslin.org/archives/2016/05/04/6537/調整-mysql-的記憶體用量/>`__
 
 
 不要讓 VSZ 超過 90% 的 system memory::
-  
+
   ps ax -O vsz | grep mysqld # 看 vsz 佔了多少, 然後調整 innodb_buffer_pool_size
 
-          
+
 Q & A
 ~~~~~~~~~~~~~
 
@@ -480,7 +481,7 @@ error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.
   # 處理
   $ chown -R mysql:mysql /var/lib/mysql/*
   $ chmod -R 700 /var/lib/mysql/*
-  
+
 
 others
 ~~~~~~~~~~~~~~~~
@@ -504,7 +505,7 @@ mac php (with-postgresql), 為了用 adminer.php:
    ## package
    # debian
    $ apt-get install postgresql postgresql-client postgresql-server-dev-9.4 # or postgresql-server-dev-all
-                
+
    # OSX
    $ brew install postgresql
 
@@ -525,7 +526,7 @@ mac php (with-postgresql), 為了用 adminer.php:
    # 找到 local all postgres peer # 把 peer 改 md5
    $ sudo service postgresql restart
 
-   
+
 建立在當前使用者:
 
 .. code-block::
@@ -548,7 +549,7 @@ export table (data & schema):
 
    pg_dump -U xxx public.TABLE_NAME DATABASE_NAME > out.sql
    pg_dump -U xxx -d DB_NAME -t TABLE_NAME > out.sql
-   
+
 
 command
 ~~~~~~~~~~~~~~~
@@ -559,22 +560,22 @@ command
    $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
    $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql
 
-   ## import 
+   ## import
    $ psql -f backup.sql dbname dbuser
 
    ## Debian Jessie
-   # first time                
+   # first time
    # createuser myuser
-                
+
    ## OSX
    # first time
    $ initdb /usr/local/var/postgres -E utf8
-   # service (daemon)                
+   # service (daemon)
    $ brew services start postgresql
 
    ## export csv
    $ psql -U user -d db_name -c "Copy (Select * From foo_table LIMIT 10) To STDOUT With CSV HEADER DELIMITER ',';" > foo_data.csv
-   
+
 `PostgreSql - Debian Wiki <https://wiki.debian.org/PostgreSql#Installation>`__
 
 syntax::
@@ -590,7 +591,7 @@ syntax::
    # pgres: \d
    # mysql: USE mydbname
    # pgres: \c  mydbname # \connect
-  
+
    # mysql: SHOW COLUMNS
    # pgres: \d table
 
@@ -604,11 +605,11 @@ syntax::
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: sql
-                
+
    ALTER USER "user_name" WITH PASSWORD 'new_password';   # 改 user 密碼
    ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
 
-  
+
 Sqlite
 ------------
 
@@ -616,7 +617,7 @@ Sqlite
 
   $ sqlite3 new.db # create db
   $ sqlite3 myprecious.db ".dump" ＞ output.sql # dump sql
-  $ sqlite3 new.db ＜ output.sql # import 
+  $ sqlite3 new.db ＜ output.sql # import
   # or
   $ cat dumpfile.sql | sqlite3 new.db
 
@@ -647,9 +648,9 @@ dump to csv
 
     $ sqlite3 -header -csv c:/sqlite/chinook.db "select * from tracks;" > tracks.csv
     $ sqlite3 -header -csv c:/sqlite/chinook.db < query.sql > data.csv
-    
 
-   
+
+
 ref: `Export SQLite Database To a CSV File <http://www.sqlitetutorial.net/sqlite-tutorial/sqlite-export-csv/>`__
 
 ref
@@ -676,7 +677,7 @@ snippets
 
     SELECT SUM(cnt) FROM (SELECT COUNT(*) AS cnt
     FROM taibif_col
-    GROUP BY genus) as A 
+    GROUP BY genus) as A
 
 單字表沒有照abc排, 要照字母順序排序(num)
 
@@ -719,7 +720,7 @@ debian 版本比較舊, 預設 apt 跑不起來
 `Install MongoDB Community Edition on Debian — MongoDB Manual 3.6 <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>`__
 
 .. code-block:: bash
-                
+
   $ mongod --dbpath db
   $ mongod --dbpath db --smallfiles
   $ mongod --config /usr/local/etc/mongod.conf # macos
@@ -729,5 +730,22 @@ debian 版本比較舊, 預設 apt 跑不起來
 .. code-block:: bash
 
   $ mongodump # 預設存成 dump 資料夾
+  $ mondodump -h <host> -d <db_name> -c <collection_name> -o <output_path>
   $ mongorestore # 預設讀取 dump 資料夾
   $ mongorestore -d <db_name> --gzip <folder>
+  $ mongorestore -h <host> -d <db_name> -c <collection_name> <bson_file_path>
+
+
+params
+.. code-block::
+
+   -h：         host
+   -u：         user
+   -p：         password
+   --port：     port
+   -d：        database
+   -c：        collection
+   -o：        output (path)
+
+
+

@@ -259,9 +259,10 @@ select_expr [, select_expr ...]
 </pre></div>
 </div>
 <p>LIMIT</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span> <span class="k">LIMIT</span> <span class="mi">20</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span> <span class="k">LIMIT</span> <span class="mi">20</span> <span class="k">OFFSET</span> <span class="mi">40</span> <span class="c1">-- 從40個以後抓20個</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span> <span class="k">LIMIT</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span> <span class="c1">-- 同上</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>SELECT * FROM foo LIMIT 20
+SELECT * FROM foo LIMIT 20 OFFSET 40 -- 從40個以後抓20個
+SELECT * FROM foo LIMIT 40, 20 -- 同上
+LIMIT -1 OFFSET 100 # 從 100 開始, 沒有限制 (SQLite)
 </pre></div>
 </div>
 <p>查看database容量:</p>
@@ -818,8 +819,21 @@ $ mongod --config /usr/local/etc/mongod.conf <span class="c1"># macos</span>
 </div>
 <p><strong>dump/import</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mongodump <span class="c1"># 預設存成 dump 資料夾</span>
+$ mondodump -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; -o &lt;output_path&gt;
 $ mongorestore <span class="c1"># 預設讀取 dump 資料夾</span>
 $ mongorestore -d &lt;db_name&gt; --gzip &lt;folder&gt;
+$ mongorestore -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;bson_file_path&gt;
+</pre></div>
+</div>
+<p>params
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-h：         host
+-u：         user
+-p：         password
+--port：     port
+-d：        database
+-c：        collection
+-o：        output (path)
 </pre></div>
 </div>
 </div>
