@@ -45,4 +45,5 @@ MooGoo's note about computer.
    soft/vagrant_and_docker
    soft/pelican
    soft/tmux   
+   soft/excel
    qna
