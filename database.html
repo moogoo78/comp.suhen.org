@@ -143,6 +143,7 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
 </ul>
 
@@ -834,6 +835,10 @@ $ mongorestore -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt
 -d：        database
 -c：        collection
 -o：        output (path)
+</pre></div>
+</div>
+<p>select fieldname has value</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>db.mycollection.find({ &#39;fieldname&#39; : { $exists: true, $ne: null } });
 </pre></div>
 </div>
 </div>

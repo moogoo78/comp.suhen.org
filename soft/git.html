@@ -139,6 +139,7 @@
 <li class="toctree-l1"><a class="reference internal" href="vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a></li>
 </ul>
 
@@ -239,10 +240,15 @@
 </pre></div>
 </div>
 <p>Remote branch:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">foo</span>
-<span class="n">remote</span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">foo_test</span> <span class="n">origin</span><span class="o">/</span><span class="n">foo</span> <span class="c1"># 可以不同branch name</span>
-<span class="c1"># 之後</span>
-<span class="n">remote</span><span class="p">(</span><span class="n">foo_test</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">pull</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>local(foo)&gt; git push -u origin foo
+remote&gt; git checkout -b foo_test origin/foo # 可以不同branch name
+# 之後
+remote(foo_test)&gt; git pull
+
+# pull remote branch
+$ git branch -f remote_branch_name origin/remote_branch_name
+$ git checkout remote_branch_name
+$ git push origin --delete &lt;remote_branch_name&gt;
 </pre></div>
 </div>
 </div>

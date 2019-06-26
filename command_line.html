@@ -136,6 +136,7 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
 </ul>
 
@@ -204,6 +205,11 @@
   <div class="section" id="command">
 <h1>Command 常用指令<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h1>
 <p>macos 的 updatedb:</p>
+<p>..code-block: bash</p>
+<blockquote>
+<div><p>sudo /usr/libexec/locate.updatedb</p>
+<p>set -e # Exit immediately if a command exits with a non-zero status.</p>
+</div></blockquote>
 <div class="section" id="package">
 <h2>package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h2>
 <p>APT:</p>
@@ -285,6 +291,10 @@ $ find * -mtime -1 -exec mv {} PATH/TO/TARGET \; # 找出, 並搬
 <blockquote>
 <div><p>sed -n 144827,144878p access.log</p>
 </div></blockquote>
+<p>把換行改成”,”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tr</span> <span class="o">-</span><span class="n">s</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="c1"># -s (squeeze), 不然會有 2 個 ,</span>
+</pre></div>
+</div>
 <p><strong>改檔名</strong></p>
 <p>大寫改小寫:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr &#39;A-Z&#39; &#39;a-z&#39;`; done

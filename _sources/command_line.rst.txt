@@ -4,11 +4,11 @@ Command 常用指令
 
 macos 的 updatedb:
 
-.. code-block: bash
+..code-block: bash
 
    sudo /usr/libexec/locate.updatedb
 
-   
+   set -e # Exit immediately if a command exits with a non-zero status.
 
 package
 ----------------
@@ -95,6 +95,14 @@ more
 ** 取出檔案的某幾行**
 
   sed -n 144827,144878p access.log
+
+
+把換行改成",":
+
+.. code-block::
+
+   tr -s '\r\n' ',' # -s (squeeze), 不然會有 2 個 ,
+
 
 
 **改檔名**

@@ -33,7 +33,11 @@ Remote branch::
   remote> git checkout -b foo_test origin/foo # 可以不同branch name
   # 之後
   remote(foo_test)> git pull
- 
+
+  # pull remote branch
+  $ git branch -f remote_branch_name origin/remote_branch_name
+  $ git checkout remote_branch_name
+  $ git push origin --delete <remote_branch_name>
 
 Basic
 =====

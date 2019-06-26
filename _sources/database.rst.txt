@@ -748,4 +748,8 @@ params
    -o：        output (path)
 
 
+select fieldname has value
 
+.. code-block::
+
+   db.mycollection.find({ 'fieldname' : { $exists: true, $ne: null } });
