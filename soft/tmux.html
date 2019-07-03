@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="問題解決" href="../qna.html" />
+    <link rel="next" title="Excel" href="excel.html" />
     <link rel="prev" title="Pelican" href="pelican.html" /> 
 </head>
 
@@ -112,7 +112,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pelican.html">Pelican</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">tmux</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tmux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shortkey">shortkey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ref">ref</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a></li>
 </ul>
 
@@ -180,68 +185,63 @@
             
   <div class="section" id="tmux">
 <h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
-<p>Quick Start:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;prefix&gt; c: Create a new window (appears in status bar)
-&lt;prefix&gt; 0: Switch to window 0
-&lt;prefix&gt; 1: Switch to window 1
-&lt;prefix&gt; 2: Switch to window 2 (etc.)
-&lt;prefix&gt; x: Kill current window
-&lt;prefix&gt; d: Detach tmux (exit back to normal terminal)
---
-&lt;prefix&gt; n/p: 前/後一個視窗
-&lt;prefix&gt;&quot;: 分割上下pane
-&lt;prefix&gt; %: 分割左右pane
-&lt;prefix&gt; SPACE: 重整pane(幫你排)
-&lt;prefix&gt; 按著不放再按上下左右: 調整視窗大小
-
-# 移動到另一視窗
-&lt;prefix&gt; 上下左右
-&lt;prefix&gt; o
-
-# 視窗交換位址
-&lt;prefix&gt; C-o
-
-# 顯示時間
-&lt;prefix&gt; t
-
-# 回到剛才的tmux session
-$ tmux a (attach)
-
-$ tmux ls: list
+<p>session -&gt; window -&gt; pane</p>
+<div class="section" id="shortkey">
+<h2>shortkey<a class="headerlink" href="#shortkey" title="Permalink to this headline">¶</a></h2>
+<p>tmux command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tmux ls: list
 $ tmux a -t &lt;session-name&gt;
 
 $ tmux new -s session_name自己取一個 session name (instead of number)
 $ tmux rename-session -t 0 my_new_name
-
-# help
-&lt;prefix&gt; ?
-
 $ tmux kill-session -t 0
 $ tmux kill-session -t &lt;session_name&gt;
 $ tmux kill-session -a # 全部
 $ tmux kill-server
 </pre></div>
 </div>
-<p>scroll:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ctrl</span><span class="o">-</span><span class="n">b</span> <span class="p">[</span> <span class="n">上</span><span class="o">/</span><span class="n">下</span><span class="o">/</span><span class="n">左</span><span class="o">/</span><span class="n">右</span> <span class="p">,</span> <span class="n">q</span> <span class="n">離開</span>
+<p>tmux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;prefix&gt; c Create a new window (with shell)
+&lt;prefix&gt; w Choose window from a list
+&lt;prefix&gt; d: Detach tmux (exit back to normal terminal)
+# 顯示時間
+&lt;prefix&gt; t
+# help
+&lt;prefix&gt; ?
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">tmux shortcuts &amp; cheatsheet</a></p></li>
-<li><p><a class="reference external" href="https://gist.github.com/andreyvit/2921703">tmux cheatsheet</a></p></li>
-<li><p><a class="reference external" href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p></li>
-<li><p><a class="reference external" href="https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa">A minimalist guide to tmux</a></p></li>
-</ul>
-<p>常用:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">c</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">window</span> <span class="p">(</span><span class="k">with</span> <span class="n">shell</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">w</span> <span class="n">Choose</span> <span class="n">window</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">list</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="mi">0</span> <span class="n">Switch</span> <span class="n">to</span> <span class="n">window</span> <span class="mi">0</span> <span class="p">(</span><span class="n">by</span> <span class="n">number</span> <span class="p">)</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="p">,</span> <span class="n">Rename</span> <span class="n">the</span> <span class="n">current</span> <span class="n">window</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="o">%</span> <span class="n">Split</span> <span class="n">current</span> <span class="n">pane</span> <span class="n">horizontally</span> <span class="n">into</span> <span class="n">two</span> <span class="n">panes</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="s2">&quot; Split current pane vertically into two panes</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">o</span> <span class="n">Go</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">pane</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="p">;</span> <span class="n">Toggle</span> <span class="n">between</span> <span class="n">current</span> <span class="ow">and</span> <span class="n">previous</span> <span class="n">pane</span>
-<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">x</span> <span class="n">Close</span> <span class="n">the</span> <span class="n">current</span> <span class="n">pane</span>
+<p>session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># rename session
+&lt;prefix&gt; $
+# switch session
+&lt;prefix&gt; s
+# switch to last session
+&lt;prefix&gt; l
+</pre></div>
+</div>
+<p>window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># switch window</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">n</span><span class="o">/</span><span class="n">p</span> <span class="c1"># 前/後一個視窗</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="mi">0</span> <span class="c1"># Switch to window 0 (by number )</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">c</span> <span class="c1"># Create a new window (appears in status bar)</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="p">,</span> <span class="c1"># Rename the current window</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="n">x</span> <span class="c1"># Kill current window</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="o">.</span> <span class="c1"># edit window number/sort</span>
+<span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="c1"># close window</span>
+</pre></div>
+</div>
+<p>pane:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># switch pane
+&lt;prefix&gt; 上下左右
+&lt;prefix&gt; o
+
+&lt;prefix&gt;&quot;: 分割上下pane
+&lt;prefix&gt; %: 分割左右pane
+&lt;prefix&gt; SPACE: 重整pane(幫你排)
+&lt;prefix&gt; 按著不放再按上下左右: 調整視窗大小
+
+&lt;prefix&gt; ! # open current panel to new window
+&lt;prefix&gt; q # display panel number
 </pre></div>
 </div>
 <p>copy-mode:</p>
@@ -255,14 +255,24 @@ $ tmux kill-server
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span><span class="p">:</span><span class="n">move</span><span class="o">-</span><span class="n">pane</span> <span class="o">-</span><span class="n">t</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span> <span class="c1"># session_name:window_name</span>
 </pre></div>
 </div>
-<p>conf</p>
+</div>
+<div class="section" id="ref">
+<h2>ref<a class="headerlink" href="#ref" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux | Linuxize</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa">A minimalist guide to tmux</a></p></li>
+</ul>
+<p>cheatsheet:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">tmux shortcuts &amp; cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://gist.github.com/andreyvit/2921703">tmux cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p></li>
+</ul>
+<p>conf:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://danielallendeutsch.com/blog/16-using-tmux-properly.html">Daniel Allen Deutsch</a></p></li>
 </ul>
-<p>tuts</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux | Linuxize</a></p></li>
-</ul>
+</div>
 </div>
 
 
@@ -273,7 +283,7 @@ $ tmux kill-server
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../qna.html" class="btn btn-neutral float-right" title="問題解決" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="excel.html" class="btn btn-neutral float-right" title="Excel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pelican.html" class="btn btn-neutral float-left" title="Pelican" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
