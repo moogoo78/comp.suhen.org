@@ -45,6 +45,24 @@ FAT32::
 
 snippets
 -------------
+
+
+新增目錄, 順便移動過去
+
+.. code-block:: bash
+
+    mkdir /foo/bar && cd $_
+
+
+複製檔案, 不用重複打兩次檔名
+
+.. code-block:: bash
+
+    cp /some/path/to/file.txt{,.bak}
+
+`Bash Brace Expansion | Linux Journal <https://www.linuxjournal.com/content/bash-brace-expansion>`__
+
+
 把"/t"分隔的檔案轉成sql語法, 用awk和sed
 
 .. code-block:: bash
@@ -53,25 +71,48 @@ snippets
 
 .. note:: 先用awk轉好, 再用sed去除最後換行符號, "^M"在commend-line裡要Ctrl-V + Ctrl-M表示
 
+忘記指令名稱, 但大概記得是幹嘛的
+
+.. code-block:: bash
+
+    apropos "some description"
+
+
+剛剛那個指令要用 sudo
+
+.. code-block:: bash
+
+    sudo !!
+
+
 more
 
 
 * `Robert Muth: Better Bash Scripting in 15 Minutes <http://robertmuth.blogspot.tw/2012/08/better-bash-scripting-in-15-minutes.html?utm_source=hackernewsletter&utm_medium=email&utm_term=fav>`__
 * `Sed - An Introduction and Tutorial <http://www.grymoire.com/Unix/sed.html?utm_source=hackernewsletter&utm_medium=email&utm_term=code>`__
-
+* `5 Handy Bash Tricks in 2 Minutes - DEV Community 👩‍💻👨‍💻 <https://dev.to/jacobherrington/5-handy-bash-tricks-in-2-minutes-23ph?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email>`__
 
 顯示 \uxxx => unicode 文字:
 
 .. code-block:: bash
 
    echo -e "$(curl http://127.0.0.1:5000/api/info)"
-             
+
 
 
 用 less +F 代替 tail -f (可以 Ctrl-c 跳出, F 再度回到追蹤模式)
    
 檔案
 ---------------
+
+
+備份每個檔案
+
+.. code-block:: bash
+
+    for file in * ; do cp "$file" "$file".bak; done
+
+
 
 把檔案foo複製到以下全部目錄裡::
 
@@ -382,6 +423,13 @@ vim硬是要存檔::
 
   :w !sudo tee %
 
+
+replace tabs with single space::
+
+  :%s/\t/ /g
+
+
+  
 pandoc
 ----------
 

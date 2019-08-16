@@ -244,6 +244,15 @@ $ dosfslabel /dev/sdb1 &quot;NEWLABEL&quot;
 </div>
 <div class="section" id="snippets">
 <h2>snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
+<p>新增目錄, 順便移動過去</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /foo/bar <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$_</span>
+</pre></div>
+</div>
+<p>複製檔案, 不用重複打兩次檔名</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /some/path/to/file.txt<span class="o">{</span>,.bak<span class="o">}</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.linuxjournal.com/content/bash-brace-expansion">Bash Brace Expansion | Linux Journal</a></p>
 <p>把”/t”分隔的檔案轉成sql語法, 用awk和sed</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk -F <span class="s1">&#39;\t&#39;</span> <span class="s1">&#39;{print &quot;INSERT INTO word (\&quot;s3id\&quot;,\&quot;content\&quot;,\&quot;freq\&quot;,\&quot;translate\&quot;,\&quot;ex1\&quot;,\&quot;ex1_translate\&quot;,\&quot;ex2\&quot;,\&quot;ex2_translate\&quot;) VALUES(\&quot;&quot;$1&quot;\&quot;,\&quot;&quot;$2&quot;\&quot;,\&quot;&quot;$3&quot;\&quot;,\&quot;&quot;$4&quot;\&quot;,\&quot;&quot;$5&quot;\&quot;,\&quot;&quot;$6&quot;\&quot;,\&quot;&quot;$7&quot;\&quot;,\&quot;&quot;$8&quot;\&quot;);&quot;}&#39;</span> data_all_u.txt <span class="p">|</span> sed -e <span class="s1">&#39;s/^M//g&#39;</span> &gt; out.sql
 </pre></div>
@@ -252,10 +261,19 @@ $ dosfslabel /dev/sdb1 &quot;NEWLABEL&quot;
 <p class="admonition-title">Note</p>
 <p>先用awk轉好, 再用sed去除最後換行符號, “^M”在commend-line裡要Ctrl-V + Ctrl-M表示</p>
 </div>
+<p>忘記指令名稱, 但大概記得是幹嘛的</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apropos <span class="s2">&quot;some description&quot;</span>
+</pre></div>
+</div>
+<p>剛剛那個指令要用 sudo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo !!
+</pre></div>
+</div>
 <p>more</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://robertmuth.blogspot.tw/2012/08/better-bash-scripting-in-15-minutes.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=fav">Robert Muth: Better Bash Scripting in 15 Minutes</a></p></li>
 <li><p><a class="reference external" href="http://www.grymoire.com/Unix/sed.html?utm_source=hackernewsletter&amp;utm_medium=email&amp;utm_term=code">Sed - An Introduction and Tutorial</a></p></li>
+<li><p><a class="reference external" href="https://dev.to/jacobherrington/5-handy-bash-tricks-in-2-minutes-23ph?utm_source=digest_mailer&amp;utm_medium=email&amp;utm_campaign=digest_email">5 Handy Bash Tricks in 2 Minutes - DEV Community 👩‍💻👨‍💻</a></p></li>
 </ul>
 <p>顯示 uxxx =&gt; unicode 文字:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="k">$(</span>curl http://127.0.0.1:5000/api/info<span class="k">)</span><span class="s2">&quot;</span>
@@ -265,6 +283,10 @@ $ dosfslabel /dev/sdb1 &quot;NEWLABEL&quot;
 </div>
 <div class="section" id="id1">
 <h2>檔案<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>備份每個檔案</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> file in * <span class="p">;</span> <span class="k">do</span> cp <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>.bak<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
 <p>把檔案foo複製到以下全部目錄裡:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ find . -type d |xargs -n 1 cp -i foo
 </pre></div>
@@ -561,6 +583,10 @@ $ sudo dpkg-reconfigure locales
 </div>
 <p>vim硬是要存檔:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:w !sudo tee %
+</pre></div>
+</div>
+<p>replace tabs with single space:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span>\<span class="n">t</span><span class="o">/</span> <span class="o">/</span><span class="n">g</span>
 </pre></div>
 </div>
 </div>
