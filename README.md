@@ -17,5 +17,9 @@
 
     $ cd docs
     $ make html
-    
 
+## fab
+
+	$ fab html # make html
+  $ fab open # make html & open browser
+  $ fab deploy # deploy to github 
