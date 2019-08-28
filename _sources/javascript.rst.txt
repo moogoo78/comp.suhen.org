@@ -25,6 +25,32 @@ via: `The Difference Between Function and Block Scope in JavaScript <https://med
    Block scope is within curly brackets.
    
 
+for ... in, for ... of | via: `When to use for..of loop instead of for..in - DEV Community 👩‍💻👨‍💻 <https://dev.to/umaralam48/when-to-use-for-of-loop-instead-of-for-in-4oa3>`__
+
+.. code-block:: javascript
+
+    // for ... in
+    // iterates over the enumerable properties of an object (array is object with index as their property in javascript)
+    // for ... of
+    // iterates over the values that the iterable defines to be iterated over (饒舌)
+    for (let x in [0.1, 0.2, 0.3]) {
+        console.log(x); // 0, 1, 2 (print index)
+    }
+
+    for (let x of [0.1, 0.2, 0.3]) {
+        console.log(x); // 0.1, 0.2, 0.3 (print value)
+    }
+
+    for (let x in {foo:'bar', monty: 'python'}) {
+        console.log(x); // foo, monty (print key)
+    }
+
+    for (let x of {foo:'bar', monty: 'python'})) {
+        console.log(x); // Uncaught TypeError: {(intermediate value)(intermediate value)} is not iterable
+    }
+
+    // objects in Javascript are not iterable unless they implement the iterable protocol
+
 
 特色
 --------------
