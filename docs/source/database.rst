@@ -272,6 +272,12 @@ via: `MySQL Change root Password <http://www.cyberciti.biz/faq/mysql-change-root
   # skip-networking 此行註解掉
   bind-address = 11.22.33.44 # 加上要連過來的ip
 
+mysqldump 錯誤 (1044 Access denied when using LOCK TABLES):
+
+可能權限沒有給夠, 要加 **--single-transaction**
+`mysqldump: 1044 Access denied when using LOCK TABLES <https://michaelrigart.be/mysqldump-1044-access-denied-using-lock-tables/>`__
+
+  
 .. note:: OpenSolaris的my.cnf好像在加在/var/mysql才會有作用
 
 2.\ 重開mysql
@@ -320,6 +326,7 @@ php的 ``mysql_query("SET NAMES UTF8");`` 相當於MySQL::
 2. piconv -f utf8 -t utf8 old.sql> new.sql
 3. 打開new.sql裡面加 ``SET NAMES utf8``;
 4. mysql -uroot -pmypassword -Dmydb_new --default-character-set=utf8 < new.sql
+
 
 
 command

@@ -52,6 +52,23 @@ for ... in, for ... of | via: `When to use for..of loop instead of for..in - DEV
     // objects in Javascript are not iterable unless they implement the iterable protocol
 
 
+用 async / await 取代 then, then...:
+
+  * `JavaScript Fetch API and using Async/Await | Fundamentals Of Code <https://fundamentalsofcode.com/javascript-fetch-api-and-using-async-await/>`__
+
+.. code-block:: javascript
+
+    async function getUserAsync(name)
+    {
+        let response = await fetch(`https://api.github.com/users/${name}`);
+        let data = await response.json()
+        return data;
+    }
+
+    getUserAsync('yourUsernameHere')
+     .then(data => console.log(data));
+
+
 特色
 --------------
 Javascript 的物件可以放任何東西
