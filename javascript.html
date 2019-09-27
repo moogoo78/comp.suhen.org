@@ -245,6 +245,23 @@ Block scope is within curly brackets.</p>
 <span class="c1">// objects in Javascript are not iterable unless they implement the iterable protocol</span>
 </pre></div>
 </div>
+<p>用 async / await 取代 then, then…:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://fundamentalsofcode.com/javascript-fetch-api-and-using-async-await/">JavaScript Fetch API and using Async/Await | Fundamentals Of Code</a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">async</span> <span class="kd">function</span> <span class="nx">getUserAsync</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://api.github.com/users/</span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">getUserAsync</span><span class="p">(</span><span class="s1">&#39;yourUsernameHere&#39;</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id1">
 <h2>特色<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>

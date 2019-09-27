@@ -433,6 +433,9 @@ $ mysqlcheck --all-databases --analyze
 <span class="n">bind</span><span class="o">-</span><span class="n">address</span> <span class="o">=</span> <span class="mf">11.22</span><span class="o">.</span><span class="mf">33.44</span> <span class="c1"># 加上要連過來的ip</span>
 </pre></div>
 </div>
+<p>mysqldump 錯誤 (1044 Access denied when using LOCK TABLES):</p>
+<p>可能權限沒有給夠, 要加 <strong>–single-transaction</strong>
+<a class="reference external" href="https://michaelrigart.be/mysqldump-1044-access-denied-using-lock-tables/">mysqldump: 1044 Access denied when using LOCK TABLES</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>OpenSolaris的my.cnf好像在加在/var/mysql才會有作用</p>
