@@ -558,6 +558,16 @@ export table (data & schema):
    pg_dump -U xxx -d DB_NAME -t TABLE_NAME > out.sql
 
 
+
+
+
+
+
+Security
+~~~~~~~~~~~~~~~
+
+ - `“FATAL: Ident authentication failed”, or how cool ideas get bad usage schemas – select * from depesz; <https://www.depesz.com/2007/10/04/ident/>`__
+
 command
 ~~~~~~~~~~~~~~~
 
