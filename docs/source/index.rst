@@ -15,10 +15,10 @@ MooGoo's note about computer.
 
    programming
    web_develop
-   web_devoops          
+   web_devoops
    database
    design
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: Programming Language
@@ -28,22 +28,23 @@ MooGoo's note about computer.
    css
    lua
    python
-   scripts_matrix   
+   scripts_matrix
    python_frameworks
 
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: Software
-             
-   soft/emacs      
+
+   soft/emacs
    soft/git
-   command_line   
+   command_line
    os_desktop
-   soft/sphinx   
+   soft/sphinx
    aws_eb_flask
    soft/vagrant_and_docker
    soft/pelican
-   soft/tmux   
+   soft/tmux
    soft/excel
+   soft/pandas
    qna
