@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Database筆記 &mdash; CompDocs 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MySQL" href="mysql.html" />
+    <link rel="prev" title="問題解決" href="../qna.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CompDocs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming 程式開發</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_devoops.html">Web DevOops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Programming Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../javascript.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts_matrix.html">比較</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_frameworks.html">Python Web Frameworks</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../soft/emacs.html">Emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/git.html">GIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command 常用指令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os_desktop.html">OS &amp; Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/sphinx.html">Sphinx - reST (reStructuredText)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws_eb_flask.html">Deploying Flask (Python) to AWS Elastic Beanstalk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/vagrant_and_docker.html">Vagrant, Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/pelican.html">Pelican</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/pandas.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database筆記</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rdbms">RDBMS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sql-syntax">常用 SQL Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">比較</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mongodb.html">MongoDB</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompDocs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Database筆記</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/database/database.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="database">
+<h1>Database筆記<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rdbms">
+<h2>RDBMS<a class="headerlink" href="#rdbms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sql-syntax">
+<h3>常用 SQL Syntax<a class="headerlink" href="#sql-syntax" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>ALTER USER &quot;user_name&quot; WITH PASSWORD &#39;new_password&#39;;   # 改 user 密碼
+ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
+</pre></div>
+</div>
+<p>把 count, group by 起來的結果筆數全部加起來, 重點是 “as A” 要加</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="k">FROM</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">cnt</span>
+<span class="k">FROM</span> <span class="n">taibif_col</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">genus</span><span class="p">)</span> <span class="k">as</span> <span class="n">A</span>
+</pre></div>
+</div>
+<p>單字表沒有照abc排, 要照字母順序排序(num)</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t2</span> <span class="k">where</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">word</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">word</span><span class="p">))</span> <span class="k">as</span> <span class="n">NUM</span> <span class="k">FROM</span> <span class="n">en_word</span> <span class="k">AS</span> <span class="n">t1</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">foo</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>一個裝置, 安裝了2個app以上的數量統計</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">total</span><span class="p">,</span> <span class="n">num</span> <span class="k">as</span> <span class="n">num_of_apps</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">num</span><span class="p">,</span> <span class="n">did</span> <span class="k">from</span> <span class="n">log_user_data</span> <span class="k">group</span> <span class="k">by</span> <span class="p">(</span><span class="n">did</span><span class="p">)</span> <span class="k">order</span> <span class="k">by</span> <span class="n">num</span> <span class="k">desc</span><span class="p">)</span> <span class="n">t</span> <span class="k">where</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">group</span> <span class="k">by</span> <span class="n">num</span> <span class="k">desc</span>
+</pre></div>
+</div>
+<p>每個字母開頭的單字數量</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">lower</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span><span class="n">english</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">as</span> <span class="k">c</span> <span class="k">from</span> <span class="n">words</span> <span class="k">group</span> <span class="k">by</span> <span class="k">c</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>比較<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">MySQL</dt>
+<dd class="field-odd"><p>RAND()</p>
+</dd>
+<dt class="field-even">Sqlite</dt>
+<dd class="field-even"><p>RANDOM()</p>
+</dd>
+</dl>
+<p>MySQL有ROW_NUMBER(), Sqlite沒有, 只能用SQL語法的奇技淫巧來達成.</p>
+<p>DB 特性討論:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/">Goodbye MongoDB, Hello PostgreSQL</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mysql.html" class="btn btn-neutral float-right" title="MySQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../qna.html" class="btn btn-neutral float-left" title="問題解決" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Suhen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
