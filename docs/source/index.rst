@@ -16,7 +16,6 @@ MooGoo's note about computer.
    programming
    web_develop
    web_devoops
-   database
    design
 
 .. toctree::
@@ -48,3 +47,13 @@ MooGoo's note about computer.
    soft/excel
    soft/pandas
    qna
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Database
+
+   database/database
+   database/mysql
+   database/postgres
+   database/sqlite
+   database/mongodb

@@ -1,9 +1,5 @@
-Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)
-===================================================
-
-
 MySQL
--------------
+====================
 
 Syntax
 
@@ -28,7 +24,7 @@ Syntax
 .. note:: MySQL的JOIN預設是 ``INNER JOIN`` ，另一種是LEFT OUTER JOIN，通常用 ``LEFT JOIN`` 就可以了。MySQL會優先處理JOIN，然後才是WHERE。
 
 cookbook
-~~~~~~~~~~~~~
+----------------
 
 .. code-block:: mysql
 
@@ -130,7 +126,7 @@ status:
    SELECT COUNT(DISTINCT <col1>) FROM <table> WHERE <col2> ...
 
 function
-~~~~~~~~~~~
+---------------------
 
 時間
 
@@ -144,7 +140,7 @@ ref: http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html
 
 
 Schema
-~~~~~~~~~~~~~~~~
+-------------------
 
 原則
 
@@ -181,7 +177,7 @@ VARCHAR和CHAR
 
 
 最佳化
-~~~~~~~~~~~~~
+------------------
 所有資料表最佳化
 
 .. code-block:: sql
@@ -205,7 +201,7 @@ s: silent mode (output only errors)
 .. note:: mysql要先停
 
 Tools
-~~~~~~~~~~
+--------------------
 
 `mysqlreport Documentation <http://hackmysql.com/mysqlreportdoc>`__::
 
@@ -222,8 +218,7 @@ Tools
 
 
 常用處理
-~~~~~~~~~~~~~~
-
+------------------
 
 第一次設定::
 
@@ -304,7 +299,7 @@ mysqldump 錯誤 (1044 Access denied when using LOCK TABLES):
 
 
 資料庫編碼
-~~~~~~~~~~~~~~~~
+-------------------
 
 列出MySQL各種編碼變數::
 
@@ -330,7 +325,7 @@ php的 ``mysql_query("SET NAMES UTF8");`` 相當於MySQL::
 
 
 command
-~~~~~~~~~~~~~~~~~
+----------------
 
 .. code-block:: sql
 
@@ -353,7 +348,7 @@ command
 
 
 Server Management
-~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 安裝, 以Debian為例::
 
@@ -423,7 +418,7 @@ path::
 
 
 Configuration
-~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 my.cnf選用(/usr/share/mysql/下)
 
@@ -468,8 +463,16 @@ my.cnf::
   ps ax -O vsz | grep mysqld # 看 vsz 佔了多少, 然後調整 innodb_buffer_pool_size
 
 
+  Engine
+--------------
+
+ - `MySQL 資料庫儲存引擎的選用 <http://blog.roga.tw/2008/11/19/1288>`__
+ - `MySQL各Engine Type(MyISAM / InnoDB / Memory) 的特性說明 <http://miggo.pixnet.net/blog/post/308147>`__
+ - `【問題】Mysql 中的 MyIsam 與 InnoDB 之差異 - 深藍學生論壇 <http://www.student.tw/db/showthread.php?t=174156>`__
+ - `mysql中char與varchar的區別 <http://www.systn.com/data/articles/304_tw.html>`__
+
 Q & A
-~~~~~~~~~~~~~
+-------------------
 
 error: MySQL server has gone away::
 
@@ -491,282 +494,6 @@ error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.
 
 
 others
-~~~~~~~~~~~~~~~~
+--------------------
 * `探討 MySQL 授權 | Ant's ATField <http://antbsd.twbbs.org/~ant/wordpress/?p=2259>`__
 
-
-PostgreSQL
----------------
-
-
-Install
-~~~~~~~~~~~
-
-mac php (with-postgresql), 為了用 adminer.php:
-
-* `Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
-* `How To Install and Use PostgreSQL 9.4 on Debian 8 | DigitalOcean <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-9-4-on-debian-8>`__
-
-.. code-block:: bash
-
-   ## package
-   # debian
-   $ apt-get install postgresql postgresql-client postgresql-server-dev-9.4 # or postgresql-server-dev-all
-
-   # OSX
-   $ brew install postgresql
-
-
-設定新密碼:
-
-.. code-block:: bash
-
-   $ sudo -u postgres psql postgres
-   postgres=# \password postgres
-
-
-以後要用 psql 時 (不用 sudo -u postgres), 要改:
-
-.. code-block::
-
-   $ sudo vim /etc/postgresql/9.x/main/pg_hba.conf
-   # 找到 local all postgres peer # 把 peer 改 md5
-   $ sudo service postgresql restart
-
-
-建立在當前使用者:
-
-.. code-block::
-
-   postgres=# CREATE DATABASE mydbname ;
-   postgres=# CREATE DATABASE mydbname  OWNER myusername ;
-   postgres=# GRANT ALL PRIVILEGES ON DATABASE mydbname to myusername ;
-   ALTER ROLE myusername WITH superuser;
-
-
-
-sequence 亂掉 (restore data 會發生) => duplicate key error...
-.. code-block::
-
-   SELECT setval('my_sequence_name', (SELECT max(id) FROM my_table));
-
-export table (data & schema):
-
-.. code-block::
-
-   pg_dump -U xxx public.TABLE_NAME DATABASE_NAME > out.sql
-   pg_dump -U xxx -d DB_NAME -t TABLE_NAME > out.sql
-
-
-
-
-
-
-
-Security
-~~~~~~~~~~~~~~~
-
- - `“FATAL: Ident authentication failed”, or how cool ideas get bad usage schemas – select * from depesz; <https://www.depesz.com/2007/10/04/ident/>`__
-
-command
-~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-   # dump
-   $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
-   $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql
-
-   ## import
-   $ psql -f backup.sql dbname dbuser
-
-   ## Debian Jessie
-   # first time
-   # createuser myuser
-
-   ## OSX
-   # first time
-   $ initdb /usr/local/var/postgres -E utf8
-   # service (daemon)
-   $ brew services start postgresql
-
-   ## export csv
-   $ psql -U user -d db_name -c "Copy (Select * From foo_table LIMIT 10) To STDOUT With CSV HEADER DELIMITER ',';" > foo_data.csv
-
-`PostgreSql - Debian Wiki <https://wiki.debian.org/PostgreSql#Installation>`__
-
-syntax::
-
-   # environment
-   $sudo -u postgres psql
-
-   # ALTER DATABASE name RENAME TO newname
-
-   # mysql: SHOW DATABASES
-   # pgres: \l
-   # mysql: SHOW TABLES
-   # pgres: \d
-   # mysql: USE mydbname
-   # pgres: \c  mydbname # \connect
-
-   # mysql: SHOW COLUMNS
-   # pgres: \d table
-
-   # mysql: DESCRIBE TABLE
-   # pgres: \d+ table ( \dt)
-
-   # exit: \q
-
-
-常用 SQL Syntax
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: sql
-
-   ALTER USER "user_name" WITH PASSWORD 'new_password';   # 改 user 密碼
-   ALTER DATABASE name RENAME TO new_name # 不能 connect 時改, 用 psql 不要加 -d
-
-
-Sqlite
-------------
-
-常用指令 ::
-
-  $ sqlite3 new.db # create db
-  $ sqlite3 myprecious.db ".dump" ＞ output.sql # dump sql
-  $ sqlite3 new.db ＜ output.sql # import
-  # or
-  $ cat dumpfile.sql | sqlite3 new.db
-
-進入sqlite3後::
-
-  .tables  # MySQL的show tables
-  .schema TABLENAME
-  .help
-  .quit
-
-
-dump to csv
-~~~~~~~~~~~~~~~~~~
-
-.. code-block::
-
-   sqlite> .headers on
-   sqlite> .mode csv
-   sqlite> .output data.csv
-   sqlite> SELECT customerid,
-      ...>        firstname,
-      ...>        lastname,
-      ...>        company
-      ...>   FROM customers;
-   sqlite> .quit
-
-.. code-block:: bash
-
-    $ sqlite3 -header -csv c:/sqlite/chinook.db "select * from tracks;" > tracks.csv
-    $ sqlite3 -header -csv c:/sqlite/chinook.db < query.sql > data.csv
-
-
-
-ref: `Export SQLite Database To a CSV File <http://www.sqlitetutorial.net/sqlite-tutorial/sqlite-export-csv/>`__
-
-ref
-
-* `Command Line Shell For SQLite <http://www.sqlite.org/sqlite.html>`__
-
-.. Comment
-   Engine
-   - [[http://blog.roga.tw/2008/11/19/1288][MySQL 資料庫儲存引擎的選用]]
-   - [[http://miggo.pixnet.net/blog/post/30855147][MySQL各Engine Type(MyISAM / InnoDB / Memory) 的特性說明]]
-   - [[http://www.student.tw/db/showthread.php?t=174156][【問題】Mysql 中的 MyIsam 與 InnoDB 之差異 - 深藍學生論壇]]
-   ** type
-   - [[http://www.systn.com/data/articles/304_tw.html][mysql中char與varchar的區別]]
-
-
-
-snippets
-~~~~~~~~~~~
-
-
-把 count, group by 起來的結果筆數全部加起來, 重點是 "as A" 要加
-
-.. code-block:: sql
-
-    SELECT SUM(cnt) FROM (SELECT COUNT(*) AS cnt
-    FROM taibif_col
-    GROUP BY genus) as A
-
-單字表沒有照abc排, 要照字母順序排序(num)
-
-.. code-block:: sql
-
-  SELECT *, (SELECT COUNT(*) FROM en_word AS t2 where LOWER(t2.word) <= LOWER(t1.word)) as NUM FROM en_word AS t1 WHERE t1.id = foo ORDER BY LOWER(word)
-
-一個裝置, 安裝了2個app以上的數量統計
-
-.. code-block:: sql
-
-  select count(*) as total, num as num_of_apps from (select count(*) as num, did from log_user_data group by (did) order by num desc) t where num > 1 group by num desc
-
-每個字母開頭的單字數量
-
-.. code-block:: sql
-
-  select count(*),lower(substr(english, 1, 1)) as c from words group by c
-
-
-
-比較
---------------------
-
-:MySQL: RAND()
-:Sqlite: RANDOM()
-
-MySQL有ROW_NUMBER(), Sqlite沒有, 只能用SQL語法的奇技淫巧來達成.
-
-
-DB 特性討論:
-
-* `Goodbye MongoDB, Hello PostgreSQL <http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/>`__
-
-MongoDB
--------------
-
-debian 版本比較舊, 預設 apt 跑不起來
-
-`Install MongoDB Community Edition on Debian — MongoDB Manual 3.6 <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>`__
-
-.. code-block:: bash
-
-  $ mongod --dbpath db
-  $ mongod --dbpath db --smallfiles
-  $ mongod --config /usr/local/etc/mongod.conf # macos
-
-**dump/import**
-
-.. code-block:: bash
-
-  $ mongodump # 預設存成 dump 資料夾
-  $ mondodump -h <host> -d <db_name> -c <collection_name> -o <output_path>
-  $ mongorestore # 預設讀取 dump 資料夾
-  $ mongorestore -d <db_name> --gzip <folder>
-  $ mongorestore -h <host> -d <db_name> -c <collection_name> <bson_file_path>
-
-
-params
-.. code-block::
-
-   -h：         host
-   -u：         user
-   -p：         password
-   --port：     port
-   -d：        database
-   -c：        collection
-   -o：        output (path)
-
-
-select fieldname has value
-
-.. code-block::
-
-   db.mycollection.find({ 'fieldname' : { $exists: true, $ne: null } });

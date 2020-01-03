@@ -1,0 +1,122 @@
+PostgreSQL
+===========================
+
+Install
+-------------------
+
+mac php (with-postgresql), 為了用 adminer.php:
+
+* `Install PostgreSQL PHP extensions on Mac OS X <https://gist.github.com/doole/8651341/59f9ccb85e3ae48861b4f892b342e08efff9236e/>`__
+* `How To Install and Use PostgreSQL 9.4 on Debian 8 | DigitalOcean <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-9-4-on-debian-8>`__
+
+.. code-block:: bash
+
+   ## package
+   # debian
+   $ apt-get install postgresql postgresql-client postgresql-server-dev-9.4 # or postgresql-server-dev-all
+
+   # OSX
+   $ brew install postgresql
+
+
+設定新密碼:
+
+.. code-block:: bash
+
+   $ sudo -u postgres psql postgres
+   postgres=# \password postgres
+
+
+以後要用 psql 時 (不用 sudo -u postgres), 要改:
+
+.. code-block::
+
+   $ sudo vim /etc/postgresql/9.x/main/pg_hba.conf
+   # 找到 local all postgres peer # 把 peer 改 md5
+   $ sudo service postgresql restart
+
+
+建立在當前使用者:
+
+.. code-block::
+
+   postgres=# CREATE DATABASE mydbname ;
+   postgres=# CREATE DATABASE mydbname  OWNER myusername ;
+   postgres=# GRANT ALL PRIVILEGES ON DATABASE mydbname to myusername ;
+   ALTER ROLE myusername WITH superuser;
+
+
+
+sequence 亂掉 (restore data 會發生) => duplicate key error...
+.. code-block::
+
+   SELECT setval('my_sequence_name', (SELECT max(id) FROM my_table));
+
+export table (data & schema):
+
+.. code-block::
+
+   pg_dump -U xxx public.TABLE_NAME DATABASE_NAME > out.sql
+   pg_dump -U xxx -d DB_NAME -t TABLE_NAME > out.sql
+
+
+.. code-block::
+
+    SELECT version();
+    show data_directory;
+
+
+
+Security
+------------------
+
+ - `“FATAL: Ident authentication failed”, or how cool ideas get bad usage schemas – select * from depesz; <https://www.depesz.com/2007/10/04/ident/>`__
+
+command
+-----------------
+
+.. code-block:: bash
+
+   # dump
+   $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
+   $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql
+
+   ## import
+   $ psql -f backup.sql dbname dbuser
+
+   ## Debian Jessie
+   # first time
+   # createuser myuser
+
+   ## OSX
+   # first time
+   $ initdb /usr/local/var/postgres -E utf8
+   # service (daemon)
+   $ brew services start postgresql
+
+   ## export csv
+   $ psql -U user -d db_name -c "Copy (Select * From foo_table LIMIT 10) To STDOUT With CSV HEADER DELIMITER ',';" > foo_data.csv
+
+`PostgreSql - Debian Wiki <https://wiki.debian.org/PostgreSql#Installation>`__
+
+syntax::
+
+   # environment
+   $sudo -u postgres psql
+
+   # ALTER DATABASE name RENAME TO newname
+
+   # mysql: SHOW DATABASES
+   # pgres: \l
+   # mysql: SHOW TABLES
+   # pgres: \d
+   # mysql: USE mydbname
+   # pgres: \c  mydbname # \connect
+
+   # mysql: SHOW COLUMNS
+   # pgres: \d table
+
+   # mysql: DESCRIBE TABLE
+   # pgres: \d+ table ( \dt)
+
+   # exit: \q
