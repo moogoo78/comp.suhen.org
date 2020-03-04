@@ -54,6 +54,6 @@ MooGoo's note about computer.
 
    database/database
    database/mysql
-   database/postgres
+   database/postgresql
    database/sqlite
    database/mongodb
