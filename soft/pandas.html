@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="問題解決" href="../qna.html" />
+    <link rel="prev" title="Excel" href="excel.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,7 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
@@ -101,7 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../python_frameworks.html">Python Web Frameworks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Software</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command 常用指令</a></li>
@@ -112,7 +113,18 @@
 <li class="toctree-l1"><a class="reference internal" href="pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
@@ -187,6 +199,44 @@
 </pre></div>
 </div>
 <p>ref: <a class="reference external" href="https://stackoverflow.com/questions/17071871/select-rows-from-a-dataframe-based-on-values-in-a-column-in-pandas">python - Select rows from a DataFrame based on values in a column in pandas - Stack Overflow</a></p>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## settings</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_column&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_seq_items&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;expand_frame_repr&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># SQL SELECT</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;num_yes&#39;</span><span class="p">,</span> <span class="s1">&#39;something1&#39;</span><span class="p">,</span> <span class="s1">&#39;something&#39;</span><span class="p">]]</span>
+<span class="c1"># SQL JOIN</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">thing1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">thing2</span><span class="p">)</span>
+<span class="c1"># SQL WHERE</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">]</span>
+<span class="c1"># SQL GROUP BY</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">,</span> <span class="n">num_yes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">))</span>
+<span class="c1"># SQL HAVING, filtering on the result of a GROUP BY</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">num_yes</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span>
+<span class="c1"># SQL ORDER BY and LIMIT</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;sometthing&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">)[:</span><span class="mi">30</span><span class="p">]</span>
+<span class="c1"># group &amp; count</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Foo&#39;</span><span class="p">])[</span><span class="s1">&#39;Foo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="c1"># select where</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">some_value</span><span class="p">]</span>
+
+<span class="c1"># nan fill with blank string</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># df = df.astype(str) # all data type to str</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -194,6 +244,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../qna.html" class="btn btn-neutral float-right" title="問題解決" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="excel.html" class="btn btn-neutral float-left" title="Excel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

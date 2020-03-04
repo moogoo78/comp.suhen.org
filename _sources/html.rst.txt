@@ -2,6 +2,18 @@ HTML
 =======
 
 
+Best Practice
+-------------------------
+
+`Why You Should Choose HTML5 <article> Over <section> — Smashing Magazine <https://www.smashingmagazine.com/2020/01/html5-article-section/>`__
+
+* Don’t use loads of <h1>s. Make <h1> the main heading of your page, then use <h2>, <h3>, <h4>, etc. in a proper hierarchy without skipping levels.
+* <section> can be used with aria-label to signal to a screen reader user where a particular sub-part of an article begins and ends. Otherwise, forget about it, or use another element, such as <aside aria-label=”quick summary”> or <div role=”region” aria-label=”quick summary”>.
+* <main>, <header>, <footer> and <nav> are very useful for screen reader users, and entirely transparent to those who don’t use assistive technology. So use them.
+* <article> isn’t just for blog posts — it’s for any self-contained thing. It also helps WatchOS display your content properly.
+
+
+
 HTML5
 ----------
 

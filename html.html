@@ -89,13 +89,13 @@
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">HTML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#best-practice">Best Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#html5">HTML5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#header">Header</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a></li>
@@ -120,7 +120,16 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
@@ -187,6 +196,16 @@
             
   <div class="section" id="html">
 <h1>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="best-practice">
+<h2>Best Practice<a class="headerlink" href="#best-practice" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.smashingmagazine.com/2020/01/html5-article-section/">Why You Should Choose HTML5 &lt;article&gt; Over &lt;section&gt; — Smashing Magazine</a></p>
+<ul class="simple">
+<li><p>Don’t use loads of &lt;h1&gt;s. Make &lt;h1&gt; the main heading of your page, then use &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, etc. in a proper hierarchy without skipping levels.</p></li>
+<li><p>&lt;section&gt; can be used with aria-label to signal to a screen reader user where a particular sub-part of an article begins and ends. Otherwise, forget about it, or use another element, such as &lt;aside aria-label=”quick summary”&gt; or &lt;div role=”region” aria-label=”quick summary”&gt;.</p></li>
+<li><p>&lt;main&gt;, &lt;header&gt;, &lt;footer&gt; and &lt;nav&gt; are very useful for screen reader users, and entirely transparent to those who don’t use assistive technology. So use them.</p></li>
+<li><p>&lt;article&gt; isn’t just for blog posts — it’s for any self-contained thing. It also helps WatchOS display your content properly.</p></li>
+</ul>
+</div>
 <div class="section" id="html5">
 <h2>HTML5<a class="headerlink" href="#html5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

@@ -224,6 +224,12 @@ $ sudo service postgresql restart
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">setval</span><span class="p">(</span><span class="s1">&#39;my_sequence_name&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">SELECT</span> <span class="nb">max</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">my_table</span><span class="p">));</span>
 </pre></div>
 </div>
+<p>truncate &amp; auto increment 從頭開始:
+加 RESTART IDENTITY 才能從頭開始</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TRUNCATE</span> <span class="n">table_name</span> <span class="n">RESTART</span> <span class="n">IDENTITY</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>或加 CASCADE</p>
 <p>export table (data &amp; schema):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pg_dump</span> <span class="o">-</span><span class="n">U</span> <span class="n">xxx</span> <span class="n">public</span><span class="o">.</span><span class="n">TABLE_NAME</span> <span class="n">DATABASE_NAME</span> <span class="o">&gt;</span> <span class="n">out</span><span class="o">.</span><span class="n">sql</span>
 <span class="n">pg_dump</span> <span class="o">-</span><span class="n">U</span> <span class="n">xxx</span> <span class="o">-</span><span class="n">d</span> <span class="n">DB_NAME</span> <span class="o">-</span><span class="n">t</span> <span class="n">TABLE_NAME</span> <span class="o">&gt;</span> <span class="n">out</span><span class="o">.</span><span class="n">sql</span>

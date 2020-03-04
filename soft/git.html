@@ -89,7 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
@@ -126,6 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git-clonebranch">git clone某一個branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-branch">commit 錯 branch</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">other</a></li>
@@ -140,7 +140,15 @@
 <li class="toctree-l1"><a class="reference internal" href="pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
@@ -543,6 +551,15 @@ git checkout <span class="o">{</span>second to last commit<span class="o">}</spa
 </div>
 <p>就會抓回到website這個branch，或是要直接拉下來看:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/</span><span class="n">experimental</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit-branch">
+<h3>commit 錯 branch<a class="headerlink" href="#commit-branch" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset --hard HEAD~1
+<span class="c1"># working dir 就會有 還沒 commit 前的狀態</span>
+git checkout b newbranch
+<span class="c1"># 重新 git add/commit 就好了</span>
 </pre></div>
 </div>
 </div>

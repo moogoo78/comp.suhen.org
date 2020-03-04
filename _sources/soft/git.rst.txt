@@ -347,7 +347,19 @@ git clone某一個branch
 
   git checkout remotes/origin/experimental
 
-  
+
+commit 錯 branch
+-----------------------
+
+.. code-block:: bash
+
+    git reset --hard HEAD~1
+    # working dir 就會有 還沒 commit 前的狀態
+    git checkout b newbranch
+    # 重新 git add/commit 就好了
+
+
+
 other
 ======
 * `寫給大家的 Git 教學 <http://www.slideshare.net/littlebtc/git-5528339>`__

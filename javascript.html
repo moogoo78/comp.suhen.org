@@ -89,7 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
@@ -134,7 +133,15 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
@@ -245,6 +252,10 @@ Block scope is within curly brackets.</p>
 <span class="c1">// objects in Javascript are not iterable unless they implement the iterable protocol</span>
 </pre></div>
 </div>
+<p>iterate over array 用 for … of 比 forEach 好</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/better-programming/stop-using-for-loops-to-iterate-over-arrays-5c46940e79d1">Stop Using For Loops to Iterate Over Arrays - Better Programming - Medium</a></p></li>
+</ul>
 <p>用 async / await 取代 then, then…:</p>
 <blockquote>
 <div><ul class="simple">
@@ -262,6 +273,7 @@ Block scope is within curly brackets.</p>
  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
 </pre></div>
 </div>
+<p>在 forEach 中用 await 會報錯, 改用 for-of (lint 不給過), 或是用 pormise.all(someArray.map(async (x) = {})) …</p>
 </div>
 <div class="section" id="id1">
 <h2>特色<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
