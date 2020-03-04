@@ -52,6 +52,12 @@ for ... in, for ... of | via: `When to use for..of loop instead of for..in - DEV
     // objects in Javascript are not iterable unless they implement the iterable protocol
 
 
+iterate over array 用 for ... of 比 forEach 好
+
+* `Stop Using For Loops to Iterate Over Arrays - Better Programming - Medium <https://medium.com/better-programming/stop-using-for-loops-to-iterate-over-arrays-5c46940e79d1>`__
+
+
+
 用 async / await 取代 then, then...:
 
   * `JavaScript Fetch API and using Async/Await | Fundamentals Of Code <https://fundamentalsofcode.com/javascript-fetch-api-and-using-async-await/>`__
@@ -68,6 +74,8 @@ for ... in, for ... of | via: `When to use for..of loop instead of for..in - DEV
     getUserAsync('yourUsernameHere')
      .then(data => console.log(data));
 
+
+在 forEach 中用 await 會報錯, 改用 for-of (lint 不給過), 或是用 pormise.all(someArray.map(async (x) = {})) ...
 
 特色
 --------------

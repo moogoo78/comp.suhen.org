@@ -52,6 +52,17 @@ sequence 亂掉 (restore data 會發生) => duplicate key error...
 
    SELECT setval('my_sequence_name', (SELECT max(id) FROM my_table));
 
+truncate & auto increment 從頭開始:
+加 RESTART IDENTITY 才能從頭開始
+
+.. code-block::
+
+   TRUNCATE table_name RESTART IDENTITY;
+
+
+或加 CASCADE
+
+
 export table (data & schema):
 
 .. code-block::
