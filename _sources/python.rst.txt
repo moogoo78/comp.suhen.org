@@ -5,6 +5,17 @@ Python
 Quick Start
 -------------------
 
+read csv:
+
+.. code-block:: python
+
+  with open('foo.csv', newline='\n') as csvfile:
+    spamreader = csv.reader(csvfile, delimiter=',')
+    for row in spamreader:
+        print(', '.join(row))
+
+
+
 path::
 
   (Mac)$ /Library/Python/2.7/site-packages

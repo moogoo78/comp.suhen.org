@@ -126,6 +126,13 @@ more
         
   $ find *.JPG -exec echo "\![](/images/nature/150214/{})" \; > out.txt
 
+
+算某目錄下的檔案數目
+
+.. code-block:: bash
+
+  $ find DIR_NAME -type f | wc -l
+
 把一天前更動的檔案搬到...::
 
 

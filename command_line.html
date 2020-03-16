@@ -89,7 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
@@ -137,7 +136,16 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
@@ -301,6 +309,10 @@ $ dosfslabel /dev/sdb1 &quot;NEWLABEL&quot;
 </dl>
 <p>把目錄下的檔案變成字串輸出 (jpg embedded markdown syntax):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ find *.JPG -exec echo &quot;\![](/images/nature/150214/{})&quot; \; &gt; out.txt
+</pre></div>
+</div>
+<p>算某目錄下的檔案數目</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find DIR_NAME -type f <span class="p">|</span> wc -l
 </pre></div>
 </div>
 <p>把一天前更動的檔案搬到…:</p>
