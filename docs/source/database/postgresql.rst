@@ -90,7 +90,7 @@ command
 
    # dump
    $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
-   $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql
+   $ # PGPASSWORD="mypassword" pg_dump -U myusername dbname 密碼 > output.sql$ pg_dump -U postgres -f /tmp/dump.sql.gz --compress=5 --no-owner dbname
 
    ## import
    $ psql -f backup.sql dbname dbuser
