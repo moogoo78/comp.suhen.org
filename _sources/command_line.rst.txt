@@ -260,6 +260,14 @@ bzip2 的壓縮率比較大, 運算時間長
 :-C: 顯示前後幾行
 :-v: --invert-match
 :-V: version
+:-e: regex (pattern)
+
+.. code-block:: bash
+
+    $ grep -r --include \*.html foo . # find foo only in html file
+    $ grep -v -e "bar" # exclude (failed)
+ 
+
 
 
 * `AWK 简明教程 | 酷壳 - CoolShell.cn <http://coolshell.cn/articles/9070.html>`__

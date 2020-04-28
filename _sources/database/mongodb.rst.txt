@@ -34,8 +34,58 @@ params
    -o：        output (path)
 
 
-select fieldname has value
+
+
+
+
+Snippets
+--------------
+
+select fieldname has value:
 
 .. code-block::
 
    db.mycollection.find({ 'fieldname' : { $exists: true, $ne: null } });
+
+
+
+aggregate/group/year-month:
+
+.. code-block::
+
+  db.getCollection('Annotations').aggregate( [
+  {
+    $project: {
+      year: {$year: "$createTime"},
+      month: {$month: "$createTime"},
+    },
+  },
+  {
+    $group: {
+      _id: {
+        year: '$year',
+        month: '$month',
+      },
+      year: { $first : "$year" },
+      month: {$first: "$month"},
+      count: {
+        $sum: 1
+      },
+    },
+  },
+  {
+    $sort: {
+      '_id.year': -1,
+      '_id.month': -1
+    }
+  },
+  ]);
+
+
+
+check last modified (orderBy):
+
+.. code-block::
+
+   db.getCollection('Annotations').find().sort({createTime: -1})
+

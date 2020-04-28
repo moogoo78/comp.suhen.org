@@ -32,19 +32,19 @@ snippets:
 
   def main(arg1):
       print arg1
-    
+
   if __name__ == '__main__':
       if len(sys.argv) > 1:
           main(sys.argv[1])
 
-  ## walk 
+  ## walk
   for root, dirs, files in os.walk(src):
       print root, dirs, files
 
   os.listdir()
-                
-                
-          
+
+
+
 struct dict:
 
 .. code-block:: python
@@ -351,6 +351,8 @@ exceptions and/or logging
 
 .. code-block:: python
 
+  import sys
+
   class SillyWalkMinistry(Exception):
       """ handle exception """
       pass
@@ -365,6 +367,9 @@ exceptions and/or logging
       raise SillyWalkMinistry(e)
 
 
+   # all exception
+   sys.exc_info()[0]
+   
 
 Profiling
 ---------------

@@ -440,7 +440,14 @@ $ bzip2 -d foo.bz2 # 把 foo.bz2 變 foo
 <dt class="field-odd">-V</dt>
 <dd class="field-odd"><p>version</p>
 </dd>
+<dt class="field-even">-e</dt>
+<dd class="field-even"><p>regex (pattern)</p>
+</dd>
 </dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -r --include <span class="se">\*</span>.html foo . <span class="c1"># find foo only in html file</span>
+$ grep -v -e <span class="s2">&quot;bar&quot;</span> <span class="c1"># exclude (failed)</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><a class="reference external" href="http://coolshell.cn/articles/9070.html">AWK 简明教程 | 酷壳 - CoolShell.cn</a></p></li>
 </ul>

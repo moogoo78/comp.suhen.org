@@ -119,8 +119,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQLite</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">MongoDB</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MongoDB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -213,9 +217,46 @@ $ mongorestore -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt
 -o：        output (path)
 </pre></div>
 </div>
-<p>select fieldname has value</p>
+<div class="section" id="snippets">
+<h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
+<p>select fieldname has value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>db.mycollection.find({ &#39;fieldname&#39; : { $exists: true, $ne: null } });
 </pre></div>
+</div>
+<p>aggregate/group/year-month:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>db.getCollection(&#39;Annotations&#39;).aggregate( [
+{
+  $project: {
+    year: {$year: &quot;$createTime&quot;},
+    month: {$month: &quot;$createTime&quot;},
+  },
+},
+{
+  $group: {
+    _id: {
+      year: &#39;$year&#39;,
+      month: &#39;$month&#39;,
+    },
+    year: { $first : &quot;$year&quot; },
+    month: {$first: &quot;$month&quot;},
+    count: {
+      $sum: 1
+    },
+  },
+},
+{
+  $sort: {
+    &#39;_id.year&#39;: -1,
+    &#39;_id.month&#39;: -1
+  }
+},
+]);
+</pre></div>
+</div>
+<p>check last modified (orderBy):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s1">&#39;Annotations&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span><span class="o">.</span><span class="n">sort</span><span class="p">({</span><span class="n">createTime</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -125,11 +125,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#commit-merge-commit">減少 commit(merge commit )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git-clonebranch">git clone某一個branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-format-patch-commit-diff">git format-patch  把修改紀錄依照 commit 分別作出 diff 來</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#commit-branch">commit 錯 branch</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">other</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting">setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command 常用指令</a></li>
@@ -147,6 +149,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/database.html">Database筆記</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/sqlite.html">SQLite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/mongodb.html">MongoDB</a></li>
 </ul>
@@ -524,6 +527,9 @@ git checkout <span class="o">{</span>second to last commit<span class="o">}</spa
 </div>
 <div class="section" id="tips">
 <h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1">🌳🚀 CS Visualized: Useful Git Commands - DEV Community 👩‍💻👨‍💻</a></p></li>
+</ul>
 <div class="section" id="commit-merge-commit">
 <h3>減少 commit(merge commit )<a class="headerlink" href="#commit-merge-commit" title="Permalink to this headline">¶</a></h3>
 <p>善用 git revert, git-bisect, git-rebase -i</p>
@@ -553,6 +559,12 @@ git checkout <span class="o">{</span>second to last commit<span class="o">}</spa
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/</span><span class="n">experimental</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="git-format-patch-commit-diff">
+<h3>git format-patch  把修改紀錄依照 commit 分別作出 diff 來<a class="headerlink" href="#git-format-patch-commit-diff" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>git format-patch [HASH] # 把從這個 [HASH] 之後 (不包括[HASH]) 的 commit 都分成一個個檔案的 patch</p>
+</div></blockquote>
 </div>
 <div class="section" id="commit-branch">
 <h3>commit 錯 branch<a class="headerlink" href="#commit-branch" title="Permalink to this headline">¶</a></h3>
@@ -584,6 +596,15 @@ git checkout b newbranch
 </pre></div>
 </div>
 <p><a class="reference external" href="http://git-scm.com/docs/git-config.html">git-config</a></p>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>casperdcl/git-fame: Pretty-print `git</cite> repository collaborators sorted by contributions. &lt;<a class="reference external" href="https://github.com/casperdcl/git-fame">https://github.com/casperdcl/git-fame</a>&gt;`__
+git-fame</p></li>
+<li><p><a class="reference external" href="https://github.com/arzzen/git-quick-stats">arzzen/git-quick-stats: ▁▅▆▃▅ Git quick statistics is a simple and efficient way to access various statistics in git repository.</a>
+git-quick-stats</p></li>
+</ul>
 </div>
 </div>
 
