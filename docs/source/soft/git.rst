@@ -312,6 +312,8 @@ repo
 Tips
 =====
 
+* `🌳🚀 CS Visualized: Useful Git Commands - DEV Community 👩‍💻👨‍💻 <https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1>`__
+
 減少 commit(merge commit )
 ----------------------------------
 
@@ -348,6 +350,13 @@ git clone某一個branch
   git checkout remotes/origin/experimental
 
 
+git format-patch  把修改紀錄依照 commit 分別作出 diff 來
+------------------------------------------------------------
+
+  git format-patch [HASH] # 把從這個 [HASH] 之後 (不包括[HASH]) 的 commit 都分成一個個檔案的 patch
+
+
+  
 commit 錯 branch
 -----------------------
 
@@ -380,3 +389,12 @@ Git 2.0 的push.default把預設的設定從 `matching` 改稱 `simple`, matchin
   git config --global push.default [matching|simple...]
 
 `git-config <http://git-scm.com/docs/git-config.html>`__
+
+
+Tools
+================
+
+- `casperdcl/git-fame: Pretty-print `git` repository collaborators sorted by contributions. <https://github.com/casperdcl/git-fame>`__
+  git-fame
+- `arzzen/git-quick-stats: ▁▅▆▃▅ Git quick statistics is a simple and efficient way to access various statistics in git repository. <https://github.com/arzzen/git-quick-stats>`__
+  git-quick-stats
