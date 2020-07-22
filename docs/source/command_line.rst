@@ -291,6 +291,7 @@ bzip2 的壓縮率比較大, 運算時間長
 
 rsync::
 
+  $ rsync --ignore-existing -avzh --delete --progress --filter='-p .DS_Store' source dest
   $ rsync -av /etc /tmp () # 將 /etc/ 的資料備份到 /tmp/etc 內(local)
   $ rsync -av --delete src tgt # 把 src 備份到 tgt (tgt 有, src 沒有的檔案會砍掉)
   $ rsync -avP # -P: --partial # (續傳, 中斷的下次再傳, --partial --progress) --progress (顯示進度)

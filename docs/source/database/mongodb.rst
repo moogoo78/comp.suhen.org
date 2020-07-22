@@ -35,6 +35,26 @@ params
 
 
 
+commands
+----------------------
+
+.. code-block::
+
+   # show all databases
+   show dbs
+
+   # use database
+   use myDatabase
+
+   # show all collections
+   show collections;
+
+   # create a collection
+   db.createCollection("myCollection");
+
+   # update a collection
+   # db.<collectionName>.save({"_id": new ObjectId("someObjectId", "field1": "value1", "field2": "value2")});
+   # 其他欄位沒有特別寫會被洗掉
 
 
 
