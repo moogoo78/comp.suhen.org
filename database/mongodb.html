@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQLite</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MongoDB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#commands">commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
 </ul>
 </li>
@@ -216,6 +217,26 @@ $ mongorestore -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt
 -c：        collection
 -o：        output (path)
 </pre></div>
+</div>
+<div class="section" id="commands">
+<h2>commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># show all databases</span>
+<span class="n">show</span> <span class="n">dbs</span>
+
+<span class="c1"># use database</span>
+<span class="n">use</span> <span class="n">myDatabase</span>
+
+<span class="c1"># show all collections</span>
+<span class="n">show</span> <span class="n">collections</span><span class="p">;</span>
+
+<span class="c1"># create a collection</span>
+<span class="n">db</span><span class="o">.</span><span class="n">createCollection</span><span class="p">(</span><span class="s2">&quot;myCollection&quot;</span><span class="p">);</span>
+
+<span class="c1"># update a collection</span>
+<span class="c1"># db.&lt;collectionName&gt;.save({&quot;_id&quot;: new ObjectId(&quot;someObjectId&quot;, &quot;field1&quot;: &quot;value1&quot;, &quot;field2&quot;: &quot;value2&quot;)});</span>
+<span class="c1"># 其他欄位沒有特別寫會被洗掉</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="snippets">
 <h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>

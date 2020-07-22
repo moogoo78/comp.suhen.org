@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MongoDB" href="mongodb.html" />
-    <link rel="prev" title="MySQL" href="mysql.html" /> 
+    <link rel="prev" title="PostgreSQL" href="postgresql.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -120,9 +120,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SQLite</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dump-to-csv">dump to csv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#import-from-csvv">import from csvv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-from-csv">import from csv</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mongodb.html">MongoDB</a></li>
@@ -200,6 +201,10 @@ $ sqlite3 new.db ＜ output.sql # import
 $ cat dumpfile.sql | sqlite3 new.db
 </pre></div>
 </div>
+<p>SQLite 沒有 truncate, 用 delete from</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table_name</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>進入sqlite3後:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">tables</span>  <span class="c1"># MySQL的show tables</span>
 <span class="o">.</span><span class="n">schema</span> <span class="n">TABLENAME</span>
@@ -221,8 +226,8 @@ $ cat dumpfile.sql | sqlite3 new.db
 </pre></div>
 </div>
 </div>
-<div class="section" id="import-from-csvv">
-<h2>import from csvv<a class="headerlink" href="#import-from-csvv" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="import-from-csv">
+<h2>import from csv<a class="headerlink" href="#import-from-csv" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">headers</span> <span class="n">on</span>
 <span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">mode</span> <span class="n">csv</span>
 <span class="n">sqlite</span><span class="o">&gt;</span> <span class="o">.</span><span class="kn">import</span> <span class="nn">data.csv</span> <span class="n">table_name</span>
@@ -251,7 +256,7 @@ $ sqlite3 -header -csv c:/sqlite/chinook.db &lt; query.sql &gt; data.csv
         <a href="mongodb.html" class="btn btn-neutral float-right" title="MongoDB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mysql.html" class="btn btn-neutral float-left" title="MySQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="postgresql.html" class="btn btn-neutral float-left" title="PostgreSQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

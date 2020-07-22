@@ -1,14 +1,22 @@
 SQLite
 ===============
 
+常用指令
 
-常用指令 ::
+.. code-block::
 
   $ sqlite3 new.db # create db
   $ sqlite3 myprecious.db ".dump" ＞ output.sql # dump sql
   $ sqlite3 new.db ＜ output.sql # import
   # or
   $ cat dumpfile.sql | sqlite3 new.db
+
+
+SQLite 沒有 truncate, 用 delete from
+
+.. code-block:: sql
+
+   DELETE FROM table_name;
 
 進入sqlite3後::
 
@@ -34,7 +42,7 @@ dump to csv
    sqlite> .quit
 
 
-import from csvv
+import from csv
 ------------------------
 
 .. code-block::
