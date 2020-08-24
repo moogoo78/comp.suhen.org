@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="比較" href="scripts_matrix.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CompDocs
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CompDocs
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -179,6 +181,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -217,7 +220,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Python</li>
     
@@ -246,7 +249,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
   <span class="n">spamreader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">spamreader</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>path:</p>
@@ -260,7 +263,7 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">arg1</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">arg1</span>
+    <span class="nb">print</span> <span class="n">arg1</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -268,7 +271,7 @@
 
 <span class="c1">## walk</span>
 <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span>
+    <span class="nb">print</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
 </pre></div>
@@ -311,7 +314,7 @@ dict_vec = {‘x’: 1, ‘y’: 0, ‘z’: 1}</p>
 .. code-block:: python</p>
 <blockquote>
 <div><p># (1, ‘The Three Little Pigs’, ‘三隻小豬’, 350, ‘這是有關於三隻…’, 28, 16000, ‘en’, 280, ‘’),
-m = re.match(r’((d+), ‘(.*)’, ‘(.*)’, (d+), ‘(.*)’, (d+), (d+), ‘(.*)’, (d+), ‘(.*)’)’, i)</p>
+m = re.match(r’((d+), '(.*)', '(.*)', (d+), '(.*)', (d+), (d+), '(.*)', (d+), '(.*)')’, i)</p>
 </div></blockquote>
 <ul class="simple">
 <li><p><a class="reference external" href="http://docs.python.org/2/library/re.html#search-vs-match">7.2. re — Regular expression operations — Python v2.7.6 documentation</a></p></li>
@@ -442,7 +445,7 @@ m = re.match(r’((d+), ‘(.*)’, ‘(.*)’, (d+), ‘(.*)’, (d+), (d+), �
 <div class="section" id="json">
 <h3>json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># obj to json string (serialize)</span>
-<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="s1">&#39;bar&#39;</span><span class="p">},</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="c1"># ensure_ascii = False (Default: True), 中文不會變成 u\xxxx 的 unicode 格式</span>
+<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="s1">&#39;bar&#39;</span><span class="p">},</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># ensure_ascii = False (Default: True), 中文不會變成 u\xxxx 的 unicode 格式</span>
 
 <span class="c1"># obj to json fp</span>
 <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="s1">&#39;bar&#39;</span><span class="p">},</span> <span class="n">fp</span><span class="p">)</span>
@@ -476,7 +479,7 @@ m = re.match(r’((d+), ‘(.*)’, ‘(.*)’, (d+), ‘(.*)’, (d+), (d+), �
         <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span> <span class="c1"># 70 %</span>
         <span class="n">a</span><span class="o">+=</span> <span class="mi">1</span>
-<span class="k">print</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">,</span> <span class="n">c</span><span class="o">/</span><span class="mf">10000.0</span>
+<span class="nb">print</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">,</span> <span class="n">c</span><span class="o">/</span><span class="mf">10000.0</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 交集</span>
@@ -594,7 +597,7 @@ m = re.match(r’((d+), ‘(.*)’, ‘(.*)’, (d+), ‘(.*)’, (d+), (d+), �
 <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM book&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
-    <span class="k">print</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
 
@@ -623,7 +626,7 @@ $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
 <p>比較新, 功能強</p>
 <p>檔名要 .xlsx, 不然認定格式不合</p>
 <p>openpyxl:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openpyxl</span> <span class="k">import</span> <span class="n">load_workbook</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">load_workbook</span>
 <span class="n">wb</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;large_file.xlsx&#39;</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sheet_name</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">get_sheet_names</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 預設第一個 sheet</span>
 <span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[</span><span class="n">sheet_name</span><span class="p">]</span>
@@ -767,7 +770,7 @@ $ brew link jpeg --overwrite jpeg # 可能之前有舊的東西
 <li><p><a class="reference external" href="http://docs.python-guide.org/en/latest/writing/style/">Code Style — The Hitchhiker’s Guide to Python</a></p></li>
 </ul>
 <p>Comments (google style):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fetch_bigtable_rows</span><span class="p">(</span><span class="n">big_table</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">other_silly_variable</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fetch_bigtable_rows</span><span class="p">(</span><span class="n">big_table</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">other_silly_variable</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Fetches rows from a Bigtable.</span>
 
 <span class="sd">    Retrieves rows pertaining to the given keys from the Table instance</span>
@@ -868,7 +871,7 @@ mirrors =
 <span class="k">def</span> <span class="nf">logged</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">with_logging</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot; was called&quot;</span>
+        <span class="nb">print</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot; was called&quot;</span>
         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">with_logging</span>
 
@@ -877,16 +880,16 @@ mirrors =
    <span class="sd">&quot;&quot;&quot;does some math&quot;&quot;&quot;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="k">print</span> <span class="n">f</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># prints &#39;f&#39;, 沒wraps -&gt; with_logging</span>
-<span class="k">print</span> <span class="n">f</span><span class="o">.</span><span class="vm">__doc__</span>   <span class="c1"># prints &#39;does some math&#39; 沒wraps -&gt; None</span>
+<span class="nb">print</span> <span class="n">f</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># prints &#39;f&#39;, 沒wraps -&gt; with_logging</span>
+<span class="nb">print</span> <span class="n">f</span><span class="o">.</span><span class="vm">__doc__</span>   <span class="c1"># prints &#39;does some math&#39; 沒wraps -&gt; None</span>
 
-<span class="k">print</span> <span class="s1">&#39;-----&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;-----&#39;</span>
 
 <span class="k">def</span> <span class="nf">logged_param</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">with_logging</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
         <span class="c1">#@wraps(func)</span>
         <span class="k">def</span> <span class="nf">log_p</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="k">print</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot; was called, &quot;</span><span class="p">,</span> <span class="n">param</span>
+            <span class="nb">print</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot; was called, &quot;</span><span class="p">,</span> <span class="n">param</span>
             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">log_p</span>
     <span class="k">return</span> <span class="n">with_logging</span>
@@ -896,18 +899,18 @@ mirrors =
    <span class="sd">&quot;&quot;&quot;does some math2&quot;&quot;&quot;</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="k">print</span> <span class="n">f2</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># prints &#39;f&#39;</span>
-<span class="k">print</span> <span class="n">f2</span><span class="o">.</span><span class="vm">__doc__</span>   <span class="c1"># prints &#39;does some math&#39;</span>
-<span class="k">print</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">f2</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># prints &#39;f&#39;</span>
+<span class="nb">print</span> <span class="n">f2</span><span class="o">.</span><span class="vm">__doc__</span>   <span class="c1"># prints &#39;does some math&#39;</span>
+<span class="nb">print</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nd">@logged_param</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; math3 &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="k">print</span> <span class="n">f3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">f3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>另一例:</p>
@@ -915,13 +918,13 @@ mirrors =
 
 <span class="c1"># Imperative Programming</span>
 <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">topic</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s2">&quot;My speach is &quot;</span> <span class="o">+</span> <span class="n">topic</span>
+    <span class="nb">print</span> <span class="s2">&quot;My speach is &quot;</span> <span class="o">+</span> <span class="n">topic</span>
 
 <span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
         <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s2">&quot;took {time}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="s2">&quot;took </span><span class="si">{time}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">inner</span>
 
@@ -931,7 +934,7 @@ mirrors =
 <span class="c1"># Decorator (Functional Programming)</span>
 <span class="nd">@timer</span>
 <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">topic</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s2">&quot;My speach is &quot;</span> <span class="o">+</span> <span class="n">topic</span>
+    <span class="nb">print</span> <span class="s2">&quot;My speach is &quot;</span> <span class="o">+</span> <span class="n">topic</span>
 
 <span class="n">speak</span><span class="p">(</span><span class="s2">&quot;FP with Python&quot;</span><span class="p">)</span>
 
@@ -1014,11 +1017,19 @@ $ pyenv <span class="nb">local</span> <span class="m">2</span>.7.15
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2015, Suhen
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1029,7 +1040,6 @@ $ pyenv <span class="nb">local</span> <span class="m">2</span>.7.15
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

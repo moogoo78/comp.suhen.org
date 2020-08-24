@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GIT" href="git.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CompDocs
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CompDocs
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,7 +91,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
@@ -149,12 +150,23 @@
 <li class="toctree-l1"><a class="reference internal" href="vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -193,7 +205,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Emacs</li>
     
@@ -264,7 +276,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 <div class="section" id="id3">
 <h3>檔案<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Visiting.html</a></p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
 <col style="width: 82%" />
@@ -284,7 +296,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 </div>
 <div class="section" id="movement">
 <h3>移動 Movement<a class="headerlink" href="#movement" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
 <col style="width: 82%" />
@@ -309,7 +321,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 </div>
 <div class="section" id="editing">
 <h3>編輯 Editing<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 40%" />
 <col style="width: 60%" />
@@ -353,7 +365,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 </div>
 <div class="section" id="register-and-bookmark">
 <h3>Register and Bookmark<a class="headerlink" href="#register-and-bookmark" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 85%" />
@@ -395,7 +407,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 </div>
 <div class="section" id="coding">
 <h3>Coding<a class="headerlink" href="#coding" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 52%" />
 <col style="width: 48%" />
@@ -497,7 +509,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 </div>
 <div class="section" id="help">
 <h3>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 75%" />
@@ -529,7 +541,7 @@ M-x replace-regexp RET $ RET &quot;, RET ;; 結尾加&quot;
 </div>
 <div class="section" id="shell">
 <h3>shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 87%" />
@@ -595,7 +607,7 @@ M-x describe-font 看現在用的字形</p>
 <div class="section" id="dired">
 <h3>Dired<a class="headerlink" href="#dired" title="Permalink to this headline">¶</a></h3>
 <p>M-x dired</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 87%" />
@@ -661,7 +673,7 @@ M-x describe-font 看現在用的字形</p>
 <div class="section" id="id4">
 <h3>批次改檔名<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>在Dired模式下，<strong>C-x C-q</strong> 進入修改模式，或是執行 <strong>wdired-change-to-wdired-mode</strong>, 這時改檔名就像改一般文字檔一樣，可以用 <em>query-replace</em>, <em>query-replace-regexp</em> 或 <em>cua-mode</em> , 改完後 <strong>C-c C-c</strong> 送出, 或是 <strong>C-c C-Esc</strong> 取消就可以了,  比寫script直覺多了。</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 26%" />
 <col style="width: 74%" />
@@ -705,7 +717,7 @@ $ make
 </pre></div>
 </div>
 <p>移動</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 27%" />
 <col style="width: 73%" />
@@ -731,7 +743,7 @@ $ make
 <div class="section" id="calc">
 <h3>Calc<a class="headerlink" href="#calc" title="Permalink to this headline">¶</a></h3>
 <p>M-x calc</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
 <col style="width: 64%" />
@@ -793,7 +805,7 @@ $ make
 </div>
 <div class="section" id="html">
 <h3>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 16%" />
 <col style="width: 84%" />
@@ -855,7 +867,7 @@ $ make
 </div>
 <div class="section" id="graphviz-dot">
 <h3>Graphviz (dot)<a class="headerlink" href="#graphviz-dot" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 16%" />
 <col style="width: 84%" />
@@ -882,7 +894,7 @@ $ make
 <div class="section" id="id5">
 <h2>其他 modes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Version Control:</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 22%" />
 <col style="width: 78%" />
@@ -900,7 +912,7 @@ $ make
 <div class="section" id="deft">
 <h2>deft<a class="headerlink" href="#deft" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://jblevins.org/projects/deft/">Deft</a>-</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 32%" />
 <col style="width: 68%" />
@@ -996,11 +1008,19 @@ $ make
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2015, Suhen
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1011,7 +1031,6 @@ $ make
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

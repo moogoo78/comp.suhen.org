@@ -39,6 +39,10 @@ Remote branch::
   $ git checkout remote_branch_name
   $ git push origin --delete <remote_branch_name>
 
+  # push to remote branch
+  $ git push origin local_branch_name:remote_branch_name
+
+
 Basic
 =====
 **Tree Roles**

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Emacs" href="soft/emacs.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CompDocs
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CompDocs
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,7 +91,6 @@
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database筆記 (MySQL, PostgreSQL, SQLite, MongoDB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
@@ -130,12 +131,23 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/vagrant_and_docker.html">Vagrant, Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/pelican.html">Pelican</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database/database.html">Database筆記</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/sqlite.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mongodb.html">MongoDB</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -174,7 +186,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Python Web Frameworks</li>
     
@@ -284,7 +296,7 @@
 </div>
 <p>get request IP:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HTTP_X_FORWARDED_FOR&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HTTP_X_FORWARDED_FOR&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">#print(request.environ[&#39;REMOTE_ADDR&#39;])</span>
     <span class="n">ip</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HTTP_X_REAL_IP&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -295,13 +307,13 @@
 </div>
 <div class="section" id="jinja2">
 <h2>Jinja2<a class="headerlink" href="#jinja2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="bp">None</span><span class="p">)::</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="kc">None</span><span class="p">)::</span>
 
 <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="o">|</span><span class="n">sort</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
   <span class="o">...</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
 
-<span class="n">dictsort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)::</span>
+<span class="n">dictsort</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)::</span>
 
 <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mydict</span><span class="o">|</span><span class="n">dictsort</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
     <span class="n">sort</span> <span class="n">the</span> <span class="nb">dict</span> <span class="n">by</span> <span class="n">key</span><span class="p">,</span> <span class="n">case</span> <span class="n">insensitive</span><span class="p">,</span> <span class="nb">sorted</span>
@@ -315,8 +327,8 @@
 <div class="section" id="id1">
 <h3>Snippets<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>import:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="k">import</span> <span class="n">BaseQuery</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="k">import</span> <span class="n">func</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">BaseQuery</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">func</span>
 </pre></div>
 </div>
 <p>Scheme:</p>
@@ -361,7 +373,7 @@
 </pre></div>
 </div>
 <p>rand:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="k">import</span> <span class="n">func</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">func</span>
 
 <span class="n">query</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">rand</span><span class="p">())</span>
 </pre></div>
@@ -382,7 +394,7 @@
 </pre></div>
 </div>
 <p>distinct:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="k">import</span> <span class="n">distinct</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">distinct</span>
 <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">distinct</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -411,7 +423,7 @@ WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
 </pre></div>
 </div>
 <p>join, or:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="k">import</span> <span class="n">or_</span><span class="p">,</span> <span class="n">and_</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">or_</span><span class="p">,</span> <span class="n">and_</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;brand&#39;</span><span class="p">)</span><span class="o">.</span>\
     <span class="nb">filter</span><span class="p">(</span><span class="n">or_</span><span class="p">(</span><span class="n">Product</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">),</span>
                <span class="n">Brand</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)))</span><span class="o">.</span>\
@@ -429,7 +441,7 @@ WHERE `email` != &#39;\&quot;\&quot;&#39; and log_user_data.app_id in (156,157)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># database level</span>
 <span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;category.id&#39;</span><span class="p">,</span> <span class="n">ondelete</span><span class="o">=</span><span class="s1">&#39;SET NULL&#39;</span><span class="p">)</span>
 <span class="c1"># pythen level</span>
-<span class="n">relationship</span><span class="p">(</span><span class="n">passive_deletes</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">relationship</span><span class="p">(</span><span class="n">passive_deletes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>relationship, associate</p>
@@ -490,7 +502,7 @@ $ python manage.py startapp myapp
 </div>
 <p>check version:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">django</span>
-<span class="k">print</span> <span class="n">django</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+<span class="nb">print</span> <span class="n">django</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -520,11 +532,19 @@ $ python manage.py startapp myapp
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2015, Suhen
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -535,7 +555,6 @@ $ python manage.py startapp myapp
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
