@@ -349,6 +349,11 @@ done
 </pre></div>
 </div>
 <p><strong>找檔案</strong></p>
+<p>複製某時間產生/修改的檔案</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find -type f -newerct <span class="m">2020</span>-01-01 <span class="c1"># find file&#39;s create time order then 2020-01-01</span>
+find -type d -not -newermt <span class="m">2020</span>-01-01 -exec -r <span class="s2">&quot;{}&quot;</span> &lt;SOMEWHERE&gt; <span class="se">\;</span> <span class="c1"># find directory&#39;s modified time less than 2020-01-01 and copy to &lt;SOMEWHERE&gt;</span>
+</pre></div>
+</div>
 <p>找目錄名稱:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ find / -type d -name &quot;dir_name&quot;
 </pre></div>
