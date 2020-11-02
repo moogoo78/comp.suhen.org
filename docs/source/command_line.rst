@@ -176,6 +176,14 @@ for loop::
 **找檔案**
 
 
+複製某時間產生/修改的檔案
+
+.. code-block:: bash
+
+  find -type f -newerct 2020-01-01 # find file's create time order then 2020-01-01
+  find -type d -not -newermt 2020-01-01 -exec -r "{}" <SOMEWHERE> \; # find directory's modified time less than 2020-01-01 and copy to <SOMEWHERE>
+
+
 找目錄名稱::
 
   $ find / -type d -name "dir_name"
