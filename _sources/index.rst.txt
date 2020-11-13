@@ -46,6 +46,7 @@ MooGoo's note about computer.
    soft/tmux
    soft/excel
    soft/pandas
+   windows-wsl
    qna
 
 .. toctree::

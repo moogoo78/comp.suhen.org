@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Design &mdash; CompDocs 1.0 documentation</title>
+  <title>Windows WSL &mdash; CompDocs 1.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="JavaScript" href="javascript.html" />
-    <link rel="prev" title="Web DevOops" href="web_devoops.html" /> 
+    <link rel="next" title="問題解決" href="qna.html" />
+    <link rel="prev" title="Pandas" href="soft/pandas.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,11 +87,11 @@
             
             
               <p class="caption"><span class="caption-text">Development</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming 程式開發</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_develop.html">Web Develop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_devoops.html">Web DevOops</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Programming Language</span></p>
 <ul>
@@ -104,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_frameworks.html">Python Web Frameworks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Software</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="soft/emacs.html">Emacs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/git.html">GIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command 常用指令</a></li>
@@ -116,7 +116,10 @@
 <li class="toctree-l1"><a class="reference internal" href="soft/tmux.html">tmux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/excel.html">Excel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/pandas.html">Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="windows-wsl.html">Windows WSL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Windows WSL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mount-external-disk">mount external disk</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="qna.html">問題解決</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Database</span></p>
@@ -172,13 +175,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Design</li>
+      <li>Windows WSL</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/design.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/windows-wsl.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -191,11 +194,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="design">
-<h1>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference external" href="http://ethanhuangstudio.com/?p=15">UI/WEB DESIGNER需要了解的DPI/PPI指南 | My Blog</a></p></li>
-</ul>
+  <div class="section" id="windows-wsl">
+<h1>Windows WSL<a class="headerlink" href="#windows-wsl" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mount-external-disk">
+<h2>mount external disk<a class="headerlink" href="#mount-external-disk" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo mkdir /mnt/d
+$ sudo mount -t drvfs D: /mnt/d
+
+$ sudo umount /mnt/d
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -206,10 +215,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="javascript.html" class="btn btn-neutral float-right" title="JavaScript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="qna.html" class="btn btn-neutral float-right" title="問題解決" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="web_devoops.html" class="btn btn-neutral float-left" title="Web DevOops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="soft/pandas.html" class="btn btn-neutral float-left" title="Pandas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
