@@ -11,7 +11,7 @@ debian 版本比較舊, 預設 apt 跑不起來
   $ mongod --dbpath db --smallfiles
   $ mongod --config /usr/local/etc/mongod.conf # macos
 
-**dump/import**
+**dump/export/import**
 
 .. code-block:: bash
 
@@ -20,7 +20,10 @@ debian 版本比較舊, 預設 apt 跑不起來
   $ mongorestore # 預設讀取 dump 資料夾
   $ mongorestore -d <db_name> --gzip <folder>
   $ mongorestore -h <host> -d <db_name> -c <collection_name> <bson_file_path>
-
+  # export
+  $ mongoexport -d <db_name> -c <collection_name> -q '{"foo":"bar"}' -o <out.json>
+  # import
+  $ mongoimport -d <db_name> -c <collection_name> <out.json>
 
 params
 .. code-block::

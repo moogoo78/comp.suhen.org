@@ -203,12 +203,16 @@ $ mongod --dbpath db --smallfiles
 $ mongod --config /usr/local/etc/mongod.conf <span class="c1"># macos</span>
 </pre></div>
 </div>
-<p><strong>dump/import</strong></p>
+<p><strong>dump/export/import</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mongodump <span class="c1"># 預設存成 dump 資料夾</span>
 $ mondodump -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; -o &lt;output_path&gt;
 $ mongorestore <span class="c1"># 預設讀取 dump 資料夾</span>
 $ mongorestore -d &lt;db_name&gt; --gzip &lt;folder&gt;
 $ mongorestore -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;bson_file_path&gt;
+<span class="c1"># export</span>
+$ mongoexport -d &lt;db_name&gt; -c &lt;collection_name&gt; -q <span class="s1">&#39;{&quot;foo&quot;:&quot;bar&quot;}&#39;</span> -o &lt;out.json&gt;
+<span class="c1"># import</span>
+$ mongoimport -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;out.json&gt;
 </pre></div>
 </div>
 <p>params
