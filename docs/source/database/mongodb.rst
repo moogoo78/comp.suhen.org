@@ -22,10 +22,12 @@ debian 版本比較舊, 預設 apt 跑不起來
   $ mongorestore -h <host> -d <db_name> -c <collection_name> <bson_file_path>
   # export
   $ mongoexport -d <db_name> -c <collection_name> -q '{"foo":"bar"}' -o <out.json>
+  $ mongoexport -d <db_name> -c <collection_name> -q '{"_id":{"$oid":"some_object_id"}}' -o <out.json>
   # import
   $ mongoimport -d <db_name> -c <collection_name> <out.json>
 
 params
+
 .. code-block::
 
    -h：         host
