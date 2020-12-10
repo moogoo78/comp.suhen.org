@@ -211,12 +211,12 @@ $ mongorestore -d &lt;db_name&gt; --gzip &lt;folder&gt;
 $ mongorestore -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;bson_file_path&gt;
 <span class="c1"># export</span>
 $ mongoexport -d &lt;db_name&gt; -c &lt;collection_name&gt; -q <span class="s1">&#39;{&quot;foo&quot;:&quot;bar&quot;}&#39;</span> -o &lt;out.json&gt;
+$ mongoexport -d &lt;db_name&gt; -c &lt;collection_name&gt; -q <span class="s1">&#39;{&quot;_id&quot;:{&quot;$oid&quot;:&quot;some_object_id&quot;}}&#39;</span> -o &lt;out.json&gt;
 <span class="c1"># import</span>
 $ mongoimport -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;out.json&gt;
 </pre></div>
 </div>
-<p>params
-.. code-block:</p>
+<p>params</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-h：         host
 -u：         user
 -p：         password
