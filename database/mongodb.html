@@ -125,6 +125,10 @@
 <li class="toctree-l1"><a class="reference internal" href="postgresql.html">PostgreSQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQLite</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MongoDB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#debian">debian</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#commands">commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
 </ul>
@@ -196,6 +200,10 @@
             
   <div class="section" id="mongodb">
 <h1>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="debian">
+<h3>debian<a class="headerlink" href="#debian" title="Permalink to this headline">¶</a></h3>
 <p>debian 版本比較舊, 預設 apt 跑不起來</p>
 <p><a class="reference external" href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/">Install MongoDB Community Edition on Debian — MongoDB Manual 3.6</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mongod --dbpath db
@@ -203,6 +211,15 @@ $ mongod --dbpath db --smallfiles
 $ mongod --config /usr/local/etc/mongod.conf <span class="c1"># macos</span>
 </pre></div>
 </div>
+<p>error message: Unrecognized field ‘snapshot’</p>
+<p>solution =&gt; docker</p>
+<p>clients only:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>buster (10): mongo-tools</p></li>
+<li><p>jessie (8): mongo-clients</p></li>
+</ul>
+</div></blockquote>
 <p><strong>dump/export/import</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mongodump <span class="c1"># 預設存成 dump 資料夾</span>
 $ mondodump -h &lt;host&gt; -d &lt;db_name&gt; -c &lt;collection_name&gt; -o &lt;output_path&gt;
@@ -225,6 +242,8 @@ $ mongoimport -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;out.json&gt;
 -c：        collection
 -o：        output (path)
 </pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="commands">
 <h2>commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
