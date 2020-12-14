@@ -1,6 +1,12 @@
 MongoDB
 ==============
 
+Installation
+-------------------
+
+debian
+~~~~~~~
+
 debian 版本比較舊, 預設 apt 跑不起來
 
 `Install MongoDB Community Edition on Debian — MongoDB Manual 3.6 <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>`__
@@ -11,6 +17,17 @@ debian 版本比較舊, 預設 apt 跑不起來
   $ mongod --dbpath db --smallfiles
   $ mongod --config /usr/local/etc/mongod.conf # macos
 
+
+error message: Unrecognized field 'snapshot'
+
+solution => docker
+
+clients only:
+
+  - buster (10): mongo-tools
+  - jessie (8): mongo-clients
+
+  
 **dump/export/import**
 
 .. code-block:: bash
@@ -113,4 +130,6 @@ check last modified (orderBy):
 .. code-block::
 
    db.getCollection('Annotations').find().sort({createTime: -1})
+
+
 
