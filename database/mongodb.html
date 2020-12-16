@@ -271,6 +271,14 @@ $ mongoimport -d &lt;db_name&gt; -c &lt;collection_name&gt; &lt;out.json&gt;
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>db.mycollection.find({ &#39;fieldname&#39; : { $exists: true, $ne: null } });
 </pre></div>
 </div>
+<p>group, sum:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>db.&lt;CollectionName&gt;.aggregate([{$group:{_id: &quot;$importNote&quot;, amt:{$sum: 1}}}])
+
+# {&quot;_id&quot;: &quot;foo&quot;, &quot;amt&quot;: 100 }
+# {&quot;_id&quot;: &quot;bar&quot;, &quot;amt&quot;: 300 }
+# {&quot;_id&quot;: &quot;baz&quot;, &quot;amt&quot;: 200 }
+</pre></div>
+</div>
 <p>aggregate/group/year-month:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>db.getCollection(&#39;Annotations&#39;).aggregate( [
 {

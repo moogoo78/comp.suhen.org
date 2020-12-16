@@ -91,6 +91,17 @@ select fieldname has value:
 
 
 
+group, sum:
+
+.. code-block::
+
+   db.<CollectionName>.aggregate([{$group:{_id: "$importNote", amt:{$sum: 1}}}])
+
+   # {"_id": "foo", "amt": 100 }
+   # {"_id": "bar", "amt": 300 }
+   # {"_id": "baz", "amt": 200 }
+
+
 aggregate/group/year-month:
 
 .. code-block::
