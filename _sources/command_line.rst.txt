@@ -282,6 +282,24 @@ bzip2 的壓縮率比較大, 運算時間長
 
 
 
+user account
+------------------
+
+.. code-block:: bash
+
+   $ w # user currently on the machine and thier process
+   $ who # who currently logged in
+   $ users # users,  It reads all information from /var/run/utmp file.
+   $ last {username}
+
+   $ w -i # display IP
+   $ who -u # display PID
+   # check utmp, wtmp man
+
+   $ kill -HUP {pid}
+
+- `UNIX / Linux List Current Logged In Users - nixCraft <https://www.cyberciti.biz/faq/unix-linux-list-current-logged-in-users/>`__
+
 網路
 ----------------
 ::

@@ -115,6 +115,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#compress-depress">壓縮/解壓縮 compress/depress</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#user-account">user account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">網路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#service">Service</a><ul>
@@ -461,6 +462,24 @@ $ grep -v -e <span class="s2">&quot;bar&quot;</span> <span class="c1"># exclude 
 <li><p><a class="reference external" href="http://coolshell.cn/articles/9070.html">AWK 简明教程 | 酷壳 - CoolShell.cn</a></p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="user-account">
+<h2>user account<a class="headerlink" href="#user-account" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ w <span class="c1"># user currently on the machine and thier process</span>
+$ who <span class="c1"># who currently logged in</span>
+$ users <span class="c1"># users,  It reads all information from /var/run/utmp file.</span>
+$ last <span class="o">{</span>username<span class="o">}</span>
+
+$ w -i <span class="c1"># display IP</span>
+$ who -u <span class="c1"># display PID</span>
+<span class="c1"># check utmp, wtmp man</span>
+
+$ <span class="nb">kill</span> -HUP <span class="o">{</span>pid<span class="o">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cyberciti.biz/faq/unix-linux-list-current-logged-in-users/">UNIX / Linux List Current Logged In Users - nixCraft</a></p></li>
+</ul>
 </div>
 <div class="section" id="id2">
 <h2>網路<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
