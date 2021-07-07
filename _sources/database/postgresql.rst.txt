@@ -84,7 +84,7 @@ restart postgres (not "service")
 commands
 ------------------
 
-::
+.. code-block:: text
 
    # ALTER DATABASE name RENAME TO newname
 
