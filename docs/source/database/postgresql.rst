@@ -46,7 +46,7 @@ truncate & auto increment 從頭開始:
 
 Slow Query
 ---------------
-
+3
 .. code-block:: text
 
    # 1. find config file
@@ -83,6 +83,8 @@ restart postgres (not "service")
 
 commands
 ------------------
+
+::
 
    # ALTER DATABASE name RENAME TO newname
 
