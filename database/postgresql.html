@@ -246,16 +246,14 @@ $ psql -U user -d db_name -c <span class="s2">&quot;Copy (Select * From foo_tabl
 </div>
 <div class="section" id="slow-query">
 <h3>Slow Query<a class="headerlink" href="#slow-query" title="Permalink to this headline">¶</a></h3>
-<p>3
-.. code-block:: bash</p>
-<blockquote>
-<div><p># 1. find config file
-$ psql -U postgres -c ‘SHOW config_file’
-# 2. edit conf
-# default
-#log_min_duration_statement = -1
-log_min_duration_statement = 1000 # (log all queries executing more than 1 second)</p>
-</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. find config file</span>
+$ psql -U postgres -c <span class="s1">&#39;SHOW config_file&#39;</span>
+<span class="c1"># 2. edit conf</span>
+<span class="c1"># default</span>
+<span class="c1">#log_min_duration_statement = -1</span>
+<span class="nv">log_min_duration_statement</span> <span class="o">=</span> <span class="m">1000</span> <span class="c1"># (log all queries executing more than 1 second)</span>
+</pre></div>
+</div>
 <p>可能的 log paths:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pgsql</span><span class="o">/</span><span class="n">PG_VERSION</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">log</span><span class="o">/</span>
 <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">postgresql</span><span class="o">/</span>
