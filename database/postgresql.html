@@ -246,14 +246,16 @@ $ psql -U user -d db_name -c &quot;Copy (Select * From foo_table LIMIT 10) To ST
 </div>
 <div class="section" id="slow-query">
 <h3>Slow Query<a class="headerlink" href="#slow-query" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># 1. find config file
-$ psql -U postgres -c &#39;SHOW config_file&#39;
+<p>3
+.. code-block:: text</p>
+<blockquote>
+<div><p># 1. find config file
+$ psql -U postgres -c ‘SHOW config_file’
 # 2. edit conf
 # default
 #log_min_duration_statement = -1
-log_min_duration_statement = 1000 # (log all queries executing more than 1 second)
-</pre></div>
-</div>
+log_min_duration_statement = 1000 # (log all queries executing more than 1 second)</p>
+</div></blockquote>
 <p>可能的 log paths:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pgsql</span><span class="o">/</span><span class="n">PG_VERSION</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">log</span><span class="o">/</span>
 <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">postgresql</span><span class="o">/</span>
@@ -276,22 +278,27 @@ log_min_duration_statement = 1000 # (log all queries executing more than 1 secon
 </div>
 <div class="section" id="commands">
 <h3>commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p># ALTER DATABASE name RENAME TO newname</p>
-<p># mysql: SHOW DATABASES
-# pgres: l
-# mysql: SHOW TABLES
-# pgres: d
-# mysql: USE mydbname
-# pgres: c  mydbname # connect</p>
-<p># mysql: SHOW COLUMNS
-# pgres: d table</p>
-<p># mysql: DESCRIBE TABLE
-# pgres: d+ table ( dt)</p>
-<p># exit: q</p>
-<p>SELECT version();
-show data_directory;</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ALTER DATABASE name RENAME TO newname</span>
+
+<span class="c1"># mysql: SHOW DATABASES</span>
+<span class="c1"># pgres: \l</span>
+<span class="c1"># mysql: SHOW TABLES</span>
+<span class="c1"># pgres: \d</span>
+<span class="c1"># mysql: USE mydbname</span>
+<span class="c1"># pgres: \c  mydbname # \connect</span>
+
+<span class="c1"># mysql: SHOW COLUMNS</span>
+<span class="c1"># pgres: \d table</span>
+
+<span class="c1"># mysql: DESCRIBE TABLE</span>
+<span class="c1"># pgres: \d+ table ( \dt)</span>
+
+<span class="c1"># exit: \q</span>
+
+<span class="n">SELECT</span> <span class="n">version</span><span class="p">();</span>
+<span class="n">show</span> <span class="n">data_directory</span><span class="p">;</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="install">
