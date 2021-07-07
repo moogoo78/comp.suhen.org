@@ -215,19 +215,19 @@
 <h2>How-to<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="data-dump-import">
 <h3>Data Dump/Import<a class="headerlink" href="#data-dump-import" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># dump
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># dump</span>
 $ pg_dump -U USERNAME DBNAME &gt; dbexport.pgsql
-$ # PGPASSWORD=&quot;mypassword&quot; pg_dump -U myusername dbname 密碼 &gt; output.sql$ pg_dump -U postgres -f /tmp/dump.sql.gz --compress=5 --no-owner dbname
+$ <span class="c1"># PGPASSWORD=&quot;mypassword&quot; pg_dump -U myusername dbname 密碼 &gt; output.sql$ pg_dump -U postgres -f /tmp/dump.sql.gz --compress=5 --no-owner dbname</span>
 
-## import
+<span class="c1">## import</span>
 $ psql -f backup.sql dbname dbuser
 
-# specific table
+<span class="c1"># specific table</span>
 pg_dump -U xxx public.TABLE_NAME DATABASE_NAME &gt; out.sql
 pg_dump -U xxx -d DB_NAME -t TABLE_NAME &gt; out.sql
 
-## export csv
-$ psql -U user -d db_name -c &quot;Copy (Select * From foo_table LIMIT 10) To STDOUT With CSV HEADER DELIMITER &#39;,&#39;;&quot; &gt; foo_data.csv
+<span class="c1">## export csv</span>
+$ psql -U user -d db_name -c <span class="s2">&quot;Copy (Select * From foo_table LIMIT 10) To STDOUT With CSV HEADER DELIMITER &#39;,&#39;;&quot;</span> &gt; foo_data.csv
 </pre></div>
 </div>
 </div>
@@ -247,7 +247,7 @@ $ psql -U user -d db_name -c &quot;Copy (Select * From foo_table LIMIT 10) To ST
 <div class="section" id="slow-query">
 <h3>Slow Query<a class="headerlink" href="#slow-query" title="Permalink to this headline">¶</a></h3>
 <p>3
-.. code-block:: text</p>
+.. code-block:: bash</p>
 <blockquote>
 <div><p># 1. find config file
 $ psql -U postgres -c ‘SHOW config_file’
