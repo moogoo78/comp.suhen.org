@@ -8,7 +8,7 @@ How-to
 Data Dump/Import
 -------------------------------------
 
-.. code-block::
+.. code-block:: bash
 
    # dump
    $ pg_dump -U USERNAME DBNAME > dbexport.pgsql
@@ -47,7 +47,7 @@ truncate & auto increment 從頭開始:
 Slow Query
 ---------------
 3
-.. code-block:: text
+.. code-block:: bash
 
    # 1. find config file
    $ psql -U postgres -c 'SHOW config_file'
@@ -55,6 +55,7 @@ Slow Query
    # default
    #log_min_duration_statement = -1
    log_min_duration_statement = 1000 # (log all queries executing more than 1 second)
+
 
 可能的 log paths::
 
