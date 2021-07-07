@@ -46,7 +46,7 @@ truncate & auto increment 從頭開始:
 
 Slow Query
 ---------------
-3
+
 .. code-block:: bash
 
    # 1. find config file
