@@ -46,14 +46,12 @@ truncate & auto increment 從頭開始:
 
 Slow Query
 ---------------
-- find config file
 
-.. code-block:: bash
-
-   psql -U postgres -c 'SHOW config_file'
-
--
 .. code-block:: text
+
+   # 1. find config file
+   $ psql -U postgres -c 'SHOW config_file'
+   # 2. edit conf
    # default
    #log_min_duration_statement = -1
    log_min_duration_statement = 1000 # (log all queries executing more than 1 second)
@@ -105,6 +103,8 @@ commands
 
    SELECT version();
    show data_directory;
+
+
 Install
 =======================
 
