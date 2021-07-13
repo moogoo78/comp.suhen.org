@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#git-clonebranch">git clone某一個branch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git-format-patch-commit-diff">git format-patch  把修改紀錄依照 commit 分別作出 diff 來</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#commit-branch">commit 錯 branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-empty-folder">commit empty folder</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a><ul>
@@ -292,6 +293,16 @@ $ git pull --rebase
 <span class="c1"># working dir 就會有 還沒 commit 前的狀態</span>
 git checkout b newbranch
 <span class="c1"># 重新 git add/commit 就好了</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit-empty-folder">
+<h3>commit empty folder<a class="headerlink" href="#commit-empty-folder" title="Permalink to this headline">¶</a></h3>
+<p>add a .gitignore in folder as follows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Ignore everything in this directory
+*
+# except this file
+!.gitignore
 </pre></div>
 </div>
 </div>

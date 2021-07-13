@@ -78,6 +78,18 @@ commit 錯 branch
     git checkout b newbranch
     # 重新 git add/commit 就好了
 
+commit empty folder
+---------------------
+
+add a .gitignore in folder as follows
+
+.. code-block::
+
+   # Ignore everything in this directory
+   *
+   # except this file
+   !.gitignore
+
 
 
 Reference
