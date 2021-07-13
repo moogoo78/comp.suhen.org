@@ -155,6 +155,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#development">Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-problems">install problems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rules">Rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#virtual-environment-management">virtual environment/management</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-python">install python</a></li>
@@ -665,6 +666,7 @@ mirrors =
 <div class="section" id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p><a class="reference external" href="https://vstinner.readthedocs.io/">Victor Stinner’s Notes — Victor Stinner’s Notes 1.0 documentation</a> (TP 推薦)</p></li>
 <li><p><a class="reference external" href="http://crsmithdev.com/arrow/">Arrow: better dates and times for Python — Arrow 0.4.4 documentation</a></p></li>
 <li><p><a class="reference external" href="http://www.slideshare.net/moskytw">Mosky Liu, Pinkoi | SlideShare</a> good tutorial</p></li>
 <li><p><a class="reference external" href="http://book.pythontips.com/en/latest/index.html">Intermediate Python — Python Tips 0.1 documentation</a> 好用進階, tips</p></li>
@@ -948,20 +950,27 @@ $ brew link jpeg --overwrite jpeg <span class="c1"># 可能之前有舊的東西
 </div>
 <div class="section" id="d-pypi-python-org">
 <h3>連不到d.pypi.python.org…時<a class="headerlink" href="#d-pypi-python-org" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt>::</dt><dd><p>pip install -i <a class="reference external" href="http://pypi.python.org/simple">http://pypi.python.org/simple</a> PACKAGE</p>
-</dd>
-</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">i</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span> <span class="n">PACKAGE</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="development">
 <h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
-<p>via:: [(85) 這樣的開發環境沒問題嗎？ – Tzu-ping Chung – PyCon Taiwan 2018 - YouTube](<a class="reference external" href="https://www.youtube.com/watch?v=6Nl0IYkU0hU&amp;t=586s">https://www.youtube.com/watch?v=6Nl0IYkU0hU&amp;t=586s</a>)</p>
+<p>via:: <a class="reference external" href="https://www.youtube.com/watch?v=6Nl0IYkU0hU">(85) 這樣的開發環境沒問題嗎？ – Tzu-ping Chung – PyCon Taiwan 2018 - YouTube</a></p>
+<div class="section" id="install-problems">
+<h3>install problems<a class="headerlink" href="#install-problems" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>api 會裝在 /usr/lib</p></li>
+<li><p>sudo pip install 會裝在 /usr/local/lib</p></li>
+<li><p>pip install –user 會裝在 ~/.local/lib</p></li>
+</ul>
+</div>
 <div class="section" id="rules">
 <h3>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Do not use sudo. Ever.</p></li>
-<li><p>Don’t use Hemebrew Python</p></li>
+<li><p>Don’t use Hemebrew Python (每次更新都會改路徑)</p></li>
 <li><p>Prefer self-compiling if possible</p></li>
 <li><p>Don’t add things to PATH; <strong>link</strong> them (in PATH)</p></li>
 <li><p>Always use virtual environments</p></li>
@@ -983,7 +992,8 @@ $ <span class="o">{</span>pipenv<span class="p">|</span>poetry<span class="o">}<
 </div>
 <div class="section" id="install-python">
 <h3>install python<a class="headerlink" href="#install-python" title="Permalink to this headline">¶</a></h3>
-<p>use python-build (pyenv plugin)</p>
+<p>不推 shim (.python-version)，因為: if 使用系統 python，外部套件可能會有 build deps error</p>
+<p>use python-build (pyenv plugin) or pythonup (mac/windows)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python-build <span class="m">3</span>.9.6 ~/.local/pythons/3.9
 $ python-build <span class="m">3</span>.8.11 ~/.local/pythons/3.8
 $ ln -s ~/.local/pythons/3.9/bin/python3.9 ~/.local/bin
