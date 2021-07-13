@@ -466,7 +466,7 @@ Package
 
 Reference
 ====================
-
+* `Victor Stinner’s Notes — Victor Stinner's Notes 1.0 documentation <https://vstinner.readthedocs.io/>`__ (TP 推薦)
 * `Arrow: better dates and times for Python — Arrow 0.4.4 documentation <http://crsmithdev.com/arrow/>`__
 * `Mosky Liu, Pinkoi | SlideShare <http://www.slideshare.net/moskytw>`__ good tutorial
 * `Intermediate Python — Python Tips 0.1 documentation <http://book.pythontips.com/en/latest/index.html>`__ 好用進階, tips
@@ -787,20 +787,27 @@ UnicodeEncodeError::
 連不到d.pypi.python.org...時
 --------------------------------
 
-::
+.. code-block::
+
   pip install -i http://pypi.python.org/simple PACKAGE
 
 
 Development
 ======================
 
-via:: [(85) 這樣的開發環境沒問題嗎？ – Tzu-ping Chung – PyCon Taiwan 2018 - YouTube](https://www.youtube.com/watch?v=6Nl0IYkU0hU&t=586s)
+via:: `(85) 這樣的開發環境沒問題嗎？ – Tzu-ping Chung – PyCon Taiwan 2018 - YouTube <https://www.youtube.com/watch?v=6Nl0IYkU0hU>`__
+
+install problems
+-----------------------------
+- api 會裝在 /usr/lib
+- sudo pip install 會裝在 /usr/local/lib
+- pip install --user 會裝在 ~/.local/lib
 
 
 Rules
 ---------------
 - Do not use sudo. Ever.
-- Don't use Hemebrew Python
+- Don't use Hemebrew Python (每次更新都會改路徑)
 - Prefer self-compiling if possible
 - Don't add things to PATH; **link** them (in PATH)
 - Always use virtual environments
@@ -826,7 +833,11 @@ virtual environment/management
 install python
 ------------------------
 
-use python-build (pyenv plugin)
+不推 shim (.python-version)，因為: if 使用系統 python，外部套件可能會有 build deps error
+
+
+use python-build (pyenv plugin) or pythonup (mac/windows)
+
 
 .. code-block:: bash
 
