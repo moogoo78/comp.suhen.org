@@ -58,3 +58,4 @@ MooGoo's note about computer.
    database/postgresql
    database/sqlite
    database/mongodb
+   database/redis
